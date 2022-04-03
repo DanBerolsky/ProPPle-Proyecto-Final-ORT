@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/publicacionesFragment">
-
+    <fragment
+        android:id="@+id/iniciarSeccionFragment"
+        android:name="com.example.propple.fragments.IniciarSeccionFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/log_in_Fragment"
+        android:name="com.example.propple.Log_in_Fragment"
+        android:label="Log_in_Fragment" />
     <fragment
         android:id="@+id/publicacionesFragment"
         android:name="com.example.propple.fragments.PublicacionesFragment"

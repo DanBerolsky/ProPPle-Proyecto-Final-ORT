@@ -1,10 +1,14 @@
 package com.example.propple.adapters
 
+import android.graphics.Color
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.entities.Publicacion
@@ -25,11 +29,18 @@ class PublicacionesAdapter(var publicacionesList : MutableList<Publicacion>) : R
             var txtRubro : TextView = view.findViewById(R.id.txtRubro)
             txtRubro.text = rubro
         }
-        fun setValoracion(){
 
+        fun setValoracion(cantEstrellas : Int){
+            //val COLOR_AMARILLO : Color.argb =
+            for ( i in 1..cantEstrellas){
+                var estrellaAux = "estrella$i"
+                Log.d("estre",estrellaAux)
+                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 235, 59, 1))
+            }
         }
 
         fun setAvatar(){
+
         }
 
         fun setUbicacion(ubicacion : String){
@@ -47,10 +58,9 @@ class PublicacionesAdapter(var publicacionesList : MutableList<Publicacion>) : R
 
     //esta funcion se ejecuta en cada iteracion de la lista
     override fun onBindViewHolder(holder: publicacionesHolder, position: Int) {
-        publicacionesList[position].rubro?.let { holder.setRubro(it) }
-        //holder.setUbicacion(publicacionesList[position].ubicacion?)
-        //holder.setAvatar(publicacionesList[position].avatar)
-        //holder.setValoracion(publicacionesList[position].valoracion)
+        publicacionesList[position].titulo?.let { holder.setRubro(it) }
+        publicacionesList[position].valoracion?.let { holder.setValoracion(it) }
+        publicacionesList[position].ubicacion?.let { holder.setUbicacion(it) }
     }
 
 

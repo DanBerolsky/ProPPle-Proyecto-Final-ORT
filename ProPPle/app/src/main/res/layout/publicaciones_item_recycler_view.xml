@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="#FFEB3B"
-    app:cardBackgroundColor="#00FFFFFF">
+    app:cardBackgroundColor="#00FFFFFF"
+    app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -29,41 +32,45 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="TODO"
+                android:tag="estrella1"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#FFEB3B" />
+                app:tint="#81817D" />
 
             <ImageView
                 android:id="@+id/estrella2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:tag="estrella2"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#FFEB3B" />
+                app:tint="#81817D" />
 
             <ImageView
                 android:id="@+id/estrella3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:tag="estrella3"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#FFEB3B" />
+                app:tint="#81817D" />
 
             <ImageView
                 android:id="@+id/estrella4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
+                android:tag="estrella4"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#FFEB3B" />
+                app:tint="#81817D" />
 
             <ImageView
                 android:id="@+id/estrella5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:tag="estrella5"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#FFEB3B" />
+                app:tint="#81817D" />
 
         </LinearLayout>
 
@@ -101,7 +108,7 @@
 
         <TextView
             android:id="@+id/txtRubro"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="TextView"
@@ -131,7 +138,7 @@
 
             <TextView
                 android:id="@+id/txtUbicacion"
-                android:layout_width="wrap_content"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:text="TextView"
