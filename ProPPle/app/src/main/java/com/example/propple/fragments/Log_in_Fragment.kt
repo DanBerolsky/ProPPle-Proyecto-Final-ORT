@@ -1,4 +1,4 @@
-package com.example.propple
+package com.example.propple.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.propple.R
 
 class Log_in_Fragment : Fragment() {
 

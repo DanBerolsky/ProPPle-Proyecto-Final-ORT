@@ -11,7 +11,7 @@
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/log_in_Fragment"
-        android:name="com.example.propple.Log_in_Fragment"
+        android:name="com.example.propple.fragments.Log_in_Fragment"
         android:label="Log_in_Fragment" />
     <fragment
         android:id="@+id/publicacionesFragment"
