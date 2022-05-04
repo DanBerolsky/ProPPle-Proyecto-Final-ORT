@@ -3,18 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/publicacionesFragment">
+    app:startDestination="@id/inicioFragment">
     <fragment
-        android:id="@+id/iniciarSeccionFragment"
-        android:name="com.example.propple.fragments.IniciarSeccionFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
-    <fragment
-        android:id="@+id/log_in_Fragment"
-        android:name="com.example.propple.fragments.Log_in_Fragment"
-        android:label="Log_in_Fragment" />
-    <fragment
-        android:id="@+id/publicacionesFragment"
-        android:name="com.example.propple.fragments.PublicacionesFragment"
-        android:label="PublicacionesFragment" />
+        android:id="@+id/inicioFragment"
+        android:name="com.example.propple.fragments.inicioFragment"
+        android:label="inicio_fragment"
+        tools:layout="@layout/inicio_fragment" />
 </navigation>

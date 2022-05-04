@@ -6,26 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.propple.viewModel.DatosPersonalesEditViewModel
 import com.example.propple.R
 
-class Log_in_Fragment : Fragment() {
+class datosPersonalesEditFragment : Fragment() {
 
     companion object {
-        fun newInstance() = Log_in_Fragment()
+        fun newInstance() = datosPersonalesEditFragment()
     }
 
-    private lateinit var viewModel: LogInViewModel
+    private lateinit var viewModel: DatosPersonalesEditViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.log_in__fragment, container, false)
+        return inflater.inflate(R.layout.datos_personales_edit_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LogInViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DatosPersonalesEditViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

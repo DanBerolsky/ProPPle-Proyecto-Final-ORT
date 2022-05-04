@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/banco_negro"
+    tools:context=".fragments.registroUsuarioFragment">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InBuscador"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese su nombre"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="113dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InApellido"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese su apellido"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="170dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InAlias"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese un alias"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="231dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InMail"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese su correo electrónico"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_baseline_email_24"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView8"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="297dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InFechaDeNacimiento"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese fecha de nacimiento"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imgGenero"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_calendar_today_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView20"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="419dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InTelefono"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese un teléfono"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@android:drawable/stat_sys_phone_call"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView27"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="357dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InDirecion"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese su direccion"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_baseline_location_on_24"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView52"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="482dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InContraseña"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese una clave"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/In"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese nuevamente la clave"
+                    android:inputType="textEmailAddress" />
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnIniciar_sesión2"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+
+            android:backgroundTint="@color/deep_purple_500"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/registrarse"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

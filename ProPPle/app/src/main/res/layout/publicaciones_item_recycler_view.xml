@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:background="#FFEB3B"
+    android:elevation="20dp"
     app:cardBackgroundColor="#00FFFFFF"
     app:cardCornerRadius="15dp">
 
@@ -21,10 +22,10 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.53">
+            app:layout_constraintVertical_bias="0.57">
 
             <ImageView
                 android:id="@+id/estrella1"
@@ -112,19 +113,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="TextView"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="66dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.82">
@@ -134,7 +136,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+                app:srcCompat="@drawable/ic_baseline_location_on_24"
+                app:tint="#817979" />
 
             <TextView
                 android:id="@+id/txtUbicacion"
@@ -142,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:text="TextView"
+                android:textColor="#605E5E"
                 android:textSize="10sp" />
 
         </LinearLayout>
