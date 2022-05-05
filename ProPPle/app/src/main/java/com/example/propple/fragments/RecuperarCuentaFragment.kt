@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.viewModel.RecuperarCuentaViewModel
 
@@ -15,14 +17,33 @@ class RecuperarCuentaFragment : Fragment() {
         fun newInstance() = RecuperarCuentaFragment()
     }
 
+    private lateinit var v: View
     private lateinit var viewModel: RecuperarCuentaViewModel
+    private lateinit var btnRecuperarCuenta : Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.recuperar_cuenta_fragment, container, false)
+        v = inflater.inflate(R.layout.recuperar_cuenta_fragment, container, false)
+        btnRecuperarCuenta = v.findViewById(R.id.btnRecuperar)
+        return v
     }
+
+
+    override fun onStart() {
+        super.onStart()
+
+
+        btnRecuperarCuenta.setOnClickListener {
+            val action = RecuperarCuentaFragmentDirections.actionRecuperarCuentaFragmentToRecuperarCuenta2Fragment()
+            v.findNavController().navigate(action)
+        }
+
+
+    }
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -6,14 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.viewModel.RegistroUsuarioViewModel
 
-class registroUsuarioFragment : Fragment() {
+class RegistroUsuarioFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = registroUsuarioFragment()
-    }
+    private lateinit var v : View
+    private lateinit var btnRegistrar : Button
+
 
     private lateinit var viewModel: RegistroUsuarioViewModel
 
@@ -21,8 +23,24 @@ class registroUsuarioFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.registro_usuario_fragment, container, false)
+        v = inflater.inflate(R.layout.registro_usuario_fragment, container, false)
+        btnRegistrar = v.findViewById(R.id.btnRegistrarUsuario)
+
+        return v
     }
+
+
+    override fun onStart() {
+        super.onStart()
+
+        btnRegistrar.setOnClickListener {
+            val action = RegistroUsuarioFragmentDirections.actionRegistroUsuarioFragmentToValidacionDeCuentaFragment()
+            v.findNavController().navigate(action)
+        }
+
+    }
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -2,6 +2,8 @@
 <resources>
     <color name="rosa_para_input">#A890CA</color>
     <color name="banco_negro">#2B2B2B</color>
+    <color name="Gris_GrisOscuro">#474646</color>
+    <color name="negro_blaco">#FFF</color>
     <color name="deep_purple_500">#664fa3</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

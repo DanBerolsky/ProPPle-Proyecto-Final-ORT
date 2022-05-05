@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MisPreferenciasFragment" >
+    android:background="@color/banco_negro"
+    tools:context=".fragments.MisPreferenciasFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
             android:layout_marginTop="50dp"
             android:text="¿Donde necesito el servicio? "
             android:textAlignment="center"
-            android:textColor="#090909"
+            android:textColor="@color/negro_blaco"
             android:textSize="24sp" />
 
         <androidx.cardview.widget.CardView
@@ -58,7 +59,7 @@
                     android:layout_weight="1"
                     android:background="#806C6565"
                     android:padding="10dp"
-                    android:src="@drawable/ic_baseline_email_24"
+
                     app:srcCompat="@drawable/ic_baseline_location_on_24"
                     app:tint="#FFF" />
 
@@ -73,7 +74,7 @@
             android:layout_marginTop="50dp"
             android:text="Ordenar prestadores por"
             android:textAlignment="center"
-            android:textColor="#090909"
+            android:textColor="@color/negro_blaco"
             android:textSize="24sp" />
 
         <Switch
@@ -85,6 +86,7 @@
             android:gravity="center"
             android:minHeight="48dp"
             android:text="Mejor Valoración"
+            android:textColor="@color/negro_blaco"
             android:textSize="16sp" />
 
         <Switch
@@ -96,6 +98,7 @@
             android:gravity="center"
             android:minHeight="48dp"
             android:text="Menor recio base"
+            android:textColor="@color/negro_blaco"
             android:textSize="16sp" />
 
         <TextView
@@ -105,7 +108,7 @@
             android:layout_marginTop="50dp"
             android:text="Vincular con Mercado Pago "
             android:textAlignment="center"
-            android:textColor="#090909"
+            android:textColor="@color/negro_blaco"
             android:textSize="24sp" />
 
         <ImageView

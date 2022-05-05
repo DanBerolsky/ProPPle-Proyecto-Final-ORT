@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.propple.fragments.homeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/cuentaFragment"
+        android:name="com.example.propple.fragments.CuentaFragment"
+        android:label="cuenta_fragment"
+        tools:layout="@layout/cuenta_fragment" >
+        <action
+            android:id="@+id/action_cuentaFragment_to_datosPersonalesEditFragment"
+            app:destination="@id/datosPersonalesEditFragment" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_cambiarContraseniaFragment"
+            app:destination="@id/cambiarContraseniaFragment" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_misPreferenciasFragment"
+            app:destination="@id/misPreferenciasFragment" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_postularmeFragment"
+            app:destination="@id/postularmeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/datosPersonalesEditFragment"
+        android:name="com.example.propple.fragments.datosPersonalesEditFragment"
+        android:label="datos_personales_edit_fragment"
+        tools:layout="@layout/datos_personales_edit_fragment" />
+    <fragment
+        android:id="@+id/cambiarContraseniaFragment"
+        android:name="com.example.propple.fragments.cambiarContraseniaFragment"
+        android:label="cambiar_contrasenia_fragment"
+        tools:layout="@layout/cambiar_contrasenia_fragment" />
+    <fragment
+        android:id="@+id/misPreferenciasFragment"
+        android:name="com.example.propple.fragments.MisPreferenciasFragment"
+        android:label="mis_preferencias_fragment"
+        tools:layout="@layout/mis_preferencias_fragment" />
+    <fragment
+        android:id="@+id/postularmeFragment"
+        android:name="com.example.propple.fragments.PostularmeFragment"
+        android:label="postularme_fragment"
+        tools:layout="@layout/postularme_fragment" >
+        <action
+            android:id="@+id/action_postularmeFragment_to_postularme2Fragment"
+            app:destination="@id/postularme2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postularme2Fragment"
+        android:name="com.example.propple.fragments.Postularme2Fragment"
+        android:label="postularme2_fragment"
+        tools:layout="@layout/postularme2_fragment" >
+        <action
+            android:id="@+id/action_postularme2Fragment_to_cuentaFragment"
+            app:destination="@id/cuentaFragment" />
+    </fragment>
+</navigation>

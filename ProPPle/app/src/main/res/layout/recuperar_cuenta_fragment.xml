@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.RecuperarCuentaFragment" >
+    android:background="@color/banco_negro"
+    tools:context=".fragments.RecuperarCuentaFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
 
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="239dp"
+        android:layout_marginBottom="197dp"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRecuperar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,13 +28,15 @@
 
             <EditText
                 android:id="@+id/InMail"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
-                android:hint="  Ingrese su correo electrónico"
-                android:inputType="textEmailAddress" />
+                android:hint="Ingrese su correo electrónico"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp" />
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -50,10 +55,9 @@
 
     <Button
         android:id="@+id/btnRecuperar"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
 
-        android:layout_marginTop="164dp"
         android:layout_marginBottom="185dp"
         android:backgroundTint="@color/deep_purple_500"
         android:fontFamily="sans-serif-condensed-light"
@@ -63,6 +67,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

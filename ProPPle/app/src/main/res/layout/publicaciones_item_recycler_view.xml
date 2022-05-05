@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:background="#FFEB3B"
     android:elevation="20dp"
     app:cardBackgroundColor="#00FFFFFF"
@@ -22,10 +22,10 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.57">
+            app:layout_constraintTop_toBottomOf="@+id/txtRubro"
+            app:layout_constraintVertical_bias="0.134">
 
             <ImageView
                 android:id="@+id/estrella1"
@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tag="estrella2"
+                android:visibility="visible"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
                 app:tint="#81817D" />
 
@@ -79,9 +80,10 @@
             android:id="@+id/cardView"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginTop="36dp"
             app:cardCornerRadius="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.372"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -112,7 +114,7 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="TextView"
+            android:text="nameUserProvider"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -122,19 +124,20 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/txtRubro2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.82">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <ImageView
                 android:id="@+id/icoUbicacion"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 app:srcCompat="@drawable/ic_baseline_location_on_24"
                 app:tint="#817979" />
@@ -142,9 +145,10 @@
             <TextView
                 android:id="@+id/txtUbicacion"
                 android:layout_width="190dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="0dp"
-                android:text="TextView"
+                android:gravity="center_vertical"
+                android:text="Location"
                 android:textColor="#605E5E"
                 android:textSize="10sp" />
 
@@ -163,6 +167,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="395dp" />
+
+        <TextView
+            android:id="@+id/txtRubro2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:padding="6dp"
+            android:text="Title"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

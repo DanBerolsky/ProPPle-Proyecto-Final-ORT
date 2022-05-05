@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.InicioSesionFragment" >
+    android:background="@color/banco_negro"
+    tools:context=".fragments.InicioSesionFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="235dp"
         android:layout_height="168dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="47dp"
-        android:backgroundTint="@color/deep_purple_500"
-        android:elevation="40dp"
+        android:layout_marginTop="26dp"
+        android:elevation="20dp"
+        app:cardBackgroundColor="#034C4949"
         app:cardCornerRadius="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/deep_purple_500"
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,10 +55,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
 
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="102dp"
         android:layout_marginBottom="56dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView52"
@@ -74,13 +74,15 @@
 
             <EditText
                 android:id="@+id/InMail"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
-                android:hint="  Ingrese su correo electrónico"
-                android:inputType="textEmailAddress" />
+                android:hint="Ingrese su correo electrónico"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp" />
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -99,7 +101,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView52"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
 
         android:layout_marginTop="40dp"
@@ -116,13 +118,15 @@
 
             <EditText
                 android:id="@+id/InContraseña"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
-                android:hint="  Ingrese una clave"
-                android:inputType="textEmailAddress" />
+                android:hint="Ingrese una clave"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -131,7 +135,7 @@
                 android:layout_weight="1"
                 android:background="#806C6565"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_email_24"
+
                 app:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
                 app:tint="#FFF" />
 
@@ -141,16 +145,16 @@
 
     <Button
         android:id="@+id/btnOlvide"
-        android:layout_width="179dp"
-        android:layout_height="wrap_content"
+        android:layout_width="229dp"
+        android:layout_height="62dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="9dp"
         android:background="#00FFFFFF"
         android:text="Olvide mi contraseña"
         android:textAlignment="center"
-        android:textColor="#852995"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnIniciar_sesión3"
+        android:textColor="@color/rosa_para_input"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciar_sesión"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +162,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnIniciar_sesión3"
+        android:id="@+id/btnIniciar_sesión"
         android:layout_width="220dp"
         android:layout_height="60dp"
 

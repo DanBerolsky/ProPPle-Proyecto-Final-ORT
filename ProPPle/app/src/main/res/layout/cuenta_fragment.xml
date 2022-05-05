@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CuentaFragment" >
+    android:background="@color/banco_negro"
+    tools:context=".fragments.CuentaFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -32,7 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
         android:text="Nombre De Usuario"
-        android:textColor="#000000"
+        android:textColor="@color/negro_blaco"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -46,7 +47,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Alias - Rol"
-        android:textColor="#373535"
+        android:textColor="@color/negro_blaco"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -72,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/bntDatosPersonales2"
+        android:id="@+id/bntCambiarContra"
         android:layout_width="0dp"
         android:layout_height="60dp"
 
@@ -90,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bntDatosPersonales" />
 
     <Button
-        android:id="@+id/bntDatosPersonales4"
+        android:id="@+id/bntMisPreferencias"
         android:layout_width="0dp"
         android:layout_height="60dp"
 
@@ -105,10 +106,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bntDatosPersonales2" />
+        app:layout_constraintTop_toBottomOf="@+id/bntCambiarContra" />
 
     <Button
-        android:id="@+id/bntDatosPersonales5"
+        android:id="@+id/bntPostularme"
         android:layout_width="0dp"
         android:layout_height="60dp"
 
@@ -123,5 +124,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bntDatosPersonales4" />
+        app:layout_constraintTop_toBottomOf="@+id/bntMisPreferencias" />
 </androidx.constraintlayout.widget.ConstraintLayout>

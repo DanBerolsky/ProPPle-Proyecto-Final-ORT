@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.datosPersonalesEditFragment" >
+    android:background="@color/banco_negro"
+    tools:context=".fragments.datosPersonalesEditFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -32,7 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
         android:text="Nombre De Usuario"
-        android:textColor="#000000"
+        android:textColor="@color/negro_blaco"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -46,7 +47,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Alias - Rol"
-        android:textColor="#373535"
+        android:textColor="@color/negro_blaco"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,11 +56,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView8"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="132dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewr8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +74,7 @@
 
             <EditText
                 android:id="@+id/InFechaDeNacrimiento"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
@@ -87,7 +89,7 @@
                 android:layout_weight="1"
                 android:background="#806C6565"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_email_24"
+
                 app:srcCompat="@drawable/ic_calendar_today_fill0_wght400_grad0_opsz48"
                 app:tint="#FFF" />
 
@@ -97,17 +99,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewr8"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginTop="24dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView8"
-        app:layout_constraintVertical_bias="0.44">
+        app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,7 +116,7 @@
 
             <EditText
                 android:id="@+id/InFechaDeNacimiento"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
@@ -131,7 +131,7 @@
                 android:layout_weight="1"
                 android:background="#806C6565"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_email_24"
+
                 app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
                 app:tint="#FFF" />
 
@@ -141,17 +141,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView27"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="263dp"
+        android:layout_marginTop="24dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewr8"
-        app:layout_constraintVertical_bias="0.292">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewr8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -160,7 +158,7 @@
 
             <EditText
                 android:id="@+id/InDirecion"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
@@ -175,7 +173,7 @@
                 android:layout_weight="1"
                 android:background="#806C6565"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_email_24"
+
                 app:srcCompat="@drawable/ic_baseline_location_on_24"
                 app:tint="#FFF" />
 
@@ -185,16 +183,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView20"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
 
+        android:layout_marginTop="24dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView27"
-        app:layout_constraintVertical_bias="0.049">
+        app:layout_constraintTop_toBottomOf="@+id/cardView27">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -203,7 +200,7 @@
 
             <EditText
                 android:id="@+id/InTelefono"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
@@ -218,7 +215,7 @@
                 android:layout_weight="1"
                 android:background="#806C6565"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_email_24"
+
                 app:srcCompat="@android:drawable/stat_sys_phone_call"
                 app:tint="#FFF" />
 
@@ -231,6 +228,7 @@
         android:layout_width="220dp"
         android:layout_height="60dp"
 
+        android:layout_marginBottom="140dp"
         android:backgroundTint="@color/deep_purple_500"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Guardar"
@@ -238,7 +236,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView20" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

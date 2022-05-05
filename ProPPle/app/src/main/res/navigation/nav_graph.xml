@@ -8,5 +8,65 @@
         android:id="@+id/inicioFragment"
         android:name="com.example.propple.fragments.inicioFragment"
         android:label="inicio_fragment"
-        tools:layout="@layout/inicio_fragment" />
+        tools:layout="@layout/inicio_fragment" >
+        <action
+            android:id="@+id/action_inicioFragment_to_inicioSesionFragment"
+            app:destination="@id/inicioSesionFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_registroUsuarioFragment"
+            app:destination="@id/registroUsuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inicioSesionFragment"
+        android:name="com.example.propple.fragments.InicioSesionFragment"
+        android:label="inicio_sesion_fragment"
+        tools:layout="@layout/inicio_sesion_fragment" >
+        <action
+            android:id="@+id/action_inicioSesionFragment_to_recuperarCuentaFragment"
+            app:destination="@id/recuperarCuentaFragment" />
+        <action
+            android:id="@+id/action_inicioSesionFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroUsuarioFragment"
+        android:name="com.example.propple.fragments.RegistroUsuarioFragment"
+        android:label="registro_usuario_fragment"
+        tools:layout="@layout/registro_usuario_fragment" >
+        <action
+            android:id="@+id/action_registroUsuarioFragment_to_validacionDeCuentaFragment"
+            app:destination="@id/validacionDeCuentaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperarCuentaFragment"
+        android:name="com.example.propple.fragments.RecuperarCuentaFragment"
+        android:label="recuperar_cuenta_fragment"
+        tools:layout="@layout/recuperar_cuenta_fragment" >
+        <action
+            android:id="@+id/action_recuperarCuentaFragment_to_recuperarCuenta2Fragment"
+            app:destination="@id/recuperarCuenta2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperarCuenta2Fragment"
+        android:name="com.example.propple.fragments.RecuperarCuenta2Fragment"
+        android:label="recuperar_cuenta2_fragment"
+        tools:layout="@layout/recuperar_cuenta2_fragment" >
+        <action
+            android:id="@+id/action_recuperarCuenta2Fragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/validacionDeCuentaFragment"
+        android:name="com.example.propple.fragments.validacionDeCuentaFragment"
+        android:label="validacion_de_cuenta_fragment"
+        tools:layout="@layout/validacion_de_cuenta_fragment" >
+        <action
+            android:id="@+id/action_validacionDeCuentaFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.propple.activities.MainActivity2"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
 </navigation>

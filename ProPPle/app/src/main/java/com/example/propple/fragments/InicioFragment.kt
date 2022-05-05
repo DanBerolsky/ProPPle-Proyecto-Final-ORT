@@ -6,23 +6,49 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import com.example.propple.viewModel.InicioViewModel
 import com.example.propple.R
 
 class inicioFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = inicioFragment()
-    }
+
 
     private lateinit var viewModel: InicioViewModel
+    private lateinit var v : View
+    private lateinit var btnIniciarSesion : Button
+    private lateinit var btnRegistroUsuario : Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.inicio_fragment, container, false)
+        v = inflater.inflate(R.layout.inicio_fragment, container, false)
+
+        btnIniciarSesion = v.findViewById(R.id.btnIniciar_sesión)
+        btnRegistroUsuario = v.findViewById(R.id.btnRegistrarse)
+        return v
     }
+
+
+    override fun onStart() {
+        super.onStart()
+
+        btnIniciarSesion.setOnClickListener {
+            val action = inicioFragmentDirections.actionInicioFragmentToInicioSesionFragment()
+            v.findNavController().navigate(action)
+        }
+
+
+        btnRegistroUsuario.setOnClickListener {
+            val action = inicioFragmentDirections.actionInicioFragmentToRegistroUsuarioFragment()
+            v.findNavController().navigate(action)
+        }
+
+
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
