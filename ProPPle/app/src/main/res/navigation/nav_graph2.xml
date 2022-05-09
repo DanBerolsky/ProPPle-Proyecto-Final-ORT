@@ -61,4 +61,9 @@
             android:id="@+id/action_postularme2Fragment_to_cuentaFragment"
             app:destination="@id/cuentaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/serviciosContratadosFragment"
+        android:name="com.example.propple.fragments.ServiciosContratadosFragment"
+        android:label="servicios_contratados_fragment"
+        tools:layout="@layout/servicios_contratados_fragment" />
 </navigation>

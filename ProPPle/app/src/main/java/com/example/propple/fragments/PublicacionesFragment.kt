@@ -17,11 +17,6 @@ import com.example.propple.entities.publicacionesRepo
 class PublicacionesFragment : Fragment() {
 
 
-
-    companion object {
-        fun newInstance() = PublicacionesFragment()
-    }
-
     lateinit var v:View
     private lateinit var viewModel: PublicacionesViewModel
     lateinit var recyclerPublicaciones : RecyclerView
@@ -48,10 +43,6 @@ class PublicacionesFragment : Fragment() {
         recyclerPublicaciones.adapter=adapter // esta linea se renderiza la lista
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PublicacionesViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
 
 }
