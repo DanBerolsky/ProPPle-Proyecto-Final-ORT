@@ -11,12 +11,12 @@
         android:id="@+id/cardView3"
         android:layout_width="235dp"
         android:layout_height="168dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="48dp"
         android:elevation="20dp"
         app:cardBackgroundColor="#034C4949"
         app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -58,12 +58,12 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
 
-        android:layout_marginTop="102dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="16dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView52"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
@@ -104,10 +104,12 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOlvide"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView6">
 
@@ -117,7 +119,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/InContraseña"
+                android:id="@+id/InContrasenia"
                 android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
@@ -147,7 +149,6 @@
         android:id="@+id/btnOlvide"
         android:layout_width="229dp"
         android:layout_height="62dp"
-        android:layout_marginTop="45dp"
         android:layout_marginBottom="9dp"
         android:background="#00FFFFFF"
         android:text="Olvide mi contraseña"
@@ -156,7 +157,6 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btnIniciar_sesión"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView52"
         app:layout_constraintVertical_bias="0.0" />
@@ -173,9 +173,10 @@
         android:text="@string/iniciar_sesi_n"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOlvide" />
 </androidx.constraintlayout.widget.ConstraintLayout>

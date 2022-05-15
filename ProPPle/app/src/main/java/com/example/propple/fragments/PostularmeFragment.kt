@@ -32,7 +32,7 @@ class PostularmeFragment : Fragment() {
         super.onStart()
 
         btnPostularme.setOnClickListener {
-            val action = PostularmeFragmentDirections.actionPostularmeFragmentToPostularme2Fragment()
+            val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
             v.findNavController().navigate(action)
         }
 

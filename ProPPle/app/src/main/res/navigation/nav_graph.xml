@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_inicioSesionFragment_to_mainActivity2"
             app:destination="@id/mainActivity2" />
+        <action
+            android:id="@+id/action_inicioSesionFragment_to_mainActivityUsuarioPrestador"
+            app:destination="@id/mainActivityUsuarioPrestador" />
     </fragment>
     <fragment
         android:id="@+id/registroUsuarioFragment"
@@ -69,4 +72,9 @@
         android:name="com.example.propple.activities.MainActivity2"
         android:label="activity_main2"
         tools:layout="@layout/activity_main2" />
+    <activity
+        android:id="@+id/mainActivityUsuarioPrestador"
+        android:name="com.example.propple.activities.MainActivityUsuarioPrestador"
+        android:label="activity_main_usuario_prestador"
+        tools:layout="@layout/activity_main_usuario_prestador" />
 </navigation>

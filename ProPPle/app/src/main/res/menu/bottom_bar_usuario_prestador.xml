@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment2"
+        android:icon="@drawable/ic_location_automation_fill0_wght400_grad0_opsz48"
+        android:title="" />
+    <item
+        android:id="@+id/serviciosContratadosFragment2"
+        android:icon="@drawable/ic_business_center_fill0_wght400_grad0_opsz48"
+        android:title="" />
+
+    <item
+        android:id="@+id/reservasFragment"
+        android:icon="@drawable/ic_baseline_folder_open_24"
+        android:title="" />
+
+    <item
+        android:id="@+id/cuentaUsuarioPrestadorFragment"
+        android:icon="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+        android:title="" />
+
+</menu>

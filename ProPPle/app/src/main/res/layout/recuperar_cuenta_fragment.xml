@@ -12,14 +12,12 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
 
-        android:layout_marginTop="239dp"
-        android:layout_marginBottom="197dp"
+        android:layout_marginBottom="96dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRecuperar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,12 +56,13 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
 
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="248dp"
         android:backgroundTint="@color/deep_purple_500"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Recuperar cuenta"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

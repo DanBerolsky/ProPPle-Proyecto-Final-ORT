@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.propple">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProPPle">
         <activity
+            android:name=".activities.MainActivityUsuarioPrestador"
+            android:exported="true" />
+
+        <activity
             android:name=".activities.MainActivity2"
             android:exported="true">
-
-    </activity>
+        </activity>
 
         <activity
             android:name=".activities.MainActivity"
@@ -23,8 +29,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
     </application>
 
 </manifest>
