@@ -17,9 +17,12 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
+import com.example.propple.databinding.InicioSesionFragmentBinding
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
+import com.example.propple.viewModel.InicioSesionViewModel
 import com.example.propple.viewModel.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -31,8 +34,8 @@ class RegistroUsuarioFragment : Fragment() {
     private lateinit var binding : RegistroUsuarioFragmentBinding
     private lateinit var viewModel: RegistroUsuarioViewModel
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var latitude : String
-    private lateinit var longitude : String
+    private var latitude : Double = 0.0
+    private var longitude : Double = 0.0
     private lateinit var date : String
 
 
@@ -44,7 +47,6 @@ class RegistroUsuarioFragment : Fragment() {
         v = inflater.inflate(R.layout.registro_usuario_fragment, container, false)
         binding = RegistroUsuarioFragmentBinding.bind(v)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
-
         return v
     }
 
@@ -71,9 +73,9 @@ class RegistroUsuarioFragment : Fragment() {
                         Toast.makeText(requireContext(),"Null recived",Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(requireContext(),"get Success",Toast.LENGTH_SHORT).show()
-                        latitude=location.latitude.toString()
-                        longitude=location.longitude.toString()
-                        binding.InDirecion.setText(latitude+","+longitude)
+                        latitude=location.latitude
+                        longitude=location.longitude
+                        binding.InDirecion.setText(latitude.toString()+","+longitude.toString())
                     }
                 }
 
@@ -171,5 +173,10 @@ class RegistroUsuarioFragment : Fragment() {
     }
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         binding.InFechaDeNacimiento.setText("$day / $month / $year")
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(RegistroUsuarioViewModel::class.java)
     }
 }
