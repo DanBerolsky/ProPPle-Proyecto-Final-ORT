@@ -24,7 +24,7 @@
             android:id="@+id/cardView1"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
 
             android:autofillHints="  Ingrese nuevamente una contraseña"
             app:cardCornerRadius="10dp"
@@ -224,14 +224,16 @@
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
+                    android:clickable="false"
                     android:ems="10"
+                    android:focusable="false"
                     android:hint="Fecha de nacimiento"
                     android:inputType="date"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
 
                 <ImageView
-                    android:id="@+id/imgGenero"
+                    android:id="@+id/btnDate"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -311,14 +313,17 @@
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
+                    android:clickable="false"
+                    android:editable="true"
                     android:ems="10"
+                    android:focusable="false"
                     android:hint="Ingrese su direccion"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
 
                 <ImageView
-                    android:id="@+id/imageView15"
+                    android:id="@+id/btnUbicacion"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -424,7 +429,7 @@
             android:id="@+id/btnRegistrarUsuario"
             android:layout_width="220dp"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
 
             android:layout_marginBottom="14dp"
             android:backgroundTint="@color/deep_purple_500"

@@ -43,6 +43,7 @@ class inicioFragment : Fragment() {
 
         btnRegistroUsuario.setOnClickListener {
             val action = inicioFragmentDirections.actionInicioFragmentToRegistroUsuarioFragment()
+            //val action = inicioFragmentDirections.actionInicioFragmentToRegistroDeCuentaActivity()
             v.findNavController().navigate(action)
         }
 

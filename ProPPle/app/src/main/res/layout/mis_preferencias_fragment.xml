@@ -55,7 +55,7 @@
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <ImageView
-                    android:id="@+id/imageView15"
+                    android:id="@+id/btnUbicacion"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
