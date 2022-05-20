@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.propple.viewModel.MisPreferenciasViewModel
 import com.example.propple.R
+import com.example.propple.databinding.MisPreferenciasFragmentBinding
+import com.example.propple.shared.ProPPle.Companion.prefs
 
 class MisPreferenciasFragment : Fragment() {
 
@@ -16,13 +18,27 @@ class MisPreferenciasFragment : Fragment() {
     }
 
     private lateinit var viewModel: MisPreferenciasViewModel
-
+    private lateinit var v:View
+    private lateinit var binding:MisPreferenciasFragmentBinding
+    private var direccion: String=prefs.getDireccion()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.mis_preferencias_fragment, container, false)
+        v=inflater.inflate(R.layout.mis_preferencias_fragment, container, false)
+        binding=MisPreferenciasFragmentBinding.bind(v)
+        return v
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        if (direccion!=""){
+            binding.InDirecion.setText(direccion)
+        }
+
+    }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

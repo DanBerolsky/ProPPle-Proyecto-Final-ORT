@@ -11,7 +11,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="29dp">
 
         <TextView
             android:id="@+id/txt1"
@@ -27,7 +29,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView27"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
@@ -49,10 +51,14 @@
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
+                    android:clickable="false"
+                    android:editable="true"
                     android:ems="10"
-                    android:hint="  Ingrese su direccion"
+                    android:focusable="false"
+                    android:hint="Ingrese su direccion"
                     android:inputType="textEmailAddress"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
 
                 <ImageView
                     android:id="@+id/btnUbicacion"

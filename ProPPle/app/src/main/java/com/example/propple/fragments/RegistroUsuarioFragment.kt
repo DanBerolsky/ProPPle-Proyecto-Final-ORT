@@ -18,6 +18,7 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.databinding.InicioSesionFragmentBinding
@@ -145,6 +146,7 @@ class RegistroUsuarioFragment : Fragment() {
             }else{
                 val userAux : Sign
                 userAux = Sign(
+                    "0",
                     binding.InAlias.text.toString(),
                     binding.InDirecion.text.toString(),
                     latitude,
@@ -155,10 +157,12 @@ class RegistroUsuarioFragment : Fragment() {
                     binding.InApellido.text.toString(),
                     binding.InNombre.text.toString(),
                     binding.InContrasenia1.text.toString(),
-                    1
+                    true
                 )
                 Log.i("hola", userAux.toString())
                 viewModel.sign(userAux)
+                val action = RegistroUsuarioFragmentDirections.actionRegistroUsuarioFragmentToValidacionDeCuentaFragment()
+                v.findNavController().navigate(action)
             }
         }
 

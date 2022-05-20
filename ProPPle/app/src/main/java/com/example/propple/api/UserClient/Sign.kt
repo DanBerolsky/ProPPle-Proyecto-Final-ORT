@@ -1,7 +1,7 @@
 package com.example.propple.api.UserClient
 
 data class Sign(
-    //val  id_usuario_cliente: String,
+    val  id_usuario_cliente: String="0",
     val alias: String,
     val location: String?="0",
     val location_latitud: Double?=0.0,
@@ -12,5 +12,5 @@ data class Sign(
     val user_last_name: String,
     val user_name: String,
     val user_password: String,
-    val visibility: Int?=1
+    val visibility: Boolean?=true
 )

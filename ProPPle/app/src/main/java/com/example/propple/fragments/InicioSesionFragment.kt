@@ -1,16 +1,21 @@
 package com.example.propple.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.InicioSesionFragmentBinding
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.viewModel.InicioSesionViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -19,6 +24,7 @@ class InicioSesionFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: InicioSesionViewModel
     private lateinit var binding: InicioSesionFragmentBinding
+    private val PREF_NAME = "myPreferences"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +42,7 @@ class InicioSesionFragment : Fragment() {
 
         binding.btnOlvide.setOnClickListener {
             val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToRecuperarCuentaFragment()
-            v.findNavController().navigate(action)
+            nav(action)
         }
 
         binding.btnIniciarSesiN.setOnClickListener {
@@ -45,28 +51,32 @@ class InicioSesionFragment : Fragment() {
         }
 
     }
+    fun nav( action: NavDirections){
+        v.findNavController().navigate(action)
+    }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(InicioSesionViewModel::class.java)
-        // TODO: Use the ViewModel
 
-        viewModel.rol.observe(viewLifecycleOwner, Observer { result ->
-
-
+        viewModel.rol.observe(viewLifecycleOwner, Observer { result->
             if (result.toString()!=null && result.toString()!=""){
-                var action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivity2()
-                if (result.toString()=="cliente-prestador"){
-                    action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivityUsuarioPrestador()
-                }
-                v.findNavController().navigate(action)
-            }
 
+                if (result.toString()=="cliente-prestador"){
+                    val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivityUsuarioPrestador()
+                    nav(action)
+                }else if (result.toString()=="cliente"){
+                    val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivity2()
+                    nav(action)
+                }else{
+                    Toast.makeText(context,"err",Toast.LENGTH_SHORT)
+                }
+
+            }
         })
 
         viewModel.status.observe(viewLifecycleOwner, Observer {result->
-
             Snackbar.make(v,result.toString(), Snackbar.LENGTH_SHORT).show()
         })
 

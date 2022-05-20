@@ -209,7 +209,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Gas"
+                    android:text="Gasista"
                     android:textAlignment="center" />
 
             </LinearLayout>
