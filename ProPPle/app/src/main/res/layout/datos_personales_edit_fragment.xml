@@ -80,10 +80,12 @@
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
                 android:hint="  Ingrese fecha de nacimiento"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
 
             <ImageView
-                android:id="@+id/imgGrenero"
+                android:id="@+id/btnDate"
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -122,10 +124,12 @@
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
                 android:hint="  Genero"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
 
             <ImageView
-                android:id="@+id/btnDate"
+                android:id="@+id/btnDate1"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -164,7 +168,9 @@
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
                 android:hint="  Ingrese su direccion"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
 
             <ImageView
                 android:id="@+id/btnUbicacion"
@@ -208,7 +214,9 @@
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
                 android:hint="  Ingrese un teléfono"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
 
             <ImageView
                 android:id="@+id/imageView14"

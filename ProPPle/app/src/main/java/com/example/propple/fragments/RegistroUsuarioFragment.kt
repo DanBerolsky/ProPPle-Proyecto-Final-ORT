@@ -9,11 +9,15 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.provider.Settings
+import android.text.InputType
+import android.text.InputType.TYPE_CLASS_TEXT
+import android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -21,13 +25,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
-import com.example.propple.databinding.InicioSesionFragmentBinding
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
-import com.example.propple.viewModel.InicioSesionViewModel
 import com.example.propple.viewModel.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+
 
 class RegistroUsuarioFragment : Fragment() {
 
@@ -138,6 +141,26 @@ class RegistroUsuarioFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        binding.btnVerContra1.setOnClickListener {
+            if (binding.InContrasenia1.inputType==129){
+                binding.InContrasenia1.inputType=1
+            }else if(binding.InContrasenia1.inputType==1) {
+                binding.InContrasenia1.inputType=129
+            }else{
+                binding.InContrasenia1.inputType=129
+            }
+
+        }
+        binding.btnVerContra2.setOnClickListener {
+            if (binding.InContrasenia2.inputType==129){
+                binding.InContrasenia2.inputType=1
+            }else if(binding.InContrasenia1.inputType==1){
+                binding.InContrasenia2.inputType=129
+            }else{
+                binding.InContrasenia2.inputType=129
+            }
+
+        }
         binding.btnUbicacion.setOnClickListener {  getCurrentLocation()}
 
         binding.btnRegistrarUsuario.setOnClickListener {
@@ -157,6 +180,7 @@ class RegistroUsuarioFragment : Fragment() {
                     binding.InApellido.text.toString(),
                     binding.InNombre.text.toString(),
                     binding.InContrasenia1.text.toString(),
+                    binding.InFechaDeNacimiento.text.toString(),
                     true
                 )
                 Log.i("hola", userAux.toString())
@@ -166,7 +190,7 @@ class RegistroUsuarioFragment : Fragment() {
             }
         }
 
-        binding.btnDate.setOnClickListener { showDatePickerDialog() }
+        binding.btnDate1.setOnClickListener { showDatePickerDialog() }
     }
 
 

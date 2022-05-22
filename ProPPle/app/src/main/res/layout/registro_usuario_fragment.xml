@@ -233,7 +233,7 @@
                     android:paddingEnd="10dp" />
 
                 <ImageView
-                    android:id="@+id/btnDate"
+                    android:id="@+id/btnDate1"
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -367,7 +367,7 @@
                     android:paddingEnd="10dp" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/btnVerContra1"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -411,7 +411,7 @@
                     android:paddingEnd="10dp" />
 
                 <ImageView
-                    android:id="@+id/imageView16"
+                    android:id="@+id/btnVerContra2"
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

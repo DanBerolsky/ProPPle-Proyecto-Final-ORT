@@ -33,8 +33,8 @@ class CuentaFragment : Fragment() {
     private lateinit var bntMisPreferencias : Button
     private lateinit var bntPostularme : Button
     private lateinit var binding : CuentaFragmentBinding
-    private  var nombre : String=""
-    private  var alias : String=""
+    private  var nombre : String=prefs.getNombre()
+    private  var alias : String= prefs.getAlias()
     private  var rol : String=prefs.getRol()
 
 
@@ -55,7 +55,8 @@ class CuentaFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
-        viewModel.getDatosFragment()
+        binding.NombreDeUsuario.setText(nombre)
+        binding.aliasRol.setText("$alias - $rol")
         bntDatosPersonales.setOnClickListener {
             val action = CuentaFragmentDirections.actionCuentaFragmentToDatosPersonalesEditFragment()
             nav(action)
@@ -85,16 +86,6 @@ class CuentaFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CuentaViewModel::class.java)
 
-        viewModel.nombre.observe(viewLifecycleOwner, Observer {result->
-            nombre=result
-            binding.NombreDeUsuario.setText(nombre)
-        })
-
-
-        viewModel.alias.observe(viewLifecycleOwner, Observer {result->
-            alias=result
-            binding.aliasRol.setText("$alias - $rol")
-        })
 
     }
 

@@ -40,4 +40,19 @@ class Prefs(context: Context) {
         return prefs.getString("direccion","").toString()
     }
 
+    fun setFechaDeNacimiento(fecha : String){
+        prefs.edit().putString("fecha",fecha).apply()
+    }
+    fun getFechaDeNacimiento() : String{
+        return prefs.getString("fecha","DD / MM / AAAA").toString()
+    }
+
+    fun setphone(phone : String){
+        prefs.edit().putString("phone",phone).apply()
+    }
+    fun getphone() : String{
+        return prefs.getString("phone","").toString()
+    }
+
+
 }

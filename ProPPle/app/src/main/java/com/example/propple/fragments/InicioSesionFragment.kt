@@ -3,6 +3,7 @@ package com.example.propple.fragments
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,16 @@ class InicioSesionFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        binding.btnVerContra1.setOnClickListener {
+            if ( binding.InContrasenia.inputType==129){
+                binding.InContrasenia.inputType=1
+            }else if( binding.InContrasenia.inputType==1){
+                binding.InContrasenia.inputType=129
+            }else{
+                binding.InContrasenia.inputType=129
+            }
+
+        }
 
         binding.btnOlvide.setOnClickListener {
             val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToRecuperarCuentaFragment()

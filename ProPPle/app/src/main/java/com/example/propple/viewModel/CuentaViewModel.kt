@@ -14,32 +14,6 @@ import retrofit2.Response
 
 class CuentaViewModel : ViewModel() {
 
-    //val rol = viewModelInicioSesionViewModel.rol
-    val nombre = MutableLiveData<String>()
-    val alias  = MutableLiveData<String>()
-
-    fun getDatosFragment(){
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val call : Response<Sign> = RetrofitHelper.getRetrofit().create(UserClientService::class.java).getOne(prefs.getJwt())
-            if(call.isSuccessful){
-                val response : Sign? = call.body()
-                if (response!=null){
-                    val nombreAux:String =response.user_name.toString()
-                    val aliasAux:String= response.alias.toString()
-                    nombre.postValue(nombreAux)
-                    alias.postValue(aliasAux)
-                    prefs.setNombre(nombreAux)
-                    prefs.setAlias(aliasAux)
-                    response.location?.let { prefs.setDireccion(it) }
-                    Log.i("hola",response.alias.toString())
-                }
-
-            }else{
-                Log.i("hola","errror")
-            }
 
 
-        }
-    }
 }

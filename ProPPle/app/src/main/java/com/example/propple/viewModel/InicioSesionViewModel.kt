@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModel
 import com.example.propple.api.RetrofitHelper
 import com.example.propple.api.UserClient.LoginModel
 import com.example.propple.api.UserClient.LoginModelRes
+import com.example.propple.api.UserClient.Sign
 import com.example.propple.api.interfaces.LoginSignInService
+import com.example.propple.api.interfaces.UserClientService
 import com.example.propple.shared.ProPPle.Companion.prefs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,6 +39,7 @@ class InicioSesionViewModel : ViewModel() {
                     jwt = response.jwt.token.toString()
                     prefs.setJwt(jwt)
                     prefs.setRol(rolAux)
+                    getDatosFragment()
                 }
 
             }else{
@@ -45,6 +48,29 @@ class InicioSesionViewModel : ViewModel() {
                 status.postValue("Usuario incorecto")
             }
             Log.i("hola",jwt)
+
+        }
+    }
+    fun getDatosFragment(){
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val call : Response<Sign> = RetrofitHelper.getRetrofit().create(UserClientService::class.java).getOne(prefs.getJwt())
+            if(call.isSuccessful){
+                val response : Sign? = call.body()
+                if (response!=null){
+                    val nombreAux:String =response.user_name.toString()
+                    val aliasAux:String= response.alias.toString()
+                    prefs.setNombre(nombreAux)
+                    prefs.setAlias(aliasAux)
+                    response.date_of_birth?.let { prefs.setFechaDeNacimiento(it) }
+                    prefs.setphone(response.phone)
+                    response.location?.let { prefs.setDireccion(it) }
+                }
+
+            }else{
+                Log.i("hola","errror")
+            }
+
 
         }
     }
