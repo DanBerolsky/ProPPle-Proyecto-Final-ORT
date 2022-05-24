@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/banco_negro"
-tools:context=".fragments.CuentaUsuarioPrestadorFragment">
+tools:context=".fragments.clientePrestador.CuentaUsuarioPrestadorFragment">
 
 <androidx.cardview.widget.CardView
     android:id="@+id/cardView"

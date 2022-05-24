@@ -10,7 +10,7 @@
         android:title="" />
 
     <item
-        android:id="@+id/reservasFragment"
+        android:id="@+id/reservasFragment2"
         android:icon="@drawable/ic_baseline_folder_open_24"
         android:title="" />
 

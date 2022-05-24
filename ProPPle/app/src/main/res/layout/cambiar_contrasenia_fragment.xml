@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
-    tools:context=".fragments.cambiarContraseniaFragment">
+    tools:context=".fragments.cliente.cambiarContraseniaFragment">
 
     <TextView
         android:id="@+id/textView21"

@@ -6,7 +6,7 @@
     app:startDestination="@id/inicioFragment">
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.example.propple.fragments.inicioFragment"
+        android:name="com.example.propple.fragments.cliente.inicioFragment"
         android:label="inicio_fragment"
         tools:layout="@layout/inicio_fragment" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/inicioSesionFragment"
-        android:name="com.example.propple.fragments.InicioSesionFragment"
+        android:name="com.example.propple.fragments.cliente.InicioSesionFragment"
         android:label="inicio_sesion_fragment"
         tools:layout="@layout/inicio_sesion_fragment" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/registroUsuarioFragment"
-        android:name="com.example.propple.fragments.RegistroUsuarioFragment"
+        android:name="com.example.propple.fragments.cliente.RegistroUsuarioFragment"
         android:label="registro_usuario_fragment"
         tools:layout="@layout/registro_usuario_fragment" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/recuperarCuentaFragment"
-        android:name="com.example.propple.fragments.RecuperarCuentaFragment"
+        android:name="com.example.propple.fragments.cliente.RecuperarCuentaFragment"
         android:label="recuperar_cuenta_fragment"
         tools:layout="@layout/recuperar_cuenta_fragment" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/recuperarCuenta2Fragment"
-        android:name="com.example.propple.fragments.RecuperarCuenta2Fragment"
+        android:name="com.example.propple.fragments.cliente.RecuperarCuenta2Fragment"
         android:label="recuperar_cuenta2_fragment"
         tools:layout="@layout/recuperar_cuenta2_fragment" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/validacionDeCuentaFragment"
-        android:name="com.example.propple.fragments.validacionDeCuentaFragment"
+        android:name="com.example.propple.fragments.cliente.validacionDeCuentaFragment"
         android:label="validacion_de_cuenta_fragment"
         tools:layout="@layout/validacion_de_cuenta_fragment" >
         <action
@@ -69,12 +69,12 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity2"
-        android:name="com.example.propple.activities.MainActivity2"
+        android:name="com.example.propple.activities.cliente.MainActivity2"
         android:label="activity_main2"
         tools:layout="@layout/activity_main2" />
     <activity
         android:id="@+id/mainActivityUsuarioPrestador"
-        android:name="com.example.propple.activities.MainActivityUsuarioPrestador"
+        android:name="com.example.propple.activities.clientePrestador.MainActivityUsuarioPrestador"
         android:label="activity_main_usuario_prestador"
         tools:layout="@layout/activity_main_usuario_prestador" />
 </navigation>

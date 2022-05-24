@@ -16,13 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProPPle">
         <activity
-            android:name=".activities.MainActivityUsuarioPrestador"
+            android:name=".activities.clientePrestador.MainActivityUsuarioPrestador"
             android:exported="true" />
         <activity
-            android:name=".activities.MainActivity2"
+            android:name=".activities.cliente.MainActivity2"
             android:exported="true"></activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.cliente.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

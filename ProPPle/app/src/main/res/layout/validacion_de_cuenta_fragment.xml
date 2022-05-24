@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
     android:textAlignment="center"
-    tools:context=".fragments.validacionDeCuentaFragment">
+    tools:context=".fragments.cliente.validacionDeCuentaFragment">
 
     <TextView
         android:id="@+id/textView2"

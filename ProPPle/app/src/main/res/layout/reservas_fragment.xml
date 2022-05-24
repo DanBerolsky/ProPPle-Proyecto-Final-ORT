@@ -1,97 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".fragments.ReservasFragment" >
-
-<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/banco_negro"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="wrap_content"
+    tools:context=".fragments.ReservasFragment">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Nuevas acordadas"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHistoricoReservas" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recAcordadas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/banco_negro"
-        android:orientation="vertical">
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/banco_negro"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="Nuevas acordadas"
-            android:textColor="@color/negro_blaco"
-            android:textSize="34sp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="A confirmar"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recAcordadas" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recNuevasAcordadas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Solicitadas"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recConfirmar" />
 
-            android:background="@color/banco_negro"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="A confirmar"
-            android:textColor="@color/negro_blaco"
-            android:textSize="34sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recSolicitadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recAConfirmar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/banco_negro">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="@color/banco_negro"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="Solicitadas"
-            android:textColor="@color/negro_blaco"
-            android:textSize="34sp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recSolicitadas"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="24dp"
-            android:background="@color/banco_negro">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <Button
-            android:id="@+id/btnOlvide2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="30dp"
-            android:background="#00FFFFFF"
-            android:text="Ver mi histórico de servicios contratados"
-            android:textAlignment="center"
-            android:textColor="@color/rosa_para_input"
-            android:textSize="14sp" />
-    </LinearLayout>
-</ScrollView>
+    <Button
+        android:id="@+id/btnHistoricoReservas"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Ver histórico de reservas a mis servicios"
+        android:textAlignment="center"
+        android:textColor="#6750A4"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

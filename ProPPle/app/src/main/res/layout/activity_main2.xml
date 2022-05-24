@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity2"
+    tools:context=".activities.cliente.MainActivity2"
     tools:menu="@menu/bottom_bar">
 
     <androidx.fragment.app.FragmentContainerView

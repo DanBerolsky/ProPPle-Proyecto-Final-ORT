@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
     android:backgroundTint="@color/banco_negro"
-    tools:context=".fragments.Postularme2Fragment">
+    tools:context=".fragments.cliente.Postularme2Fragment">
 
     <TextView
         android:id="@+id/textView10"

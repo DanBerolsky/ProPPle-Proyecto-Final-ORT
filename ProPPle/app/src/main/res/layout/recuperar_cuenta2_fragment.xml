@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
-    tools:context=".fragments.RecuperarCuenta2Fragment">
+    tools:context=".fragments.cliente.RecuperarCuenta2Fragment">
 
     <TextView
         android:id="@+id/sdad"
