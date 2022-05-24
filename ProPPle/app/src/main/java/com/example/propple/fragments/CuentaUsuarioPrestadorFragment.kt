@@ -24,8 +24,9 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
     private lateinit var viewModel: CuentaUsuarioPrestadorViewModel
     private lateinit var v : View
     private lateinit var binding : CuentaUsuarioPrestadorFragmentBinding
-    private lateinit var nombre : String
-    private lateinit var alias : String
+    private var nombre : String= prefs.getNombre()
+    private var apellido : String= prefs.getApellido()
+    private var alias : String= prefs.getAlias()
     private val rol : String = prefs.getRol()
 
 
@@ -41,9 +42,10 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.getDatosFragment()
+        binding.NombreDeUsuario.setText(nombre+" "+apellido)
+        binding.aliasRol.setText(alias +" - " + rol)
         binding.bntDatosPersonales.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToDatosPersonalesEditFragment2()) }
-        binding.bntCambiarContra.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToCambiarContraseniaFragment2()) }
+        binding.bntCambiarContra.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToCambiarContraseniaPrestadorFragment()) }
         binding.bntMisPreferencias.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToMisPreferenciasFragment2()) }
         binding.bntPostularme.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToPostularmeFragment2()) }
         //binding.bntMisPublicaciones.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.) }
@@ -59,20 +61,13 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CuentaUsuarioPrestadorViewModel::class.java)
 
+        //viewModel.cerrar.observe(viewLifecycleOwner, Observer {result->
 
-
-        viewModel.nombre.observe(viewLifecycleOwner, Observer {result->
-            nombre=result
-            binding.NombreDeUsuario.setText(nombre)
-
-        })
-
-
-        viewModel.alias.observe(viewLifecycleOwner, Observer {result->
-            alias=result
-            binding.aliasRol.setText(alias +" - " + rol)
-        })
-
+          //  if(result){
+            //    val action = cambiarContraseniaFragmentDirections.actionCambiarContraseniaFragment2ToMainActivity3()
+             //   v.findNavController().navigate(action)
+            //}
+        //})
     }
 
 }

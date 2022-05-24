@@ -55,7 +55,7 @@ class CuentaFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
-        binding.NombreDeUsuario.setText(nombre)
+        binding.NombreDeUsuario.setText(nombre+" "+ prefs.getApellido())
         binding.aliasRol.setText("$alias - $rol")
         bntDatosPersonales.setOnClickListener {
             val action = CuentaFragmentDirections.actionCuentaFragmentToDatosPersonalesEditFragment()

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+                <item
+                    android:id="@+id/btnDate1"
+                    android:layout_height="match_parent"
+                    android:layout_width="10dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:drawable="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:tint="#FFF">
+                    <shape>
+                        <stroke
+                            android:width="10dp"
+                            >
+                        </stroke>
+                    </shape>
+                </item>
+        </layer-list>
+
+    </item>
+</selector>

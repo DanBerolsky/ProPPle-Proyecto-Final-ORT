@@ -2,7 +2,6 @@ package com.example.propple.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.text.InputType
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,36 +9,32 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
-import com.example.propple.viewModel.CambiarContraseniaViewModel
 import com.example.propple.R
-import com.example.propple.activities.MainActivity
-import com.example.propple.activities.MainActivity2
-import com.example.propple.databinding.CambiarContraseniaFragmentBinding
-import com.example.propple.shared.ProPPle.Companion.prefs
-import com.google.android.material.snackbar.Snackbar
+import com.example.propple.databinding.FragmentCambiarContraseniaPrestadorBinding
+import com.example.propple.shared.ProPPle
+import com.example.propple.viewModel.CambiarContraseniaViewModel
 
-class cambiarContraseniaFragment : Fragment() {
+class CambiarContraseniaPrestadorFragment : Fragment() {
 
     companion object {
-        fun newInstance() = cambiarContraseniaFragment()
+        fun newInstance() = CambiarContraseniaPrestadorFragment()
     }
 
     private lateinit var viewModel: CambiarContraseniaViewModel
     private lateinit var v:View
-    private lateinit var binding: CambiarContraseniaFragmentBinding
+    private lateinit var binding:FragmentCambiarContraseniaPrestadorBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        v= inflater.inflate(R.layout.cambiar_contrasenia_fragment, container, false)
-        binding= CambiarContraseniaFragmentBinding.bind(v)
+        v=inflater.inflate(R.layout.fragment_cambiar_contrasenia_prestador, container, false)
+        binding=FragmentCambiarContraseniaPrestadorBinding.bind(v)
         return v
     }
 
     override fun onStart() {
         super.onStart()
-
         binding.btnVerContraActual.setOnClickListener {
             if (binding.InContraseniaActual.inputType==129){
                 binding.InContraseniaActual.inputType=1
@@ -81,22 +76,18 @@ class cambiarContraseniaFragment : Fragment() {
                 v)
         }
 
-
     }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CambiarContraseniaViewModel::class.java)
 
         viewModel.cerrar.observe(viewLifecycleOwner, Observer {result->
-            var action : NavDirections= cambiarContraseniaFragmentDirections.actionCambiarContraseniaFragmentToMainActivity()
-
-            if(result && prefs.getRol()=="Cliente"){
-                action = cambiarContraseniaFragmentDirections.actionCambiarContraseniaFragmentToMainActivity()
+            if(result && ProPPle.prefs.getRol()=="cliente-prestador"){
+                val action = CambiarContraseniaPrestadorFragmentDirections.actionCambiarContraseniaPrestadorFragmentToMainActivity3()
+                v.findNavController().navigate(action)
             }
-            v.findNavController().navigate(action)
-        })
 
+        })
     }
 
 }

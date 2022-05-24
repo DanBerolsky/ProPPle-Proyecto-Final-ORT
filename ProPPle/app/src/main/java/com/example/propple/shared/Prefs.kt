@@ -54,5 +54,27 @@ class Prefs(context: Context) {
         return prefs.getString("phone","").toString()
     }
 
+    fun setApellido(ap :String){
+        prefs.edit().putString("apellido",ap).apply()
+    }
+
+    fun getApellido(): String {
+        return prefs.getString("apellido","").toString()
+    }
+
+    fun getUrlImage(): String {
+        return prefs.getString("urlImage","").toString()
+    }
+
+    fun setUrlImage(x:String){
+        prefs.edit().putString("urlImage",x).apply()
+    }
+
+    fun setGenero(gender: String) {
+        prefs.edit().putString("gender","").apply()
+    }
+    fun getGenero():String{
+        return prefs.getString("gender","Sin especificar").toString()
+    }
 
 }

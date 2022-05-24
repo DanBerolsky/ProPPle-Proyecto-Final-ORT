@@ -2,6 +2,7 @@ package com.example.propple.api.interfaces
 
 import com.example.propple.api.UserClient.PasswordChange
 import com.example.propple.api.UserClient.Sign
+import com.example.propple.api.UserClient.UpdateUser
 
 import retrofit2.Response
 import retrofit2.http.*
@@ -12,4 +13,7 @@ interface UserClientService {
 
     @PUT("/user/passwordChange")
     suspend fun passwordChange(@Body x : PasswordChange):Response<Void>
+
+    @PUT("/user/updateUser")
+    suspend fun updateUser(@Body x:UpdateUser):Response<Void>
 }

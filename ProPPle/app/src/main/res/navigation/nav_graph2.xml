@@ -20,7 +20,7 @@
             app:destination="@id/datosPersonalesEditFragment" />
         <action
             android:id="@+id/action_cuentaFragment_to_cambiarContraseniaFragment"
-            app:destination="@id/cambiarContraseniaFragment" />
+            app:destination="@id/cambiarContraseniaFragment1" />
         <action
             android:id="@+id/action_cuentaFragment_to_misPreferenciasFragment"
             app:destination="@id/misPreferenciasFragment" />
@@ -34,10 +34,14 @@
         android:label="datos_personales_edit_fragment"
         tools:layout="@layout/datos_personales_edit_fragment" />
     <fragment
-        android:id="@+id/cambiarContraseniaFragment"
+        android:id="@+id/cambiarContraseniaFragment1"
         android:name="com.example.propple.fragments.cambiarContraseniaFragment"
-        android:label="cambiar_contrasenia_fragment"
-        tools:layout="@layout/cambiar_contrasenia_fragment" />
+        android:label="cambiar_contrasenia_fragment1"
+        tools:layout="@layout/cambiar_contrasenia_fragment">
+        <action
+            android:id="@+id/action_cambiarContraseniaFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
     <fragment
         android:id="@+id/misPreferenciasFragment"
         android:name="com.example.propple.fragments.MisPreferenciasFragment"
@@ -66,4 +70,9 @@
         android:name="com.example.propple.fragments.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.propple.activities.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

@@ -24,6 +24,9 @@ class datosPersonalesEditFragment : Fragment() {
     private var fechaDeNacimiento:String=prefs.getFechaDeNacimiento()
     private var phone:String= prefs.getphone()
     private var dir :String= prefs.getDireccion()
+    private var nombre:String=prefs.getNombre()
+    private var apellido:String=prefs.getApellido()
+    private var alias:String=prefs.getAlias()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,12 +39,27 @@ class datosPersonalesEditFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        binding.Nombre.setText(prefs.getNombre().toString())
-        binding.aliasRoll.setText(prefs.getAlias()+ " - "+ prefs.getRol())
+        binding.Nombre.setText(nombre+" "+apellido)
+        binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
         binding.btnDate.setOnClickListener { showDatePickerDialog() }
         binding.InDirecion.setText(dir)
         binding.InFechaDeNacrimiento.setText(fechaDeNacimiento)
         binding.InTelefono.setText(phone)
+        binding.InNombre.setText(nombre)
+        binding.InApellido.setText(apellido)
+        binding.InAlias.setText(alias)
+        binding.btnGuardar.setOnClickListener { viewModel.updateUser(
+                                                                    prefs.getJwt(),
+                                                                    binding.InAlias.text.toString(),
+                                                                    binding.InFechaDeNacrimiento.text.toString(),
+                                                                    "f",
+                                                                    binding.InDirecion.text.toString(),
+                                                                    binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
+                                                                    binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
+                                                                    phone,
+                                                                    prefs.getUrlImage(),
+                                                                    prefs.getApellido(),
+                                                                    prefs.getNombre(),v) }
     }
 
     private fun showDatePickerDialog() {
