@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.propple.R
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.GoogleMap
@@ -22,5 +23,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        prefs.clear()
+    }
+
+    override fun onStart() {
+        super.onStart()
+       prefs.clear()
     }
 }

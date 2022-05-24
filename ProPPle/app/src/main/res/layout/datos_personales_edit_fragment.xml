@@ -281,7 +281,7 @@
                         android:paddingEnd="10dp" />
 
                     <ImageView
-                        android:id="@+id/btnDate"
+                        android:id="@+id/btnDate1"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -303,7 +303,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Genero"
+                android:text="Género"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -325,25 +325,36 @@
 
                     <Spinner
                         android:id="@+id/spinner2"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:entries="@array/generos"
+                        android:spinnerMode="dropdown"
+                        android:translationX="5dp"
+                        android:translationY="16dp"
+                        android:visibility="invisible"
+                        tools:visibility="invisible" />
+
+
+                    <EditText
+                        android:id="@+id/inGenero"
+                        android:layout_width="270dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        tools:listitem="@layout/genero_item_framework"
-                        android:background="@drawable/spinner_style"
-                        android:backgroundTint="#806C6565"
-                        />
-
-
+                        android:background="@color/rosa_para_input"
+                        android:backgroundTint="#00AA3E3E"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="selecciona tu género"
+                        android:inputType="textEmailAddress"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
 
                     <ImageView
-                        android:id="@+id/btnDate1"
+                        android:id="@+id/btnGenero"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:background="#806C6565"
                         android:padding="10dp"
-
-                        android:visibility="gone"
                         app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
                         app:tint="#FFF" />
 

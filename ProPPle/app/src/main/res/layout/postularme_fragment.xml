@@ -76,7 +76,7 @@
                 android:inputType="textEmailAddress" />
 
             <ImageView
-                android:id="@+id/btnDate1"
+                android:id="@+id/btnGenero"
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.FragmentActivity
 import com.example.propple.viewModel.DatosPersonalesEditViewModel
 import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
+import com.google.android.material.snackbar.Snackbar
 
 class datosPersonalesEditFragment : Fragment() {
 
@@ -27,6 +29,7 @@ class datosPersonalesEditFragment : Fragment() {
     private var nombre:String=prefs.getNombre()
     private var apellido:String=prefs.getApellido()
     private var alias:String=prefs.getAlias()
+    private var genero:String= prefs.getGenero()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,9 +42,35 @@ class datosPersonalesEditFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        binding.inGenero.setText(genero)
+        binding.btnGenero.setOnClickListener {
+            binding.spinner2.performClick()
+            binding.spinner2.onItemSelectedListener=object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    genero= getResources().getStringArray(R.array.generos)[position]
+                    Snackbar.make(v,genero,Snackbar.LENGTH_SHORT).show()
+                    binding.inGenero.setText(genero)
+                }
+            }
+
+        }
+
+
+
+
+
         binding.Nombre.setText(nombre+" "+apellido)
         binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
-        binding.btnDate.setOnClickListener { showDatePickerDialog() }
+        binding.btnDate1.setOnClickListener { showDatePickerDialog() }
         binding.InDirecion.setText(dir)
         binding.InFechaDeNacrimiento.setText(fechaDeNacimiento)
         binding.InTelefono.setText(phone)
@@ -52,14 +81,14 @@ class datosPersonalesEditFragment : Fragment() {
                                                                     prefs.getJwt(),
                                                                     binding.InAlias.text.toString(),
                                                                     binding.InFechaDeNacrimiento.text.toString(),
-                                                                    "f",
+                                                                    genero,
                                                                     binding.InDirecion.text.toString(),
                                                                     binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
                                                                     binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
-                                                                    phone,
+                                                                    binding.InTelefono.text.toString(),
                                                                     prefs.getUrlImage(),
-                                                                    prefs.getApellido(),
-                                                                    prefs.getNombre(),v) }
+                                                                    binding.InApellido.text.toString(),
+                                                                    binding.InNombre.text.toString(),v) }
     }
 
     private fun showDatePickerDialog() {

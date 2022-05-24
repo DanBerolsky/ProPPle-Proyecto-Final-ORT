@@ -18,6 +18,10 @@
     <string-array name="generos">
         <item>Masculino</item>
         <item>Femenino</item>
+        <item>Transexual</item>
+        <item>Bigénero</item>
+        <item>No Binario</item>
+        <item>Prefiero no decir</item>
         <item>Otro</item>
     </string-array>
 </resources>
