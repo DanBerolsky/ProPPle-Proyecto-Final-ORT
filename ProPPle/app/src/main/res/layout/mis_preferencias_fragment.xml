@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
     android:scrollbarSize="4dp"
-    tools:context=".fragments.MisPreferenciasFragment">
+    tools:context=".fragments.cliente.MisPreferenciasFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.propple.fragments.homeFragment"
+        android:name="com.example.propple.fragments.cliente.homeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/cuentaFragment"
-        android:name="com.example.propple.fragments.CuentaFragment"
+        android:name="com.example.propple.fragments.cliente.CuentaFragment"
         android:label="cuenta_fragment"
         tools:layout="@layout/cuenta_fragment" >
         <action
@@ -30,12 +30,12 @@
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment"
-        android:name="com.example.propple.fragments.datosPersonalesEditFragment"
+        android:name="com.example.propple.fragments.cliente.datosPersonalesEditFragment"
         android:label="datos_personales_edit_fragment"
         tools:layout="@layout/datos_personales_edit_fragment" />
     <fragment
         android:id="@+id/cambiarContraseniaFragment1"
-        android:name="com.example.propple.fragments.cambiarContraseniaFragment"
+        android:name="com.example.propple.fragments.cliente.cambiarContraseniaFragment"
         android:label="cambiar_contrasenia_fragment1"
         tools:layout="@layout/cambiar_contrasenia_fragment">
         <action
@@ -44,12 +44,12 @@
     </fragment>
     <fragment
         android:id="@+id/misPreferenciasFragment"
-        android:name="com.example.propple.fragments.MisPreferenciasFragment"
+        android:name="com.example.propple.fragments.cliente.MisPreferenciasFragment"
         android:label="mis_preferencias_fragment"
         tools:layout="@layout/mis_preferencias_fragment" />
     <fragment
         android:id="@+id/postularmeFragment"
-        android:name="com.example.propple.fragments.PostularmeFragment"
+        android:name="com.example.propple.fragments.cliente.PostularmeFragment"
         android:label="postularme_fragment"
         tools:layout="@layout/postularme_fragment" >
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/postularme2Fragment"
-        android:name="com.example.propple.fragments.Postularme2Fragment"
+        android:name="com.example.propple.fragments.cliente.Postularme2Fragment"
         android:label="postularme2_fragment"
         tools:layout="@layout/postularme2_fragment" >
         <action
@@ -67,12 +67,12 @@
     </fragment>
     <fragment
         android:id="@+id/serviciosContratadosFragment"
-        android:name="com.example.propple.fragments.ServiciosContratadosFragment"
+        android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" />
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.propple.activities.MainActivity"
+        android:name="com.example.propple.activities.cliente.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>

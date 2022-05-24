@@ -7,22 +7,17 @@
 
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="com.example.propple.fragments.homeFragment"
+        android:name="com.example.propple.fragments.cliente.homeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/serviciosContratadosFragment2"
-        android:name="com.example.propple.fragments.ServiciosContratadosFragment"
+        android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" />
     <fragment
-        android:id="@+id/reservasFragment"
-        android:name="com.example.propple.fragments.ReservasFragment"
-        android:label="reservas_fragment"
-        tools:layout="@layout/reservas_fragment" />
-    <fragment
         android:id="@+id/cuentaUsuarioPrestadorFragment"
-        android:name="com.example.propple.fragments.CuentaUsuarioPrestadorFragment"
+        android:name="com.example.propple.fragments.clientePrestador.CuentaUsuarioPrestadorFragment"
         android:label="cuenta_usuario_prestador_fragment"
         tools:layout="@layout/cuenta_usuario_prestador_fragment" >
         <action
@@ -37,20 +32,23 @@
         <action
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_cambiarContraseniaPrestadorFragment"
             app:destination="@id/cambiarContraseniaPrestadorFragment" />
+        <action
+            android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_misPublicacionesFragment"
+            app:destination="@id/misPublicacionesFragment" />
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment2"
-        android:name="com.example.propple.fragments.datosPersonalesEditFragment"
+        android:name="com.example.propple.fragments.cliente.datosPersonalesEditFragment"
         android:label="datos_personales_edit_fragment"
         tools:layout="@layout/datos_personales_edit_fragment" />
     <fragment
         android:id="@+id/misPreferenciasFragment2"
-        android:name="com.example.propple.fragments.MisPreferenciasFragment"
+        android:name="com.example.propple.fragments.cliente.MisPreferenciasFragment"
         android:label="mis_preferencias_fragment"
         tools:layout="@layout/mis_preferencias_fragment" />
     <fragment
         android:id="@+id/postularmeFragment2"
-        android:name="com.example.propple.fragments.PostularmeFragment"
+        android:name="com.example.propple.fragments.cliente.PostularmeFragment"
         android:label="postularme_fragment"
         tools:layout="@layout/postularme_fragment" >
         <action
@@ -59,21 +57,109 @@
     </fragment>
     <fragment
         android:id="@+id/postularme2Fragment2"
-        android:name="com.example.propple.fragments.Postularme2Fragment"
+        android:name="com.example.propple.fragments.cliente.Postularme2Fragment"
         android:label="postularme2_fragment"
         tools:layout="@layout/postularme2_fragment" />
     <activity
         android:id="@+id/mainActivity3"
-        android:name="com.example.propple.activities.MainActivity"
+        android:name="com.example.propple.activities.cliente.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/cambiarContraseniaPrestadorFragment"
-        android:name="com.example.propple.fragments.CambiarContraseniaPrestadorFragment"
+        android:name="com.example.propple.fragments.clientePrestador.CambiarContraseniaPrestadorFragment"
         android:label="fragment_cambiar_contrasenia_prestador"
         tools:layout="@layout/fragment_cambiar_contrasenia_prestador" >
         <action
             android:id="@+id/action_cambiarContraseniaPrestadorFragment_to_mainActivity3"
             app:destination="@id/mainActivity3" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservasFragment2"
+        android:name="com.ort.casodeusotest.fragments.ReservasFragment"
+        android:label="ReservasFragment" >
+        <action
+            android:id="@+id/action_reservasFragment2_to_historicoReservasFragment"
+            app:destination="@id/historicoReservasFragment" />
+        <action
+            android:id="@+id/action_reservasFragment2_to_formularioReservaFragment"
+            app:destination="@id/formularioReservaFragment" />
+        <action
+            android:id="@+id/action_reservasFragment2_to_cancelarReservaFragment"
+            app:destination="@id/cancelarReservaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historicoReservasFragment"
+        android:name="com.ort.casodeusotest.fragments.HistoricoReservasFragment"
+        android:label="HistoricoReservasFragment" >
+        <action
+            android:id="@+id/action_historicoReservasFragment_to_reservasFragment2"
+            app:destination="@id/reservasFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/formularioReservaFragment"
+        android:name="com.ort.casodeusotest.fragments.FormularioReservaFragment"
+        android:label="FormularioReservaFragment" >
+        <action
+            android:id="@+id/action_formularioReservaFragment_to_reservasFragment2"
+            app:destination="@id/reservasFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cancelarReservaFragment"
+        android:name="com.ort.casodeusotest.fragments.CancelarReservaFragment"
+        android:label="CancelarReservaFragment" >
+        <action
+            android:id="@+id/action_cancelarReservaFragment_to_reservasFragment2"
+            app:destination="@id/reservasFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/misPublicacionesFragment"
+        android:name="com.ort.casodeusotest.fragments.MisPublicacionesFragment"
+        android:label="MisPublicacionesFragment" >
+        <action
+            android:id="@+id/action_misPublicacionesFragment_to_cuentaUsuarioPrestadorFragment"
+            app:destination="@id/cuentaUsuarioPrestadorFragment" />
+        <action
+            android:id="@+id/action_misPublicacionesFragment_to_publicacionFragment"
+            app:destination="@id/publicacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publicarServicioFragment"
+        android:name="com.ort.casodeusotest.fragments.PublicarServicioFragment"
+        android:label="PublicarServicioFragment" >
+        <argument
+            android:name="rubroPosition"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_publicarServicioFragment_to_publicacionFragment"
+            app:destination="@id/publicacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentariosFragment"
+        android:name="com.ort.casodeusotest.fragments.ComentariosFragment"
+        android:label="ComentariosFragment" >
+        <argument
+            android:name="rubroPosition"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_comentariosFragment_to_publicacionFragment"
+            app:destination="@id/publicacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publicacionFragment"
+        android:name="com.ort.casodeusotest.fragments.PublicacionFragment"
+        android:label="PublicacionFragment" >
+        <action
+            android:id="@+id/action_publicacionFragment_to_publicarServicioFragment"
+            app:destination="@id/publicarServicioFragment" />
+        <action
+            android:id="@+id/action_publicacionFragment_to_comentariosFragment"
+            app:destination="@id/comentariosFragment" />
+        <action
+            android:id="@+id/action_publicacionFragment_to_misPublicacionesFragment"
+            app:destination="@id/misPublicacionesFragment" />
+        <argument
+            android:name="rubroPosition"
+            app:argType="integer" />
     </fragment>
 </navigation>
