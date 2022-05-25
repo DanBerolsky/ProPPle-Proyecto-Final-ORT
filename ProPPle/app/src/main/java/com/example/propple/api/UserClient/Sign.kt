@@ -13,5 +13,6 @@ data class Sign(
     val user_name: String,
     val user_password: String,
     val date_of_birth : String,
+    val gender: String,
     val visibility: Boolean?=true
 )

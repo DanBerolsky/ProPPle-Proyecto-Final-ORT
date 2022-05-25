@@ -2,12 +2,14 @@ package com.example.propple.fragments.cliente
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
 import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
 import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
@@ -23,13 +25,13 @@ class datosPersonalesEditFragment : Fragment() {
     private lateinit var viewModel: DatosPersonalesEditViewModel
     private lateinit var binding : DatosPersonalesEditFragmentBinding
     private lateinit var v : View
-    private var fechaDeNacimiento:String=prefs.getFechaDeNacimiento()
-    private var phone:String= prefs.getphone()
-    private var dir :String= prefs.getDireccion()
-    private var nombre:String=prefs.getNombre()
-    private var apellido:String=prefs.getApellido()
-    private var alias:String=prefs.getAlias()
-    private var genero:String= prefs.getGenero()
+    private var fechaDeNacimiento:String=""
+    private var phone:String=""
+    private var dir :String=""
+    private var nombre:String=""
+    private var apellido:String=""
+    private var alias:String=""
+    private var genero:String=""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +39,13 @@ class datosPersonalesEditFragment : Fragment() {
     ): View? {
         v=inflater.inflate(R.layout.datos_personales_edit_fragment, container, false)
         binding=DatosPersonalesEditFragmentBinding.bind(v)
+        fechaDeNacimiento=prefs.getFechaDeNacimiento()
+        phone=prefs.getphone()
+        dir=prefs.getDireccion()
+        nombre=prefs.getNombre()
+        apellido=prefs.getApellido()
+        alias=prefs.getAlias()
+        genero=prefs.getGenero()
         return v
     }
 
@@ -83,12 +92,15 @@ class datosPersonalesEditFragment : Fragment() {
                                                                     binding.InFechaDeNacrimiento.text.toString(),
                                                                     genero,
                                                                     binding.InDirecion.text.toString(),
-                                                                    binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
-                                                                    binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
+                                                                    0.0,
+                                                        0.0,
                                                                     binding.InTelefono.text.toString(),
                                                                     prefs.getUrlImage(),
                                                                     binding.InApellido.text.toString(),
-                                                                    binding.InNombre.text.toString(),v) }
+                                                                    binding.InNombre.text.toString(),v ,binding) }
+
+        //binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
+        //binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
     }
 
     private fun showDatePickerDialog() {
@@ -102,7 +114,23 @@ class datosPersonalesEditFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DatosPersonalesEditViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            if (!it){
+                binding.inGenero.setText(genero)
+                binding.InDirecion.setText(dir)
+                binding.InFechaDeNacrimiento.setText(fechaDeNacimiento)
+                binding.InTelefono.setText(phone)
+                binding.InNombre.setText(nombre)
+                binding.InApellido.setText(apellido)
+                binding.InAlias.setText(alias)
+            }else{
+                nombre=prefs.getNombre()
+                apellido=prefs.getApellido()
+                alias=prefs.getAlias()
+                binding.Nombre.setText(nombre+" "+apellido)
+                binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
+            }
+        })
     }
 
 }

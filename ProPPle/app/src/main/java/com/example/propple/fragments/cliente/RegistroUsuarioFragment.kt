@@ -177,6 +177,7 @@ class RegistroUsuarioFragment : Fragment() {
                     binding.InNombre.text.toString(),
                     binding.InContrasenia1.text.toString(),
                     binding.InFechaDeNacimiento.text.toString(),
+                    "Sin especificar",
                     true
                 )
                 Log.i("hola", userAux.toString())

@@ -90,5 +90,4 @@ class Prefs(context: Context) {
     fun clear(){
         prefs.edit().clear().apply()
     }
-
 }

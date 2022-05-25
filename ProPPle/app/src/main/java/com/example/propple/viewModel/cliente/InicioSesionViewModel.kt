@@ -62,6 +62,7 @@ class InicioSesionViewModel : ViewModel() {
                     prefs.setAlias(aliasAux)
                     response.date_of_birth?.let { prefs.setFechaDeNacimiento(it) }
                     prefs.setphone(response.phone)
+                    prefs.setGenero(response.gender)
                     response.location?.let { prefs.setDireccion(it) }
                     prefs.setApellido(response.user_last_name)
                 }

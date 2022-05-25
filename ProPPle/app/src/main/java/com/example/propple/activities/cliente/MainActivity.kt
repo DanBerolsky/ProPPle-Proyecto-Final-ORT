@@ -30,4 +30,9 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
        prefs.clear()
     }
+
+    override fun onResume() {
+        super.onResume()
+        prefs.clear()
+    }
 }

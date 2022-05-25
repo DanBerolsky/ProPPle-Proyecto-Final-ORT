@@ -21,6 +21,7 @@ class CuentaFragment : Fragment() {
         fun newInstance() = CuentaFragment()
     }
 
+    private var apellido: String=""
     private lateinit var viewModel: CuentaViewModel
     private lateinit var v : View
     private lateinit var bntDatosPersonales : Button
@@ -43,14 +44,16 @@ class CuentaFragment : Fragment() {
         bntMisPreferencias = v.findViewById(R.id.bntMisPreferencias)
         bntPostularme = v.findViewById(R.id.bntPostularme)
         binding = CuentaFragmentBinding.bind(v)
-
+        nombre=prefs.getNombre()
+        apellido=prefs.getApellido()
+        alias=prefs.getAlias()
         return v
     }
 
     @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
-        binding.NombreDeUsuario.setText(nombre+" "+ prefs.getApellido())
+        binding.NombreDeUsuario.setText(nombre+" "+ apellido)
         binding.aliasRol.setText("$alias - $rol")
         bntDatosPersonales.setOnClickListener {
             val action = CuentaFragmentDirections.actionCuentaFragmentToDatosPersonalesEditFragment()
