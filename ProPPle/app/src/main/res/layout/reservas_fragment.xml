@@ -7,94 +7,83 @@
     android:layout_height="wrap_content"
     tools:context=".fragments.ReservasFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Nuevas acordadas"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHistoricoReservas" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recAcordadas"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="A confirmar"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recAcordadas" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recConfirmar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Nuevas acordadas"
+                android:textAlignment="center"
+                android:textColor="#2B2B2B"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Solicitadas"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recConfirmar" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recAcordadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recSolicitadas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="A confirmar"
+                android:textAlignment="center"
+                android:textColor="#2B2B2B"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnHistoricoReservas"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="Ver histórico de reservas a mis servicios"
-        android:textAlignment="center"
-        android:textColor="#6750A4"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recConfirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Solicitadas"
+                android:textAlignment="center"
+                android:textColor="#2B2B2B"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recSolicitadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/btnHistoricoReservas"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Ver histórico de reservas a mis servicios"
+                android:textAlignment="center"
+                android:textColor="#6750A4"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

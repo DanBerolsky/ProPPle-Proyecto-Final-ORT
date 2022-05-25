@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:elevation="20dp"
     app:cardBackgroundColor="#A890CA"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="8dp">
+    app:cardCornerRadius="15dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
 
         <TextView
             android:id="@+id/txtRubroItemName"
@@ -24,6 +25,7 @@
             android:layout_marginEnd="100dp"
             android:layout_marginBottom="10dp"
             android:text="Servicio"
+            android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/switch4"
