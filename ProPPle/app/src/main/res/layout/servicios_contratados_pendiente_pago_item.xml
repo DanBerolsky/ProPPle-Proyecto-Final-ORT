@@ -137,6 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/ic_baseline_location_on_24"
                 app:tint="#000000" />
 

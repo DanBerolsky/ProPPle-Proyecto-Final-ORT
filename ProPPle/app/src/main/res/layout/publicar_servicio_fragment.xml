@@ -20,83 +20,249 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/fabVolverPublicacion1">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="Título del servicio" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:padding="3dp"
+            android:text="Título del servicio"
+            android:textColor="@color/negro_blaco" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InNombre"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="Ingrese su nombre"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF"
+                    tools:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="Descripción del servicio" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:padding="3dp"
+            android:text="Descripción del servicio"
+            android:textColor="@color/negro_blaco" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="113dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InApellido"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="Ingrese su apellido"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="Precio por hora" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:padding="3dp"
+            android:text="Precio por hora"
+            android:textColor="@color/negro_blaco" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="170dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InAlias"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="Ingrese un alias"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+                    android:scrollbarThumbVertical="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    android:scrollbarTrackVertical="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+
+                    app:srcCompat="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="Dirección laboral" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="16dp"
+            android:padding="3dp"
+            android:text="Dirección laboral"
+            android:textColor="@color/negro_blaco" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView8"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:autofillHints="  Ingrese nuevamente una contraseña"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewr8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aliasRoll">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InFechaDeNacrimiento"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#00AA3E3E"
+                    android:ems="10"
+                    android:hint="  Ingrese fecha de nacimiento"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+                <ImageView
+                    android:id="@+id/btnDate"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#806C6565"
+                    android:padding="10dp"
+
+                    app:srcCompat="@drawable/ic_baseline_location_on_24"
+                    app:tint="#FFF" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnEnviarReserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Publicar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

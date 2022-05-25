@@ -72,12 +72,28 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/menu/bottom_bar_usuario_prestador.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/activity_main_usuario_prestador.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cambiar_contrasenia_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/comentarios_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cancelar_reserva_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/comentarios_fragment.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_fragment.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_usuario_prestador_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/datos_personales_edit_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/genero_item_framework.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.22" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_acordada.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_detalle.xml" value="0.2" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_rechazada.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_solicitada.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_rubro.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_preferencias_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_publicaciones_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicaciones_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicaciones_item_recycler_view.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicar_servicio_fragment.xml" value="0.5" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/reservas_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/servicios_contratados_fragment.xml" value="0.1585144927536232" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/servicios_contratados_pendiente_pago_item.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/servicios_contratados_proximo_a_realizar_item.xml" value="0.5" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/menu/bottom_bar_usuario_prestador.xml" value="0.1962962962962963" />
       </map>
     </option>

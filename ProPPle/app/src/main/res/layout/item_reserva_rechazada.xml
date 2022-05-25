@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardReservaRechazadaItem"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:layout_margin="8dp"
+    android:elevation="20dp"
     app:cardBackgroundColor="#A890CA"
-    app:cardCornerRadius="50dp"
-    app:cardElevation="8dp">
+    app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView10"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="52dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="24dp"
             app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView40"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -33,23 +36,24 @@
 
         <TextView
             android:id="@+id/textView39"
-            android:layout_width="140dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="90dp"
             android:text="Servicio - para Nombre"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView40"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardView10"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView40"
-            android:layout_width="175dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Rechazada el dd/mm/aaaa"
+            android:textSize="10sp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
