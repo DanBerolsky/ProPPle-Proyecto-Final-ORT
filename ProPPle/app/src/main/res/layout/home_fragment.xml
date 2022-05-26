@@ -77,7 +77,7 @@
             app:columnCount="3">
 
             <LinearLayout
-                android:id="@+id/Plomeria"
+                android:id="@+id/x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -85,7 +85,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnP"
+                    android:id="@+id/btnPlomeria"
                     android:layout_width="60dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -105,7 +105,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/Electricista"
+                android:id="@+id/e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -113,7 +113,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnE"
+                    android:id="@+id/btnElectricista"
                     android:layout_width="60dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -136,7 +136,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/Domestica"
+                android:id="@+id/v"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -144,7 +144,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnD"
+                    android:id="@+id/btnDomestica"
                     android:layout_width="60dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -164,7 +164,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/AireAC"
+                android:id="@+id/xx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -172,7 +172,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnA"
+                    android:id="@+id/btnAireAC"
                     android:layout_width="60dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
@@ -200,7 +200,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnGasista"
                     android:layout_width="60dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"

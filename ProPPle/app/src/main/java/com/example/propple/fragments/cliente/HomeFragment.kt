@@ -37,23 +37,23 @@ class homeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        binding.Plomeria.setOnClickListener {
+        binding.btnPlomeria.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Plomeria")
             nav(action)
         }
-        binding.Domestica.setOnClickListener {
+        binding.btnDomestica.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Domestica")
             nav(action)
         }
-        binding.Electricista.setOnClickListener {
+        binding.btnElectricista.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Electricista")
             nav(action)
         }
-        binding.AireAC.setOnClickListener {
+        binding.btnAireAC.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("acondicionado")
             nav(action)
         }
-        binding.Gasista.setOnClickListener {
+        binding.btnGasista.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Gasista")
             nav(action)
         }
@@ -70,11 +70,7 @@ class homeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        viewModel.publiXRubro.observe(viewLifecycleOwner, Observer {
-            if(it!=null){
 
-            }
-        } )
     }
 
 }

@@ -68,7 +68,7 @@ class InicioSesionFragment : Fragment() {
         viewModel.rol.observe(viewLifecycleOwner, Observer { result->
             if (result.toString()!=null && result.toString()!=""){
 
-                if (result.toString()=="cliente-prestador"){
+                if (result.toString()=="cliente - prestador"){
                     val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivityUsuarioPrestador()
                     nav(action)
                 }else if (result.toString()=="cliente"){

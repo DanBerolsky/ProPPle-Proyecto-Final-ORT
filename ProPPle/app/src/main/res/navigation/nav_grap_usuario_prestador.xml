@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_grap_usuario_prestador"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/home_fragment">
 
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/home_fragment"
         android:name="com.example.propple.fragments.cliente.homeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_publicacionesFragment"
+            app:destination="@id/publicacionesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/serviciosContratadosFragment2"
         android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
@@ -161,5 +165,13 @@
         <argument
             android:name="rubroPosition"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/publicacionesFragment"
+        android:name="com.example.propple.fragments.cliente.PublicacionesFragment"
+        android:label="PublicacionesFragment" >
+        <argument
+            android:name="rubroIndex"
+            app:argType="string" />
     </fragment>
 </navigation>

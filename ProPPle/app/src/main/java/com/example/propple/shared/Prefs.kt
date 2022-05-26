@@ -2,7 +2,6 @@ package com.example.propple.shared
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.propple.api.interfaces.Publication
 
 class Prefs(context: Context) {
     val PREFS_NAME = "myPreferences"

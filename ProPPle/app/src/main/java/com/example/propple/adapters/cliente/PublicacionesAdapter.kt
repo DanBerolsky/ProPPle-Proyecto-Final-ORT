@@ -9,9 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.example.propple.entities.cliente.Publicacion
+import com.example.propple.api.interfaces.PublicationService
+import com.example.propple.api.publication.Publication
 
-class PublicacionesAdapter(var publicacionesList : MutableList<Publicacion>) : RecyclerView.Adapter<PublicacionesAdapter.publicacionesHolder>(){
+class PublicacionesAdapter(var publicacionesList: List<Publication>?) : RecyclerView.Adapter<PublicacionesAdapter.publicacionesHolder>(){
 
 
 
@@ -55,15 +56,19 @@ class PublicacionesAdapter(var publicacionesList : MutableList<Publicacion>) : R
 
     //esta funcion se ejecuta en cada iteracion de la lista
     override fun onBindViewHolder(holder: publicacionesHolder, position: Int) {
-        publicacionesList[position].titulo?.let { holder.setRubro(it) }
-        publicacionesList[position].valoracion?.let { holder.setValoracion(it) }
-        publicacionesList[position].ubicacion?.let { holder.setUbicacion(it) }
+        publicacionesList?.get(position)?.title.let {
+            if (it != null) {
+                holder.setRubro(it)
+            }
+        }
+        publicacionesList?.get(position)?.puntuacion?.let { holder.setValoracion(it) }
+        publicacionesList?.get(position)?.location?.let { holder.setUbicacion(it) }
     }
 
 
     //aca le pongo la cantidad de elemetos de la lista
     override fun getItemCount(): Int {
-        return publicacionesList.size
+        return publicacionesList?.size ?:
         Log.d("hola","hola")
     }
 
