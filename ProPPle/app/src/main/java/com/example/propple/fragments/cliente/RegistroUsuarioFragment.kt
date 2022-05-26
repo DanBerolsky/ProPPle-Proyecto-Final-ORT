@@ -5,6 +5,7 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
@@ -15,13 +16,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
+import com.example.propple.shared.ProPPle.Companion.prefs
+import com.example.propple.utils.GoogleMaps
 import com.example.propple.viewModel.cliente.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -37,8 +43,10 @@ class RegistroUsuarioFragment : Fragment() {
     private var latitude : Double = 0.0
     private var longitude : Double = 0.0
     private lateinit var date : String
+    private var googleMaps: GoogleMaps=GoogleMaps()
 
-
+    private lateinit var locationManager: LocationManager
+    private val locationPermissionCode = 2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,72 +58,10 @@ class RegistroUsuarioFragment : Fragment() {
         return v
     }
 
-    private fun getCurrentLocation() {
-
-        if(checkPermisison()){
-            if(isLocationEnable())
-            {
-                //final latitude and longitude
-                if (ActivityCompat.checkSelfPermission(
-                        requireContext(),
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                        requireContext(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    requestPermissions()
-                    return
-                }
-                fusedLocationClient.lastLocation.addOnCompleteListener { task ->
-                    val location: Location?=task.result
-                    if (location==null){
-                        Toast.makeText(requireContext(),"Null recived",Toast.LENGTH_SHORT).show()
-                    }else{
-                        Toast.makeText(requireContext(),"get Success",Toast.LENGTH_SHORT).show()
-                        latitude=location.latitude
-                        longitude=location.longitude
-                        binding.InDirecion.setText(latitude.toString()+","+longitude.toString())
-                    }
-                }
-
-            }else
-            {
-                // abrir ajustes para acitvar localizacion
-                Toast.makeText(requireContext(),"Turn on location",Toast.LENGTH_SHORT).show()
-                val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                startActivity(intent)
-            }
-
-        }else{
-            //perdir permisos
-            requestPermissions()
-        }
-
-    }
-
-    private fun requestPermissions(){
-        ActivityCompat.requestPermissions(requireActivity(),
-            arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION),
-            PERMISSION_REQUEST_ACCESS_LOCATION
-        )
-    }
-
-    private fun isLocationEnable(): Boolean {
-        val locationManager : LocationManager = requireActivity().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)||locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
-    }
-
-    private fun checkPermisison(): Boolean {
-        if(ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.ACCESS_COARSE_LOCATION)==PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(),Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
-            return true
-        }
-        return false
-    }
-
     companion object{
         private const val PERMISSION_REQUEST_ACCESS_LOCATION=100
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -126,7 +72,7 @@ class RegistroUsuarioFragment : Fragment() {
         if(requestCode== PERMISSION_REQUEST_ACCESS_LOCATION){
             if (grantResults.isNotEmpty() && grantResults[0]== PackageManager.PERMISSION_GRANTED){
                 Toast.makeText(requireContext(),"Granted",Toast.LENGTH_SHORT).show()
-                getCurrentLocation()
+                googleMaps.getCurrentLocation(requireActivity(),requireContext(),fusedLocationClient)
             }else{
                 Toast.makeText(requireContext(),"Denied",Toast.LENGTH_SHORT).show()
 
@@ -157,7 +103,12 @@ class RegistroUsuarioFragment : Fragment() {
             }
 
         }
-        binding.btnUbicacion.setOnClickListener {  getCurrentLocation()}
+        binding.btnUbicacion.setOnClickListener {
+            googleMaps.getCurrentLocation(requireActivity(),requireContext(),fusedLocationClient)
+            googleMaps.dir.observe(viewLifecycleOwner, Observer {
+                binding.InDirecion.setText(it)
+            })
+        } //
 
         binding.btnRegistrarUsuario.setOnClickListener {
             if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){
@@ -203,5 +154,6 @@ class RegistroUsuarioFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(RegistroUsuarioViewModel::class.java)
+
     }
 }

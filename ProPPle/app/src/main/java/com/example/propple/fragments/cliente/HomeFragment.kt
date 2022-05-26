@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.navigation.NavDirections
+import androidx.navigation.findNavController
 import com.example.propple.viewModel.cliente.HomeViewModel
 import com.example.propple.R
+import com.example.propple.databinding.FragmentCambiarContraseniaPrestadorBinding
+import com.example.propple.databinding.HomeFragmentBinding
 
 class homeFragment : Fragment() {
 
@@ -16,18 +22,59 @@ class homeFragment : Fragment() {
     }
 
     private lateinit var viewModel: HomeViewModel
+    private lateinit var binding: HomeFragmentBinding
+    private lateinit var v:View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        v=inflater.inflate(R.layout.home_fragment, container, false)
+        binding=HomeFragmentBinding.bind(v)
+        return v
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        binding.Plomeria.setOnClickListener {
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Plomeria")
+            nav(action)
+        }
+        binding.Domestica.setOnClickListener {
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Domestica")
+            nav(action)
+        }
+        binding.Electricista.setOnClickListener {
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Electricista")
+            nav(action)
+        }
+        binding.AireAC.setOnClickListener {
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("acondicionado")
+            nav(action)
+        }
+        binding.Gasista.setOnClickListener {
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Gasista")
+            nav(action)
+        }
+
+    }
+
+    fun nav(action:NavDirections){
+        v.findNavController().navigate(action)
+    }
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        viewModel.publiXRubro.observe(viewLifecycleOwner, Observer {
+            if(it!=null){
+
+            }
+        } )
     }
 
 }

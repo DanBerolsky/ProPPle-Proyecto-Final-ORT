@@ -20,7 +20,6 @@ class InicioSesionFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: InicioSesionViewModel
     private lateinit var binding: InicioSesionFragmentBinding
-    private val PREF_NAME = "myPreferences"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

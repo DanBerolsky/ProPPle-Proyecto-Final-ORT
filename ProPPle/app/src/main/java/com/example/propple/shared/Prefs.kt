@@ -2,6 +2,7 @@ package com.example.propple.shared
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.propple.api.interfaces.Publication
 
 class Prefs(context: Context) {
     val PREFS_NAME = "myPreferences"
@@ -90,4 +91,20 @@ class Prefs(context: Context) {
     fun clear(){
         prefs.edit().clear().apply()
     }
+    fun setMejorValoracion(mejorValoracion: Boolean) {
+        prefs.edit().putBoolean("mejorValoracion", mejorValoracion).apply()
+    }
+
+    fun getMejorValoracion(): Boolean {
+        return prefs.getBoolean("mejorValoracion", false)
+    }
+    fun setMenorPrecioBase(menorPrecioBase: Boolean) {
+        prefs.edit().putBoolean("menorPrecioBase", menorPrecioBase).apply()
+    }
+
+    fun getMenorPrecioBase(): Boolean {
+        return prefs.getBoolean("menorPrecioBase", false)
+    }
+
+
 }

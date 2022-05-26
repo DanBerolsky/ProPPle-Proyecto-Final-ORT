@@ -77,6 +77,7 @@
             app:columnCount="3">
 
             <LinearLayout
+                android:id="@+id/Plomeria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -104,6 +105,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/Electricista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -134,6 +136,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/Domestica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -161,6 +164,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/AireAC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
@@ -188,6 +192,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/Gasista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"

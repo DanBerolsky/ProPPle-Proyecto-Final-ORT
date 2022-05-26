@@ -37,6 +37,9 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         v = inflater.inflate(R.layout.cuenta_usuario_prestador_fragment, container, false)
         binding = CuentaUsuarioPrestadorFragmentBinding.bind(v)
         bntMisPublicaciones = v.findViewById(R.id.bntMisPublicaciones)
+        nombre=prefs.getNombre()
+        apellido=prefs.getApellido()
+        alias=prefs.getAlias()
         return v
     }
 
