@@ -23,7 +23,7 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : 
         }
 
         fun setRubro(rubro : String){
-            var txtRubro : TextView = view.findViewById(R.id.txtRubro)
+            var txtRubro : TextView = view.findViewById(R.id.txtNombre)
             txtRubro.text = rubro
         }
 

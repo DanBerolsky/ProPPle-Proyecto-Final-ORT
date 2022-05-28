@@ -34,7 +34,7 @@
             android:layout_marginTop="36dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/txtRubro2"
+            app:layout_constraintBottom_toTopOf="@+id/txtTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -47,7 +47,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtRubro"
+            android:id="@+id/txtNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.123"
             app:layout_constraintStart_toEndOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/txtRubro">
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre">
 
             <ImageView
                 android:id="@+id/estrella1"
@@ -130,7 +130,7 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/btnGuardar3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtRubro2">
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle">
 
             <ImageView
                 android:id="@+id/icoUbicacion"
@@ -154,7 +154,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txtRubro2"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginStart="40dp"
@@ -176,7 +176,7 @@
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toBottomOf="@+id/txtRubro" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
         <TextView
             android:id="@+id/textView11"

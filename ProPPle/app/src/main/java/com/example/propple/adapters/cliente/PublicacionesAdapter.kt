@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.example.propple.api.interfaces.PublicationService
 import com.example.propple.api.publication.Publication
+import com.example.propple.fragments.cliente.PublicacionesFragmentDirections
 
 class PublicacionesAdapter(var publicacionesList: List<Publication>?) : RecyclerView.Adapter<PublicacionesAdapter.publicacionesHolder>(){
 
@@ -23,9 +25,9 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
             this.view = v
         }
 
-        fun setRubro(rubro : String){
-            var txtRubro : TextView = view.findViewById(R.id.txtRubro)
-            txtRubro.text = rubro
+        fun setPrecio(precio: Int?){
+            var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
+            txtPrecio.text = "Precio base : $"+precio
         }
 
         fun setValoracion(cantEstrellas : Int){
@@ -38,12 +40,21 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
         }
 
         fun setAvatar(){
-
         }
 
         fun setUbicacion(ubicacion : String){
             var txtUbicacion : TextView = view.findViewById(R.id.txtUbicacion)
             txtUbicacion.text = ubicacion
+        }
+        fun setTitulo(x:String){
+            val txt:TextView=view.findViewById(R.id.txtTitle)
+            txt.setText(x)
+        }
+
+        fun click() {
+            view.findViewById<CardView>(R.id.acaDoc).setOnClickListener(){
+                view.findNavController().navigate( PublicacionesFragmentDirections.actionPublicacionesFragmentToPublicacionVistaPublicaFragment())
+            }
         }
 
     }
@@ -58,11 +69,13 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
     override fun onBindViewHolder(holder: publicacionesHolder, position: Int) {
         publicacionesList?.get(position)?.title.let {
             if (it != null) {
-                holder.setRubro(it)
+                holder.setTitulo(it)
             }
         }
+        publicacionesList?.get(position)?.precio_x_hora.let { holder.setPrecio(it) }
         publicacionesList?.get(position)?.puntuacion?.let { holder.setValoracion(it) }
         publicacionesList?.get(position)?.location?.let { holder.setUbicacion(it) }
+        publicacionesList?.get(position)?.id_publicacion?.let { holder.click() }
     }
 
 

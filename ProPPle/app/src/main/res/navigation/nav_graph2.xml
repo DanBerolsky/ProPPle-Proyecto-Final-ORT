@@ -86,5 +86,13 @@
         <argument
             android:name="rubroIndex"
             app:argType="string" />
+        <action
+            android:id="@+id/action_publicacionesFragment_to_publicacionVistaPublicaFragment"
+            app:destination="@id/publicacionVistaPublicaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/publicacionVistaPublicaFragment"
+        android:name="com.example.propple.adapters.cliente.publicacionVistaPublicaFragment"
+        android:label="fragment_publicacion_vista_publica"
+        tools:layout="@layout/fragment_publicacion_vista_publica" />
 </navigation>

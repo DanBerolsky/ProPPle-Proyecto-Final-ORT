@@ -20,15 +20,13 @@
             android:id="@+id/txtRubroItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="100dp"
             android:layout_marginBottom="10dp"
             android:text="Servicio"
             android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/switch4"
             app:layout_constraintStart_toEndOf="@+id/btnRubroItemName"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,8 +34,9 @@
             android:id="@+id/switch4"
             android:layout_width="80dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="40dp"
             android:layout_marginBottom="5dp"
             android:buttonTint="#FFFFFF"
             android:scaleX="2"
@@ -48,6 +47,8 @@
             android:trackTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.97"
+            app:layout_constraintStart_toEndOf="@+id/txtRubroItemName"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
