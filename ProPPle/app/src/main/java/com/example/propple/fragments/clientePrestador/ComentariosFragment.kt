@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.ComentarioAdapter
 import com.ort.casodeusotest.entities.ComentarioRepository
 import com.ort.casodeusotest.viewModel.ComentariosViewModel
@@ -27,6 +28,7 @@ class ComentariosFragment : Fragment() {
     lateinit var adapter : ComentarioAdapter
     var repository : ComentarioRepository = ComentarioRepository()
     private lateinit var fabVolverPublicacion2 : FloatingActionButton
+    private lateinit var fabResponder : FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +52,12 @@ class ComentariosFragment : Fragment() {
         }
         recyclerComentarios.setHasFixedSize(true)
         recyclerComentarios.layoutManager = LinearLayoutManager(context)
-        adapter = ComentarioAdapter(repository.comentarioList) {}
+        adapter = ComentarioAdapter(repository.comentarioList) {
+            fabResponder = v.findViewById(R.id.fabResponder)
+            fabResponder.setOnClickListener{
+                Snackbar.make(v, "Respondiste el comentario", Snackbar.LENGTH_SHORT).show()
+            }
+        }
         recyclerComentarios.adapter = adapter
     }
 

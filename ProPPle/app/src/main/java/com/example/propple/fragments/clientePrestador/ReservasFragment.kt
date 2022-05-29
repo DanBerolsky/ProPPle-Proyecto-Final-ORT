@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.reservas.ReservaAcordadaAdapter
 import com.ort.casodeusotest.adapters.reservas.ReservaConfirmarAdapter
 import com.ort.casodeusotest.adapters.reservas.ReservaSolicitadaAdapter
@@ -85,7 +86,9 @@ class ReservasFragment : Fragment() {
                 v.findNavController().navigate(action)
             }
             fabRechazarSolicitud = v.findViewById(R.id.fabRechazarSolicitud)
-            fabRechazarSolicitud.setOnClickListener {}
+            fabRechazarSolicitud.setOnClickListener {
+                Snackbar.make(v, "Rechazaste la solicitud de reserva de Cliente", Snackbar.LENGTH_SHORT).show()
+            }
         }
         recyclerReservasSolicitadas.adapter = solicitadaAdapter
 

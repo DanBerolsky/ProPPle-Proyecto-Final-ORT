@@ -10,6 +10,7 @@ import android.widget.Button
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.FormularioReservaViewModel
 
 class FormularioReservaFragment : Fragment() {
@@ -38,6 +39,7 @@ class FormularioReservaFragment : Fragment() {
         btnEnviarReserva.setOnClickListener {
             val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment2()
             v.findNavController().navigate(action)
+            Snackbar.make(v, "Reserva enviada a Cliente para confirmar", Snackbar.LENGTH_SHORT).show()
         }
         fabVolverReservas1.setOnClickListener {
             val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment2()

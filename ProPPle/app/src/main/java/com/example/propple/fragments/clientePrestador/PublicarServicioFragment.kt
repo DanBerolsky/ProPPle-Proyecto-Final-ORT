@@ -10,6 +10,7 @@ import android.widget.Button
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.PublicarServicioViewModel
 
 class PublicarServicioFragment : Fragment() {
@@ -39,6 +40,7 @@ class PublicarServicioFragment : Fragment() {
         btnPublicar.setOnClickListener {
             val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
             v.findNavController().navigate(action)
+            Snackbar.make(v, "Publicación modificada", Snackbar.LENGTH_SHORT).show()
         }
         fabVolverPublicacion1.setOnClickListener {
             val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
