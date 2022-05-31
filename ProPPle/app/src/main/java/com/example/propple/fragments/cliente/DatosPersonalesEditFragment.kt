@@ -1,14 +1,7 @@
 package com.example.propple.fragments.cliente
 
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Base64
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,12 +16,13 @@ import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.utils.imgController.base64Encode
+import com.example.propple.utils.imgController.base64decode
+import com.example.propple.utils.imgController.pickPhotoFromGalery
 import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
-import java.io.ByteArrayOutputStream
-import java.io.IOException
 
 
 class datosPersonalesEditFragment : Fragment() {
@@ -55,40 +49,13 @@ class datosPersonalesEditFragment : Fragment() {
     private val SELECT_ACTIVITY =121
     val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         var uri= it.data?.data!!
-        //binding.Avatar.setImageURI(uri)
+        binding.Avatar.setImageURI(uri)
+        prefs.setUrlImage(uri,requireContext())
         //Log.i("holaa",base64Encode(uri))
-        val aux=base64Encode(uri)
-
-        binding.Avatar.setImageBitmap(base64decode(base64Encode(uri)))
-
-    }
-    fun base64decode(encodedImage:String):Bitmap{
-        val decodedString: ByteArray = Base64.decode(encodedImage, Base64.DEFAULT)
-        val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-        return decodedByte
+        //val aux= base64Encode(uri,requireContext())
+        //binding.Avatar.setImageBitmap(base64decode(base64Encode(uri,requireContext())))
     }
 
-    fun base64Encode(uri: Uri):String{
-        var sImage=""
-        //val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), uri)
-        try {
-            val bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), uri)
-            // initialize byte stream
-            val stream = ByteArrayOutputStream()
-            // compress Bitmap
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
-            // Initialize byte array
-            val bytes: ByteArray = stream.toByteArray()
-            // get base64 encoded string
-            sImage = Base64.encodeToString(bytes, Base64.DEFAULT)
-
-            // set encoded text on textview
-            //textView.setText(sImage)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return sImage
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -128,19 +95,11 @@ class datosPersonalesEditFragment : Fragment() {
             }
         }
     }
-    fun pickPhotoFromGalery( code:Int) {
-        val intent= Intent(Intent.ACTION_GET_CONTENT)
-        intent.type="image/*"
 
-        imageLauncher.launch(intent)
-    }
     override fun onStart() {
         super.onStart()
 
-        binding.imgEdit.setOnClickListener {
-            //imgController.pickPhotoFromGalery(requireActivity(),SELECT_ACTIVITY)
-            pickPhotoFromGalery(SELECT_ACTIVITY)
-        }
+        binding.imgEdit.setOnClickListener { pickPhotoFromGalery(imageLauncher) }
 
         googleMaps.lat.observe(viewLifecycleOwner, Observer {
             lat=it
@@ -176,7 +135,8 @@ class datosPersonalesEditFragment : Fragment() {
 
 
 
-
+        if (prefs.getUrlImageString()!="")
+            binding.Avatar.setImageBitmap(prefs.getUrlImage())
         binding.Nombre.setText(nombre+" "+apellido)
         binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
         binding.btnDate1.setOnClickListener { showDatePickerDialog() }
@@ -195,7 +155,7 @@ class datosPersonalesEditFragment : Fragment() {
                                                                     lat,
                                                                     lon,
                                                                     binding.InTelefono.text.toString(),
-                                                                    prefs.getUrlImage(),
+                                                                    prefs.getUrlImageString(),
                                                                     binding.InApellido.text.toString(),
                                                                     binding.InNombre.text.toString(),v ,binding) }
 

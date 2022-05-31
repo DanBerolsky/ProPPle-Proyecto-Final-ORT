@@ -2,6 +2,9 @@ package com.example.propple.shared
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Bitmap
+import android.net.Uri
+import com.example.propple.utils.imgController
 
 class Prefs(context: Context) {
     val PREFS_NAME = "myPreferences"
@@ -71,12 +74,19 @@ class Prefs(context: Context) {
         return prefs.getString("apellido", "").toString()
     }
 
-    fun getUrlImage(): String {
+    fun getUrlImage(): Bitmap {
+        return imgController.base64decode( prefs.getString("urlImage", "").toString())
+    }
+    fun setUrlImageString(img : String){
+        prefs.edit().putString("urlImage", img).apply()
+    }
+    fun getUrlImageString():String{
         return prefs.getString("urlImage", "").toString()
     }
 
-    fun setUrlImage(x: String) {
-        prefs.edit().putString("urlImage", x).apply()
+    fun setUrlImage(uri: Uri,context: Context) {
+        prefs.edit().putString("urlImage",
+            imgController.base64Encode(uri, context)).apply()
     }
 
     fun setGenero(gender: String) {

@@ -45,7 +45,7 @@ class DatosPersonalesEditViewModel : ViewModel() {
                 prefs.setGenero(gender)
                 prefs.setDireccion(location)
                 prefs.setphone(phone)
-                prefs.setUrlImage(url_image)
+                prefs.setUrlImageString(url_image)
                 prefs.setNombre(user_name)
                 prefs.setApellido(user_last_name)
                 status.postValue(true)

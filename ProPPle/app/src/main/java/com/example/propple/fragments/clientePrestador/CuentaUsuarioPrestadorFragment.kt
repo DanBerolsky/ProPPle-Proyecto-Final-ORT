@@ -1,5 +1,6 @@
 package com.example.propple.fragments.clientePrestador
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +41,8 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         nombre=prefs.getNombre()
         apellido=prefs.getApellido()
         alias=prefs.getAlias()
+        if (prefs.getUrlImageString()!="")
+            binding.btnAvatar.setImageBitmap(prefs.getUrlImage())
         return v
     }
 

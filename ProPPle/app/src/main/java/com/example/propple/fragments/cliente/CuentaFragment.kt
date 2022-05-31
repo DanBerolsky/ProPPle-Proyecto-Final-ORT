@@ -47,6 +47,8 @@ class CuentaFragment : Fragment() {
         nombre=prefs.getNombre()
         apellido=prefs.getApellido()
         alias=prefs.getAlias()
+        if (prefs.getUrlImageString()!="")
+            binding.btnAvatar.setImageBitmap(prefs.getUrlImage())
         return v
     }
 
