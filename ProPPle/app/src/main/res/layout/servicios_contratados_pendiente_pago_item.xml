@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="260dp"
     android:layout_margin="20dp"
-    android:background="@color/rosa_para_input"
-    android:backgroundTint="@color/rosa_para_input"
-    android:elevation="20dp"
-    app:cardBackgroundColor="#C6A890CA"
-    app:cardCornerRadius="15dp">
+    android:backgroundTint="#C6A890CA"
+    app:cardCornerRadius="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/btnAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/avatar_1" />

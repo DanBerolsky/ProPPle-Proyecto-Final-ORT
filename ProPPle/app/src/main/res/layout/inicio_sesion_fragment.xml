@@ -82,7 +82,6 @@
                 android:id="@+id/cardView6"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="10dp">
 

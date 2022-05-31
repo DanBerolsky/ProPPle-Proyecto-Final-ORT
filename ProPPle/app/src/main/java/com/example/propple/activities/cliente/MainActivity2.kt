@@ -1,11 +1,17 @@
 package com.example.propple.activities.cliente
 
-import androidx.appcompat.app.AppCompatActivity
+
+import android.R.attr
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.propple.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity2 : AppCompatActivity() {
 

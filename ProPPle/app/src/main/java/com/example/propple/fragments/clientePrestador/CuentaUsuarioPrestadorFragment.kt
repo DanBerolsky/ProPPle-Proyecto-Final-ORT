@@ -1,12 +1,12 @@
 package com.example.propple.fragments.clientePrestador
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.propple.R
@@ -50,7 +50,7 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         binding.bntDatosPersonales.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToDatosPersonalesEditFragment2()) }
         binding.bntCambiarContra.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToCambiarContraseniaPrestadorFragment()) }
         binding.bntMisPreferencias.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToMisPreferenciasFragment2()) }
-        binding.bntPostularme.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToPostularmeFragment2()) }
+        binding.bntPostularme.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaFragmentToPostularmeFragment()) }
         //binding.bntMisPublicaciones.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.) }
         bntMisPublicaciones.setOnClickListener {
             val action = CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToMisPublicacionesFragment()

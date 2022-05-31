@@ -35,7 +35,7 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
             for ( i in 1..cantEstrellas){
                 var estrellaAux = "estrella$i"
                 Log.d("estre",estrellaAux)
-                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 235, 59, 1))
+                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 245, 242, 66))
             }
         }
 

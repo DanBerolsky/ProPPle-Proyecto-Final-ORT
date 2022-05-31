@@ -15,7 +15,7 @@
         android:title="" />
 
     <item
-        android:id="@+id/cuentaUsuarioPrestadorFragment"
+        android:id="@+id/cuentaFragment"
         android:icon="@drawable/ic_account_circle_full_fill0_wght400_grad0_opsz48"
         android:title="" />
 

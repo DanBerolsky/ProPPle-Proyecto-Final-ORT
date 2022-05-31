@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewr38"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
@@ -24,18 +24,31 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:spinnerMode="dropdown"
+                android:translationX="5dp"
+                android:translationY="16dp"
+                android:visibility="invisible"
+                android:entries="@array/rubros"
+                />
+
             <EditText
                 android:id="@+id/InRubro"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
-                android:hint="  Seleccione su rubro" />
+                android:hint="  Seleccione su rubro"
+                android:paddingLeft="10dp" />
 
             <ImageView
                 android:id="@+id/imgRubro"
-                android:layout_width="10dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#806C6565"
@@ -50,7 +63,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewr8"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginBottom="176dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
@@ -67,17 +80,18 @@
 
             <EditText
                 android:id="@+id/InFechaDeNacimiento"
-                android:layout_width="250dp"
+                android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
                 android:ems="10"
                 android:hint="  Adjunte su CV"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp" />
 
             <ImageView
                 android:id="@+id/btnGenero"
-                android:layout_width="10dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#806C6565"

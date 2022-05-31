@@ -5,26 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
+    android:id="@+id/hola"
     tools:context=".fragments.cliente.datosPersonalesEditFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <FrameLayout
+        android:id="@+id/imgEdit"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
-        app:cardCornerRadius="50dp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            app:cardCornerRadius="50dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/Avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avatar_1" />
+        </androidx.cardview.widget.CardView>
+
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/avatar_1" />
+            android:layout_gravity="bottom|right"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:elevation="16dp"
+            android:outlineProvider="none"
+            android:src="@drawable/ic_baseline_add_circle_24" />
 
-    </androidx.cardview.widget.CardView>
+    </FrameLayout>
 
     <TextView
         android:id="@+id/Nombre"
@@ -32,12 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
-        android:text="Nombre De Usuario"
         android:textColor="@color/negro_blaco"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/imgEdit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -46,12 +62,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Alias - Rol"
         android:textColor="@color/negro_blaco"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/imgEdit"
         app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
     <ScrollView

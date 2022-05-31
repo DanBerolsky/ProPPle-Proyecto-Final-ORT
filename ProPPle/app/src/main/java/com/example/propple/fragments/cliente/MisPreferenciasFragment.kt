@@ -1,19 +1,19 @@
 package com.example.propple.fragments.cliente
 
 import android.content.pm.PackageManager
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.example.propple.viewModel.cliente.MisPreferenciasViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.propple.R
 import com.example.propple.databinding.MisPreferenciasFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.viewModel.cliente.MisPreferenciasViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar

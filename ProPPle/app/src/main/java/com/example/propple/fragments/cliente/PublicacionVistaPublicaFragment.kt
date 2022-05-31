@@ -1,13 +1,13 @@
 package com.example.propple.adapters.cliente
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.propple.R
+import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 
 class publicacionVistaPublicaFragment : Fragment() {
 

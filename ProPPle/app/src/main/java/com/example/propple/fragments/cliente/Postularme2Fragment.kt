@@ -1,15 +1,15 @@
 package com.example.propple.fragments.cliente
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.example.propple.viewModel.cliente.Postularme2ViewModel
 import com.example.propple.R
+import com.example.propple.viewModel.cliente.Postularme2ViewModel
 
 class Postularme2Fragment : Fragment() {
 
@@ -34,7 +34,7 @@ class Postularme2Fragment : Fragment() {
         super.onStart()
 
         btnRegresar.setOnClickListener {
-            val action = Postularme2FragmentDirections.actionPostularme2FragmentToCuentaFragment()
+            val action = Postularme2FragmentDirections.actionPostularme2Fragment2ActionPostularme2FragmentToCuentaFragment()
             v.findNavController().navigate(action)
         }
 

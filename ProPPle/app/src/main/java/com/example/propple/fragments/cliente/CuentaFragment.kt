@@ -1,19 +1,19 @@
 package com.example.propple.fragments.cliente
 
 import android.annotation.SuppressLint
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
-import com.example.propple.viewModel.cliente.CuentaViewModel
 import com.example.propple.R
 import com.example.propple.databinding.CuentaFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
+import com.example.propple.viewModel.cliente.CuentaViewModel
 
 class CuentaFragment : Fragment() {
 

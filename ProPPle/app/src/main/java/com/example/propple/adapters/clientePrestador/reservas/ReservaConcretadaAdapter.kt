@@ -3,13 +3,10 @@ package com.ort.casodeusotest.adapters.reservas
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.ort.casodeusotest.entities.Reserva
-import com.ort.casodeusotest.entities.Rubro
 
 class ReservaConcretadaAdapter (var reservaList : MutableList<Reserva>,
                                 var onClick : (Int) -> Unit) : RecyclerView.Adapter<ReservaConcretadaAdapter.ReservaHolder>() {

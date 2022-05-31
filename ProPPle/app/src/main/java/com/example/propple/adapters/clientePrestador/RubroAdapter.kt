@@ -9,7 +9,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.ort.casodeusotest.entities.Rubro
-import java.text.DateFormatSymbols
 
 class RubroAdapter (var rubroList : MutableList<Rubro>,
                     var onClick : (Int) -> Unit) : RecyclerView.Adapter<RubroAdapter.RubroHolder>() {

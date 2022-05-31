@@ -1,25 +1,35 @@
 package com.example.propple.fragments.cliente
 
+import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.lifecycle.ViewModelProvider
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Base64
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
-import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+import java.io.ByteArrayOutputStream
+import java.io.IOException
+
 
 class datosPersonalesEditFragment : Fragment() {
 
@@ -42,12 +52,48 @@ class datosPersonalesEditFragment : Fragment() {
     private var googleMaps: GoogleMaps = GoogleMaps()
     private var lat :Double=0.0
     private var lon :Double=0.0
+    private val SELECT_ACTIVITY =121
+    val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+        var uri= it.data?.data!!
+        //binding.Avatar.setImageURI(uri)
+        //Log.i("holaa",base64Encode(uri))
+        val aux=base64Encode(uri)
 
+        binding.Avatar.setImageBitmap(base64decode(base64Encode(uri)))
+
+    }
+    fun base64decode(encodedImage:String):Bitmap{
+        val decodedString: ByteArray = Base64.decode(encodedImage, Base64.DEFAULT)
+        val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+        return decodedByte
+    }
+
+    fun base64Encode(uri: Uri):String{
+        var sImage=""
+        //val bitmap: Bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), uri)
+        try {
+            val bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), uri)
+            // initialize byte stream
+            val stream = ByteArrayOutputStream()
+            // compress Bitmap
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            // Initialize byte array
+            val bytes: ByteArray = stream.toByteArray()
+            // get base64 encoded string
+            sImage = Base64.encodeToString(bytes, Base64.DEFAULT)
+
+            // set encoded text on textview
+            //textView.setText(sImage)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return sImage
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        v=inflater.inflate(R.layout.datos_personales_edit_fragment, container, false)
+        v=inflater.inflate(com.example.propple.R.layout.datos_personales_edit_fragment, container, false)
         binding=DatosPersonalesEditFragmentBinding.bind(v)
         fechaDeNacimiento=prefs.getFechaDeNacimiento()
         phone=prefs.getphone()
@@ -57,10 +103,14 @@ class datosPersonalesEditFragment : Fragment() {
         alias=prefs.getAlias()
         genero=prefs.getGenero()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+
+
         return v
     }
 
-
+    /*val imageBytes = Base64.decode(base64String, Base64.DEFAULT)
+    val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length)
+    imageView.setImageBitmap(decodedImage)*/
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -78,8 +128,20 @@ class datosPersonalesEditFragment : Fragment() {
             }
         }
     }
+    fun pickPhotoFromGalery( code:Int) {
+        val intent= Intent(Intent.ACTION_GET_CONTENT)
+        intent.type="image/*"
+
+        imageLauncher.launch(intent)
+    }
     override fun onStart() {
         super.onStart()
+
+        binding.imgEdit.setOnClickListener {
+            //imgController.pickPhotoFromGalery(requireActivity(),SELECT_ACTIVITY)
+            pickPhotoFromGalery(SELECT_ACTIVITY)
+        }
+
         googleMaps.lat.observe(viewLifecycleOwner, Observer {
             lat=it
         })
@@ -115,7 +177,6 @@ class datosPersonalesEditFragment : Fragment() {
 
 
 
-
         binding.Nombre.setText(nombre+" "+apellido)
         binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
         binding.btnDate1.setOnClickListener { showDatePickerDialog() }
@@ -142,6 +203,20 @@ class datosPersonalesEditFragment : Fragment() {
         //binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
     }
 
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode==SELECT_ACTIVITY){
+            Snackbar.make(v,"hola",Snackbar.LENGTH_SHORT).show()
+        }
+        val fragments = childFragmentManager.fragments
+        if (fragments != null) {
+            for (fragment in fragments) {
+                fragment.onActivityResult(requestCode, resultCode, data)
+
+            }
+        }
+    }*/
+
     private fun showDatePickerDialog() {
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
         val fragmentManager = (activity as FragmentActivity).supportFragmentManager
@@ -150,6 +225,8 @@ class datosPersonalesEditFragment : Fragment() {
     private fun onDateSelected(day: Int, month: Int, year: Int) {
         binding.InFechaDeNacrimiento.setText("$day / $month / $year")
     }
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DatosPersonalesEditViewModel::class.java)

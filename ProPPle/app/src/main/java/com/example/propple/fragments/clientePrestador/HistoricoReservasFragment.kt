@@ -1,21 +1,22 @@
 package com.ort.casodeusotest.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
-import com.ort.casodeusotest.adapters.reservas.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.ort.casodeusotest.adapters.reservas.ReservaCanceladaAdapter
+import com.ort.casodeusotest.adapters.reservas.ReservaConcretadaAdapter
+import com.ort.casodeusotest.adapters.reservas.ReservaRechazadaAdapter
+import com.ort.casodeusotest.adapters.reservas.ReservaVencidaAdapter
 import com.ort.casodeusotest.entities.ReservaRepository
 import com.ort.casodeusotest.viewModel.HistoricoReservasViewModel
-import com.ort.casodeusotest.viewModel.ReservasViewModel
 
 class HistoricoReservasFragment : Fragment() {
 

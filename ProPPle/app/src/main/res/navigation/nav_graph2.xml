@@ -30,7 +30,7 @@
             app:destination="@id/misPreferenciasFragment" />
         <action
             android:id="@+id/action_cuentaFragment_to_postularmeFragment"
-            app:destination="@id/postularmeFragment" />
+            app:destination="@id/postularmeFragment2" />
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment"
@@ -52,21 +52,21 @@
         android:label="mis_preferencias_fragment"
         tools:layout="@layout/mis_preferencias_fragment" />
     <fragment
-        android:id="@+id/postularmeFragment"
+        android:id="@+id/postularmeFragment2"
         android:name="com.example.propple.fragments.cliente.PostularmeFragment"
         android:label="postularme_fragment"
         tools:layout="@layout/postularme_fragment" >
         <action
-            android:id="@+id/action_postularmeFragment_to_postularme2Fragment"
-            app:destination="@id/postularme2Fragment" />
+            android:id="@+id/action_postularmeFragment2_to_postularme2Fragment2"
+            app:destination="@id/postularme2Fragment2" />
     </fragment>
     <fragment
-        android:id="@+id/postularme2Fragment"
+        android:id="@+id/postularme2Fragment2"
         android:name="com.example.propple.fragments.cliente.Postularme2Fragment"
         android:label="postularme2_fragment"
         tools:layout="@layout/postularme2_fragment" >
         <action
-            android:id="@+id/action_postularme2Fragment_to_cuentaFragment"
+            android:id="@+id/action_postularme2Fragment2_action_postularme2Fragment_to_cuentaFragment"
             app:destination="@id/cuentaFragment" />
     </fragment>
     <fragment

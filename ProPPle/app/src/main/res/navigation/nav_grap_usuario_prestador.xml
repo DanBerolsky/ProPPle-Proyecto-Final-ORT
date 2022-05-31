@@ -20,10 +20,10 @@
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" />
     <fragment
-        android:id="@+id/cuentaUsuarioPrestadorFragment"
+        android:id="@+id/cuentaFragment"
         android:name="com.example.propple.fragments.clientePrestador.CuentaUsuarioPrestadorFragment"
-        android:label="cuenta_usuario_prestador_fragment"
-        tools:layout="@layout/cuenta_usuario_prestador_fragment" >
+        android:label="cuentaFragment"
+        tools:layout="@layout/cuenta_usuario_prestador_fragment">
         <action
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_datosPersonalesEditFragment2"
             app:destination="@id/datosPersonalesEditFragment2" />
@@ -31,7 +31,7 @@
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_misPreferenciasFragment2"
             app:destination="@id/misPreferenciasFragment2" />
         <action
-            android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_postularmeFragment2"
+            android:id="@+id/action_cuentaFragment_to_postularmeFragment"
             app:destination="@id/postularmeFragment2" />
         <action
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_cambiarContraseniaPrestadorFragment"
@@ -63,7 +63,11 @@
         android:id="@+id/postularme2Fragment2"
         android:name="com.example.propple.fragments.cliente.Postularme2Fragment"
         android:label="postularme2_fragment"
-        tools:layout="@layout/postularme2_fragment" />
+        tools:layout="@layout/postularme2_fragment" >
+        <action
+            android:id="@+id/action_postularme2Fragment2_action_postularme2Fragment_to_cuentaFragment"
+            app:destination="@id/cuentaFragment" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity3"
         android:name="com.example.propple.activities.cliente.MainActivity"
@@ -122,7 +126,7 @@
         android:label="MisPublicacionesFragment" >
         <action
             android:id="@+id/action_misPublicacionesFragment_to_cuentaUsuarioPrestadorFragment"
-            app:destination="@id/cuentaUsuarioPrestadorFragment" />
+            app:destination="@id/cuentaFragment" />
         <action
             android:id="@+id/action_misPublicacionesFragment_to_publicacionFragment"
             app:destination="@id/publicacionFragment" />

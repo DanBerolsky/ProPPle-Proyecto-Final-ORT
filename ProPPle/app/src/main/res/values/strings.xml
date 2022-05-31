@@ -24,4 +24,12 @@
         <item>Prefiero no decir</item>
         <item>Otro</item>
     </string-array>
+    <string-array name="rubros">
+        <item>Plomería</item>
+        <item>Electricista</item>
+        <item>Domestica</item>
+        <item>Acondicionados</item>
+        <item>Gasista</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

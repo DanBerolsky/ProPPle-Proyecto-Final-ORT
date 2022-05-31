@@ -5,16 +5,15 @@
     android:id="@+id/acaDoc"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFEB3B"
-    android:elevation="20dp"
-    app:cardBackgroundColor="#00FFFFFF"
-    app:cardCornerRadius="15dp">
+    android:layout_margin="20dp"
+    android:elevation="10dp"
+    app:cardBackgroundColor="#1D000000">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:background="#DBCBF8">
+        android:layout_margin="2dp"
+        android:background="#B4A890CA">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -28,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/btnAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/avatar_1" />
@@ -67,7 +66,7 @@
             android:id="@+id/txtTitle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="24dp"
             android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -103,7 +102,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#11000000"
+                android:backgroundTint="#28000000"
                 android:contentDescription="TODO"
+                android:hapticFeedbackEnabled="false"
                 android:tag="estrella1"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
                 app:tint="#81817D" />
@@ -113,6 +115,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#11000000"
+                android:backgroundTint="#28000000"
+                android:hapticFeedbackEnabled="false"
                 android:tag="estrella2"
                 android:visibility="visible"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
@@ -123,6 +128,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#11000000"
+                android:backgroundTint="#28000000"
+                android:hapticFeedbackEnabled="false"
                 android:tag="estrella3"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
                 app:tint="#81817D" />
@@ -132,6 +140,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#11000000"
+                android:backgroundTint="#28000000"
+                android:hapticFeedbackEnabled="false"
                 android:tag="estrella4"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
                 app:tint="#81817D" />
@@ -141,6 +152,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#11000000"
+                android:backgroundTint="#28000000"
+                android:hapticFeedbackEnabled="false"
                 android:tag="estrella5"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
                 app:tint="#81817D" />

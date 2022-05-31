@@ -1,23 +1,14 @@
 package com.example.propple.fragments.cliente
 
 
-import android.Manifest
-import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Geocoder
-import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
-import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
@@ -26,7 +17,6 @@ import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
-import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.viewModel.cliente.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -82,6 +72,12 @@ class RegistroUsuarioFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        googleMaps.lat.observe(viewLifecycleOwner, Observer {
+            latitude=it
+        })
+        googleMaps.lon.observe(viewLifecycleOwner, Observer {
+            longitude=it
+        })
 
         binding.btnVerContra1.setOnClickListener {
             if (binding.InContrasenia1.inputType==129){

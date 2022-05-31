@@ -9,7 +9,7 @@
     android:backgroundTint="@color/rosa_para_input"
     android:elevation="20dp"
     app:cardBackgroundColor="#C6A890CA"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/btnAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/avatar_1" />

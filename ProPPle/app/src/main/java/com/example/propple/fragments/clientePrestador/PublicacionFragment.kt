@@ -1,15 +1,15 @@
 package com.ort.casodeusotest.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ort.casodeusotest.viewModel.PublicacionViewModel
 
 class PublicacionFragment : Fragment() {
