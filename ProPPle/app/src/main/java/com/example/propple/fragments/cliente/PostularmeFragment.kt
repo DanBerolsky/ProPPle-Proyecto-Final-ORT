@@ -1,7 +1,7 @@
 package com.example.propple.fragments.cliente
 
-import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,11 +13,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.PostularmeFragmentBinding
+import com.example.propple.utils.fileController
+import com.example.propple.utils.fileController.getFileName
+import com.example.propple.utils.fileController.getRealPathFromURI
 import com.example.propple.viewModel.cliente.PostularmeViewModel
 import com.google.android.material.snackbar.Snackbar
+import java.io.File
+import java.io.InputStream
+import java.net.URI
 
 class PostularmeFragment : Fragment() {
-
 
 
     private lateinit var viewModel: PostularmeViewModel
@@ -25,6 +30,16 @@ class PostularmeFragment : Fragment() {
     private lateinit var btnPostularme : Button
     private lateinit var binding:PostularmeFragmentBinding
     private var rubro:String=""
+    val fileLaucher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        var uri = it.data?.data!!
+        binding.InCv.setText(getFileName(uri,requireContext()))
+        //var adsa : InputStream? = activity?.contentResolver?.openInputStream(uri)
+        //Snackbar.make(v,adsa.toString() ,Snackbar.LENGTH_LONG).show()
+        //var dfPath = uri.path
+        //var file: File = File(dfPath)
+        //val encode = fileController.encodeFileToBase64Binary(file)
+        //var absolutePathPdf = file.getAbsolutePath()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +53,10 @@ class PostularmeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+
+        binding.btnAdjt.setOnClickListener {
+            fileController.pickFile(fileLaucher)
+        }
 
         btnPostularme.setOnClickListener {
             val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
@@ -57,7 +76,7 @@ class PostularmeFragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    rubro = getResources().getStringArray(R.array.rubros)[position]
+                    rubro = resources.getStringArray(R.array.rubros)[position]
                     Snackbar.make(v,rubro, Snackbar.LENGTH_SHORT).show()
                     binding.InRubro.setText(rubro)
                 }

@@ -42,7 +42,9 @@
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
+                android:clickable="false"
                 android:ems="10"
+                android:focusable="false"
                 android:hint="  Seleccione su rubro"
                 android:paddingLeft="10dp" />
 
@@ -79,18 +81,20 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/InFechaDeNacimiento"
+                android:id="@+id/InCv"
                 android:layout_width="270dp"
                 android:layout_height="match_parent"
                 android:background="@color/rosa_para_input"
                 android:backgroundTint="#00AA3E3E"
+                android:clickable="false"
                 android:ems="10"
+                android:focusable="false"
                 android:hint="  Adjunte su CV"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp" />
 
             <ImageView
-                android:id="@+id/btnGenero"
+                android:id="@+id/btnAdjt"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

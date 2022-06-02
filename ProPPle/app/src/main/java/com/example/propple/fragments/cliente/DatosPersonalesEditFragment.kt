@@ -16,6 +16,7 @@ import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.utils.fileController
 import com.example.propple.utils.imgController.base64Encode
 import com.example.propple.utils.imgController.base64decode
 import com.example.propple.utils.imgController.pickPhotoFromGalery
@@ -23,6 +24,7 @@ import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+import java.io.File
 
 
 class datosPersonalesEditFragment : Fragment() {
@@ -51,6 +53,8 @@ class datosPersonalesEditFragment : Fragment() {
         var uri= it.data?.data!!
         binding.Avatar.setImageURI(uri)
         prefs.setUrlImage(uri,requireContext())
+
+
         //Log.i("holaa",base64Encode(uri))
         //val aux= base64Encode(uri,requireContext())
         //binding.Avatar.setImageBitmap(base64decode(base64Encode(uri,requireContext())))
@@ -125,7 +129,7 @@ class datosPersonalesEditFragment : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    genero= getResources().getStringArray(R.array.generos)[position]
+                    genero= resources.getStringArray(R.array.generos)[position]
                     Snackbar.make(v,genero,Snackbar.LENGTH_SHORT).show()
                     binding.inGenero.setText(genero)
                 }
@@ -137,8 +141,8 @@ class datosPersonalesEditFragment : Fragment() {
 
         if (prefs.getUrlImageString()!="")
             binding.Avatar.setImageBitmap(prefs.getUrlImage())
-        binding.Nombre.setText(nombre+" "+apellido)
-        binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
+        binding.Nombre.text = nombre+" "+apellido
+        binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
         binding.btnDate1.setOnClickListener { showDatePickerDialog() }
         binding.InDirecion.setText(dir)
         binding.InFechaDeNacrimiento.setText(fechaDeNacimiento)
@@ -203,8 +207,8 @@ class datosPersonalesEditFragment : Fragment() {
                 nombre=prefs.getNombre()
                 apellido=prefs.getApellido()
                 alias=prefs.getAlias()
-                binding.Nombre.setText(nombre+" "+apellido)
-                binding.aliasRoll.setText(alias+ " - "+ prefs.getRol())
+                binding.Nombre.text = nombre+" "+apellido
+                binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
             }
         })
     }

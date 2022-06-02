@@ -15,6 +15,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.196" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.295" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.196" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_local_parking_24.xml" value="0.1665" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.196" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.238" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/ic_baseline_maximize_24.xml" value="0.295" />
@@ -78,6 +79,8 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/validacion_de_cuenta_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/menu/bottom_bar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/menu/bottom_bar_usuario_prestador.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.155" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1665" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.12" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.20416666666666666" />
       </map>
