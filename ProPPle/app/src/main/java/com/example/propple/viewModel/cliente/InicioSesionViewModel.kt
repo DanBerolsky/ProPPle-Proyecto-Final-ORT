@@ -65,6 +65,7 @@ class InicioSesionViewModel : ViewModel() {
                     response.gender?.let { prefs.setGenero(it) }
                     response.location?.let { prefs.setDireccion(it) }
                     prefs.setApellido(response.user_last_name)
+                    //response.url_image?.let { prefs.setUrlImageString(it) }
                 }
 
             }else{

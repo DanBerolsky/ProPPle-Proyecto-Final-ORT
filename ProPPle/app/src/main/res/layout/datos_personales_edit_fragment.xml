@@ -22,7 +22,6 @@
             android:layout_width="99dp"
             android:layout_height="99dp"
             app:cardCornerRadius="50dp"
-
             >
 
             <ImageView

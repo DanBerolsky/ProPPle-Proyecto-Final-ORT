@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.PostularmeFragmentBinding
 import com.example.propple.utils.fileController
+import com.example.propple.utils.fileController.encodeFileToBase64Binary
 import com.example.propple.utils.fileController.getFileName
 import com.example.propple.utils.fileController.getRealPathFromURI
 import com.example.propple.viewModel.cliente.PostularmeViewModel
@@ -33,6 +34,8 @@ class PostularmeFragment : Fragment() {
     val fileLaucher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         var uri = it.data?.data!!
         binding.InCv.setText(getFileName(uri,requireContext()))
+        val sss = encodeFileToBase64Binary(File(uri.path))
+        Snackbar.make(v,sss.toString(),Snackbar.LENGTH_LONG).show()
         //var adsa : InputStream? = activity?.contentResolver?.openInputStream(uri)
         //Snackbar.make(v,adsa.toString() ,Snackbar.LENGTH_LONG).show()
         //var dfPath = uri.path
