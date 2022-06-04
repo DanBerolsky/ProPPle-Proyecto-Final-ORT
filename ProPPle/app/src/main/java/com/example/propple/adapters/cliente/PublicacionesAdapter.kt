@@ -53,7 +53,7 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
 
         fun click() {
             view.findViewById<CardView>(R.id.acaDoc).setOnClickListener(){
-                view.findNavController().navigate( PublicacionesFragmentDirections.actionPublicacionesFragmentToPublicacionVistaPublicaFragment())
+                view.findNavController().navigate( PublicacionesFragmentDirections.actionPublicacionesFragmentToPublicacionVistaPublicaFragment2())
             }
         }
 

@@ -178,12 +178,42 @@
             android:name="rubroIndex"
             app:argType="string" />
         <action
-            android:id="@+id/action_publicacionesFragment_to_publicacionVistaPublicaFragment"
+            android:id="@+id/action_publicacionesFragment_to_publicacionVistaPublicaFragment2"
             app:destination="@id/publicacionVistaPublicaFragment" />
     </fragment>
     <fragment
         android:id="@+id/publicacionVistaPublicaFragment"
         android:name="com.example.propple.adapters.cliente.publicacionVistaPublicaFragment"
         android:label="fragment_publicacion_vista_publica"
-        tools:layout="@layout/fragment_publicacion_vista_publica" />
+        tools:layout="@layout/fragment_publicacion_vista_publica" >
+        <action
+            android:id="@+id/action_publicacionVistaPublicaFragment_to_comentarios2Fragment2"
+            app:destination="@id/comentarios2Fragment2" />
+        <action
+            android:id="@+id/action_publicacionVistaPublicaFragment_to_formalizacionAcuerdoFragment2"
+            app:destination="@id/formalizacionAcuerdoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentarios2Fragment2"
+        android:name="com.example.propple.fragments.cliente.Comentarios2Fragment"
+        android:label="fragment_comentarios2"
+        tools:layout="@layout/fragment_comentarios2" />
+    <fragment
+        android:id="@+id/formalizacionAcuerdoFragment2"
+        android:name="com.example.propple.fragments.cliente.FormalizacionAcuerdoFragment"
+        android:label="fragment_formalizacion_acuerdo"
+        tools:layout="@layout/fragment_formalizacion_acuerdo" >
+        <action
+            android:id="@+id/action_formalizacionAcuerdoFragment2_to_formalizacionEnvioFragment"
+            app:destination="@id/formalizacionEnvioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formalizacionEnvioFragment"
+        android:name="com.example.propple.fragments.cliente.FormalizacionEnvioFragment"
+        android:label="fragment_formalizacion_envio"
+        tools:layout="@layout/fragment_formalizacion_envio" >
+        <action
+            android:id="@+id/action_formalizacionEnvioFragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
 </navigation>

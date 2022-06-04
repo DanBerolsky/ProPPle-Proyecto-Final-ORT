@@ -94,5 +94,35 @@
         android:id="@+id/publicacionVistaPublicaFragment"
         android:name="com.example.propple.adapters.cliente.publicacionVistaPublicaFragment"
         android:label="fragment_publicacion_vista_publica"
-        tools:layout="@layout/fragment_publicacion_vista_publica" />
+        tools:layout="@layout/fragment_publicacion_vista_publica" >
+        <action
+            android:id="@+id/action_publicacionVistaPublicaFragment_to_comentarios2Fragment"
+            app:destination="@id/comentarios2Fragment" />
+        <action
+            android:id="@+id/action_publicacionVistaPublicaFragment_to_formalizacionAcuerdoFragment"
+            app:destination="@id/formalizacionAcuerdoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentarios2Fragment"
+        android:name="com.example.propple.fragments.cliente.Comentarios2Fragment"
+        android:label="fragment_comentarios2"
+        tools:layout="@layout/fragment_comentarios2" />
+    <fragment
+        android:id="@+id/formalizacionAcuerdoFragment"
+        android:name="com.example.propple.fragments.cliente.FormalizacionAcuerdoFragment"
+        android:label="fragment_formalizacion_acuerdo"
+        tools:layout="@layout/fragment_formalizacion_acuerdo" >
+        <action
+            android:id="@+id/action_formalizacionAcuerdoFragment_to_formalizacionEnvioFragment2"
+            app:destination="@id/formalizacionEnvioFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/formalizacionEnvioFragment2"
+        android:name="com.example.propple.fragments.cliente.FormalizacionEnvioFragment"
+        android:label="fragment_formalizacion_envio"
+        tools:layout="@layout/fragment_formalizacion_envio" >
+        <action
+            android:id="@+id/action_formalizacionEnvioFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

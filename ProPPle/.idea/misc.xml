@@ -81,8 +81,19 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/menu/bottom_bar_usuario_prestador.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.155" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1665" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/comentarios_fragment.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/datos_personales_edit_fragment.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_blank.xml" value="0.11775362318840579" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_comentarios2.xml" value="0.20244565217391305" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_formalizacion_acuerdo.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_formalizacion_envio.xml" value="0.11775362318840579" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_publicacion_vista_publica.xml" value="0.18" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.12" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario2.xml" value="0.5" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_acordada.xml" value="0.11775362318840579" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_solicitada.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/servicios_contratados_pendiente_pago_item.xml" value="0.67" />
       </map>
     </option>
   </component>
