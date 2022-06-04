@@ -51,9 +51,9 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
             txt.setText(x)
         }
 
-        fun click() {
+        fun click(id : Int) {
             view.findViewById<CardView>(R.id.acaDoc).setOnClickListener(){
-                view.findNavController().navigate( PublicacionesFragmentDirections.actionPublicacionesFragmentToPublicacionVistaPublicaFragment2())
+                view.findNavController().navigate( PublicacionesFragmentDirections.actionPublicacionesFragmentToPublicacionVistaPublicaFragment(id.toLong()))
             }
         }
 
@@ -75,7 +75,7 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
         publicacionesList?.get(position)?.precio_x_hora.let { holder.setPrecio(it) }
         publicacionesList?.get(position)?.puntuacion?.let { holder.setValoracion(it) }
         publicacionesList?.get(position)?.location?.let { holder.setUbicacion(it) }
-        publicacionesList?.get(position)?.id_publicacion?.let { holder.click() }
+        publicacionesList?.get(position)?.id_publicacion?.let { holder.click(it) }
     }
 
 

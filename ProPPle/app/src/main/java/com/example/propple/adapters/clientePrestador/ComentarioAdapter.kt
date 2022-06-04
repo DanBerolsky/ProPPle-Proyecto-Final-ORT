@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.ort.casodeusotest.entities.Comentario
+import com.example.propple.api.publication.Comentario
 
-class ComentarioAdapter (var comentarioList: MutableList<Comentario>,
-                         var onClick : (Int) -> Unit) : RecyclerView.Adapter<ComentarioAdapter.ComentarioHolder>() {
+class ComentarioAdapter (var comentarioList: List<Comentario>) : RecyclerView.Adapter<ComentarioAdapter.ComentarioHolder>() {
     class ComentarioHolder (v : View) : RecyclerView.ViewHolder(v) {
         private var view : View
         init {
@@ -27,7 +26,7 @@ class ComentarioAdapter (var comentarioList: MutableList<Comentario>,
 
     override fun onBindViewHolder(holder: ComentarioHolder, position: Int) {
         holder.getCard().setOnClickListener {
-            onClick(position)
+            //onClick(position)
         }
     }
 

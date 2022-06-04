@@ -6,18 +6,17 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.ort.casodeusotest.entities.Comentario
+import com.example.propple.api.publication.Comentario
 
-class Comentario2Adapter (var comentarioList: MutableList<Comentario>,
-                          var onClick : (Int) -> Unit) : RecyclerView.Adapter<Comentario2Adapter.Comentario2Holder>() {
+class Comentario2Adapter (var comentarioList: List<Comentario>) : RecyclerView.Adapter<Comentario2Adapter.Comentario2Holder>() {
     class Comentario2Holder (v : View) : RecyclerView.ViewHolder(v) {
         private var view : View
         init {
             this.view = v
         }
-        fun getCard () : CardView {
+        /*fun getCard () : CardView {
             return view.findViewById(R.id.cardComentarioItem)
-        }
+        }*/
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Comentario2Holder {
@@ -26,9 +25,9 @@ class Comentario2Adapter (var comentarioList: MutableList<Comentario>,
     }
 
     override fun onBindViewHolder(holder: Comentario2Holder, position: Int) {
-        holder.getCard().setOnClickListener {
+        /*holder.getCard().setOnClickListener {
             onClick(position)
-        }
+        }*/
     }
 
     override fun getItemCount(): Int {

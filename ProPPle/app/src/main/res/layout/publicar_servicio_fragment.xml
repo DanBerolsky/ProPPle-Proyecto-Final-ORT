@@ -85,7 +85,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/textCantVeces"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

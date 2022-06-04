@@ -69,7 +69,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/textprecio"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
 import com.example.propple.R
-import com.example.propple.adapters.cliente.publicacionVistaPublicaFragmentDirections
 import com.example.propple.viewModel.cliente.FormalizacionAcuerdoViewModel
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -36,8 +35,8 @@ class FormalizacionAcuerdoFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnSolicitar.setOnClickListener {
-            val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragment2ToFormalizacionEnvioFragment()
-            v.findNavController().navigate(action)
+            //val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragment2ToFormalizacionEnvioFragment()
+            //v.findNavController().navigate(action)
         }
     }
 

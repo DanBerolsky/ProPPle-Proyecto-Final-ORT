@@ -68,7 +68,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textCantVeces"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
@@ -94,7 +94,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/títuloDelServicio"
                 android:layout_width="340dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
@@ -106,7 +106,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                app:layout_constraintTop_toBottomOf="@+id/textCantVeces" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -118,7 +118,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
             <TextView
                 android:id="@+id/textView22"
@@ -130,20 +130,20 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/textprecio"
                 android:layout_width="80dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:text="$precio"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textDescripción"
                 android:layout_width="300dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="15dp"
@@ -163,17 +163,17 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textDireccion"
                 android:layout_width="200dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Dirección Google Maps"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView24"
-                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnEditarPublicacion"

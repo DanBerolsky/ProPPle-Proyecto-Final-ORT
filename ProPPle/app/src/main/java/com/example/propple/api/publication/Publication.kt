@@ -4,7 +4,7 @@ data class Publication(
     val cant_transacciones: Int,
     val id_publicacion: Int,
     val id_rubro: Int,
-    val id_usuario_prestador: Int,
+    val id_usuario_prestador: String,
     val location: String,
     val location_latitud: Double,
     val location_longitud: Double,
