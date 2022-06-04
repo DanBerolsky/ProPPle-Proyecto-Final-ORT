@@ -42,6 +42,21 @@ class Prefs(context: Context) {
         return prefs.getString("alias", "").toString()
     }
 
+    fun setLat(Direccion: Double) {
+        prefs.edit().putString("lat", Direccion.toString()).apply()
+    }
+
+    fun getLat(): Double {
+        return prefs.getString("lat", "0.0")?.toDouble() ?: 0.0
+    }
+
+    fun setLon(Direccion: Double) {
+        prefs.edit().putString("lon", Direccion.toString()).apply()
+    }
+
+    fun getLon(): Double {
+        return prefs.getString("lon", "0.0")?.toDouble() ?: 0.0
+    }
     fun setDireccion(Direccion: String) {
         prefs.edit().putString("direccion", Direccion).apply()
     }

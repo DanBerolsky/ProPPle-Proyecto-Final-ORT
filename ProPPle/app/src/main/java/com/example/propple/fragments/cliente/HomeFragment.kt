@@ -10,7 +10,10 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.HomeFragmentBinding
+import com.example.propple.shared.ProPPle
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.viewModel.cliente.HomeViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class homeFragment : Fragment() {
 
@@ -28,11 +31,14 @@ class homeFragment : Fragment() {
     ): View? {
         v=inflater.inflate(R.layout.home_fragment, container, false)
         binding=HomeFragmentBinding.bind(v)
+
         return v
     }
 
     override fun onStart() {
         super.onStart()
+
+
 
         binding.btnPlomeria.setOnClickListener {
             val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Plomeria")

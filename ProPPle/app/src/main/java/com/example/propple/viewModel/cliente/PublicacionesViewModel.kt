@@ -7,6 +7,7 @@ import com.example.propple.api.RetrofitHelper
 import com.example.propple.api.interfaces.PublicationService
 import com.example.propple.api.publication.Publication
 import com.example.propple.shared.ProPPle
+import com.example.propple.shared.ProPPle.Companion.prefs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +20,8 @@ class PublicacionesViewModel : ViewModel() {
 
         CoroutineScope(Dispatchers.IO).launch {
             var call : Response<List<Publication>> = RetrofitHelper.getRetrofit().create(PublicationService::class.java).getPublications(
-                ProPPle.prefs.getJwt(), ProPPle.prefs.getMenorPrecioBase(), ProPPle.prefs.getMejorValoracion(), ProPPle.prefs.getDireccion(),rubro)
+                ProPPle.prefs.getJwt(), ProPPle.prefs.getMenorPrecioBase(), ProPPle.prefs.getMejorValoracion(), ProPPle.prefs.getLat().toString()+","+prefs.getLon().toString(),rubro)
+            Log.i("hola",ProPPle.prefs.getJwt()+ ProPPle.prefs.getMenorPrecioBase()+ ProPPle.prefs.getMejorValoracion()+ ProPPle.prefs.getLat().toString()+prefs.getLon().toString()+rubro)
             if(call.isSuccessful){
                 val response : List<Publication>? = call.body()
                 if (response!=null){

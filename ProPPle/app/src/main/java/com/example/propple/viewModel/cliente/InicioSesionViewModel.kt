@@ -9,7 +9,9 @@ import com.example.propple.api.UserClient.LoginModelRes
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.api.interfaces.LoginSignInService
 import com.example.propple.api.interfaces.UserClientService
+import com.example.propple.shared.ProPPle
 import com.example.propple.shared.ProPPle.Companion.prefs
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -66,6 +68,9 @@ class InicioSesionViewModel : ViewModel() {
                     response.location?.let { prefs.setDireccion(it) }
                     prefs.setApellido(response.user_last_name)
                     //response.url_image?.let { prefs.setUrlImageString(it) }
+                    response.location_latitud?.let { prefs.setLat(it.toDouble()) }
+                    response.location_longitud?.let { prefs.setLon(it.toDouble()) }
+
                 }
 
             }else{
