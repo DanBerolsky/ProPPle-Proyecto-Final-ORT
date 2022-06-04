@@ -35,8 +35,8 @@ class FormalizacionAcuerdoFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnSolicitar.setOnClickListener {
-            //val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragment2ToFormalizacionEnvioFragment()
-            //v.findNavController().navigate(action)
+            val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragmentToFormalizacionEnvioFragment()
+            v.findNavController().navigate(action)
         }
     }
 

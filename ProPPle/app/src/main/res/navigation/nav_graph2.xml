@@ -101,6 +101,9 @@
         <action
             android:id="@+id/action_publicacionVistaPublicaFragment_to_comentarios2Fragment2"
             app:destination="@id/comentarios2Fragment" />
+        <action
+            android:id="@+id/action_publicacionVistaPublicaFragment_to_formalizacionAcuerdoFragment2"
+            app:destination="@id/formalizacionAcuerdoFragment" />
     </fragment>
     <fragment
         android:id="@+id/comentarios2Fragment"
@@ -110,5 +113,23 @@
         <argument
             android:name="id"
             app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/formalizacionAcuerdoFragment"
+        android:name="com.example.propple.fragments.cliente.FormalizacionAcuerdoFragment"
+        android:label="fragment_formalizacion_acuerdo"
+        tools:layout="@layout/fragment_formalizacion_acuerdo" >
+        <action
+            android:id="@+id/action_formalizacionAcuerdoFragment_to_formalizacionEnvioFragment"
+            app:destination="@id/formalizacionEnvioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formalizacionEnvioFragment"
+        android:name="com.example.propple.fragments.cliente.FormalizacionEnvioFragment"
+        android:label="fragment_formalizacion_envio"
+        tools:layout="@layout/fragment_formalizacion_envio" >
+        <action
+            android:id="@+id/action_formalizacionEnvioFragment_to_home_fragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

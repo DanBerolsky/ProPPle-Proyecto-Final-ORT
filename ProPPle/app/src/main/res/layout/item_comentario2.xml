@@ -5,7 +5,7 @@
     android:id="@+id/cardComentarioItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="16dp"
     android:elevation="20dp"
     app:cardBackgroundColor="#A890CA"
     app:cardCornerRadius="15dp">
@@ -89,6 +89,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/banco_negro"
+                        android:backgroundTint="@color/banco_negro"
                         android:hint="Consulta" />
                 </com.google.android.material.textfield.TextInputLayout>
 

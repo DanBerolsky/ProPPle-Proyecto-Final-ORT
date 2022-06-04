@@ -1,7 +1,9 @@
 package com.example.propple.adapters.cliente
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -46,6 +48,11 @@ class publicacionVistaPublicaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        binding.fabContactar.setOnClickListener{
+            val act = publicacionVistaPublicaFragmentDirections.actionPublicacionVistaPublicaFragmentToFormalizacionAcuerdoFragment2()
+            nav(act)
+        }
+
 
 
     }
@@ -59,6 +66,17 @@ class publicacionVistaPublicaFragment : Fragment() {
     }
     fun nav( action: NavDirections){
         v.findNavController().navigate(action)
+    }
+    fun getWhatsapp(telefono:String,mensaje:String){
+        //hola,%20qué%20tal?
+        val oldValue = " "
+        val newValue = "%20"
+        val output = mensaje.replace(oldValue, newValue)
+        Log.i("mensaje", output)
+        val url = "https://api.whatsapp.com/send?phone=${telefono}&text=${output}";
+        val i = Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i)
     }
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -81,7 +99,11 @@ class publicacionVistaPublicaFragment : Fragment() {
                     actionPublicacionVistaPublicaFragmentToComentarios2Fragment2(it.id_publicacion.toLong())
                     nav(act)
                 }
-
+                binding.fabWapp1.setOnClickListener{resul->
+                   // val mensaje = "Hola ${it.name}!!/nContacto con usted para conocer mas sobre su ProppleService."
+                   // getWhatsapp(it.phone,mensaje)
+                    getWhatsapp("5491164960203","Hola que onda doc?")
+                }
             }
         } )
 

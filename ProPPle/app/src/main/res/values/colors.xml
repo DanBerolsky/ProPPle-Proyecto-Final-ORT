@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="rosa_para_input">#A890CA</color>
+    <color name="estrellaOscura">#383636</color>
     <color name="banco_negro">#2B2B2B</color>
     <color name="Gris_GrisOscuro">#474646</color>
     <color name="negro_blaco">#FFF</color>

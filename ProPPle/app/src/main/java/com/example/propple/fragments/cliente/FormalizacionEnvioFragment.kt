@@ -33,8 +33,8 @@ class FormalizacionEnvioFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnHome2.setOnClickListener {
-            //val action = FormalizacionEnvioFragmentDirections.actionFormalizacionEnvioFragmentToHomeFragment()
-            //v.findNavController().navigate(action)
+            val action = FormalizacionEnvioFragmentDirections.actionFormalizacionEnvioFragmentToHomeFragment()
+            v.findNavController().navigate(action)
         }
     }
 

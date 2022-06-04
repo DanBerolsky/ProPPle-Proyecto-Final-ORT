@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="24dp"
-            android:textColor="#000000"
+            android:textColor="@color/banco_negro"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toStartOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.0"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:textColor="@color/negro_blaco"
+            android:textColor="@color/banco_negro"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
@@ -108,7 +108,7 @@
                 android:hapticFeedbackEnabled="false"
                 android:tag="estrella1"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#81817D" />
+                app:tint="@color/estrellaOscura" />
 
             <ImageView
                 android:id="@+id/estrella2"
@@ -121,7 +121,7 @@
                 android:tag="estrella2"
                 android:visibility="visible"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#81817D" />
+                app:tint="@color/estrellaOscura" />
 
             <ImageView
                 android:id="@+id/estrella3"
@@ -133,7 +133,7 @@
                 android:hapticFeedbackEnabled="false"
                 android:tag="estrella3"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#81817D" />
+                app:tint="@color/estrellaOscura" />
 
             <ImageView
                 android:id="@+id/estrella4"
@@ -145,7 +145,7 @@
                 android:hapticFeedbackEnabled="false"
                 android:tag="estrella4"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#81817D" />
+                app:tint="@color/estrellaOscura" />
 
             <ImageView
                 android:id="@+id/estrella5"
@@ -157,7 +157,7 @@
                 android:hapticFeedbackEnabled="false"
                 android:tag="estrella5"
                 app:srcCompat="@drawable/ic_baseline_star_rate_24"
-                app:tint="#81817D" />
+                app:tint="@color/estrellaOscura" />
 
         </LinearLayout>
 
@@ -186,7 +186,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="0dp"
                 android:gravity="center_vertical"
-                android:textColor="#605E5E"
+                android:textColor="@color/banco_negro"
                 android:textSize="10sp" />
 
         </LinearLayout>

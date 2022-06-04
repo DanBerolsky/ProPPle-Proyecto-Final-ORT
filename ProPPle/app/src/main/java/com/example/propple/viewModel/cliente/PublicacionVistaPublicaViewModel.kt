@@ -1,5 +1,7 @@
 package com.example.propple.viewModel.cliente
 
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -51,4 +53,7 @@ class PublicacionVistaPublicaViewModel : ViewModel() {
 
         }
     }
+
+
+
 }
