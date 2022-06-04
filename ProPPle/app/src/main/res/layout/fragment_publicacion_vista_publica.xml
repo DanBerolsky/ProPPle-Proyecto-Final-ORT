@@ -56,45 +56,124 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
 
                     <TextView
                         android:id="@+id/textView16"
-                        android:layout_width="150dp"
+                        android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
                         android:text="Nombre"
                         android:textAlignment="textStart"
                         android:textSize="35dp"
                         android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/cardView4"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="180dp"
+                        android:id="@+id/textCantVeces"
+                        android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
                         android:text="Ha realizado X veces este servicio"
                         android:textSize="15sp"
                         android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/cardView4"
                         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-                    <Button
-                        android:id="@+id/button10"
-                        android:layout_width="55dp"
-                        android:layout_height="65dp"
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="125dp"
+                        android:layout_height="25dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:backgroundTint="#6750A4"
-                        android:text="Y.Y"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        app:cornerRadius="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toTopOf="@+id/títuloDelServicio"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textCantVeces">
+
+                        <ImageView
+                            android:id="@+id/estrella1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="#11000000"
+                            android:backgroundTint="#28000000"
+                            android:contentDescription="TODO"
+                            android:hapticFeedbackEnabled="false"
+                            android:tag="estrella1"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ic_baseline_star_rate_24"
+                            app:tint="#81817D" />
+
+                        <ImageView
+                            android:id="@+id/estrella2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="#11000000"
+                            android:backgroundTint="#28000000"
+                            android:hapticFeedbackEnabled="false"
+                            android:tag="estrella2"
+                            app:srcCompat="@drawable/ic_baseline_star_rate_24"
+                            app:tint="#81817D" />
+
+                        <ImageView
+                            android:id="@+id/estrella3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="#11000000"
+                            android:backgroundTint="#28000000"
+                            android:hapticFeedbackEnabled="false"
+                            android:tag="estrella3"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ic_baseline_star_rate_24"
+                            app:tint="#81817D" />
+
+                        <ImageView
+                            android:id="@+id/estrella4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="#11000000"
+                            android:backgroundTint="#28000000"
+                            android:hapticFeedbackEnabled="false"
+                            android:tag="estrella4"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ic_baseline_star_rate_24"
+                            app:tint="#81817D" />
+
+                        <ImageView
+                            android:id="@+id/estrella5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="1"
+                            android:background="#11000000"
+                            android:backgroundTint="#28000000"
+                            android:hapticFeedbackEnabled="false"
+                            android:tag="estrella5"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ic_baseline_star_rate_24"
+                            app:tint="#81817D" />
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/títuloDelServicio"
                         android:layout_width="340dp"
                         android:layout_height="35dp"
                         android:layout_marginStart="5dp"
@@ -106,7 +185,7 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
                     <TextView
                         android:id="@+id/textView21"
@@ -118,7 +197,7 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                        app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
                     <TextView
                         android:id="@+id/textView22"
@@ -130,20 +209,20 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                        app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
                     <TextView
-                        android:id="@+id/textView20"
+                        android:id="@+id/textprecio"
                         android:layout_width="80dp"
                         android:layout_height="20dp"
                         android:layout_marginTop="10dp"
                         android:text="$precio"
                         android:textSize="15sp"
                         app:layout_constraintStart_toEndOf="@+id/textView21"
-                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                        app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
                     <TextView
-                        android:id="@+id/textView23"
+                        android:id="@+id/textDescripción"
                         android:layout_width="300dp"
                         android:layout_height="20dp"
                         android:layout_marginStart="15dp"
@@ -163,10 +242,10 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                        app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
 
                     <TextView
-                        android:id="@+id/textView25"
+                        android:id="@+id/textDireccion"
                         android:layout_width="200dp"
                         android:layout_height="20dp"
                         android:layout_marginTop="10dp"
@@ -175,17 +254,12 @@ tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView24"
-                        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                        app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recComentarios"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp" />
         </LinearLayout>
     </ScrollView>
 
