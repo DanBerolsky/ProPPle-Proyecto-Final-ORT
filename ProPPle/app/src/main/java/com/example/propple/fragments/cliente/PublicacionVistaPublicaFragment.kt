@@ -93,6 +93,7 @@ class publicacionVistaPublicaFragment : Fragment() {
                 binding.textprecio.text="$"+it.precio_x_hora
                 binding.textCantVeces.text="Ha realizado ${it.cant_transacciones} veces este servicio"
                 binding.tTuloDelServicio.text=it.title
+                binding.Nombre.text=it.user_name+" "+it.user_last_name
 
                 binding.btnComen2.setOnClickListener {resutl ->
                     var act:NavDirections = publicacionVistaPublicaFragmentDirections.
@@ -100,9 +101,9 @@ class publicacionVistaPublicaFragment : Fragment() {
                     nav(act)
                 }
                 binding.fabWapp1.setOnClickListener{resul->
-                   // val mensaje = "Hola ${it.name}!!/nContacto con usted para conocer mas sobre su ProppleService."
-                   // getWhatsapp(it.phone,mensaje)
-                    getWhatsapp("5491164960203","Hola que onda doc?")
+                    val mensaje = "Hola ${it.user_name}!!/nContacto con usted para conocer mas sobre su ProppleService."
+                    getWhatsapp(it.phone,mensaje)
+                    //getWhatsapp("5491164960203","Hola que onda doc?")
                 }
             }
         } )

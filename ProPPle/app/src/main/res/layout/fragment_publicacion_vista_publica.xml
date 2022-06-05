@@ -38,36 +38,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView4"
+                        android:id="@+id/cardView"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="20dp"
                         app:cardCornerRadius="50dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/btnAvatar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:srcCompat="@drawable/avatar_1" />
+
                     </androidx.cardview.widget.CardView>
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/Nombre"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="10dp"
                         android:text="Nombre"
-                        android:textAlignment="textStart"
+                        android:textAlignment="center"
                         android:textSize="35dp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/cardView4"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -75,14 +77,15 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="10dp"
                         android:text="Ha realizado X veces este servicio"
+                        android:textAlignment="center"
                         android:textSize="15sp"
                         android:textStyle="italic"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/cardView4"
-                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout2"

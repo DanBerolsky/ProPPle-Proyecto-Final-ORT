@@ -12,5 +12,8 @@ data class Publication(
     val publicacion_description: String,
     val puntuacion: Int,
     val title: String,
-    val visibility: Boolean
+    val visibility: Boolean,
+    val phone: String,
+    val user_last_name: String,
+    val user_name: String,
 )
