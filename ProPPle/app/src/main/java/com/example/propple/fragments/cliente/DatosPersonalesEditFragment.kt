@@ -1,6 +1,8 @@
 package com.example.propple.fragments.cliente
 
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,7 +56,8 @@ class datosPersonalesEditFragment : Fragment() {
         binding.Avatar.setImageURI(uri)
         prefs.setUrlImage(uri,requireContext())
 
-
+        lat=prefs.getLat()
+        lon=prefs.getLon()
         //Log.i("holaa",base64Encode(uri))
         //val aux= base64Encode(uri,requireContext())
         //binding.Avatar.setImageBitmap(base64decode(base64Encode(uri,requireContext())))
@@ -74,8 +77,8 @@ class datosPersonalesEditFragment : Fragment() {
         alias=prefs.getAlias()
         genero=prefs.getGenero()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
-
-
+        lat=prefs.getLat()
+        lon=prefs.getLon()
         return v
     }
 
@@ -191,6 +194,7 @@ class datosPersonalesEditFragment : Fragment() {
     }
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DatosPersonalesEditViewModel::class.java)
@@ -209,6 +213,7 @@ class datosPersonalesEditFragment : Fragment() {
                 alias=prefs.getAlias()
                 binding.Nombre.text = nombre+" "+apellido
                 binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
+                binding.Avatar.setImageDrawable(getResources().getDrawable(R.drawable.avatar_1))
             }
         })
     }

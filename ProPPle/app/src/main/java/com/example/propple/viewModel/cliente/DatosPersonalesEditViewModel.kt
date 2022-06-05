@@ -51,6 +51,7 @@ class DatosPersonalesEditViewModel : ViewModel() {
                 status.postValue(true)
                 Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
             }else{
+                prefs.setUrlImageString("")
                 status.postValue(false)
                 Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
             }
