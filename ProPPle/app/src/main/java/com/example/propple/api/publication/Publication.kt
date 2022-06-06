@@ -16,4 +16,5 @@ data class Publication(
     val phone: String,
     val user_last_name: String,
     val user_name: String,
+    val url_download_image:String
 )

@@ -19,6 +19,7 @@ import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.utils.fileController
+import com.example.propple.utils.imgController
 import com.example.propple.utils.imgController.base64Encode
 import com.example.propple.utils.imgController.base64decode
 import com.example.propple.utils.imgController.pickPhotoFromGalery
@@ -51,16 +52,16 @@ class datosPersonalesEditFragment : Fragment() {
     private var lat :Double=0.0
     private var lon :Double=0.0
     private val SELECT_ACTIVITY =121
+    private var imgAux=""
     val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         var uri= it.data?.data!!
         binding.Avatar.setImageURI(uri)
-        prefs.setUrlImage(uri,requireContext())
-
-        lat=prefs.getLat()
-        lon=prefs.getLon()
+        //prefs.setUrlImage(uri,requireContext())
         //Log.i("holaa",base64Encode(uri))
         //val aux= base64Encode(uri,requireContext())
-        //binding.Avatar.setImageBitmap(base64decode(base64Encode(uri,requireContext())))
+       //binding.Avatar.setImageBitmap(base64decode(base64Encode(uri,requireContext())))
+        imgAux=base64Encode(uri,requireContext())
+        binding.Avatar.setImageURI(uri)
     }
 
     override fun onCreateView(
@@ -142,8 +143,14 @@ class datosPersonalesEditFragment : Fragment() {
 
 
 
-        if (prefs.getUrlImageString()!="")
-            binding.Avatar.setImageBitmap(prefs.getUrlImage())
+
+            if (prefs.getUrlImageString()!="")
+                imgController.getImgUrl(
+                    prefs.getUrlImageString(),
+                    requireContext(),
+                    binding.Avatar
+                )
+            //binding.Avatar.setImageBitmap(prefs.getUrlImage())
         binding.Nombre.text = nombre+" "+apellido
         binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
         binding.btnDate1.setOnClickListener { showDatePickerDialog() }
@@ -162,7 +169,7 @@ class datosPersonalesEditFragment : Fragment() {
                                                                     lat,
                                                                     lon,
                                                                     binding.InTelefono.text.toString(),
-                                                                    prefs.getUrlImageString(),
+                                                                    imgAux,
                                                                     binding.InApellido.text.toString(),
                                                                     binding.InNombre.text.toString(),v ,binding) }
 
@@ -207,13 +214,16 @@ class datosPersonalesEditFragment : Fragment() {
                 binding.InNombre.setText(nombre)
                 binding.InApellido.setText(apellido)
                 binding.InAlias.setText(alias)
+                prefs.setUrlImageString("")
+                imgAux=""
+                @Suppress("DEPRECATION")
+                binding.Avatar.setImageDrawable(resources.getDrawable(R.drawable.avatar_1))
             }else{
                 nombre=prefs.getNombre()
                 apellido=prefs.getApellido()
                 alias=prefs.getAlias()
                 binding.Nombre.text = nombre+" "+apellido
                 binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
-                binding.Avatar.setImageDrawable(getResources().getDrawable(R.drawable.avatar_1))
             }
         })
     }

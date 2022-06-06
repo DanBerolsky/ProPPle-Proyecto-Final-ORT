@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imgCliente"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline12">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/imgPrestador"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -78,14 +78,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/textRespuesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Consulta"
                 android:textColor="#000000" />
 
             <TextView
-                android:id="@+id/textView37"
+                android:id="@+id/textRespuesta2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cliente escribió el dd/mm/aaaa"
@@ -140,7 +140,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView38"
+                android:id="@+id/textPregunta2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Prestador aún no ha respondido"

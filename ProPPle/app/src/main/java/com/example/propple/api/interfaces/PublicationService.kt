@@ -1,9 +1,13 @@
 package com.example.propple.api.interfaces
 
+import com.example.propple.api.UserClient.Sign
 import com.example.propple.api.publication.Comentario
+import com.example.propple.api.publication.ComentarioNuevo
 import com.example.propple.api.publication.Publication
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface PublicationService {
@@ -20,6 +24,9 @@ interface PublicationService {
 
     @GET("publication/getComentario/{token}/{id}")
     suspend fun getPublicationCometarios(@Path("token") token: String, @Path("id") id: Int):Response<List<Comentario>>
+
+    @POST("publication/postComentario")
+    suspend fun nuevoComentario(@Body x : ComentarioNuevo):Response<Void>
 
 }
 

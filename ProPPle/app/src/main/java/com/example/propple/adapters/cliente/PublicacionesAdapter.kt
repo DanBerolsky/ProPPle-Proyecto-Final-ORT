@@ -1,5 +1,6 @@
 package com.example.propple.adapters.cliente
 
+import android.content.Context
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.api.publication.Publication
 import com.example.propple.fragments.cliente.PublicacionesFragmentDirections
+import com.example.propple.shared.ProPPle
+import com.example.propple.utils.imgController
 
 class PublicacionesAdapter(var publicacionesList: List<Publication>?) : RecyclerView.Adapter<PublicacionesAdapter.publicacionesHolder>(){
 
@@ -39,7 +42,13 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
             }
         }
 
-        fun setAvatar(){
+        fun setAvatar(img64:String){
+            if (ProPPle.prefs.getUrlImageString()!="")
+                imgController.getImgUrl(
+                    img64,
+                    view.context,
+                    view.findViewById<ImageView>(R.id.btnAvatar)
+                )
         }
 
         fun setUbicacion(ubicacion : String){
@@ -76,6 +85,11 @@ class PublicacionesAdapter(var publicacionesList: List<Publication>?) : Recycler
         publicacionesList?.get(position)?.puntuacion?.let { holder.setValoracion(it) }
         publicacionesList?.get(position)?.location?.let { holder.setUbicacion(it) }
         publicacionesList?.get(position)?.id_publicacion?.let { holder.click(it) }
+        publicacionesList?.get(position)?.url_download_image.let {
+            if (it != null && it!="") {
+                holder.setAvatar(it)
+            }
+        }
     }
 
 

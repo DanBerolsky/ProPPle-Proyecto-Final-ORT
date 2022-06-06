@@ -125,7 +125,8 @@ class RegistroUsuarioFragment : Fragment() {
                     binding.InContrasenia1.text.toString(),
                     binding.InFechaDeNacimiento.text.toString(),
                     "Sin especificar",
-                    true
+                    true,
+                    ""
                 )
                 Log.i("hola", userAux.toString())
                 viewModel.sign(userAux)

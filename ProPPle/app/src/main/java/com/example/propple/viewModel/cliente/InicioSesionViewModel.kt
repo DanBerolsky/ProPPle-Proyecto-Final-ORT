@@ -62,12 +62,12 @@ class InicioSesionViewModel : ViewModel() {
                     val aliasAux:String= response.alias.toString()
                     prefs.setNombre(nombreAux)
                     prefs.setAlias(aliasAux)
-                    response.date_of_birth?.let { prefs.setFechaDeNacimiento(it) }
+                    response.date_of_birth.let { prefs.setFechaDeNacimiento(it) }
                     prefs.setphone(response.phone)
-                    response.gender?.let { prefs.setGenero(it) }
+                    response.gender.let { prefs.setGenero(it) }
                     response.location?.let { prefs.setDireccion(it) }
                     prefs.setApellido(response.user_last_name)
-                    //response.url_image?.let { prefs.setUrlImageString(it) }
+                    response.url_download_image.let { prefs.setUrlImageString(it) }
                     response.location_latitud?.let { prefs.setLat(it.toDouble()) }
                     response.location_longitud?.let { prefs.setLon(it.toDouble()) }
 

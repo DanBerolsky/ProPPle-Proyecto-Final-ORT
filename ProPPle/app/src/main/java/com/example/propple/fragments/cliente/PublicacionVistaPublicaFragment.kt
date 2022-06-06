@@ -20,6 +20,8 @@ import com.example.propple.R
 import com.example.propple.api.publication.Comentario
 import com.example.propple.databinding.FragmentPublicacionVistaPublicaBinding
 import com.example.propple.fragments.cliente.PublicacionesFragmentArgs
+import com.example.propple.shared.ProPPle
+import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.ort.casodeusotest.adapters.ComentarioAdapter
 
@@ -52,6 +54,7 @@ class publicacionVistaPublicaFragment : Fragment() {
             val act = publicacionVistaPublicaFragmentDirections.actionPublicacionVistaPublicaFragmentToFormalizacionAcuerdoFragment2()
             nav(act)
         }
+
 
 
 
@@ -94,6 +97,12 @@ class publicacionVistaPublicaFragment : Fragment() {
                 binding.textCantVeces.text="Ha realizado ${it.cant_transacciones} veces este servicio"
                 binding.tTuloDelServicio.text=it.title
                 binding.Nombre.text=it.user_name+" "+it.user_last_name
+                imgController.getImgUrl(
+                    it.url_download_image,
+                    requireContext(),
+                    binding.btnAvatar
+                )
+
 
                 binding.btnComen2.setOnClickListener {resutl ->
                     var act:NavDirections = publicacionVistaPublicaFragmentDirections.

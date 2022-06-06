@@ -8,8 +8,10 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Base64
+import android.widget.ImageView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import com.bumptech.glide.Glide
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 
@@ -51,4 +53,9 @@ object imgController {
     }
     //private fun saveImage(Co)
 
+    fun getImgUrl(url: String,context: Context,imgView:ImageView) {
+        if (url.isNotEmpty()) {
+            Glide.with(context).load(url).into(imgView)
+        }
+    }
 }
