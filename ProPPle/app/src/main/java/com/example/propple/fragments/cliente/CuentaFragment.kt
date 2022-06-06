@@ -2,6 +2,7 @@ package com.example.propple.fragments.cliente
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import com.example.propple.databinding.CuentaFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.imgController.getImgUrl
 import com.example.propple.viewModel.cliente.CuentaViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class CuentaFragment : Fragment() {
 
@@ -48,8 +50,12 @@ class CuentaFragment : Fragment() {
         nombre=prefs.getNombre()
         apellido=prefs.getApellido()
         alias=prefs.getAlias()
-        if (prefs.getUrlImageString()!="")
+        if (prefs.getUrlImageString()!=""){
+            Log.i("queonda", prefs.getUrlImageString())
+            //Snackbar.make(v,prefs.getUrlImageString()+"", Snackbar.LENGTH_SHORT).show()
             getImgUrl(prefs.getUrlImageString(),requireContext(),binding.btnAvatar)
+        }
+
         return v
     }
 

@@ -17,7 +17,7 @@ import retrofit2.Response
 
 class DatosPersonalesEditViewModel : ViewModel() {
 
-
+    var viewModelInicioSesionViewModel: InicioSesionViewModel = InicioSesionViewModel()
     var status = MutableLiveData<Boolean>()
 
     fun updateUser(
@@ -36,7 +36,6 @@ class DatosPersonalesEditViewModel : ViewModel() {
         Log.i("holaa",location_latitud.toString())
         Log.i("holaa",location_longitud.toString())
         val updateUserAux=UpdateUser(token,alias, date_of_birth, gender, location, location_latitud, location_longitud, phone, url_image, user_last_name, user_name)
-
         CoroutineScope(Dispatchers.IO).launch {
             val call : Response<Void> = RetrofitHelper.getRetrofit().create(UserClientService::class.java).updateUser(updateUserAux)
             if(call.isSuccessful){
@@ -45,18 +44,17 @@ class DatosPersonalesEditViewModel : ViewModel() {
                 prefs.setGenero(gender)
                 prefs.setDireccion(location)
                 prefs.setphone(phone)
-                prefs.setUrlImageString(url_image)
+                //prefs.setUrlImageString(url_image)
                 prefs.setNombre(user_name)
                 prefs.setApellido(user_last_name)
                 status.postValue(true)
+                viewModelInicioSesionViewModel.getDatosFragment()
                 Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
             }else{
                 prefs.setUrlImageString("")
                 status.postValue(false)
                 Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
             }
-
-
         }
     }
 

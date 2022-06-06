@@ -22,6 +22,7 @@ import com.example.propple.utils.fileController
 import com.example.propple.utils.imgController
 import com.example.propple.utils.imgController.base64Encode
 import com.example.propple.utils.imgController.base64decode
+import com.example.propple.utils.imgController.getImgUrl
 import com.example.propple.utils.imgController.pickPhotoFromGalery
 import com.example.propple.viewModel.cliente.DatosPersonalesEditViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -52,7 +53,7 @@ class datosPersonalesEditFragment : Fragment() {
     private var lat :Double=0.0
     private var lon :Double=0.0
     private val SELECT_ACTIVITY =121
-    private var imgAux=""
+    private var imgAux= ""
     val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         var uri= it.data?.data!!
         binding.Avatar.setImageURI(uri)
@@ -106,7 +107,6 @@ class datosPersonalesEditFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
         binding.imgEdit.setOnClickListener { pickPhotoFromGalery(imageLauncher) }
 
         googleMaps.lat.observe(viewLifecycleOwner, Observer {
@@ -172,6 +172,9 @@ class datosPersonalesEditFragment : Fragment() {
                                                                     imgAux,
                                                                     binding.InApellido.text.toString(),
                                                                     binding.InNombre.text.toString(),v ,binding) }
+
+
+
 
         //binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
         //binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
