@@ -65,7 +65,7 @@ class Comentario2Adapter (var comentarioList: List<Comentario>) : RecyclerView.A
         comentarioList.get(position).content.let { holder.setPregunta(it) }
         comentarioList.get(position).foto_cliente.let { holder.setAvatarClietne(it) }
         comentarioList.get(position).foto_prestador.let { holder.setAvatarPrestador(it) }
-        comentarioList.get(position).date_of_creation.let { holder.setPregunta2("Enviado el "+it.replace("-"," / ")) }
+        comentarioList.get(position).date_of_creation.let { holder.setPregunta2("Enviado el  "+it.replace("-"," / ").substring(0,14)) }
         comentarioList.get(position).answer.let {
             if (it!="" && it!=null){
                 holder.setRespuesta(it)

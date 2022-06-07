@@ -1,11 +1,14 @@
 package com.example.propple.fragments.cliente
 
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
@@ -36,6 +39,7 @@ class RecuperarCuentaFragment : Fragment() {
 
 
         btnRecuperarCuenta.setOnClickListener {
+            viewModel.getDatosFragment(v.findViewById<EditText>(R.id.InMail).text.toString(),v)
             val action = RecuperarCuentaFragmentDirections.actionRecuperarCuentaFragmentToRecuperarCuenta2Fragment()
             v.findNavController().navigate(action)
         }

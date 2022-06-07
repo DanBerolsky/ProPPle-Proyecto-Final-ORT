@@ -73,11 +73,7 @@ class Comentarios2Fragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PublicacionVistaPublicaViewModel::class.java)
-        var servicios = Comentarios2FragmentArgs.fromBundle(requireArguments()).id
-        Log.i("id",servicios.toString())
+    fun cargarListaDeComentarios(servicios:Long){
         viewModel.getComentarios(servicios.toInt())
         viewModel.comentarios.observe(viewLifecycleOwner, Observer {
             if (it!=null){
@@ -86,6 +82,13 @@ class Comentarios2Fragment : Fragment() {
             }
 
         })
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(PublicacionVistaPublicaViewModel::class.java)
+        var servicios = Comentarios2FragmentArgs.fromBundle(requireArguments()).id
+        Log.i("id",servicios.toString())
+        cargarListaDeComentarios(servicios)
         binding.btnEnviar.setOnClickListener{
             viewModel.newComment(servicios.toInt(),binding.inPregunta.text.toString())
         }
@@ -95,6 +98,7 @@ class Comentarios2Fragment : Fragment() {
             {
                 Snackbar.make(v,"Enviado",Snackbar.LENGTH_SHORT).show()
                 v.findViewById<EditText>(R.id.inPregunta).setText("")
+                cargarListaDeComentarios(servicios)
             }else if (it=="2")
             {
                 Snackbar.make(v,"Error, intente mas tarde.",Snackbar.LENGTH_SHORT).show()
