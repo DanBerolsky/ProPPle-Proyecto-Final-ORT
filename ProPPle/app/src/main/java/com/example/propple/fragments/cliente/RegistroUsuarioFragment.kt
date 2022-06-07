@@ -2,12 +2,15 @@ package com.example.propple.fragments.cliente
 
 
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -18,6 +21,7 @@ import com.example.propple.R
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.viewModel.cliente.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -107,31 +111,35 @@ class RegistroUsuarioFragment : Fragment() {
         } //
 
         binding.btnRegistrarUsuario.setOnClickListener {
-            if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){
-                Snackbar.make(v,"Ingrese nuevamente la contraseña", Snackbar.LENGTH_SHORT).show()
-            }else{
-                val userAux : Sign
-                userAux = Sign(
-                    "0",
-                    binding.InAlias.text.toString(),
-                    binding.InDirecion.text.toString(),
-                    latitude,
-                    longitude,
-                    binding.InMail.text.toString(),
-                    binding.InTelefono.text.toString(),
-                    "",
-                    binding.InApellido.text.toString(),
-                    binding.InNombre.text.toString(),
-                    binding.InContrasenia1.text.toString(),
-                    binding.InFechaDeNacimiento.text.toString(),
-                    "Sin especificar",
-                    true,
-                    ""
-                )
-                Log.i("hola", userAux.toString())
-                viewModel.sign(userAux)
-                val action = RegistroUsuarioFragmentDirections.actionRegistroUsuarioFragmentToValidacionDeCuentaFragment()
-                v.findNavController().navigate(action)
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){
+                    Snackbar.make(v,"Ingrese nuevamente la contraseña", Snackbar.LENGTH_SHORT).show()
+                } else {
+                    val userAux : Sign
+                    userAux = Sign(
+                        "0",
+                        binding.InAlias.text.toString(),
+                        binding.InDirecion.text.toString(),
+                        latitude,
+                        longitude,
+                        binding.InMail.text.toString(),
+                        binding.InTelefono.text.toString(),
+                        "",
+                        binding.InApellido.text.toString(),
+                        binding.InNombre.text.toString(),
+                        binding.InContrasenia1.text.toString(),
+                        binding.InFechaDeNacimiento.text.toString(),
+                        "Sin especificar",
+                        true,
+                        ""
+                    )
+                    Log.i("hola", userAux.toString())
+                    viewModel.sign(userAux)
+                    val action = RegistroUsuarioFragmentDirections.actionRegistroUsuarioFragmentToValidacionDeCuentaFragment()
+                    v.findNavController().navigate(action)
+                }
             }
         }
 
@@ -153,4 +161,20 @@ class RegistroUsuarioFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(RegistroUsuarioViewModel::class.java)
 
     }
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InNombre, binding.txvInNombre, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InApellido, binding.txvInApellido, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InMail, binding.txvInMail, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InAlias, binding.txvInAlias, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InFechaDeNacimiento, binding.txvInFechaDeNacimiento, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InTelefono, binding.txvInTelefono, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InDirecion, binding.txvInDirecion, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InContrasenia1, binding.txvInContrasenia1, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InContrasenia2, binding.txvInContrasenia2, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
+    }
+
 }

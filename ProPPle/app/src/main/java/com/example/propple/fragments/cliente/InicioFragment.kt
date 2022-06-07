@@ -25,7 +25,6 @@ class inicioFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.inicio_fragment, container, false)
-
         btnIniciarSesion = v.findViewById(R.id.btnIniciar_sesión)
         btnRegistroUsuario = v.findViewById(R.id.btnRegistrarse)
         return v

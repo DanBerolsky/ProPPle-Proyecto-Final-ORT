@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.viewModel.cliente.RecuperarCuentaViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class RecuperarCuentaFragment : Fragment() {
 
@@ -23,6 +24,7 @@ class RecuperarCuentaFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: RecuperarCuentaViewModel
     private lateinit var btnRecuperarCuenta : Button
+    private lateinit var inMail : EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +32,7 @@ class RecuperarCuentaFragment : Fragment() {
     ): View? {
         v = inflater.inflate(R.layout.recuperar_cuenta_fragment, container, false)
         btnRecuperarCuenta = v.findViewById(R.id.btnRecuperar)
+        inMail = v.findViewById(R.id.InMail)
         return v
     }
 
@@ -39,9 +42,13 @@ class RecuperarCuentaFragment : Fragment() {
 
 
         btnRecuperarCuenta.setOnClickListener {
-            viewModel.getDatosFragment(v.findViewById<EditText>(R.id.InMail).text.toString(),v)
-            val action = RecuperarCuentaFragmentDirections.actionRecuperarCuentaFragmentToRecuperarCuenta2Fragment()
-            v.findNavController().navigate(action)
+            if(inMail.text.isBlank()){
+                Snackbar.make(v, "No ingresaste ningún correo electrónico", Snackbar.LENGTH_SHORT).show()
+            } else {
+                viewModel.getDatosFragment(v.findViewById<EditText>(R.id.InMail).text.toString(),v)
+                val action = RecuperarCuentaFragmentDirections.actionRecuperarCuentaFragmentToRecuperarCuenta2Fragment()
+                v.findNavController().navigate(action)
+            }
         }
 
 

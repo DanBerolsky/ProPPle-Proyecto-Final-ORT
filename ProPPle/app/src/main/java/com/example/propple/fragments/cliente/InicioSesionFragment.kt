@@ -12,6 +12,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.InicioSesionFragmentBinding
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.viewModel.cliente.InicioSesionViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -51,7 +52,11 @@ class InicioSesionFragment : Fragment() {
         }
 
         binding.btnIniciarSesiN.setOnClickListener {
-            viewModel.login(binding.InMail.text.toString(),binding.InContrasenia.text.toString())
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                viewModel.login(binding.InMail.text.toString(),binding.InContrasenia.text.toString())
+            }
 
         }
 
@@ -87,5 +92,15 @@ class InicioSesionFragment : Fragment() {
 
 
     }
+
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InMail, binding.txvInMailIS, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InContrasenia, binding.txvInContraseniaIS, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
+    }
+
 
 }
