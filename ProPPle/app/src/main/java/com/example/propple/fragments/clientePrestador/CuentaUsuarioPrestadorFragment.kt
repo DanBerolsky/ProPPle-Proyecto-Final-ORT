@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.CuentaUsuarioPrestadorFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
+import com.example.propple.utils.imgController
 import com.example.propple.viewModel.clientePrestador.CuentaUsuarioPrestadorViewModel
 
 class CuentaUsuarioPrestadorFragment : Fragment() {
@@ -42,7 +43,8 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         apellido=prefs.getApellido()
         alias=prefs.getAlias()
         if (prefs.getUrlImageString()!="")
-            binding.btnAvatar.setImageBitmap(prefs.getUrlImage())
+            imgController.getImgUrl(prefs.getUrlImageString(), requireContext(), binding.btnAvatar)
+            //binding.btnAvatar.setImageBitmap(prefs.getUrlImage())
         return v
     }
 
