@@ -11,7 +11,9 @@ import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.FragmentCambiarContraseniaPrestadorBinding
 import com.example.propple.shared.ProPPle
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.viewModel.cliente.CambiarContraseniaViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class CambiarContraseniaPrestadorFragment : Fragment() {
 
@@ -69,10 +71,14 @@ class CambiarContraseniaPrestadorFragment : Fragment() {
 
 
         binding.btnCambiar.setOnClickListener {
-            viewModel.passwordChange(binding.InContraseniaActual.text.toString(),
-                binding.InContrasenia1.text.toString(),
-                binding.InContrasenia2.text.toString(),
-                v)
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                viewModel.passwordChange(binding.InContraseniaActual.text.toString(),
+                    binding.InContrasenia1.text.toString(),
+                    binding.InContrasenia2.text.toString(),
+                    v)
+            }
         }
 
     }
@@ -87,6 +93,15 @@ class CambiarContraseniaPrestadorFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InContraseniaActual, binding.txvInContraseniaActualCCP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InContrasenia1, binding.txvInContrasenia1CCP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InContrasenia2, binding.txvInContrasenia2CCP, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
     }
 
 }

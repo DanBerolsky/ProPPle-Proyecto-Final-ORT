@@ -29,13 +29,13 @@
         app:layout_constraintTop_toBottomOf="@+id/fabVolverPublicacion1">
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/txvInTituloServicioPS"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:padding="3dp"
-            android:text="Título del servicio"
+            android:text="Título del servicio *"
             android:textColor="@color/negro_blaco" />
 
         <androidx.cardview.widget.CardView
@@ -57,13 +57,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/InNombre"
+                    android:id="@+id/InTituloServicio"
                     android:layout_width="270dp"
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
                     android:ems="10"
-                    android:hint="Ingrese su nombre"
+                    android:hint="Título del servicio"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
@@ -85,14 +85,14 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textCantVeces"
+            android:id="@+id/txvInDescripcionServicioPS"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:padding="3dp"
-            android:text="Descripción del servicio"
+            android:text="Descripción del servicio *"
             android:textColor="@color/negro_blaco" />
 
         <androidx.cardview.widget.CardView
@@ -114,13 +114,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/InApellido"
+                    android:id="@+id/InDescripcionServicio"
                     android:layout_width="270dp"
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
                     android:ems="10"
-                    android:hint="Ingrese su apellido"
+                    android:hint="Descripción del servicio"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
@@ -141,14 +141,14 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txvInPrecioHoraPS"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:padding="3dp"
-            android:text="Precio por hora"
+            android:text="Precio por hora *"
             android:textColor="@color/negro_blaco" />
 
         <androidx.cardview.widget.CardView
@@ -169,13 +169,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/InAlias"
+                    android:id="@+id/InPrecioHora"
                     android:layout_width="270dp"
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
                     android:ems="10"
-                    android:hint="Ingrese un alias"
+                    android:hint="Precio por hora"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />
@@ -198,14 +198,14 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/txvInDireccionLaboralPS"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
             android:padding="3dp"
-            android:text="Dirección laboral"
+            android:text="Dirección laboral *"
             android:textColor="@color/negro_blaco" />
 
         <androidx.cardview.widget.CardView
@@ -227,13 +227,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/InFechaDeNacrimiento"
+                    android:id="@+id/InDireccionLaboral"
                     android:layout_width="270dp"
                     android:layout_height="match_parent"
                     android:background="@color/rosa_para_input"
                     android:backgroundTint="#00AA3E3E"
                     android:ems="10"
-                    android:hint="  Ingrese fecha de nacimiento"
+                    android:hint="Dirección laboral"
                     android:inputType="textEmailAddress"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp" />

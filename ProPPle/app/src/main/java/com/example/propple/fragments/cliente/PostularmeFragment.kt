@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.PostularmeFragmentBinding
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.utils.fileController
 import com.example.propple.utils.fileController.encodeFileToBase64Binary
 import com.example.propple.utils.fileController.getFileName
@@ -62,8 +63,12 @@ class PostularmeFragment : Fragment() {
         }
 
         btnPostularme.setOnClickListener {
-            val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
-            v.findNavController().navigate(action)
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
+                v.findNavController().navigate(action)
+            }
         }
 
         binding.imgRubro.setOnClickListener {
@@ -93,6 +98,14 @@ class PostularmeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PostularmeViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InRubro, binding.txvInRubroP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InCv, binding.txvCVP, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
     }
 
 }

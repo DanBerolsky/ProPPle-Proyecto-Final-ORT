@@ -76,10 +76,10 @@ class InicioSesionFragment : Fragment() {
                 if (result.toString()=="cliente - prestador"){
                     val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivityUsuarioPrestador()
                     nav(action)
-                }else if (result.toString()=="cliente"){
+                } else if (result.toString()=="cliente"){
                     val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivity2()
                     nav(action)
-                }else{
+                } else {
                     Toast.makeText(context,"err",Toast.LENGTH_SHORT)
                 }
 

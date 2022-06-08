@@ -72,10 +72,14 @@ class MisPreferenciasFragment : Fragment() {
         }
 
         binding.btnGuardar2.setOnClickListener {
-            prefs.setDireccion(binding.InDirecion.text.toString())
-            prefs.setMejorValoracion(binding.switch1.isChecked)
-            prefs.setMenorPrecioBase(binding.switch12.isChecked)
-            Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
+            if(binding.InDirecion.text.isBlank()) {
+                Snackbar.make(v, "No ingresaste ninguna dirección", Snackbar.LENGTH_SHORT).show()
+            } else {
+                prefs.setDireccion(binding.InDirecion.text.toString())
+                prefs.setMejorValoracion(binding.switch1.isChecked)
+                prefs.setMenorPrecioBase(binding.switch12.isChecked)
+                Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
+            }
         }
 
     }

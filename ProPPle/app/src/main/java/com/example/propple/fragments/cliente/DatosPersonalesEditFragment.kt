@@ -18,6 +18,7 @@ import com.example.propple.R
 import com.example.propple.databinding.DatosPersonalesEditFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.utils.fileController
 import com.example.propple.utils.imgController
 import com.example.propple.utils.imgController.base64Encode
@@ -160,21 +161,24 @@ class datosPersonalesEditFragment : Fragment() {
         binding.InNombre.setText(nombre)
         binding.InApellido.setText(apellido)
         binding.InAlias.setText(alias)
-        binding.btnGuardar.setOnClickListener { viewModel.updateUser(
-                                                                    prefs.getJwt(),
-                                                                    binding.InAlias.text.toString(),
-                                                                    binding.InFechaDeNacrimiento.text.toString(),
-                                                                    genero,
-                                                                    binding.InDirecion.text.toString(),
-                                                                    lat,
-                                                                    lon,
-                                                                    binding.InTelefono.text.toString(),
-                                                                    imgAux,
-                                                                    binding.InApellido.text.toString(),
-                                                                    binding.InNombre.text.toString(),v ,binding) }
-
-
-
+        binding.btnGuardar.setOnClickListener {
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                viewModel.updateUser(
+                    prefs.getJwt(),
+                    binding.InAlias.text.toString(),
+                    binding.InFechaDeNacrimiento.text.toString(),
+                    genero,
+                    binding.InDirecion.text.toString(),
+                    lat,
+                    lon,
+                    binding.InTelefono.text.toString(),
+                    imgAux,
+                    binding.InApellido.text.toString(),
+                    binding.InNombre.text.toString(),v ,binding)
+            }
+        }
 
         //binding.InDirecion.text.toString().split(",").toTypedArray()[0].toDouble(),
         //binding.InDirecion.text.toString().split(",").toTypedArray()[1].toDouble(),
@@ -229,6 +233,19 @@ class datosPersonalesEditFragment : Fragment() {
                 binding.aliasRoll.text = alias+ " - "+ prefs.getRol()
             }
         })
+    }
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InNombre, binding.txvInNombreDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InApellido, binding.txvInApellidoDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InAlias, binding.txvInAliasDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InFechaDeNacrimiento, binding.txvInFechaDeNacrimientoDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.inGenero, binding.txvInGeneroDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InDirecion, binding.txvInDirecionDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InTelefono, binding.txvInTelefonoDP, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
     }
 
 }

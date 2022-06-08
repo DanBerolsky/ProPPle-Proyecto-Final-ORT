@@ -12,6 +12,9 @@ import androidx.fragment.app.findFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
+import com.example.propple.databinding.RecuperarCuentaFragmentBinding
+import com.example.propple.databinding.RegistroUsuarioFragmentBinding
+import com.example.propple.utils.InputFieldValidator
 import com.example.propple.viewModel.cliente.RecuperarCuentaViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -22,6 +25,7 @@ class RecuperarCuentaFragment : Fragment() {
     }
 
     private lateinit var v: View
+    private lateinit var binding : RecuperarCuentaFragmentBinding
     private lateinit var viewModel: RecuperarCuentaViewModel
     private lateinit var btnRecuperarCuenta : Button
     private lateinit var inMail : EditText
@@ -31,6 +35,7 @@ class RecuperarCuentaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.recuperar_cuenta_fragment, container, false)
+        binding = RecuperarCuentaFragmentBinding.bind(v)
         btnRecuperarCuenta = v.findViewById(R.id.btnRecuperar)
         inMail = v.findViewById(R.id.InMail)
         return v
@@ -42,7 +47,7 @@ class RecuperarCuentaFragment : Fragment() {
 
 
         btnRecuperarCuenta.setOnClickListener {
-            if(inMail.text.isBlank()){
+            if(verificarCamposVacios()){
                 Snackbar.make(v, "No ingresaste ningún correo electrónico", Snackbar.LENGTH_SHORT).show()
             } else {
                 viewModel.getDatosFragment(v.findViewById<EditText>(R.id.InMail).text.toString(),v)
@@ -55,11 +60,17 @@ class RecuperarCuentaFragment : Fragment() {
     }
 
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(RecuperarCuentaViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    private fun verificarCamposVacios(): Boolean {
+        var campoVacio = false
+        var txvDefaultColor = 1979711488
+        if (InputFieldValidator.esCampoVacio(binding.InMail, binding.txvInMailRC, txvDefaultColor) && !campoVacio) campoVacio = true
+        return campoVacio
     }
 
 }

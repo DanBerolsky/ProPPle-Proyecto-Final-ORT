@@ -8,13 +8,13 @@ android:background="@color/banco_negro"
 tools:context=".fragments.clientePrestador.CambiarContraseniaPrestadorFragment">
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/txvInContraseniaActualCCP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="5dp"
         android:padding="3dp"
-        android:text="Ingrese su contraseña actual"
+        android:text="Ingrese su contraseña actual *"
         android:textColor="@color/negro_blaco"
         app:layout_constraintBottom_toTopOf="@+id/cardView52a"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,14 +64,14 @@ tools:context=".fragments.clientePrestador.CambiarContraseniaPrestadorFragment">
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textDescripción"
+        android:id="@+id/txvInContrasenia2CCP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="5dp"
         android:layout_marginTop="16dp"
         android:padding="3dp"
-        android:text="Ingrese nuevamente la contraseña"
+        android:text="Ingrese nuevamente la contraseña *"
         android:textColor="@color/negro_blaco"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@ tools:context=".fragments.clientePrestador.CambiarContraseniaPrestadorFragment">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDescripción">
+        app:layout_constraintTop_toBottomOf="@+id/txvInContrasenia2CCP">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,14 +124,14 @@ tools:context=".fragments.clientePrestador.CambiarContraseniaPrestadorFragment">
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/txvInContrasenia1CCP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="5dp"
         android:layout_marginTop="16dp"
         android:padding="3dp"
-        android:text="Ingrese su nueva contraseña"
+        android:text="Ingrese su nueva contraseña *"
         android:textColor="@color/negro_blaco"
         app:layout_constraintBottom_toTopOf="@+id/cardView52"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +147,7 @@ tools:context=".fragments.clientePrestador.CambiarContraseniaPrestadorFragment">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22">
+        app:layout_constraintTop_toBottomOf="@+id/txvInContrasenia1CCP">
 
         <LinearLayout
             android:layout_width="match_parent"

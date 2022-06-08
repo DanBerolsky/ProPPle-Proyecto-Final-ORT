@@ -83,13 +83,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/txvInNombreDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:padding="3dp"
-                android:text="Nombre"
+                android:text="Nombre *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -139,7 +139,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textCantVeces"
+                android:id="@+id/txvInApellidoDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -195,14 +195,14 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txvInAliasDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Alias"
+                android:text="Alias *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -252,14 +252,14 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/txvInFechaDeNacrimientoDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Fecha de nacimiento"
+                android:text="Fecha de nacimiento *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -308,14 +308,14 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/txvInGeneroDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Género"
+                android:text="Género *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -375,14 +375,14 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/títuloDelServicio"
+                android:id="@+id/txvInDirecionDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Dirección"
+                android:text="Dirección *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
@@ -430,14 +430,14 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txvInTelefonoDP"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
                 android:padding="3dp"
-                android:text="Telefono"
+                android:text="Telefono *"
                 android:textColor="@color/negro_blaco" />
 
             <androidx.cardview.widget.CardView
