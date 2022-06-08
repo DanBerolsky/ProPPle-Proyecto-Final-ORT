@@ -22,6 +22,10 @@ import com.example.propple.api.UserClient.Sign
 import com.example.propple.databinding.RegistroUsuarioFragmentBinding
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.utils.InputFieldValidator
+import com.example.propple.utils.InputFieldValidator.Companion.esEmail
+import com.example.propple.utils.InputFieldValidator.Companion.esNumeroTelefonico
+import com.example.propple.utils.InputFieldValidator.Companion.noTieneNumerosNiSimbolos
+import com.example.propple.utils.InputFieldValidator.Companion.noTieneSimbolos
 import com.example.propple.viewModel.cliente.RegistroUsuarioViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -113,7 +117,23 @@ class RegistroUsuarioFragment : Fragment() {
         binding.btnRegistrarUsuario.setOnClickListener {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else {
+            }
+            else if (!noTieneNumerosNiSimbolos(binding.InNombre, binding.txvInNombre, 1979711488)){
+                Snackbar.make(v, "El nombre debe contener letras únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!noTieneNumerosNiSimbolos(binding.InApellido, binding.txvInApellido, 1979711488)){
+                Snackbar.make(v, "El apellido debe contener letras únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!noTieneSimbolos(binding.InAlias, binding.txvInAlias, 1979711488)){
+                Snackbar.make(v, "El alias no puede contener símbolos", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esEmail(binding.InMail, binding.txvInMail, 1979711488)){
+                Snackbar.make(v, "Formato de email incorrecto", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esNumeroTelefonico(binding.InTelefono, binding.txvInTelefono, 1979711488)){
+                Snackbar.make(v, "El télefono debe contener números únicamnete", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
                 if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){
                     Snackbar.make(v,"Ingrese nuevamente la contraseña", Snackbar.LENGTH_SHORT).show()
                 } else {
