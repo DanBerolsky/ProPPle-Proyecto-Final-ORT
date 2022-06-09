@@ -45,7 +45,15 @@ class PublicarServicioFragment : Fragment() {
         btnPublicar.setOnClickListener {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else {
+            } else if(!InputFieldValidator.esNumerico(
+                    binding.InPrecioHora,
+                    binding.txvInPrecioHoraPS,
+                    1979711488
+                )
+            ) {
+                Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
                 val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
                 v.findNavController().navigate(action)
                 Snackbar.make(v, "Publicación modificada", Snackbar.LENGTH_SHORT).show()

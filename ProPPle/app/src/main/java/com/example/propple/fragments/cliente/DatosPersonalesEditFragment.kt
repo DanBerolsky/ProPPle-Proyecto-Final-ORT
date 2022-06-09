@@ -164,7 +164,48 @@ class datosPersonalesEditFragment : Fragment() {
         binding.btnGuardar.setOnClickListener {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else {
+            }
+            else if (!InputFieldValidator.noTieneNumerosNiSimbolos(
+                    binding.InNombre,
+                    binding.txvInNombreDP,
+                    1979711488
+                )
+            ){
+                Snackbar.make(v, "El nombre debe contener letras únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!InputFieldValidator.noTieneNumerosNiSimbolos(
+                    binding.InApellido,
+                    binding.txvInApellidoDP,
+                    1979711488
+                )
+            ){
+                Snackbar.make(v, "El apellido debe contener letras únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!InputFieldValidator.noTieneSimbolos(
+                    binding.InAlias,
+                    binding.txvInAliasDP,
+                    1979711488
+                )
+            ){
+                Snackbar.make(v, "El alias no puede contener símbolos", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!InputFieldValidator.esNumerico(
+                    binding.InTelefono,
+                    binding.txvInTelefonoDP,
+                    1979711488
+                )
+            ){
+                Snackbar.make(v, "El teléfono debe contener números únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!InputFieldValidator.esTelefono(
+                    binding.InTelefono,
+                    binding.txvInTelefonoDP,
+                    1979711488
+                )
+            ){
+                Snackbar.make(v, "Formato de teléfono incorrecto", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
                 viewModel.updateUser(
                     prefs.getJwt(),
                     binding.InAlias.text.toString(),

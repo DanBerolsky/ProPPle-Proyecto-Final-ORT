@@ -20,18 +20,18 @@ class InputFieldValidator {
             return vacio
         }
 
-        public fun esNumeroTelefonico(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
-            var numerico = false
+        public fun esTelefono(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
+            var esTelefono = false
             val REG = "^(?:(?:00)?549?)?0?(?:11|[2368]\\d)(?:(?=\\d{0,2}15)\\d{2})??\\d{8}\$"
             var PATTERN: Pattern = Pattern.compile(REG)
             fun CharSequence.isPhoneNumber() : Boolean = PATTERN.matcher(this).matches()
             if (editTXT.text.isPhoneNumber()) {
                 viewTXT.setTextColor(txtDefaultColor)
-                numerico = true
+                esTelefono = true
             } else {
                 viewTXT.setTextColor(Color.RED)
             }
-            return numerico
+            return esTelefono
         }
 
         public fun noTieneNumerosNiSimbolos(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
@@ -74,6 +74,20 @@ class InputFieldValidator {
                 viewTXT.setTextColor(Color.RED)
             }
             return campoEmail
+        }
+
+        public fun esNumerico(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
+            var esNumerico = false
+            val REG = "^[0-9, ]*\$"
+            var PATTERN: Pattern = Pattern.compile(REG)
+            fun CharSequence.isNumeric() : Boolean = PATTERN.matcher(this).matches()
+            if (editTXT.text.isNumeric()) {
+                viewTXT.setTextColor(txtDefaultColor)
+                esNumerico = true
+            } else {
+                viewTXT.setTextColor(Color.RED)
+            }
+            return esNumerico
         }
 
     }

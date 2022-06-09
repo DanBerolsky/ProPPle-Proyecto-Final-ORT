@@ -2,15 +2,12 @@ package com.example.propple.fragments.cliente
 
 
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -23,7 +20,8 @@ import com.example.propple.databinding.RegistroUsuarioFragmentBinding
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.utils.InputFieldValidator
 import com.example.propple.utils.InputFieldValidator.Companion.esEmail
-import com.example.propple.utils.InputFieldValidator.Companion.esNumeroTelefonico
+import com.example.propple.utils.InputFieldValidator.Companion.esNumerico
+import com.example.propple.utils.InputFieldValidator.Companion.esTelefono
 import com.example.propple.utils.InputFieldValidator.Companion.noTieneNumerosNiSimbolos
 import com.example.propple.utils.InputFieldValidator.Companion.noTieneSimbolos
 import com.example.propple.viewModel.cliente.RegistroUsuarioViewModel
@@ -130,8 +128,11 @@ class RegistroUsuarioFragment : Fragment() {
             else if (!esEmail(binding.InMail, binding.txvInMail, 1979711488)){
                 Snackbar.make(v, "Formato de email incorrecto", Snackbar.LENGTH_SHORT).show()
             }
-            else if (!esNumeroTelefonico(binding.InTelefono, binding.txvInTelefono, 1979711488)){
-                Snackbar.make(v, "El télefono debe contener números únicamnete", Snackbar.LENGTH_SHORT).show()
+            else if (!esNumerico(binding.InTelefono, binding.txvInTelefono, 1979711488)){
+                Snackbar.make(v, "El teléfono debe contener números únicamente", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esTelefono(binding.InTelefono, binding.txvInTelefono, 1979711488)){
+                Snackbar.make(v, "Formato de teléfono incorrecto", Snackbar.LENGTH_SHORT).show()
             }
             else {
                 if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){
