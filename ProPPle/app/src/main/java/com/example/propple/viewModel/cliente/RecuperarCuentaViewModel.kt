@@ -22,10 +22,10 @@ class RecuperarCuentaViewModel : ViewModel() {
             val call : Response<Void> = RetrofitHelper.getRetrofit().create(LoginSignInService::class.java).recoverPassword(
                 RecoverPassword(mail)
             )
-            if(!call.isSuccessful) {
+            /*if(!call.isSuccessful) {
                 Snackbar.make(v,"Error, por favor inténtelo de nuevo más tarde.",Snackbar.LENGTH_SHORT).show()
                 //Log.i("hola", "errror")
-            }
+         */
         }
     }
 }

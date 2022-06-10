@@ -33,6 +33,9 @@
                     android:textColor="@color/negro_blaco"
                     android:textSize="24sp" />
 
+
+
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView27"
                     android:layout_width="match_parent"
@@ -52,6 +55,12 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
+                        <fragment
+                            android:id="@+id/autocomplete_fragment1"
+                            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            android:visibility="visible" />
                         <EditText
                             android:id="@+id/InDirecion"
                             android:layout_width="300dp"
@@ -65,7 +74,8 @@
                             android:hint="Ingrese su direccion"
                             android:inputType="textEmailAddress"
                             android:paddingStart="10dp"
-                            android:paddingEnd="10dp" />
+                            android:paddingEnd="10dp"
+                            android:visibility="gone"/>
 
                         <ImageView
                             android:id="@+id/btnUbicacion"
@@ -79,6 +89,17 @@
                             app:tint="#FFF" />
 
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/ll1"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="14sp"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
 
                 </androidx.cardview.widget.CardView>
 

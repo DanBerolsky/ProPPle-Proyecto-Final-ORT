@@ -1,5 +1,6 @@
 package com.example.propple.fragments.cliente
 
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,8 +15,13 @@ import com.example.propple.databinding.MisPreferenciasFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.viewModel.cliente.MisPreferenciasViewModel
+import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
 
 class MisPreferenciasFragment : Fragment() {
@@ -31,6 +37,7 @@ class MisPreferenciasFragment : Fragment() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val PERMISSION_REQUEST_ACCESS_LOCATION=100
     private var googleMaps: GoogleMaps = GoogleMaps()
+    private lateinit var autocompleteSupportFragment1:AutocompleteSupportFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,8 +49,86 @@ class MisPreferenciasFragment : Fragment() {
         binding.switch1.setChecked(prefs.getMejorValoracion())
         binding.switch12.setChecked(prefs.getMenorPrecioBase())
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+
+        // Fetching API_KEY which we wrapped
+        val applicationContext=requireContext()
+        val ai: ApplicationInfo = applicationContext.packageManager
+            .getApplicationInfo(applicationContext.packageName, PackageManager.GET_META_DATA)
+        val value = ai.metaData["keyValue"]
+        val apiKey = value.toString()
+
+        // Initializing the Places API
+        // with the help of our API_KEY
+        if (!Places.isInitialized()) {
+            Places.initialize(applicationContext, apiKey)
+        }
+
+        // Initialize Autocomplete Fragments
+        // from the main activity layout file
+        autocompleteSupportFragment1 = (getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment1) as AutocompleteSupportFragment?)!!
+
+        // Information that we wish to fetch after typing
+        // the location and clicking on one of the options
+        autocompleteSupportFragment1!!.setPlaceFields(
+            listOf(
+                Place.Field.NAME,
+                Place.Field.ADDRESS,
+                Place.Field.PHONE_NUMBER,
+                Place.Field.LAT_LNG,
+                Place.Field.OPENING_HOURS,
+                Place.Field.RATING,
+                Place.Field.USER_RATINGS_TOTAL))
+
+        // Display the fetched information after clicking on one of the options
+        autocompleteSupportFragment1.setOnPlaceSelectedListener(object : PlaceSelectionListener {
+            override fun onPlaceSelected(place: Place) {
+
+                // Text view where we will
+                // append the information that we fetch
+                val textView = binding.tv1
+
+                // Information about the place
+                val name = place.name
+                val address = place.address
+                //val phone = place.phoneNumber.toString()
+                val latlng = place.latLng
+                val latitude = latlng?.latitude
+                val longitude = latlng?.longitude
+
+                if (latitude != null) {
+                    prefs.setLat(latitude)
+                }
+                if (longitude != null) {
+                    prefs.setLon(longitude)
+                }
+
+
+                val isOpenStatus : String = if(place.isOpen == true){
+                    "Open"
+                } else {
+                    "Closed"
+                }
+
+                val rating = place.rating
+                val userRatings = place.userRatingsTotal
+
+                /*Name: $name \nAddress: $address \nPhone Number: $phone \n" +
+                "Latitude, Longitude: $latitude , $longitude \nIs open: $isOpenStatus \n" +
+                        "Rating: $rating \nUser ratings: $userRatings
+                */
+                textView.text = "${address}"
+            }
+
+            override fun onError(status: Status) {
+                Toast.makeText(applicationContext,"Some error occurred", Toast.LENGTH_SHORT).show()
+            }
+        })
+
         return v
     }
+
+
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -65,23 +150,20 @@ class MisPreferenciasFragment : Fragment() {
         binding.btnUbicacion.setOnClickListener { googleMaps.getCurrentLocation(requireActivity(),requireContext(),fusedLocationClient)
             googleMaps.dir.observe(viewLifecycleOwner, Observer {
                 prefs.setDireccion(it)
-                binding.InDirecion.setText(it)
+                //binding.InDirecion.setText(it)
+                autocompleteSupportFragment1.setText(it)
             }) }
         if (direccion!=""){
-            binding.InDirecion.setText(direccion)
+            autocompleteSupportFragment1.setText(direccion)
         }
 
         binding.btnGuardar2.setOnClickListener {
-            if(binding.InDirecion.text.isBlank()) {
-                Snackbar.make(v, "No ingresaste ninguna dirección", Snackbar.LENGTH_SHORT).show()
-            } else {
-                prefs.setDireccion(binding.InDirecion.text.toString())
-                prefs.setMejorValoracion(binding.switch1.isChecked)
-                prefs.setMenorPrecioBase(binding.switch12.isChecked)
-                Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
-            }
-        }
+            prefs.setDireccion(direccion)
+            prefs.setMejorValoracion(binding.switch1.isChecked)
+            prefs.setMenorPrecioBase(binding.switch12.isChecked)
+            Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
 
+        }
     }
 
 
