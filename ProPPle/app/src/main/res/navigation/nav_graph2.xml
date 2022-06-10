@@ -122,6 +122,9 @@
         <action
             android:id="@+id/action_formalizacionAcuerdoFragment_to_formalizacionEnvioFragment"
             app:destination="@id/formalizacionEnvioFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/formalizacionEnvioFragment"

@@ -8,55 +8,34 @@
     android:background="@color/banco_negro"
     tools:context=".fragments.cliente.FormalizacionAcuerdoFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvForma"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textDescripción"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:backgroundTint="#C6A890CA"
-        app:cardCornerRadius="20dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="1dp"
+        android:text="Si ya pre-acordaste con Prestador los detalles del trabajo, solicitale la formalización del acuerdo de trabajo. En caso contrario, ponete en contacto con Prestador para alcanzar un acuerdo previo antes de solicitar."
+        android:textAlignment="textStart"
+        android:textColor="@color/negro_blaco"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSolicitar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <TextView
-                android:id="@+id/textDescripción"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="Si ya pre-acordaste con Prestador los detalles del trabajo, solicitale la formalización del acuerdo de trabajo. En caso contrario, ponete en contacto con Prestador para alcanzar un acuerdo previo antes de solicitar."
-                android:textAlignment="textStart"
-                android:textColor="@color/negro_blaco"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSolicitar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="#6750A4"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/deep_purple_500"
         android:text="Solicitar"
-        app:circularflow_defaultRadius="10dp"
-        app:circularflow_radiusInDP="10dp"
-        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvForma" />
+        app:layout_constraintTop_toBottomOf="@+id/textDescripción"
+        app:rippleColor="#B11B1B" />
 </androidx.constraintlayout.widget.ConstraintLayout>

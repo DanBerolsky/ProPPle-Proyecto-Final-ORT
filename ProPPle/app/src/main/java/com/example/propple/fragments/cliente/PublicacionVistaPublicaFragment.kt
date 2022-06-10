@@ -24,6 +24,7 @@ import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.ort.casodeusotest.adapters.ComentarioAdapter
+import kotlin.properties.Delegates
 
 class publicacionVistaPublicaFragment : Fragment() {
 
@@ -34,8 +35,9 @@ class publicacionVistaPublicaFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: PublicacionVistaPublicaViewModel
     private lateinit var binding: FragmentPublicacionVistaPublicaBinding
-    lateinit var adapter : ComentarioAdapter
-    lateinit var recycle : RecyclerView
+    private lateinit var adapter : ComentarioAdapter
+    private lateinit var recycle : RecyclerView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,10 +52,7 @@ class publicacionVistaPublicaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        binding.fabContactar.setOnClickListener{
-            val act = publicacionVistaPublicaFragmentDirections.actionPublicacionVistaPublicaFragmentToFormalizacionAcuerdoFragment2()
-            nav(act)
-        }
+
 
 
 
@@ -84,12 +83,14 @@ class publicacionVistaPublicaFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        var idPubli : Int = -1
         viewModel = ViewModelProvider(this).get(PublicacionVistaPublicaViewModel::class.java)
         var servicios = publicacionVistaPublicaFragmentArgs.fromBundle(requireArguments()).id
         viewModel.getPublication(servicios.toInt())
         viewModel.publi.observe(viewLifecycleOwner, Observer {
 
             if (it != null) {
+                idPubli=it.id_publicacion
                 binding.textDescripciN.text=it.publicacion_description
                 setValoracion(it.puntuacion)
                 binding.textDireccion.text=it.location
@@ -113,6 +114,12 @@ class publicacionVistaPublicaFragment : Fragment() {
                     val mensaje = "Hola ${it.user_name}!!/nContacto con usted para conocer mas sobre su ProppleService."
                     getWhatsapp(it.phone,mensaje)
                     //getWhatsapp("5491164960203","Hola que onda doc?")
+                }
+                binding.fabContactar.setOnClickListener{
+                    if (idPubli!=-1){
+                        val act = publicacionVistaPublicaFragmentDirections.actionPublicacionVistaPublicaFragmentToFormalizacionAcuerdoFragment2(idPubli)
+                        nav(act)
+                    }
                 }
             }
         } )

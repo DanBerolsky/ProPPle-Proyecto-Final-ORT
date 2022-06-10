@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.propple.R
+import com.example.propple.adapters.cliente.publicacionVistaPublicaFragmentArgs
 import com.example.propple.viewModel.cliente.FormalizacionAcuerdoViewModel
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 class FormalizacionAcuerdoFragment : Fragment() {
 
@@ -22,6 +25,7 @@ class FormalizacionAcuerdoFragment : Fragment() {
     private lateinit var v : View
     private lateinit var btnSolicitar : Button
     private lateinit var viewModel: FormalizacionAcuerdoViewModel
+    private var status : Boolean =false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,16 +38,31 @@ class FormalizacionAcuerdoFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        btnSolicitar.setOnClickListener {
-            val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragmentToFormalizacionEnvioFragment()
-            v.findNavController().navigate(action)
-        }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(FormalizacionAcuerdoViewModel::class.java)
-        // TODO: Use the ViewModel
+        var id = FormalizacionAcuerdoFragmentArgs.fromBundle(requireArguments()).id
+        viewModel.crearTransaccion(id)
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            status=true
+        })
+
+        btnSolicitar.setOnClickListener {
+            if (status){
+                status=false
+                Snackbar.make(v,"Listo",Snackbar.LENGTH_SHORT).show()
+                val action = FormalizacionAcuerdoFragmentDirections.actionFormalizacionAcuerdoFragmentToFormalizacionEnvioFragment()
+                v.findNavController().navigate(action)
+            }else{
+                Snackbar.make(v,"Error",Snackbar.LENGTH_SHORT).show()
+            }
+
+
+        }
+
     }
 
 }

@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:backgroundTint="@color/white"
-        android:text="Comentarios en la publicación"
+        android:text="volver al inicio"
         android:textColor="#6750A4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
