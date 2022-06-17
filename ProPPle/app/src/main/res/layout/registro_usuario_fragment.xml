@@ -23,11 +23,38 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="23dp"
+                app:cardBackgroundColor="@color/deep_purple_500"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Bienvenido a Propple"
+                    android:textAlignment="center"
+                    android:textColor="@color/banco_negro"
+                    android:textSize="34sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txvInNombre"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Nombre *" />
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardView1"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="20dp"
                 android:autofillHints="  Ingrese nuevamente una contraseña"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,17 +96,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInNombre"
+                android:id="@+id/txvInApellido"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Nombre *" />
+                android:layout_marginTop="20dp"
+                android:text="Apellido *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 android:autofillHints="  Ingrese nuevamente una contraseña"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -120,17 +149,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInApellido"
+                android:id="@+id/txvInAlias"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Apellido *" />
+                android:layout_marginTop="20dp"
+                android:text="Alias *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.405"
@@ -172,17 +203,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInAlias"
+                android:id="@+id/txvInMail"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Alias *" />
+                android:layout_marginTop="20dp"
+                android:text="Correo electrónico *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView6"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.405"
@@ -222,15 +255,17 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInMail"
+                android:id="@+id/txvInFechaDeNacimiento"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Correo electrónico *" />
+                android:layout_marginTop="20dp"
+                android:text="Fecha de nacimiento *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView8"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
+                android:layout_margin="0dp"
                 android:layout_marginTop="10dp"
                 android:autofillHints="  Ingrese nuevamente una contraseña"
                 app:cardCornerRadius="10dp"
@@ -273,17 +308,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInFechaDeNacimiento"
+                android:id="@+id/txvInTelefono"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Fecha de nacimiento *" />
+                android:layout_marginTop="20dp"
+                android:text="Teléfono *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView20"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.405"
@@ -323,16 +360,20 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInTelefono"
+                android:id="@+id/txvInDirecion"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Teléfono *" />
+                android:layout_marginTop="20dp"
+                android:text="Dirección *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView27"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:autofillHints="  Ingrese nuevamente una contraseña"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -345,9 +386,31 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
+                    <fragment
+                        android:id="@+id/autocomplete_fragment1"
+                        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        tools:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/textDirecion"
+                        android:layout_width="270dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:hint="Ingrese Dirección"
+                        android:padding="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="0dp"
+                        android:textSize="16sp" />
+
                     <EditText
                         android:id="@+id/InDirecion"
-                        android:layout_width="270dp"
+                        android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/rosa_para_input"
                         android:backgroundTint="#00AA3E3E"
@@ -358,11 +421,12 @@
                         android:hint="Ingrese su direccion"
                         android:inputType="textEmailAddress"
                         android:paddingStart="10dp"
-                        android:paddingEnd="10dp" />
+                        android:paddingEnd="10dp"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/btnUbicacion"
-                        android:layout_width="10dp"
+                        android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="#806C6565"
@@ -373,20 +437,33 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/ll1"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="14sp"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInDirecion"
+                android:id="@+id/txvInContrasenia1"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Dirección *" />
+                android:layout_marginTop="20dp"
+                android:text="Clave *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView52"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.405"
@@ -425,17 +502,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/txvInContrasenia1"
+                android:id="@+id/txvInContrasenia2"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="Clave *" />
+                android:layout_marginTop="20dp"
+                android:text="Repetir clave *" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="0dp"
 
+                android:layout_marginTop="10dp"
                 android:autofillHints="  Ingrese nuevamente una contraseña"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -475,19 +554,13 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/txvInContrasenia2"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="Repetir clave *" />
-
             <Button
                 android:id="@+id/btnRegistrarUsuario"
                 android:layout_width="220dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="34dp"
 
-                android:layout_marginBottom="14dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/deep_purple_500"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="@string/registrarse"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -156,6 +157,7 @@ class MisPreferenciasFragment : Fragment() {
         if (direccion!=""){
             autocompleteSupportFragment1.setText(direccion)
         }
+
 
         binding.btnGuardar2.setOnClickListener {
             prefs.setDireccion(direccion)

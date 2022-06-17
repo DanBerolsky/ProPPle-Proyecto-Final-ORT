@@ -19,6 +19,16 @@ class InputFieldValidator {
             }
             return vacio
         }
+        public fun esCampoVacio2(TXT : String, viewTXT : TextView, txtDefaultColor : Int): Boolean {
+            var vacio = false
+            if(TXT=="") {
+                viewTXT.setTextColor(Color.RED)
+                vacio = true
+            } else {
+                viewTXT.setTextColor(txtDefaultColor)
+            }
+            return vacio
+        }
 
         public fun esTelefono(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
             var esTelefono = false
