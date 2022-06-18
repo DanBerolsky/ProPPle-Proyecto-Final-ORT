@@ -36,7 +36,7 @@
         </activity>
         <meta-data
             android:name = "keyValue"
-            android:value = "AIzaSyCUiYXiVjEbxvtg5FL0noAR1t0eQyDOW9o"/>
+            android:value = ""/>
     </application>
 
 </manifest>
