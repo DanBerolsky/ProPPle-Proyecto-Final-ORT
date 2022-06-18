@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/banco_negro"
     tools:context=".fragments.ReservasFragment">
 
     <ScrollView
@@ -14,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
@@ -25,7 +26,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="Nuevas acordadas"
                 android:textAlignment="center"
-                android:textColor="#2B2B2B"
+                android:textColor="@color/negro_blaco"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -44,7 +45,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="A confirmar"
                 android:textAlignment="center"
-                android:textColor="#2B2B2B"
+                android:textColor="@color/negro_blaco"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -63,7 +64,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="Solicitadas"
                 android:textAlignment="center"
-                android:textColor="#2B2B2B"
+                android:textColor="@color/negro_blaco"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -77,11 +78,13 @@
                 android:id="@+id/btnHistoricoReservas"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="#FFFFFF"
                 android:text="Ver histórico de reservas a mis servicios"
                 android:textAlignment="center"
-                android:textColor="#6750A4"
+                android:textColor="@color/rosa_para_input"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>

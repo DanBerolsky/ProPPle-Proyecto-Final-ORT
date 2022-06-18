@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:elevation="20dp"
-    app:cardBackgroundColor="#A890CA"
+    app:cardBackgroundColor="@color/rosa_para_input"
     app:cardCornerRadius="15dp">
 
 
@@ -18,15 +18,17 @@
 
         <TextView
             android:id="@+id/txtRubroItemName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:text="Servicio"
             android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/switch4"
             app:layout_constraintStart_toEndOf="@+id/btnRubroItemName"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +60,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/deep_purple_500"
             android:text="S"
             app:cornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"

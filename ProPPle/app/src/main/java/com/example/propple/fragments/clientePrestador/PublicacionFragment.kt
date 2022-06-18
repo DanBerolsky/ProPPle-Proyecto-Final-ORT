@@ -32,7 +32,7 @@ class PublicacionFragment : Fragment() {
         v = inflater.inflate(R.layout.publicacion_fragment, container, false)
         btnEditarPublicacion = v.findViewById(R.id.btnEditarPublicacion)
         btnComentarios = v.findViewById(R.id.btnComentarios)
-        fabVolverMisPublic = v.findViewById(R.id.fabVolverMisPublic)
+        //fabVolverMisPublic = v.findViewById(R.id.fabVolverMisPublic)
         return v
     }
 
@@ -46,10 +46,10 @@ class PublicacionFragment : Fragment() {
             val action = PublicacionFragmentDirections.actionPublicacionFragmentToComentariosFragment(PublicacionFragmentArgs.fromBundle(requireArguments()).rubroPosition)
             v.findNavController().navigate(action)
         }
-        fabVolverMisPublic.setOnClickListener {
+        /*fabVolverMisPublic.setOnClickListener {
             val action = PublicacionFragmentDirections.actionPublicacionFragmentToMisPublicacionesFragment()
             v.findNavController().navigate(action)
-        }
+        }*/
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

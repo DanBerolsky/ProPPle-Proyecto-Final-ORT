@@ -1,6 +1,6 @@
 package com.example.propple.api.Transacciones
 
-data class formalizarTransaccion(
+data class FormalizarTransaccion(
     val date_of_work: String,
     val id_transaccion: Int,
     val location: String,

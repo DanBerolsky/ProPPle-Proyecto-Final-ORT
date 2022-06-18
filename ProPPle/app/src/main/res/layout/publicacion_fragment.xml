@@ -7,277 +7,292 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ServicioPublicadoFragment">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabVolverMisPublic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:src="@drawable/ic_left_arrow"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#C6A890CA"
-        app:cardCornerRadius="20dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fabVolverMisPublic">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                app:cardCornerRadius="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/imageView7"
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </androidx.cardview.widget.CardView>
+                    android:layout_marginStart="57dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="55dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnComentarios">
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Nombre"
-                android:textAlignment="textStart"
-                android:textSize="35dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/cardView4"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textCantVeces"
-                android:layout_width="180dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Ha realizado X veces este servicio"
-                android:textSize="15sp"
-                android:textStyle="italic"
-                app:layout_constraintStart_toEndOf="@+id/cardView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="50dp"
+                            android:text="Publicación visible"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="55dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="#6750A4"
-                android:text="Y.Y"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:cornerRadius="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="15dp"
+                            android:text="No"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-            <TextView
-                android:id="@+id/títuloDelServicio"
-                android:layout_width="340dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:text="Título del servicio"
-                android:textAlignment="textStart"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textCantVeces" />
+                        <Switch
+                            android:id="@+id/switch3"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="10dp"
+                            android:isScrollContainer="false"
+                            android:scaleX="1.5"
+                            android:scaleY="1.5"
+                            android:switchMinWidth="65dp"
+                            android:textAlignment="center"
+                            android:thumbTint="#6750A4"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textView30"
+                            app:layout_constraintStart_toEndOf="@+id/textView29"
+                            app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="115dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Precio por hora: "
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
+                        <TextView
+                            android:id="@+id/textView30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="30dp"
+                            android:text="Si"
+                            android:textAlignment="center"
+                            android:textColor="#000000"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="165dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="40dp"
-                android:text="Descripción del servicio"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
+                </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/textprecio"
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="10dp"
-                android:text="$precio"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
+                <Button
+                    android:id="@+id/btnComentarios"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="55dp"
+                    android:backgroundTint="@color/deep_purple_500"
+                    android:text="Comentarios en la publicación"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
-            <TextView
-                android:id="@+id/textDescripción"
-                android:layout_width="300dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:text="Descripción."
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="#C6A890CA"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="125dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Dirección laboral: "
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textDireccion"
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Dirección Google Maps"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/textView24"
-                app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnEditarPublicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:clickable="true"
-                android:src="@drawable/ic_edit"
-                app:backgroundTint="#6750A4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView24"
-                app:tint="@android:color/white"
-                tools:ignore="SpeakableTextPresentCheck" />
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:srcCompat="@drawable/avatar_1" />
+                        </androidx.cardview.widget.CardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Nombre"
+                            android:textAlignment="textStart"
+                            android:textSize="35dp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/cardView4"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/textCantVeces"
+                            android:layout_width="180dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Ha realizado X veces este servicio"
+                            android:textSize="15sp"
+                            android:textStyle="italic"
+                            app:layout_constraintStart_toEndOf="@+id/cardView4"
+                            app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-    <Button
-        android:id="@+id/btnComentarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Comentarios en la publicación"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                        <Button
+                            android:id="@+id/button10"
+                            android:layout_width="55dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="#6750A4"
+                            android:text="Y.Y"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="50dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnComentarios">
+                        <TextView
+                            android:id="@+id/títuloDelServicio"
+                            android:layout_width="340dp"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:text="Título del servicio"
+                            android:textAlignment="textStart"
+                            android:textSize="25dp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textCantVeces" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="115dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Precio por hora: "
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="50dp"
-                android:text="Publicación visible"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="165dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Descripción del servicio"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="15dp"
-                android:text="No"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                        <TextView
+                            android:id="@+id/textprecio"
+                            android:layout_width="80dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="$precio"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/textView21"
+                            app:layout_constraintTop_toBottomOf="@+id/títuloDelServicio" />
 
-            <Switch
-                android:id="@+id/switch3"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="10dp"
-                android:isScrollContainer="false"
-                android:scaleX="2"
-                android:scaleY="2"
-                android:switchMinWidth="65dp"
-                android:textAlignment="center"
-                android:thumbTint="#6750A4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView30"
-                app:layout_constraintStart_toEndOf="@+id/textView29"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                        <TextView
+                            android:id="@+id/textDescripción"
+                            android:layout_width="300dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Descripción."
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="30dp"
-                android:text="Si"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="125dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Dirección laboral: "
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
 
-    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/textDireccion"
+                            android:layout_width="200dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Dirección Google Maps"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/textView24"
+                            app:layout_constraintTop_toBottomOf="@+id/textDescripción" />
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/btnEditarPublicacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:clickable="true"
+                            android:src="@drawable/ic_edit"
+                            app:backgroundTint="#6750A4"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView24"
+                            app:tint="@android:color/white"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

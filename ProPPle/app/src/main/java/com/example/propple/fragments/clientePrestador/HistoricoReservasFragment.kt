@@ -42,7 +42,7 @@ class HistoricoReservasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.historico_reservas_fragment, container, false)
-        fabVolverReservas2 = v.findViewById(R.id.fabVolverReservas2)
+        //fabVolverReservas2 = v.findViewById(R.id.fabVolverReservas2)
         recyclerReservasConcretadas = v.findViewById(R.id.recConcretadas)
         recyclerReservasCanceladas = v.findViewById(R.id.recCanceladas)
         recyclerReservasRechazadas = v.findViewById(R.id.recRechazadas)
@@ -57,10 +57,10 @@ class HistoricoReservasFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        fabVolverReservas2.setOnClickListener {
+        /*fabVolverReservas2.setOnClickListener {
             val action = HistoricoReservasFragmentDirections.actionHistoricoReservasFragmentToReservasFragment2()
             v.findNavController().navigate(action)
-        }
+        }*/
 
         recyclerReservasConcretadas.setHasFixedSize(true)
         recyclerReservasConcretadas.layoutManager = LinearLayoutManager(context)

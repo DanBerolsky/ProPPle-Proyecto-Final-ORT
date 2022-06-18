@@ -28,10 +28,12 @@
 
     <TextView
         android:id="@+id/NombreDeUsuario"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="12sp"
         android:textColor="@color/negro_blaco"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

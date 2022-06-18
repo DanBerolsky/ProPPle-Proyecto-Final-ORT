@@ -290,7 +290,8 @@
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/fabWapp1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:src="@drawable/ic_whatsapp_white"
@@ -322,7 +323,8 @@
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/fabContactar"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:src="@drawable/ic_right_arrow"
@@ -362,8 +364,10 @@
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
+                        android:gravity="center_horizontal"
                         android:text="Denunciar servicio"
                         android:textColor="@color/negro_blaco"
                         android:textSize="18sp" />
@@ -372,6 +376,7 @@
                         android:id="@+id/fabDenunciar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:backgroundTint="#FFFFFF"
                         android:clickable="true"

@@ -18,6 +18,7 @@ import com.example.propple.utils.fileController
 import com.example.propple.utils.fileController.encodeFileToBase64Binary
 import com.example.propple.utils.fileController.getFileName
 import com.example.propple.utils.fileController.getRealPathFromURI
+import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PostularmeViewModel
 import com.google.android.material.snackbar.Snackbar
 import java.io.File
@@ -32,11 +33,12 @@ class PostularmeFragment : Fragment() {
     private lateinit var btnPostularme : Button
     private lateinit var binding:PostularmeFragmentBinding
     private var rubro:String=""
-    val fileLaucher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+    val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         var uri = it.data?.data!!
         binding.InCv.setText(getFileName(uri,requireContext()))
-        val sss = encodeFileToBase64Binary(File(uri.path))
-        Snackbar.make(v,sss.toString(),Snackbar.LENGTH_LONG).show()
+
+        //val sss = encodeFileToBase64Binary(File(uri.path))
+        //Snackbar.make(v,sss.toString(),Snackbar.LENGTH_LONG).show()
         //var adsa : InputStream? = activity?.contentResolver?.openInputStream(uri)
         //Snackbar.make(v,adsa.toString() ,Snackbar.LENGTH_LONG).show()
         //var dfPath = uri.path
@@ -59,7 +61,8 @@ class PostularmeFragment : Fragment() {
         super.onStart()
 
         binding.btnAdjt.setOnClickListener {
-            fileController.pickFile(fileLaucher)
+           // fileController.pickFile(fileLaucher)
+            imgController.pickPhotoFromGalery(imageLauncher)
         }
 
         btnPostularme.setOnClickListener {

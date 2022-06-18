@@ -36,7 +36,7 @@ class PublicarServicioFragment : Fragment() {
         v = inflater.inflate(R.layout.publicar_servicio_fragment, container, false)
         binding = PublicarServicioFragmentBinding.bind(v)
         btnPublicar = v.findViewById(R.id.btnEnviarReserva)
-        fabVolverPublicacion1 = v.findViewById(R.id.fabVolverPublicacion1)
+        //fabVolverPublicacion1 = v.findViewById(R.id.fabVolverPublicacion1)
         return v
     }
 
@@ -59,10 +59,10 @@ class PublicarServicioFragment : Fragment() {
                 Snackbar.make(v, "Publicación modificada", Snackbar.LENGTH_SHORT).show()
             }
         }
-        fabVolverPublicacion1.setOnClickListener {
+        /*fabVolverPublicacion1.setOnClickListener {
             val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
             v.findNavController().navigate(action)
-        }
+        }*/
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -6,6 +6,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/ProPPle/app/src/main/res/layout/activity_main.xml" value="0.3375" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.238" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/avatar_1.xml" value="0.238" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/avatar_11.xml" value="0.256" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/avatar_2.xml" value="0.269" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/avatar_5.xml" value="0.238" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/drawable/avatar_6.xml" value="0.238" />
@@ -56,7 +57,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_fragment_usuario_prestador.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_prestador_fragment.xml" value="0.30925925925925923" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_usuario_prestador_fragment.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/datos_personales_edit_fragment.xml" value="0.6512488436632747" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/datos_personales_edit_fragment.xml" value="0.5337995337995338" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/formulario_reserva_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_blank.xml" value="0.3423913043478261" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_cambiar_contrasenia_prestador.xml" value="0.33" />
@@ -68,6 +69,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_inicio.xml" value="0.3509963768115942" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_publicacion_vista_publica.xml" value="0.40764331210191085" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/genero_item_framework.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/home_fragment.xml" value="0.26618705035971224" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/iniciar_seccion_fragment.xml" value="0.3515625" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/inicio_fragment.xml" value="0.36666666666666664" />
@@ -75,6 +77,10 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.3101851851851852" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario2.xml" value="0.46113989637305697" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_nuevo_cometario.xml" value="0.365625" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_acordada.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_detalle.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_rechazada.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_reserva_solicitada.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_rubro.xml" value="0.36102564102564105" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/log_in__fragment.xml" value="0.3515625" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_preferencias_fragment.xml" value="0.36666666666666664" />
@@ -84,7 +90,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/productos_recycler_view.xml" value="0.3515625" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicacion_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicaciones_fragment.xml" value="0.33" />
-        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicaciones_item_recycler_view.xml" value="0.5" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicaciones_item_recycler_view.xml" value="0.48132780082987553" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicar_servicio_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/recuperar_cuenta2_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/recuperar_cuenta_fragment.xml" value="0.1" />
