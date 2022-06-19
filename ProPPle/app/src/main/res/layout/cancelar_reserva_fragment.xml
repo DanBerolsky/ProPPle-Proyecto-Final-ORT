@@ -32,7 +32,7 @@
                     android:id="@+id/textView14"
                     android:layout_width="350dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="20dp"
                     android:text="¿Estás seguro que queres cancelar la siguiente reserva?"
                     android:textAlignment="center"
                     android:textColor="#000000"

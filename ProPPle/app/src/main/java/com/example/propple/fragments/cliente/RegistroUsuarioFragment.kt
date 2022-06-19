@@ -54,7 +54,7 @@ class RegistroUsuarioFragment : Fragment() {
     private var googleMaps: GoogleMaps = GoogleMaps()
     private lateinit var autocompleteSupportFragment1:AutocompleteSupportFragment
     private var direccion: String=""
-    private lateinit var textView:TextView
+    //private lateinit var textView:TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

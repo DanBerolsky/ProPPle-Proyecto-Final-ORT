@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.propple.R
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.CancelarReservaViewModel
@@ -39,7 +40,7 @@ class CancelarReservaFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        btnNoRegresar.setOnClickListener {}
+        btnNoRegresar.setOnClickListener { v.findNavController().navigate(CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment22())}
         btnSiCancelar.setOnClickListener {
             if(inMotivo.text.isBlank()) {
                 Snackbar.make(v, "Debes ingresar un motivo", Snackbar.LENGTH_SHORT).show()

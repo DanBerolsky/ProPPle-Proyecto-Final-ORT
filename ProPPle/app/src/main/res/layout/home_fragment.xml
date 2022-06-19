@@ -56,7 +56,7 @@
                     android:textSize="34sp" />
 
                 <EditText
-                    android:id="@+id/InNombre"
+                    android:id="@+id/inTituloServicio"
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:backgroundTint="#00AA3E3E"
