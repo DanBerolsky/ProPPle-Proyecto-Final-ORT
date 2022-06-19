@@ -34,7 +34,7 @@ class CancelarReservaFragment : Fragment() {
         btnNoRegresar = v.findViewById(R.id.btnNoRegresar)
         btnSiCancelar = v.findViewById(R.id.btnSiCancelar)
         //fabVolverReservas3 = v.findViewById(R.id.fabVolverReservas3)
-        inMotivo = v.findViewById(R.id.inMotivo)
+        inMotivo = v.findViewById(R.id.InMotivo)
         return v
     }
 

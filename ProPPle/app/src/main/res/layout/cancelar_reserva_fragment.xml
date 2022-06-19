@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.clientePrestador.CancelarReservaFragment"
-    >
+    android:background="@color/banco_negro"
+    android:backgroundTint="@color/banco_negro"
+    tools:context=".fragments.clientePrestador.CancelarReservaFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,13 +20,48 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/frameLayout10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1232"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginTop="24dp"
+                    android:autofillHints="  Ingrese nuevamente una contraseña"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.491"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/InMotivo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/rosa_para_input"
+                            android:backgroundTint="#00AA3E3E"
+                            android:ems="10"
+                            android:hint="Motivo"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:id="@+id/textView14"
@@ -35,7 +70,7 @@
                     android:layout_marginTop="20dp"
                     android:text="¿Estás seguro que queres cancelar la siguiente reserva?"
                     android:textAlignment="center"
-                    android:textColor="#000000"
+                    android:textColor="@color/negro_blaco"
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,42 +213,29 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <EditText
-                    android:id="@+id/inMotivo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="Motivo"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="48dp"
                     android:text="Devolución del abono de la reserva a través de"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inMotivo" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardView1232" />
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_mercado_pago"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/inMotivo" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardView1232" />
 
                 <Button
                     android:id="@+id/btnSiCancelar"

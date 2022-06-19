@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.entities.Rubro
 
 class RubroAdapter (var rubroList : MutableList<Rubro>,
@@ -32,6 +34,16 @@ class RubroAdapter (var rubroList : MutableList<Rubro>,
         fun getCard(): CardView {
             return view.findViewById(R.id.cardRubroItem)
         }
+
+        fun estado(){
+            view.findViewById<Switch>(R.id.switch4).setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked){
+                    Snackbar.make(view,"Activado", Snackbar.LENGTH_SHORT).show()
+                }else{
+                    Snackbar.make(view,"Desactivado", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RubroHolder {
@@ -45,6 +57,8 @@ class RubroAdapter (var rubroList : MutableList<Rubro>,
         holder.getCard().setOnClickListener {
             onClick(position)
         }
+
+        holder.estado()
     }
 
     override fun getItemCount(): Int {

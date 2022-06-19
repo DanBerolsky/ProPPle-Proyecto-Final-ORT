@@ -18,7 +18,11 @@
         android:id="@+id/serviciosContratadosFragment2"
         android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
-        tools:layout="@layout/servicios_contratados_fragment" />
+        tools:layout="@layout/servicios_contratados_fragment" >
+        <action
+            android:id="@+id/action_serviciosContratadosFragment2_action_serviciosContratadosFragment_to_abonarReservaFragment"
+            app:destination="@id/abonarReservaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cuentaFragment"
         android:name="com.example.propple.fragments.clientePrestador.CuentaUsuarioPrestadorFragment"
@@ -135,7 +139,7 @@
     </fragment>
     <fragment
         android:id="@+id/publicarServicioFragment"
-        android:name="com.ort.casodeusotest.fragments.PublicarServicioFragment"
+        android:name="com.example.propple.fragments.clientePrestador.PublicarServicioFragment"
         android:label="PublicarServicioFragment" >
         <argument
             android:name="rubroPosition"
@@ -227,5 +231,14 @@
         <action
             android:id="@+id/action_formalizacionEnvioFragment_to_home_fragment"
             app:destination="@id/home_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/abonarReservaFragment"
+        android:name="com.example.propple.fragments.cliente.AbonarReservaFragment"
+        android:label="fragment_abonar_reserva"
+        tools:layout="@layout/fragment_abonar_reserva" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

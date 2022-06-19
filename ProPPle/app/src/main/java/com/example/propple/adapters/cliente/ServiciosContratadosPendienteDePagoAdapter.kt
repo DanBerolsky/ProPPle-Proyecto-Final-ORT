@@ -5,11 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.entities.cliente.Transaccion
+import com.example.propple.fragments.cliente.ServiciosContratadosFragmentDirections
+import com.google.android.material.snackbar.Snackbar
 
 class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : MutableList<Transaccion>) : RecyclerView.Adapter<ServiciosContratadosPendienteDePagoAdapter.ServiciosContratadosHolder>(){
 
@@ -45,6 +49,16 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : 
             txtUbicacion.text = ubicacion
         }
 
+        fun abonar(id:Int){
+            view.findViewById<Button>(R.id.btnAbonar).setOnClickListener {
+                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragment2ActionServiciosContratadosFragmentToAbonarReservaFragment(id))
+            }
+        }
+        fun Rechazar(){
+            view.findViewById<Button>(R.id.btnRechazar).setOnClickListener {
+                Snackbar.make(view,"ELIMINAR",Snackbar.LENGTH_SHORT).show()
+            }
+        }
     }
 
     // aca voy a buscar el xml de item
@@ -58,6 +72,8 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : 
         //ServiciosContratadosList[position].titulo?.let { holder.setRubro(it) }
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
         //ServiciosContratadosList[position].ubicacion?.let { holder.setUbicacion(it) }
+        ServiciosContratadosList[position].id?.let { holder.abonar(it as Int) }
+        holder.Rechazar()
     }
 
 

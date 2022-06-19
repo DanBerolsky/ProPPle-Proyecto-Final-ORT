@@ -141,7 +141,7 @@
                         android:minHeight="48dp"
                         android:scaleX="1.5"
                         android:scaleY="1.5"
-                        android:textColor="@color/negro_blaco"
+                        android:textColorHighlight="@color/deep_purple_500"
                         android:textColorLink="@color/purple_200"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -173,7 +173,7 @@
                         android:minHeight="48dp"
                         android:scaleX="1.5"
                         android:scaleY="1.5"
-                        android:textColor="@color/negro_blaco"
+                        android:textColorHighlight="@color/deep_purple_500"
                         android:textColorLink="@color/purple_200"
                         android:textSize="16sp" />
                 </LinearLayout>

@@ -25,6 +25,7 @@
             android:layout_marginTop="52dp"
             android:autofillHints="  Ingrese nuevamente una contraseña"
             android:foregroundGravity="center"
+            android:padding="3dp"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -36,6 +37,10 @@
                     android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/teal_700"
                     android:maxWidth="10dp"
@@ -60,7 +65,9 @@
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:backgroundTint="#00AA3E3E"
+                    android:clickable="false"
                     android:ems="10"
+                    android:focusable="false"
                     android:hint="Qué servicio estás buscando?"
                     android:inputType="textEmailAddress"
                     android:padding="10dp" />

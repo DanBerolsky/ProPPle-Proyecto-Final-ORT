@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -24,6 +23,7 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
+
 
 class MisPreferenciasFragment : Fragment() {
 
@@ -159,6 +159,20 @@ class MisPreferenciasFragment : Fragment() {
         }
 
 
+        binding.switch1.setOnCheckedChangeListener { buttonView, isChecked ->
+           if (isChecked){
+               Snackbar.make(v,"Activado",Snackbar.LENGTH_SHORT).show()
+           }else{
+               Snackbar.make(v,"Desactivado",Snackbar.LENGTH_SHORT).show()
+           }
+        }
+        binding.switch12.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                Snackbar.make(v,"Activado",Snackbar.LENGTH_SHORT).show()
+            }else{
+                Snackbar.make(v,"Desactivado",Snackbar.LENGTH_SHORT).show()
+            }
+        }
         binding.btnGuardar2.setOnClickListener {
             prefs.setDireccion(direccion)
             prefs.setMejorValoracion(binding.switch1.isChecked)

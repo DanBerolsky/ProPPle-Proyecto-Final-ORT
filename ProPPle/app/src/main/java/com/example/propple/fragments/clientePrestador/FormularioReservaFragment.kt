@@ -37,7 +37,6 @@ class FormularioReservaFragment : Fragment() {
     private lateinit var btnEnviarReserva : Button
     //private lateinit var fabVolverReservas1 : FloatingActionButton
 
-    private var googleMaps: GoogleMaps = GoogleMaps()
     private lateinit var autocompleteSupportFragment1:AutocompleteSupportFragment
     private var direccion: String=""
     private var latitude : Double = 0.0

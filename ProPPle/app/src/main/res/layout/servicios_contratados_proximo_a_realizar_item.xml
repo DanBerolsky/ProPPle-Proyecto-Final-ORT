@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
-    android:background="@color/rosa_para_input"
     android:backgroundTint="@color/rosa_para_input"
     android:elevation="20dp"
-    app:cardBackgroundColor="#C6A890CA"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout

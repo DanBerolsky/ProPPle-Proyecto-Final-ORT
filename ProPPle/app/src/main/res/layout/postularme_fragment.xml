@@ -11,13 +11,12 @@
         android:id="@+id/cardViewr38"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="24dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewr8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvInRubroP">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,13 +65,12 @@
         android:id="@+id/cardViewr8"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="176dp"
         android:autofillHints="  Ingrese nuevamente una contraseña"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnEnviarCv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvCVP">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,17 +128,19 @@
         android:id="@+id/txvInRubroP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Rubro *"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewr38"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txvCVP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="CV *"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewr8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewr38" />
 </androidx.constraintlayout.widget.ConstraintLayout>

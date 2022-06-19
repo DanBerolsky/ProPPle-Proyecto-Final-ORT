@@ -73,7 +73,11 @@
         android:id="@+id/serviciosContratadosFragment"
         android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
-        tools:layout="@layout/servicios_contratados_fragment" />
+        tools:layout="@layout/servicios_contratados_fragment" >
+        <action
+            android:id="@+id/action_serviciosContratadosFragment_to_abonarReservaFragment"
+            app:destination="@id/abonarReservaFragment" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.propple.activities.cliente.MainActivity"
@@ -134,5 +138,14 @@
         <action
             android:id="@+id/action_formalizacionEnvioFragment_to_home_fragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/abonarReservaFragment"
+        android:name="com.example.propple.fragments.cliente.AbonarReservaFragment"
+        android:label="fragment_abonar_reserva"
+        tools:layout="@layout/fragment_abonar_reserva" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

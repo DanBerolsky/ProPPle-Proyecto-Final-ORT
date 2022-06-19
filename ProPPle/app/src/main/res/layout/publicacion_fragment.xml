@@ -5,6 +5,8 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/negro_blaco"
+    android:backgroundTint="@color/banco_negro"
     tools:context=".fragments.ServicioPublicadoFragment">
 
     <ScrollView
@@ -31,6 +33,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="55dp"
                     android:layout_marginBottom="20dp"
+                    android:backgroundTint="#D5CCCC"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +42,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#D6D6D6">
 
                         <TextView
                             android:id="@+id/textView28"
@@ -122,7 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="35dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     android:backgroundTint="#C6A890CA"
                     app:cardCornerRadius="20dp"
