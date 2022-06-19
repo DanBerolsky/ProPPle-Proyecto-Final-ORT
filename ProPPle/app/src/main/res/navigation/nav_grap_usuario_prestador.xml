@@ -87,37 +87,39 @@
         android:name="com.ort.casodeusotest.fragments.ReservasFragment"
         android:label="ReservasFragment" >
         <action
-            android:id="@+id/action_reservasFragment2_to_historicoReservasFragment"
+            android:id="@+id/action_reservasFragment2_to_historicoReservasFragment2"
             app:destination="@id/historicoReservasFragment" />
         <action
-            android:id="@+id/action_reservasFragment2_to_formularioReservaFragment"
-            app:destination="@id/formularioReservaFragment" />
-        <action
-            android:id="@+id/action_reservasFragment2_to_cancelarReservaFragment"
+            android:id="@+id/action_reservasFragment2_to_cancelarReservaFragment2"
             app:destination="@id/cancelarReservaFragment" />
+        <action
+            android:id="@+id/action_reservasFragment2_to_formularioReservaFragment2"
+            app:destination="@id/formularioReservaFragment" />
     </fragment>
     <fragment
         android:id="@+id/historicoReservasFragment"
-        android:name="com.ort.casodeusotest.fragments.HistoricoReservasFragment"
-        android:label="HistoricoReservasFragment" >
-        <action
-            android:id="@+id/action_historicoReservasFragment_to_reservasFragment2"
-            app:destination="@id/reservasFragment2" />
-    </fragment>
+        android:name="com.example.propple.fragments.clientePrestador.HistoricoReservasFragment"
+        android:label="HistoricoReservasFragment" />
     <fragment
         android:id="@+id/formularioReservaFragment"
-        android:name="com.ort.casodeusotest.fragments.FormularioReservaFragment"
+        android:name="com.example.propple.fragments.clientePrestador.FormularioReservaFragment"
         android:label="FormularioReservaFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_formularioReservaFragment_to_reservasFragment2"
+            android:id="@+id/action_formularioReservaFragment_to_reservasFragment22"
             app:destination="@id/reservasFragment2" />
     </fragment>
     <fragment
         android:id="@+id/cancelarReservaFragment"
-        android:name="com.ort.casodeusotest.fragments.CancelarReservaFragment"
+        android:name="com.example.propple.fragments.clientePrestador.CancelarReservaFragment"
         android:label="CancelarReservaFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_cancelarReservaFragment_to_reservasFragment2"
+            android:id="@+id/action_cancelarReservaFragment_to_reservasFragment22"
             app:destination="@id/reservasFragment2" />
     </fragment>
     <fragment
@@ -183,7 +185,7 @@
     </fragment>
     <fragment
         android:id="@+id/publicacionVistaPublicaFragment"
-        android:name="com.example.propple.adapters.cliente.publicacionVistaPublicaFragment"
+        android:name="com.example.propple.fragments.cliente.publicacionVistaPublicaFragment"
         android:label="fragment_publicacion_vista_publica"
         tools:layout="@layout/fragment_publicacion_vista_publica" >
         <argument

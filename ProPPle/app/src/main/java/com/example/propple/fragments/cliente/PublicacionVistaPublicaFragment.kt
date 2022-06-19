@@ -1,4 +1,4 @@
-package com.example.propple.adapters.cliente
+package com.example.propple.fragments.cliente
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -17,14 +17,10 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.example.propple.api.publication.Comentario
 import com.example.propple.databinding.FragmentPublicacionVistaPublicaBinding
-import com.example.propple.fragments.cliente.PublicacionesFragmentArgs
-import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.ort.casodeusotest.adapters.ComentarioAdapter
-import kotlin.properties.Delegates
 
 class publicacionVistaPublicaFragment : Fragment() {
 
@@ -51,11 +47,6 @@ class publicacionVistaPublicaFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
-
-
-
-
 
     }
     fun setValoracion(cantEstrellas : Int){

@@ -1,4 +1,4 @@
-package com.ort.casodeusotest.fragments
+package com.example.propple.fragments.clientePrestador
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -11,7 +11,6 @@ import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
 import com.example.propple.databinding.FormularioReservaFragmentBinding
-import com.example.propple.databinding.RegistroUsuarioFragmentBinding
 import com.example.propple.utils.InputFieldValidator
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.FormularioReservaViewModel
@@ -26,7 +25,7 @@ class FormularioReservaFragment : Fragment() {
     private lateinit var binding : FormularioReservaFragmentBinding
     private lateinit var viewModel: FormularioReservaViewModel
     private lateinit var btnEnviarReserva : Button
-    private lateinit var fabVolverReservas1 : FloatingActionButton
+    //private lateinit var fabVolverReservas1 : FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +34,7 @@ class FormularioReservaFragment : Fragment() {
         v = inflater.inflate(R.layout.formulario_reserva_fragment, container, false)
         binding = FormularioReservaFragmentBinding.bind(v)
         btnEnviarReserva = v.findViewById(R.id.btnEnviarReserva)
-        fabVolverReservas1 = v.findViewById(R.id.fabVolverReservas1)
+        //fabVolverReservas1 = v.findViewById(R.id.fabVolverReservas1)
         return v
     }
 
@@ -53,15 +52,15 @@ class FormularioReservaFragment : Fragment() {
                 Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
             }
             else {
-                val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment2()
+                val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment22()
                 v.findNavController().navigate(action)
                 Snackbar.make(v, "Reserva enviada a Cliente para confirmar", Snackbar.LENGTH_SHORT).show()
             }
         }
-        fabVolverReservas1.setOnClickListener {
+        /*fabVolverReservas1.setOnClickListener {
             val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment2()
             v.findNavController().navigate(action)
-        }
+        }*/
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

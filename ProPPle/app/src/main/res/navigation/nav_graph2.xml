@@ -92,7 +92,7 @@
     </fragment>
     <fragment
         android:id="@+id/publicacionVistaPublicaFragment"
-        android:name="com.example.propple.adapters.cliente.publicacionVistaPublicaFragment"
+        android:name="com.example.propple.fragments.cliente.publicacionVistaPublicaFragment"
         android:label="fragment_publicacion_vista_publica"
         tools:layout="@layout/fragment_publicacion_vista_publica" >
         <argument

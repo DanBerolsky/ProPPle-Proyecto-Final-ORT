@@ -4,51 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FormularioReservaFragment"
+    tools:context=".fragments.clientePrestador.FormularioReservaFragment"
     android:id="@+id/frameLayout9">
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
         android:text="Servicio - para Nombre"
         android:textAlignment="textStart"
         android:textSize="22sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardView10"
-        app:layout_constraintTop_toBottomOf="@+id/fabVolverReservas1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView10"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fabVolverReservas1">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/avatar_1" />
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabVolverReservas1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:src="@drawable/ic_left_arrow"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/txvinTituloServicio"
@@ -138,6 +127,7 @@
         android:id="@+id/btnEnviarReserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/deep_purple_500"
         android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

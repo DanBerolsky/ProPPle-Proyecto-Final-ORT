@@ -1,4 +1,4 @@
-package com.ort.casodeusotest.fragments
+package com.example.propple.fragments.clientePrestador
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.example.propple.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.TextInputEditText
 import com.ort.casodeusotest.viewModel.CancelarReservaViewModel
 
 class CancelarReservaFragment : Fragment() {
@@ -26,7 +23,7 @@ class CancelarReservaFragment : Fragment() {
     private lateinit var inMotivo : EditText
     private lateinit var btnNoRegresar : Button
     private lateinit var btnSiCancelar : Button
-    private lateinit var fabVolverReservas3 : FloatingActionButton
+    //private lateinit var fabVolverReservas3 : FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +32,7 @@ class CancelarReservaFragment : Fragment() {
         v = inflater.inflate(R.layout.cancelar_reserva_fragment, container, false)
         btnNoRegresar = v.findViewById(R.id.btnNoRegresar)
         btnSiCancelar = v.findViewById(R.id.btnSiCancelar)
-        fabVolverReservas3 = v.findViewById(R.id.fabVolverReservas3)
+        //fabVolverReservas3 = v.findViewById(R.id.fabVolverReservas3)
         inMotivo = v.findViewById(R.id.inMotivo)
         return v
     }
@@ -49,10 +46,10 @@ class CancelarReservaFragment : Fragment() {
             } else {
             }
         }
-        fabVolverReservas3.setOnClickListener {
-            val action = CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment2()
+        /*fabVolverReservas3.setOnClickListener {
+            val action = CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment22()
             v.findNavController().navigate(action)
-        }
+        }*/
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

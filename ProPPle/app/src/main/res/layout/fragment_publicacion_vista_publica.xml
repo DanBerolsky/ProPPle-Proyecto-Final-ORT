@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/banco_negro"
-    tools:context=".adapters.cliente.publicacionVistaPublicaFragment">
+    tools:context=".fragments.cliente.publicacionVistaPublicaFragment">
 
     <ScrollView
         android:layout_width="match_parent"

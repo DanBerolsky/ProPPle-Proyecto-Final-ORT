@@ -15,7 +15,7 @@ import com.example.propple.R
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.reservas.ReservaAcordadaAdapter
 import com.ort.casodeusotest.adapters.reservas.ReservaConfirmarAdapter
-import com.ort.casodeusotest.adapters.reservas.ReservaSolicitadaAdapter
+import com.example.propple.adapters.clientePrestador.reservas.ReservaSolicitadaAdapter
 import com.ort.casodeusotest.entities.ReservaRepository
 import com.ort.casodeusotest.viewModel.ReservasViewModel
 
@@ -35,10 +35,10 @@ class ReservasFragment : Fragment() {
     lateinit var solicitadaAdapter : ReservaSolicitadaAdapter
     var repository : ReservaRepository = ReservaRepository()
     private lateinit var btnHistoricoReservas : Button
-    private lateinit var fabWhatsapp : FloatingActionButton
-    private lateinit var fabCancelar : FloatingActionButton
-    private lateinit var fabLlenarFormulario : FloatingActionButton
-    private lateinit var fabRechazarSolicitud : FloatingActionButton
+    //private lateinit var fabWhatsapp : FloatingActionButton
+    //private lateinit var fabCancelar : FloatingActionButton
+    //private lateinit var fabLlenarFormulario : FloatingActionButton
+    //private lateinit var fabRechazarSolicitud : FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,7 +61,7 @@ class ReservasFragment : Fragment() {
 
         recyclerReservasAcordadas.setHasFixedSize(true)
         recyclerReservasAcordadas.layoutManager = LinearLayoutManager(context)
-        acordadaAdapter = ReservaAcordadaAdapter(repository.reservaList) {
+        /*acordadaAdapter = ReservaAcordadaAdapter(repository.reservaList) {
             fabWhatsapp = v.findViewById(R.id.fabWhatsapp)
             fabWhatsapp.setOnClickListener {}
             fabCancelar = v.findViewById(R.id.fabCancelar)
@@ -69,7 +69,8 @@ class ReservasFragment : Fragment() {
                 val action = ReservasFragmentDirections.actionReservasFragment2ToCancelarReservaFragment()
                 v.findNavController().navigate(action)
             }
-        }
+        }*/
+        acordadaAdapter= ReservaAcordadaAdapter(repository.reservaList)
         recyclerReservasAcordadas.adapter = acordadaAdapter
 
         recyclerReservasConfirmar.setHasFixedSize(true)
@@ -79,21 +80,22 @@ class ReservasFragment : Fragment() {
 
         recyclerReservasSolicitadas.setHasFixedSize(true)
         recyclerReservasSolicitadas.layoutManager = LinearLayoutManager(context)
-        solicitadaAdapter = ReservaSolicitadaAdapter(repository.reservaList) {
-            fabLlenarFormulario = v.findViewById(R.id.fabLlenarFormulario)
+        /*solicitadaAdapter = ReservaSolicitadaAdapter(repository.reservaList) {
+            /*fabLlenarFormulario = v.findViewById(R.id.fabLlenarFormulario)
             fabLlenarFormulario.setOnClickListener {
                 val action = ReservasFragmentDirections.actionReservasFragment2ToFormularioReservaFragment()
                 v.findNavController().navigate(action)
-            }
+            }*/
             fabRechazarSolicitud = v.findViewById(R.id.fabRechazarSolicitud)
             fabRechazarSolicitud.setOnClickListener {
                 Snackbar.make(v, "Rechazaste la solicitud de reserva de Cliente", Snackbar.LENGTH_SHORT).show()
             }
-        }
+        }*/
+        solicitadaAdapter = ReservaSolicitadaAdapter(repository.reservaList)
         recyclerReservasSolicitadas.adapter = solicitadaAdapter
 
          btnHistoricoReservas.setOnClickListener {
-            val action = ReservasFragmentDirections.actionReservasFragment2ToHistoricoReservasFragment()
+            val action = ReservasFragmentDirections.actionReservasFragment2ToHistoricoReservasFragment2()
             v.findNavController().navigate(action)
         }
 

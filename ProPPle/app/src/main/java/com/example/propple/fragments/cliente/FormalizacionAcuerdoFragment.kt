@@ -10,7 +10,6 @@ import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.propple.R
-import com.example.propple.adapters.cliente.publicacionVistaPublicaFragmentArgs
 import com.example.propple.viewModel.cliente.FormalizacionAcuerdoViewModel
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
