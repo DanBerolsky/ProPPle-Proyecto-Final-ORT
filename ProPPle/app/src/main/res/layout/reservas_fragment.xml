@@ -24,6 +24,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="Nuevas acordadas"
                 android:textAlignment="center"
                 android:textColor="@color/negro_blaco"
@@ -43,6 +44,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="A confirmar"
                 android:textAlignment="center"
                 android:textColor="@color/negro_blaco"
@@ -62,6 +64,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:text="Solicitadas"
                 android:textAlignment="center"
                 android:textColor="@color/negro_blaco"
@@ -81,11 +84,17 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/banco_negro"
+                android:shadowColor="#00FFFFFF"
                 android:text="Ver histórico de reservas a mis servicios"
                 android:textAlignment="center"
                 android:textColor="@color/rosa_para_input"
-                android:textStyle="bold" />
+                android:textColorHighlight="#00FFFFFF"
+                android:textColorHint="#00FFFFFF"
+                android:textColorLink="#00FFFFFF"
+                android:textStyle="bold"
+                app:rippleColor="#00603131"
+                app:strokeColor="#00FFFFFF" />
         </LinearLayout>
     </ScrollView>
 

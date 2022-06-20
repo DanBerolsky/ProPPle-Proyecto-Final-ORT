@@ -9,9 +9,7 @@ import com.example.propple.api.UserClient.LoginModelRes
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.api.interfaces.LoginSignInService
 import com.example.propple.api.interfaces.UserClientService
-import com.example.propple.shared.ProPPle
 import com.example.propple.shared.ProPPle.Companion.prefs
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,6 +24,7 @@ class InicioSesionViewModel : ViewModel() {
     var jwt : String = ""
 
     fun login(mail:String, contrasenia:String){
+
         CoroutineScope(Dispatchers.IO).launch {
             var user : LoginModel = LoginModel(mail,contrasenia)
             val call : Response<LoginModelRes> = RetrofitHelper.getRetrofit().create(LoginSignInService::class.java).login(user)

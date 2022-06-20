@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import com.example.propple.fragments.DialogCargarFragment
 import com.example.propple.R
 import com.example.propple.databinding.InicioSesionFragmentBinding
 import com.example.propple.utils.InputFieldValidator
@@ -21,6 +23,10 @@ class InicioSesionFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: InicioSesionViewModel
     private lateinit var binding: InicioSesionFragmentBinding
+    companion object {
+        val DIALOG_CARGANDO = "carga"
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +61,7 @@ class InicioSesionFragment : Fragment() {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
             } else {
+                DialogCargarFragment().show(childFragmentManager, DIALOG_CARGANDO)
                 viewModel.login(binding.InMail.text.toString(),binding.InContrasenia.text.toString())
             }
 
@@ -72,7 +79,7 @@ class InicioSesionFragment : Fragment() {
 
         viewModel.rol.observe(viewLifecycleOwner, Observer { result->
             if (result.toString()!=null && result.toString()!=""){
-
+                dismissDialog(DIALOG_CARGANDO)
                 if (result.toString()=="cliente - prestador"){
                     val action = InicioSesionFragmentDirections.actionInicioSesionFragmentToMainActivityUsuarioPrestador()
                     nav(action)
@@ -86,11 +93,22 @@ class InicioSesionFragment : Fragment() {
             }
         })
 
+
+
         viewModel.status.observe(viewLifecycleOwner, Observer {result->
+            dismissDialog(DIALOG_CARGANDO)
             Snackbar.make(v,result.toString(), Snackbar.LENGTH_SHORT).show()
         })
 
 
+    }
+
+    fun dismissDialog(tag:String){
+        val prev: Fragment? = getChildFragmentManager().findFragmentByTag(tag)
+        if (prev != null) {
+            val df : DialogFragment = prev as DialogFragment
+            df.dismiss()
+        }
     }
 
 

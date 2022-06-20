@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.adapters.cliente.PublicacionesAdapter
 import com.example.propple.entities.cliente.publicacionesRepo
+import com.example.propple.fragments.DialogCargarFragment
 import com.example.propple.viewModel.cliente.PublicacionesViewModel
 
 class PublicacionesFragment : Fragment() {
@@ -30,6 +32,7 @@ class PublicacionesFragment : Fragment() {
 
         v =inflater.inflate(R.layout.publicaciones_fragment, container, false)
         recyclerPublicaciones = v.findViewById(R.id.recPublicaciones)
+        DialogCargarFragment().show(childFragmentManager, InicioSesionFragment.DIALOG_CARGANDO)
         return v
     }
 
@@ -38,11 +41,15 @@ class PublicacionesFragment : Fragment() {
         super.onStart()
         recyclerPublicaciones.setHasFixedSize(true)
         recyclerPublicaciones.layoutManager = LinearLayoutManager(context)
-
-
-
     }
 
+    fun dismissDialog(tag:String){
+        val prev: Fragment? = getChildFragmentManager().findFragmentByTag(tag)
+        if (prev != null) {
+            val df : DialogFragment = prev as DialogFragment
+            df.dismiss()
+        }
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -52,6 +59,7 @@ class PublicacionesFragment : Fragment() {
         viewModel.publiXRubro.observe(viewLifecycleOwner, Observer {
             adapter = PublicacionesAdapter(it)
             recyclerPublicaciones.adapter=adapter
+            dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)
         } )
     }
 
