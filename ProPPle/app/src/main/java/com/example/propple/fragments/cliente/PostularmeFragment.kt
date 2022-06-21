@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
@@ -33,10 +34,11 @@ class PostularmeFragment : Fragment() {
     private lateinit var btnPostularme : Button
     private lateinit var binding:PostularmeFragmentBinding
     private var rubro:String=""
+    private var img64:String=""
     val imageLauncher=registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         var uri = it.data?.data!!
         binding.InCv.setText(getFileName(uri,requireContext()))
-
+        img64= imgController.base64Encode(uri, requireContext())
         //val sss = encodeFileToBase64Binary(File(uri.path))
         //Snackbar.make(v,sss.toString(),Snackbar.LENGTH_LONG).show()
         //var adsa : InputStream? = activity?.contentResolver?.openInputStream(uri)
@@ -65,14 +67,7 @@ class PostularmeFragment : Fragment() {
             imgController.pickPhotoFromGalery(imageLauncher)
         }
 
-        btnPostularme.setOnClickListener {
-            if(verificarCamposVacios()) {
-                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else {
-                val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
-                v.findNavController().navigate(action)
-            }
-        }
+
 
         binding.imgRubro.setOnClickListener {
             binding.spinner3.performClick()
@@ -101,6 +96,27 @@ class PostularmeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PostularmeViewModel::class.java)
         // TODO: Use the ViewModel
+        btnPostularme.setOnClickListener {
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else {
+                if (img64!="")
+                    viewModel.postPostulacion(binding.InRubro.text.toString(),img64)
+                else
+                    Snackbar.make(v,"Error: imagen :(",Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            if (it=="Enviado!"){
+                Snackbar.make(v,"Listo!! Postulacion enviada. ",Snackbar.LENGTH_SHORT).show()
+                val action = PostularmeFragmentDirections.actionPostularmeFragment2ToPostularme2Fragment2()
+                v.findNavController().navigate(action)
+            }
+            else{
+                Snackbar.make(v,"Error",Snackbar.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun verificarCamposVacios(): Boolean {

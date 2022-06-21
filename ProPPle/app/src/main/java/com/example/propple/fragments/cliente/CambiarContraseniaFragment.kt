@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -17,10 +18,6 @@ import com.example.propple.viewModel.cliente.CambiarContraseniaViewModel
 import com.google.android.material.snackbar.Snackbar
 
 class cambiarContraseniaFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = cambiarContraseniaFragment()
-    }
 
     private lateinit var viewModel: CambiarContraseniaViewModel
     private lateinit var v:View

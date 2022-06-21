@@ -23,10 +23,10 @@ class InicioSesionFragment : Fragment() {
     private lateinit var v: View
     private lateinit var viewModel: InicioSesionViewModel
     private lateinit var binding: InicioSesionFragmentBinding
+
     companion object {
         val DIALOG_CARGANDO = "carga"
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
