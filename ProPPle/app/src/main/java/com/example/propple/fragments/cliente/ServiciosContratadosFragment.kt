@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.adapters.cliente.ServiciosContratadosPendienteDePagoAdapter
 import com.example.propple.adapters.cliente.ServiciosContratadosProximosARealizarseAdapter
+import com.example.propple.adapters.cliente.ServiciosIniciadosAdapter
 import com.example.propple.entities.cliente.TransaccionesRepo
 import com.example.propple.viewModel.cliente.ServiciosContratadosViewModel
 
@@ -21,6 +22,8 @@ class ServiciosContratadosFragment : Fragment() {
 
     private lateinit var viewModel: ServiciosContratadosViewModel
     lateinit var v:View
+    lateinit var recyclerIniciado : RecyclerView
+    lateinit var iniciadoAdapter : ServiciosIniciadosAdapter
     lateinit var recyclerPendienteDePago : RecyclerView
     lateinit var pendienteDePagoAdapter : ServiciosContratadosPendienteDePagoAdapter
     lateinit var recyclerProximoARealizarse : RecyclerView
@@ -36,6 +39,7 @@ class ServiciosContratadosFragment : Fragment() {
     ): View? {
         v = inflater.inflate(R.layout.servicios_contratados_fragment, container, false)
 
+        recyclerIniciado = v.findViewById(R.id.recIniciado)
         recyclerPendienteDePago = v.findViewById(R.id.recPendientePago)
         recyclerProximoARealizarse = v.findViewById(R.id.recProximoRealizar)
 
@@ -44,6 +48,14 @@ class ServiciosContratadosFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        recyclerIniciado.setHasFixedSize(true)
+        recyclerIniciado.layoutManager = LinearLayoutManager(context)
+
+
+        iniciadoAdapter = ServiciosIniciadosAdapter(repo.transaccionesList)
+        recyclerIniciado.adapter=iniciadoAdapter // esta linea se renderiza la lista
+
+
         recyclerPendienteDePago.setHasFixedSize(true)
         recyclerPendienteDePago.layoutManager = LinearLayoutManager(context)
 
