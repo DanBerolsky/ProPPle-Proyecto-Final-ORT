@@ -74,35 +74,41 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="245dp"
-                        android:layout_height="match_parent">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="230dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#00FFFFFF"
+                        app:cardBackgroundColor="#00FFFFFF"
+                        app:cardCornerRadius="10dp">
 
-                        <androidx.cardview.widget.CardView
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="10dp"
-                            android:backgroundTint="#00FFFFFF"
-                            app:cardBackgroundColor="#00FFFFFF"
-                            app:cardCornerRadius="10dp">
+                            android:layout_height="match_parent"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/inPregunta"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:background="@color/banco_negro"
-                                android:gravity="start|center_vertical"
-                                android:hint="Consulta" />
-                        </androidx.cardview.widget.CardView>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inPregunta"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/banco_negro"
+                            android:gravity="start|center_vertical"
+                            android:hint="Consulta"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:visibility="visible" />
+                    </androidx.cardview.widget.CardView>
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/btnEnviar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         app:backgroundTint="#6750A4"

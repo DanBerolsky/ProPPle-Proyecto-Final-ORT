@@ -10,10 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.entities.cliente.Transaccion
+import com.example.propple.shared.ProPPle
+import com.example.propple.utils.imgController
 
 
-
-class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosList : MutableList<Transaccion>) : RecyclerView.Adapter<ServiciosContratadosProximosARealizarseAdapter.ServiciosContratadosHolder>(){
+class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosList: List<com.example.propple.api.Transacciones.Transaccion>) : RecyclerView.Adapter<ServiciosContratadosProximosARealizarseAdapter.ServiciosContratadosHolder>(){
 
 
 
@@ -29,22 +30,38 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             txtRubro.text = rubro
         }
 
+
+
+        fun setPrecio(precio: Double){
+            var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
+            txtPrecio.text = "Presupuesto : $"+precio
+        }
+
         fun setValoracion(cantEstrellas : Int){
             //val COLOR_AMARILLO : Color.argb =
             for ( i in 1..cantEstrellas){
                 var estrellaAux = "estrella$i"
                 Log.d("estre",estrellaAux)
-                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 235, 59, 1))
+                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 245, 242, 66))
             }
         }
 
-        fun setAvatar(){
-
+        fun setAvatar(img64:String){
+            if (ProPPle.prefs.getUrlImageString()!="")
+                imgController.getImgUrl(
+                    img64,
+                    view.context,
+                    view.findViewById<ImageView>(R.id.btnAvatar)
+                )
         }
 
         fun setUbicacion(ubicacion : String){
             var txtUbicacion : TextView = view.findViewById(R.id.txtUbicacion)
             txtUbicacion.text = ubicacion
+        }
+        fun setTitulo(x:String){
+            val txt:TextView=view.findViewById(R.id.txtTitle)
+            txt.setText(x)
         }
 
     }
@@ -59,7 +76,12 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
     override fun onBindViewHolder(holder: ServiciosContratadosHolder, position: Int) {
         //ServiciosContratadosList[position].titulo?.let { holder.setRubro(it) }
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
-        //ServiciosContratadosList[position].ubicacion?.let { holder.setUbicacion(it) }
+        ServiciosContratadosList[position].location.let { holder.setUbicacion(it) }
+        ServiciosContratadosList[position].presupuesto.let { holder.setPrecio(it) }
+        ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
+        val aliasAux = ServiciosContratadosList[position].alias
+        //val rubroAux = ServiciosContratadosList[position].rubro
+        //holder.setTitulo(aliasAux,rubroAux)
     }
 
 
