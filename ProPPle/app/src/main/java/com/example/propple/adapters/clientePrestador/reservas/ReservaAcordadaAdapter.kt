@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -18,7 +17,6 @@ import com.example.propple.fragments.clientePrestador.ReservasFragmentDirections
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.ort.casodeusotest.entities.Reserva
 
 class ReservaAcordadaAdapter(
     var reservaList: List<Transaccion>/*,
@@ -47,9 +45,9 @@ class ReservaAcordadaAdapter(
             txt.setText(rubroAux+" - "+x)
         }
 
-        fun cancelar(id:Int){
+        fun cancelar(trx: Transaccion){
             view.findViewById<FloatingActionButton>(R.id.fabCancelar).setOnClickListener {
-                view.findNavController().navigate( ReservasFragmentDirections.actionReservasFragment2ToCancelarReservaFragment2(id))
+                view.findNavController().navigate( ReservasFragmentDirections.actionReservasFragment2ToCancelarReservaFragment2(trx))
             }
         }
         fun wps(telefono: Int, mensaje: String, context: Any){
@@ -91,7 +89,7 @@ class ReservaAcordadaAdapter(
             onClick(position)
         }*/
 
-        holder.cancelar(reservaList.get(position).id_transaccion)
+        holder.cancelar(reservaList.get(position))
         //reservaList.get(position).telefono.let { holder.cancelar(it) }   //implemeta esto!
         reservaList[position].url_download_image.let { holder.setAvatar(it) }
         reservaList[position].location.let { holder.setUbicacion(it) }

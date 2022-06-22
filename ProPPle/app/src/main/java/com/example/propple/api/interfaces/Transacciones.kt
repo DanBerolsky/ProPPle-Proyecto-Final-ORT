@@ -27,9 +27,9 @@ interface Transacciones {
 
     @GET("/transaccion/pending")
     suspend fun pending(@Body ):Response<Void>
-
-    @PUT("/transaccion/deleteTransaccionPresupuestada")
-    suspend fun deleteTransaccionPresupuestada(@Body ):Response<Void>*/
+    */
+    //@PUT("/transaccion/deleteTransaccionPresupuestada")
+    //suspend fun deleteTransaccionPresupuestada(@Body ):Response<Void>
 
     @GET("transaccion/getCompras/{token}")
     suspend fun getCompras(@Path("token") token: String):Response<CompraCli>

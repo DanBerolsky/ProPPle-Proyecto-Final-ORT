@@ -6,12 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-<<<<<<< HEAD
 import androidx.navigation.findNavController
-=======
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
->>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -75,6 +72,7 @@ class ServiciosContratadosFragment : Fragment() {
         recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista
 =======
         recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista*/
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -92,15 +90,20 @@ class ServiciosContratadosFragment : Fragment() {
            }else{
                Snackbar.make(v,"Error al cargar los datos.",Snackbar.LENGTH_SHORT).show()
            }
+            btnHistServ.setOnClickListener {res->
+                val action = it?.let { it1 ->
+                    ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToHistoricoServiciosFragment(
+                        it1
+                    )
+                }
+                if (action != null) {
+                    v.findNavController().navigate(action)
+                }
+            }
             //dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)
         } )
     }
->>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 
-        btnHistServ.setOnClickListener {
-            val action = ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToHistoricoServiciosFragment()
-            v.findNavController().navigate(action)
-        }
-    }
 
 }
+

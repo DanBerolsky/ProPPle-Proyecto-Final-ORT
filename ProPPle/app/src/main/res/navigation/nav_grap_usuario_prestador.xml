@@ -115,23 +115,23 @@
         android:id="@+id/formularioReservaFragment"
         android:name="com.example.propple.fragments.clientePrestador.FormularioReservaFragment"
         android:label="FormularioReservaFragment" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
         <action
             android:id="@+id/action_formularioReservaFragment_to_reservasFragment22"
             app:destination="@id/reservasFragment2" />
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
         android:id="@+id/cancelarReservaFragment"
         android:name="com.example.propple.fragments.clientePrestador.CancelarReservaFragment"
         android:label="CancelarReservaFragment" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
         <action
             android:id="@+id/action_cancelarReservaFragment_to_reservasFragment22"
             app:destination="@id/reservasFragment2" />
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
         android:id="@+id/misPublicacionesFragment"
@@ -245,12 +245,16 @@
         android:label="fragment_abonar_reserva"
         tools:layout="@layout/fragment_abonar_reserva" >
         <argument
-            android:name="id"
-            app:argType="integer" />
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
         android:id="@+id/historicoServiciosFragment"
         android:name="com.example.propple.fragments.cliente.HistoricoServiciosFragment"
         android:label="fragment_historico_servicios"
-        tools:layout="@layout/fragment_historico_servicios" />
+        tools:layout="@layout/fragment_historico_servicios" >
+        <argument
+            android:name="trxs"
+            app:argType="com.example.propple.api.Transacciones.CompraCli" />
+    </fragment>
 </navigation>

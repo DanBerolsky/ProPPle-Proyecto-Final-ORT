@@ -29,6 +29,56 @@
                 android:layout_height="match_parent">
 
 
+                <TextView
+                    android:id="@+id/txvInFechaDeNacrimientoDP2"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="31dp"
+                    android:padding="3dp"
+                    android:text="Fecha acordada *"
+                    android:textColor="@color/negro_blaco"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView8"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:autofillHints="  Ingrese nuevamente una contraseña"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txvInFechaDeNacrimientoDP2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/InFechaDeNacrimiento"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/rosa_para_input"
+                            android:backgroundTint="#00AA3E3E"
+                            android:clickable="false"
+                            android:ems="10"
+                            android:focusable="false"
+                            android:hint="Ingrese fecha acordada"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView27"
                     android:layout_width="350dp"
@@ -57,15 +107,16 @@
                         <TextView
                             android:id="@+id/textDirecion"
                             android:layout_width="270dp"
-                            android:layout_height="40dp"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:hint="Dirección laboral"
+                            android:hint="Dirección "
                             android:padding="10dp"
                             android:paddingStart="10dp"
                             android:paddingLeft="5dp"
                             android:paddingTop="0dp"
+                            android:paddingEnd="10dp"
                             android:textSize="16sp" />
 
                         <EditText
@@ -123,7 +174,7 @@
                             android:background="@color/rosa_para_input"
                             android:backgroundTint="#00AA3E3E"
                             android:ems="10"
-                            android:hint="Precio por hora"
+                            android:hint="Presupuesto"
                             android:inputType="none|number"
                             android:paddingStart="10dp"
                             android:paddingEnd="10dp" />
@@ -139,6 +190,7 @@
                     android:layout_margin="0dp"
 
                     android:autofillHints="  Ingrese nuevamente una contraseña"
+                    android:visibility="gone"
                     app:cardCornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -174,6 +226,7 @@
                     android:layout_marginStart="31dp"
                     android:layout_marginEnd="61dp"
                     android:autofillHints="  Ingrese nuevamente una contraseña"
+                    android:visibility="gone"
                     app:cardCornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -226,7 +279,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView17"
+                        android:id="@+id/btnAvatar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         tools:srcCompat="@drawable/avatar_1" />
@@ -238,6 +291,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:text="Título del servicio *"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView10" />
@@ -248,6 +302,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="Descripción del servicio *"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.508"
                     app:layout_constraintStart_toStartOf="parent"
@@ -257,18 +312,20 @@
                     android:id="@+id/txvinPrecioHora"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Precio por hora *"
+                    android:layout_marginTop="20dp"
+                    android:text="Presupuesto *"
+                    android:textColor="@color/negro_blaco"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView1" />
+                    app:layout_constraintTop_toBottomOf="@+id/cardView8" />
 
                 <TextView
                     android:id="@+id/txvinDireccionLaboral"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="Dirección laboral *"
+                    android:text="Dirección  *"
+                    android:textColor="@color/negro_blaco"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView3" />

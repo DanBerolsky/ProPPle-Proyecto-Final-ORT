@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.example.propple.entities.cliente.Transaccion
 import com.example.propple.fragments.cliente.ServiciosContratadosFragmentDirections
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
@@ -55,9 +54,9 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
             txtUbicacion.text = ubicacion
         }
 
-        fun abonar(id:Int){
+        fun abonar(trx: com.example.propple.api.Transacciones.Transaccion){
             view.findViewById<Button>(R.id.btnAbonar).setOnClickListener {
-                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToAbonarReservaFragment2(id))
+                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToAbonarReservaFragment2(trx))
             }
         }
         fun Rechazar(){
@@ -84,13 +83,14 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
         ServiciosContratadosList[position].location.let { holder.setUbicacion(it) }
         ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
-        ServiciosContratadosList[position].id_transaccion.let { holder.abonar(it) }
+        ServiciosContratadosList[position].let { holder.abonar(it) }
         ServiciosContratadosList[position].fecha.let {
             if (it != null) {
                 holder.setFecha(it)
             }
         }
         holder.Rechazar()
+
     }
 
 

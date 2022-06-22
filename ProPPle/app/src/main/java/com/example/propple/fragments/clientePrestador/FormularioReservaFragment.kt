@@ -9,14 +9,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
 import com.example.propple.databinding.FormularioReservaFragmentBinding
+import com.example.propple.fragments.cliente.DatePickerFragment
+import com.example.propple.shared.ProPPle
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.utils.InputFieldValidator
+import com.example.propple.utils.imgController
 import com.google.android.gms.common.api.Status
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
@@ -113,6 +118,7 @@ class FormularioReservaFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        binding.InFechaDeNacrimiento.setOnClickListener { showDatePickerDialog() }
         btnEnviarReserva.setOnClickListener {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
@@ -140,18 +146,39 @@ class FormularioReservaFragment : Fragment() {
             root.findViewById<View>(com.google.android.libraries.places.R.id.places_autocomplete_search_input).performClick()
         }
     }
+    fun setAvatar(img64:String){
+        if (ProPPle.prefs.getUrlImageString()!="")
+            imgController.getImgUrl(
+                img64,
+                v.context,
+                v.findViewById<ImageView>(R.id.btnAvatar)
+            )
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(FormularioReservaViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        var trx = FormularioReservaFragmentArgs.fromBundle(requireArguments()).trx
+        setAvatar(trx.url_download_image)
+        binding.btnEnviarReserva.setOnClickListener {
 
+        }
+
+    }
+    private fun showDatePickerDialog() {
+        val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+        val fragmentManager = (activity as FragmentActivity).supportFragmentManager
+        datePicker.show(fragmentManager, "RegistroUsuarioFragment")
+    }
+    private fun onDateSelected(day: Int, month: Int, year: Int) {
+        binding.InFechaDeNacrimiento.setText("$day / $month / $year")
+    }
     private fun verificarCamposVacios(): Boolean {
         var campoVacio = false
         var txvDefaultColor = 1979711488
-        if (InputFieldValidator.esCampoVacio(binding.inTituloServicio, binding.txvinTituloServicio, txvDefaultColor) && !campoVacio) campoVacio = true
-        if (InputFieldValidator.esCampoVacio(binding.inDescripcionServicio, binding.txvinDescripcionServicio, txvDefaultColor) && !campoVacio) campoVacio = true
+        if (InputFieldValidator.esCampoVacio(binding.InFechaDeNacrimiento, binding.txvInFechaDeNacrimientoDP2, txvDefaultColor) && !campoVacio) campoVacio = true
+        //if (InputFieldValidator.esCampoVacio(binding.inTituloServicio, binding.txvinTituloServicio, txvDefaultColor) && !campoVacio) campoVacio = true
+        //if (InputFieldValidator.esCampoVacio(binding.inDescripcionServicio, binding.txvinDescripcionServicio, txvDefaultColor) && !campoVacio) campoVacio = true
         if (InputFieldValidator.esCampoVacio(binding.inPrecioHora, binding.txvinPrecioHora, txvDefaultColor) && !campoVacio) campoVacio = true
         if (InputFieldValidator.esCampoVacio2(direccion, binding.txvinDireccionLaboral, txvDefaultColor) && !campoVacio) campoVacio = true
         return campoVacio
