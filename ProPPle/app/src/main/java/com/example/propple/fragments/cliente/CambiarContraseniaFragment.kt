@@ -29,8 +29,7 @@ class cambiarContraseniaFragment : Fragment() {
     ): View? {
         v= inflater.inflate(R.layout.cambiar_contrasenia_fragment, container, false)
         binding= CambiarContraseniaFragmentBinding.bind(v)
-        return v
-    }
+        return v    }
 
     override fun onStart() {
         super.onStart()

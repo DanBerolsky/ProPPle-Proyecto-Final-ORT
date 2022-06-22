@@ -41,11 +41,11 @@
             android:id="@+id/action_cuentaFragment_to_postularmeFragment"
             app:destination="@id/postularmeFragment2" />
         <action
-            android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_cambiarContraseniaPrestadorFragment"
-            app:destination="@id/cambiarContraseniaPrestadorFragment" />
-        <action
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_misPublicacionesFragment"
             app:destination="@id/misPublicacionesFragment" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_cambiarContraseniaFragment"
+            app:destination="@id/cambiarContraseniaFragment" />
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment2"
@@ -76,19 +76,10 @@
             app:destination="@id/cuentaFragment" />
     </fragment>
     <activity
-        android:id="@+id/mainActivity3"
+        android:id="@+id/mainActivity"
         android:name="com.example.propple.activities.cliente.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-    <fragment
-        android:id="@+id/cambiarContraseniaPrestadorFragment"
-        android:name="com.example.propple.fragments.clientePrestador.CambiarContraseniaPrestadorFragment"
-        android:label="fragment_cambiar_contrasenia_prestador"
-        tools:layout="@layout/fragment_cambiar_contrasenia_prestador" >
-        <action
-            android:id="@+id/action_cambiarContraseniaPrestadorFragment_to_mainActivity3"
-            app:destination="@id/mainActivity3" />
-    </fragment>
     <fragment
         android:id="@+id/reservasFragment2"
         android:name="com.example.propple.fragments.clientePrestador.ReservasFragment"
@@ -256,5 +247,14 @@
         <argument
             android:name="trxs"
             app:argType="com.example.propple.api.Transacciones.CompraCli" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambiarContraseniaFragment"
+        android:name="com.example.propple.fragments.cliente.cambiarContraseniaFragment"
+        android:label="cambiar_contrasenia_fragment"
+        tools:layout="@layout/cambiar_contrasenia_fragment" >
+        <action
+            android:id="@+id/action_cambiarContraseniaFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
 </navigation>

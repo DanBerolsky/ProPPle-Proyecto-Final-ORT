@@ -24,7 +24,7 @@
             app:destination="@id/datosPersonalesEditFragment" />
         <action
             android:id="@+id/action_cuentaFragment_to_cambiarContraseniaFragment"
-            app:destination="@id/cambiarContraseniaFragment1" />
+            app:destination="@id/cambiarContraseniaFragment" />
         <action
             android:id="@+id/action_cuentaFragment_to_misPreferenciasFragment"
             app:destination="@id/misPreferenciasFragment" />
@@ -38,7 +38,7 @@
         android:label="datos_personales_edit_fragment"
         tools:layout="@layout/datos_personales_edit_fragment" />
     <fragment
-        android:id="@+id/cambiarContraseniaFragment1"
+        android:id="@+id/cambiarContraseniaFragment"
         android:name="com.example.propple.fragments.cliente.cambiarContraseniaFragment"
         android:label="cambiar_contrasenia_fragment1"
         tools:layout="@layout/cambiar_contrasenia_fragment">

@@ -53,7 +53,9 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
         binding.NombreDeUsuario.setText(nombre+" "+apellido)
         binding.aliasRol.setText(alias +" - " + rol)
         binding.bntDatosPersonales.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToDatosPersonalesEditFragment2()) }
-        binding.bntCambiarContra.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToCambiarContraseniaPrestadorFragment()) }
+        /** CAMBIAR ESTA*/
+        binding.bntCambiarContra.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaFragmentToCambiarContraseniaFragment()) }
+        /** */
         binding.bntMisPreferencias.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToMisPreferenciasFragment2()) }
         binding.bntPostularme.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaFragmentToPostularmeFragment()) }
         //binding.bntMisPublicaciones.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.) }
