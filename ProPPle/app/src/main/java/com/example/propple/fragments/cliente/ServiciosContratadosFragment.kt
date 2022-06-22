@@ -4,9 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+<<<<<<< HEAD
+import androidx.navigation.findNavController
+=======
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+>>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -31,6 +36,7 @@ class ServiciosContratadosFragment : Fragment() {
     lateinit var pendienteDePagoAdapter : ServiciosContratadosPendienteDePagoAdapter
     lateinit var recyclerProximoARealizarse : RecyclerView
     lateinit var proximosARealizarAdapter : ServiciosContratadosProximosARealizarseAdapter
+    lateinit var btnHistServ : Button
 
 
     var repo : TransaccionesRepo = TransaccionesRepo()
@@ -46,6 +52,7 @@ class ServiciosContratadosFragment : Fragment() {
         recyclerIniciado = v.findViewById(R.id.recIniciado)
         recyclerPendienteDePago = v.findViewById(R.id.recPendientePago)
         recyclerProximoARealizarse = v.findViewById(R.id.recProximoRealizar)
+        btnHistServ = v.findViewById(R.id.btnHistServ)
 
         return v
     }
@@ -64,6 +71,9 @@ class ServiciosContratadosFragment : Fragment() {
         /*pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(repo.transaccionesList)
         recyclerPendienteDePago.adapter=pendienteDePagoAdapter // esta linea se renderiza la lista
         proximosARealizarAdapter = ServiciosContratadosProximosARealizarseAdapter(repo2.transaccionesList)
+<<<<<<< HEAD
+        recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista
+=======
         recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista*/
     }
 
@@ -85,6 +95,12 @@ class ServiciosContratadosFragment : Fragment() {
             //dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)
         } )
     }
+>>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 
+        btnHistServ.setOnClickListener {
+            val action = ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToHistoricoServiciosFragment()
+            v.findNavController().navigate(action)
+        }
+    }
 
 }
