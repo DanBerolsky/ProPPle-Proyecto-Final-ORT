@@ -15,7 +15,7 @@ import com.example.propple.entities.cliente.Transaccion
 import com.example.propple.fragments.cliente.ServiciosContratadosFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 
-class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : MutableList<Transaccion>) : RecyclerView.Adapter<ServiciosContratadosPendienteDePagoAdapter.ServiciosContratadosHolder>(){
+class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: List<com.example.propple.api.Transacciones.Transaccion>) : RecyclerView.Adapter<ServiciosContratadosPendienteDePagoAdapter.ServiciosContratadosHolder>(){
 
 
 
@@ -72,7 +72,7 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList : 
         //ServiciosContratadosList[position].titulo?.let { holder.setRubro(it) }
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
         //ServiciosContratadosList[position].ubicacion?.let { holder.setUbicacion(it) }
-        ServiciosContratadosList[position].id?.let { holder.abonar(it as Int) }
+        ServiciosContratadosList[position].id_transaccion.let { holder.abonar(it as Int) }
         holder.Rechazar()
     }
 

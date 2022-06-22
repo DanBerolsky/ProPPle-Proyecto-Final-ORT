@@ -61,7 +61,7 @@
                 android:id="@+id/imgPrestador"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/avatar_2" />
+                app:srcCompat="@drawable/avatar_1" />
 
         </androidx.cardview.widget.CardView>
 

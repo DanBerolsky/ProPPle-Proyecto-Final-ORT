@@ -1,12 +1,11 @@
 package com.example.propple.api.interfaces
 
+import com.example.propple.api.Transacciones.CompraCli
 import com.example.propple.api.Transacciones.CrearTransaccion
 import com.example.propple.api.Transacciones.FormalizarTransaccion
+import com.example.propple.api.publication.Comentario
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface Transacciones {
 
@@ -30,5 +29,9 @@ interface Transacciones {
 
     @PUT("/transaccion/deleteTransaccionPresupuestada")
     suspend fun deleteTransaccionPresupuestada(@Body ):Response<Void>*/
+
+    @GET("transaccion/getCompras/{token}")
+    suspend fun getCompras(@Path("token") token: String):Response<CompraCli>
+
 
 }

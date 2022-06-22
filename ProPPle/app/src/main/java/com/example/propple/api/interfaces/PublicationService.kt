@@ -32,7 +32,6 @@ interface PublicationService {
     @POST("publication/postPostulacion")
     suspend fun postPostulacion(@Body x : CrearPostulacion):Response<Void>
 
-
 }
 
 

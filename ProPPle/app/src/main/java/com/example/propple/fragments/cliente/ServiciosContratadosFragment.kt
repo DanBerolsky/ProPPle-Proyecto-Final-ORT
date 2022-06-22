@@ -6,7 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+<<<<<<< HEAD
 import androidx.navigation.findNavController
+=======
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+>>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -15,6 +20,7 @@ import com.example.propple.adapters.cliente.ServiciosContratadosProximosARealiza
 import com.example.propple.adapters.cliente.ServiciosIniciadosAdapter
 import com.example.propple.entities.cliente.TransaccionesRepo
 import com.example.propple.viewModel.cliente.ServiciosContratadosViewModel
+import com.google.android.material.snackbar.Snackbar
 
 class ServiciosContratadosFragment : Fragment() {
 
@@ -31,6 +37,7 @@ class ServiciosContratadosFragment : Fragment() {
     lateinit var recyclerProximoARealizarse : RecyclerView
     lateinit var proximosARealizarAdapter : ServiciosContratadosProximosARealizarseAdapter
     lateinit var btnHistServ : Button
+
 
     var repo : TransaccionesRepo = TransaccionesRepo()
     var repo2 : TransaccionesRepo = TransaccionesRepo()
@@ -63,17 +70,35 @@ class ServiciosContratadosFragment : Fragment() {
         recyclerPendienteDePago.setHasFixedSize(true)
         recyclerPendienteDePago.layoutManager = LinearLayoutManager(context)
 
-
-        pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(repo.transaccionesList)
-        recyclerPendienteDePago.adapter=pendienteDePagoAdapter // esta linea se renderiza la lista
-
-
         recyclerProximoARealizarse.setHasFixedSize(true)
         recyclerProximoARealizarse.layoutManager = LinearLayoutManager(context)
 
-
+        /*pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(repo.transaccionesList)
+        recyclerPendienteDePago.adapter=pendienteDePagoAdapter // esta linea se renderiza la lista
         proximosARealizarAdapter = ServiciosContratadosProximosARealizarseAdapter(repo2.transaccionesList)
+<<<<<<< HEAD
         recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista
+=======
+        recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista*/
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(ServiciosContratadosViewModel::class.java)
+        viewModel.getCompras()
+        viewModel.listasDeCompras.observe(viewLifecycleOwner, Observer {
+           if (it!=null){
+               pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(it.pendientes)
+               recyclerPendienteDePago.adapter=pendienteDePagoAdapter
+               proximosARealizarAdapter = ServiciosContratadosProximosARealizarseAdapter(it.proximos)
+               recyclerProximoARealizarse.adapter=proximosARealizarAdapter
+           }else{
+               Snackbar.make(v,"Error al cargar los datos.",Snackbar.LENGTH_SHORT).show()
+           }
+            //dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)
+        } )
+    }
+>>>>>>> 2cfab86fdc8e0a43809bc95b75452b199bb98e80
 
         btnHistServ.setOnClickListener {
             val action = ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToHistoricoServiciosFragment()
