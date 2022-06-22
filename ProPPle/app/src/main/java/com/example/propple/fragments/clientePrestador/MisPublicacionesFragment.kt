@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -44,17 +44,18 @@ class MisPublicacionesFragment : Fragment() {
         super.onStart()
         recyclerRubro.setHasFixedSize(true)
         recyclerRubro.layoutManager = LinearLayoutManager(context)
-        adapter = RubroAdapter(repository.rubroList) { position ->
-            val action = MisPublicacionesFragmentDirections.actionMisPublicacionesFragmentToPublicacionFragment(position)
-            v.findNavController().navigate(action)
-        }
-        recyclerRubro.adapter = adapter
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MisPublicacionesViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel.getPublicationsForPrestador()
+        viewModel.lista.observe(viewLifecycleOwner, Observer {
+            adapter = RubroAdapter(it)
+            recyclerRubro.adapter = adapter
+        })
+
+
     }
 
 }

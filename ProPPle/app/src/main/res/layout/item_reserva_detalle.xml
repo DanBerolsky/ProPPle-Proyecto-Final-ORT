@@ -29,11 +29,9 @@
             android:id="@+id/cardView10"
             android:layout_width="52dp"
             android:layout_height="53dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="32dp"
             app:cardCornerRadius="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -45,7 +43,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -96,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/txtFecha"
-            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"

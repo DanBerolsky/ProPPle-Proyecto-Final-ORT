@@ -24,10 +24,6 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             this.view = v
         }
 
-        fun setRubro(rubro : String){
-            var txtRubro : TextView = view.findViewById(R.id.txtNombre)
-            txtRubro.text = rubro
-        }
 
         fun setFecha(fecha: String){
             var txtFecha : TextView = view.findViewById(R.id.txtFecha)
@@ -92,8 +88,8 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
                 holder.setFecha(it)
             }
         }
-        //val rubroAux = ServiciosContratadosList[position].rubro
-        //holder.setTitulo(aliasAux,rubroAux)
+        val rubroAux = ServiciosContratadosList[position].rubro_name
+        holder.setTitulo(aliasAux,rubroAux)
     }
 
 

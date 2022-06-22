@@ -33,19 +33,19 @@
             android:layout_marginTop="36dp"
             android:layout_marginBottom="24dp"
             app:cardCornerRadius="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView44"
+            app:layout_constraintBottom_toTopOf="@+id/txtFecha"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/btnAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:srcCompat="@drawable/avatar_1" />
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView10" />
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/txtFecha"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:layout_marginStart="40dp"
@@ -85,7 +85,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView10" />
 
         <TextView
-            android:id="@+id/textView47"
+            android:id="@+id/txtPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
@@ -93,7 +93,7 @@
             android:textColor="#000000"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+            app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
@@ -112,7 +112,7 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView44">
+            app:layout_constraintTop_toBottomOf="@+id/txtFecha">
 
             <ImageView
                 android:id="@+id/imageView15"
@@ -123,7 +123,7 @@
                 app:tint="#000000" />
 
             <TextView
-                android:id="@+id/textView45"
+                android:id="@+id/txtUbicacion"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"

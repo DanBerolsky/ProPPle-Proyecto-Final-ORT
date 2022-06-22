@@ -48,8 +48,8 @@ class ServiciosIniciadosAdapter(
         //ServiciosContratadosList[position].id?.let {}
         ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
         val aliasAux = ServiciosContratadosList[position].alias
-        //val rubroAux = ServiciosContratadosList[position].rubro
-        //holder.setTitulo(aliasAux,rubroAux)
+        val rubroAux = ServiciosContratadosList[position].rubro_name
+        holder.setTitulo(aliasAux,rubroAux)
     }
 
 

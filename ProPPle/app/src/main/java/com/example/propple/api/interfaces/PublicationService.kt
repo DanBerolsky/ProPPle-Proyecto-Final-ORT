@@ -1,10 +1,7 @@
 package com.example.propple.api.interfaces
 
 import com.example.propple.api.UserClient.Sign
-import com.example.propple.api.publication.Comentario
-import com.example.propple.api.publication.ComentarioNuevo
-import com.example.propple.api.publication.CrearPostulacion
-import com.example.propple.api.publication.Publication
+import com.example.propple.api.publication.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -31,6 +28,12 @@ interface PublicationService {
 
     @POST("publication/postPostulacion")
     suspend fun postPostulacion(@Body x : CrearPostulacion):Response<Void>
+
+    @GET("publication/getPublicationForPrestador/{token}/{id}")
+    suspend fun getPublicationForPrestador(@Path("token") token: String, @Path("id") id: Int):Response<Void>
+
+    @GET("publication/getPublicationsForPrestador/{token}")
+    suspend fun getPublicationsForPrestador(@Path("token") token: String):Response<List<PublicationCuenta>>
 
 }
 

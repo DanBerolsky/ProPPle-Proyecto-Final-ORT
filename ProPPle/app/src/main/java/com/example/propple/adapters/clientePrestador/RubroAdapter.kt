@@ -9,11 +9,11 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.publication.PublicationCuenta
 import com.google.android.material.snackbar.Snackbar
-import com.ort.casodeusotest.entities.Rubro
 
-class RubroAdapter (var rubroList : MutableList<Rubro>,
-                    var onClick : (Int) -> Unit) : RecyclerView.Adapter<RubroAdapter.RubroHolder>() {
+class RubroAdapter(
+    var rubroList: List<PublicationCuenta>) : RecyclerView.Adapter<RubroAdapter.RubroHolder>() {
 
     class RubroHolder(v: View) : RecyclerView.ViewHolder(v) {
         private var view: View
@@ -24,7 +24,9 @@ class RubroAdapter (var rubroList : MutableList<Rubro>,
 
         fun setName(name: String) {
             var txtName: TextView = view.findViewById(R.id.txtRubroItemName)
+            var txtBtn: TextView = view.findViewById(R.id.btnRubroItemName)
             txtName.text = name
+            txtBtn.text = name[0].toString()
         }
         fun setSymbol(symbol : String) {
             var btnName: Button = view.findViewById(R.id.btnRubroItemName)
@@ -44,6 +46,9 @@ class RubroAdapter (var rubroList : MutableList<Rubro>,
                 }
             }
         }
+        fun setEstado(visibility: Boolean) {
+            view.findViewById<Switch>(R.id.switch4).setChecked(visibility)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RubroHolder {
@@ -52,13 +57,14 @@ class RubroAdapter (var rubroList : MutableList<Rubro>,
     }
 
     override fun onBindViewHolder(holder: RubroHolder, position: Int) {
-        holder.setName(rubroList[position].name)
-        holder.setSymbol(rubroList[position].symbol)
-        holder.getCard().setOnClickListener {
-            onClick(position)
-        }
-
+        //holder.setName(rubroList[position].name)
+       // holder.setSymbol(rubroList[position].symbol)
+        //holder.getCard().setOnClickListener {
+          //  onClick(position)
+        //}
+        holder.setEstado(rubroList[position].visibility)
         holder.estado()
+        holder.setName(rubroList[position].rubro_name)
     }
 
     override fun getItemCount(): Int {

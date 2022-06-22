@@ -72,6 +72,9 @@ class ReservaSolicitadaAdapter(
         reservaList[position].url_download_image.let { holder.setAvatar(it) }
         reservaList[position].let { holder.edit(it) }
         reservaList[position].id_transaccion.let { holder.cancelar(it) }
+        val aliasAux = reservaList[position].alias
+        val rubroAux = reservaList[position].rubro_name
+        holder.setTitulo(aliasAux,rubroAux)
     }
 
     override fun getItemCount(): Int {

@@ -22,26 +22,26 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
 
     //esto se conecta con el item
     class ServiciosContratadosHolder (v : View) : RecyclerView.ViewHolder(v) {
-        private var view : View
+        private var view: View
+
         init {
             this.view = v
         }
 
-        fun setRubro(rubro : String){
-            var txtRubro : TextView = view.findViewById(R.id.txtNombre)
-            txtRubro.text = rubro
-        }
 
-        fun setValoracion(cantEstrellas : Int){
+
+        fun setValoracion(cantEstrellas: Int) {
             //val COLOR_AMARILLO : Color.argb =
-            for ( i in 1..cantEstrellas){
+            for (i in 1..cantEstrellas) {
                 var estrellaAux = "estrella$i"
-                Log.d("estre",estrellaAux)
-                view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 245, 188, 66))
+                Log.d("estre", estrellaAux)
+                view.findViewWithTag<ImageView>(estrellaAux)
+                    .setColorFilter(Color.argb(255, 245, 188, 66))
             }
         }
-        fun setAvatar(img64:String){
-            if (ProPPle.prefs.getUrlImageString()!="")
+
+        fun setAvatar(img64: String) {
+            if (ProPPle.prefs.getUrlImageString() != "")
                 imgController.getImgUrl(
                     img64,
                     view.context,
@@ -49,28 +49,39 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
                 )
         }
 
-        fun setUbicacion(ubicacion : String){
-            var txtUbicacion : TextView = view.findViewById(R.id.txtUbicacion)
+        fun setUbicacion(ubicacion: String) {
+            var txtUbicacion: TextView = view.findViewById(R.id.txtUbicacion)
             txtUbicacion.text = ubicacion
         }
 
-        fun abonar(trx: com.example.propple.api.Transacciones.Transaccion){
+        fun abonar(trx: com.example.propple.api.Transacciones.Transaccion) {
             view.findViewById<Button>(R.id.btnAbonar).setOnClickListener {
-                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToAbonarReservaFragment2(trx))
+                view.findNavController().navigate(
+                    ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToAbonarReservaFragment2(
+                        trx
+                    )
+                )
             }
         }
-        fun Rechazar(){
+
+        fun Rechazar() {
             view.findViewById<Button>(R.id.btnRechazar).setOnClickListener {
-                Snackbar.make(view,"ELIMINAR",Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(view, "ELIMINAR", Snackbar.LENGTH_SHORT).show()
             }
         }
-        fun setFecha(fecha: String){
-            var txtFecha : TextView = view.findViewById(R.id.txtFecha)
-            val fecha = fecha.replace("-"," / ").substring(0,14)
+
+        fun setFecha(fecha: String) {
+            var txtFecha: TextView = view.findViewById(R.id.txtFecha)
+            val fecha = fecha.replace("-", " / ").substring(0, 14)
             txtFecha.text = "Fecha : " + fecha
         }
-    }
 
+        fun setTitulo(x: String, rubroAux: String) {
+            val txt: TextView = view.findViewById(R.id.txtTitle)
+            txt.setText(rubroAux + " - " + x)
+
+        }
+    }
     // aca voy a buscar el xml de item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiciosContratadosHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.servicios_contratados_pendiente_pago_item,parent,false)
@@ -90,7 +101,9 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
             }
         }
         holder.Rechazar()
-
+        val aliasAux = ServiciosContratadosList[position].alias
+        val rubroAux = ServiciosContratadosList[position].rubro_name
+        holder.setTitulo(aliasAux,rubroAux)
     }
 
 

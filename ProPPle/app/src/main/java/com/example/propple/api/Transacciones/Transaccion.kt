@@ -17,5 +17,7 @@ data class Transaccion(
     val location_latitud: Int,
     val location_longitud: Int,
     val presupuesto: Double?,
-    val url_download_image: String
+    val url_download_image: String,
+    val rubro_name:String,
+    val phone: String
 ): Parcelable
