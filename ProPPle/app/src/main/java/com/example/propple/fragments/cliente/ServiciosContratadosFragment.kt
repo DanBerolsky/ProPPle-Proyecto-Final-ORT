@@ -55,11 +55,6 @@ class ServiciosContratadosFragment : Fragment() {
         recyclerIniciado.setHasFixedSize(true)
         recyclerIniciado.layoutManager = LinearLayoutManager(context)
 
-
-        iniciadoAdapter = ServiciosIniciadosAdapter(repo.transaccionesList)
-        recyclerIniciado.adapter=iniciadoAdapter // esta linea se renderiza la lista
-
-
         recyclerPendienteDePago.setHasFixedSize(true)
         recyclerPendienteDePago.layoutManager = LinearLayoutManager(context)
 
@@ -78,6 +73,8 @@ class ServiciosContratadosFragment : Fragment() {
         viewModel.getCompras()
         viewModel.listasDeCompras.observe(viewLifecycleOwner, Observer {
            if (it!=null){
+               iniciadoAdapter = ServiciosIniciadosAdapter(it.proximos)
+               recyclerIniciado.adapter=iniciadoAdapter // esta linea se renderiza la lista
                pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(it.pendientes)
                recyclerPendienteDePago.adapter=pendienteDePagoAdapter
                proximosARealizarAdapter = ServiciosContratadosProximosARealizarseAdapter(it.proximos)

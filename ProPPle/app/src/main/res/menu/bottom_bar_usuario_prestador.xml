@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_location_automation_fill0_wght400_grad0_opsz48"
         android:title="" />
     <item
-        android:id="@+id/serviciosContratadosFragment2"
+        android:id="@+id/serviciosContratadosFragment"
         android:icon="@drawable/ic_business_center_fill0_wght400_grad0_opsz48"
         android:title="" />
 

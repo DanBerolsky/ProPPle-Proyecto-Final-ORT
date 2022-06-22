@@ -3,17 +3,24 @@ package com.example.propple.adapters.clientePrestador.reservas
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.Transacciones.Transaccion
 import com.example.propple.fragments.cliente.PublicacionesFragmentDirections
+import com.example.propple.fragments.clientePrestador.ReservasFragmentDirections
+import com.example.propple.shared.ProPPle
+import com.example.propple.utils.imgController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.entities.Reserva
-import com.ort.casodeusotest.fragments.ReservasFragmentDirections
 
-class ReservaSolicitadaAdapter (var reservaList : MutableList<Reserva>/*,
+
+class ReservaSolicitadaAdapter(
+    var reservaList: List<Transaccion>/*,
                                 var onClick : (Int) -> Unit*/) : RecyclerView.Adapter<ReservaSolicitadaAdapter.ReservaHolder>() {
 
     class ReservaHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -26,6 +33,14 @@ class ReservaSolicitadaAdapter (var reservaList : MutableList<Reserva>/*,
         /*fun getCard(): CardView {
             return view.findViewById(R.id.cardReservaDetalleItem)
         }*/
+        fun setAvatar(img64:String){
+            if (ProPPle.prefs.getUrlImageString()!="")
+                imgController.getImgUrl(
+                    img64,
+                    view.context,
+                    view.findViewById<ImageView>(R.id.btnAvatar)
+                )
+        }
 
         fun edit(id: Int) {
             view.findViewById<FloatingActionButton>(R.id.fabLlenarFormulario).setOnClickListener{
@@ -37,6 +52,13 @@ class ReservaSolicitadaAdapter (var reservaList : MutableList<Reserva>/*,
                 Snackbar.make(view,"Rechazar solicitud",Snackbar.LENGTH_SHORT).show()
             }
         }
+        fun setTitulo(x: String, rubroAux: String){
+            val txt: TextView =view.findViewById(R.id.txtTitle)
+            txt.setText(rubroAux+" - "+x)
+        }
+
+
+
 
     }
 
@@ -50,8 +72,9 @@ class ReservaSolicitadaAdapter (var reservaList : MutableList<Reserva>/*,
             onClick(position)
         }*/
 
-        reservaList?.get(position)?.id?.let { holder.edit(it) }
-        reservaList?.get(position)?.id?.let { holder.cancelar(it) }
+        reservaList[position].url_download_image.let { holder.setAvatar(it) }
+        reservaList[position].id_transaccion.let { holder.edit(it) }
+        reservaList[position].id_transaccion.let { holder.cancelar(it) }
     }
 
     override fun getItemCount(): Int {

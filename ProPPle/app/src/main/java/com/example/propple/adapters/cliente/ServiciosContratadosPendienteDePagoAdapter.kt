@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.entities.cliente.Transaccion
 import com.example.propple.fragments.cliente.ServiciosContratadosFragmentDirections
+import com.example.propple.shared.ProPPle
+import com.example.propple.utils.imgController
 import com.google.android.material.snackbar.Snackbar
 
 class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: List<com.example.propple.api.Transacciones.Transaccion>) : RecyclerView.Adapter<ServiciosContratadosPendienteDePagoAdapter.ServiciosContratadosHolder>(){
@@ -39,9 +41,13 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
                 view.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 245, 188, 66))
             }
         }
-
-        fun setAvatar(){
-
+        fun setAvatar(img64:String){
+            if (ProPPle.prefs.getUrlImageString()!="")
+                imgController.getImgUrl(
+                    img64,
+                    view.context,
+                    view.findViewById<ImageView>(R.id.btnAvatar)
+                )
         }
 
         fun setUbicacion(ubicacion : String){
@@ -51,13 +57,18 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
 
         fun abonar(id:Int){
             view.findViewById<Button>(R.id.btnAbonar).setOnClickListener {
-                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragment2ActionServiciosContratadosFragmentToAbonarReservaFragment(id))
+                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToAbonarReservaFragment2(id))
             }
         }
         fun Rechazar(){
             view.findViewById<Button>(R.id.btnRechazar).setOnClickListener {
                 Snackbar.make(view,"ELIMINAR",Snackbar.LENGTH_SHORT).show()
             }
+        }
+        fun setFecha(fecha: String){
+            var txtFecha : TextView = view.findViewById(R.id.txtFecha)
+            val fecha = fecha.replace("-"," / ").substring(0,14)
+            txtFecha.text = "Fecha : " + fecha
         }
     }
 
@@ -71,8 +82,14 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
     override fun onBindViewHolder(holder: ServiciosContratadosHolder, position: Int) {
         //ServiciosContratadosList[position].titulo?.let { holder.setRubro(it) }
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
-        //ServiciosContratadosList[position].ubicacion?.let { holder.setUbicacion(it) }
-        ServiciosContratadosList[position].id_transaccion.let { holder.abonar(it as Int) }
+        ServiciosContratadosList[position].location.let { holder.setUbicacion(it) }
+        ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
+        ServiciosContratadosList[position].id_transaccion.let { holder.abonar(it) }
+        ServiciosContratadosList[position].fecha.let {
+            if (it != null) {
+                holder.setFecha(it)
+            }
+        }
         holder.Rechazar()
     }
 

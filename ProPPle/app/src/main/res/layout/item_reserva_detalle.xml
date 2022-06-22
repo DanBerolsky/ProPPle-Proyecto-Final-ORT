@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/btnAvatar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:srcCompat="@drawable/avatar_1" />
@@ -67,33 +67,36 @@
             android:text="Hora: hh:mm"
             android:textColor="#000000"
             android:textSize="14sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toBottomOf="@+id/cardView10" />
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/txtFecha"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="85dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="20dp"
             android:text="Fecha: "
             android:textColor="#000000"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView10" />
 
         <TextView
-            android:id="@+id/textView47"
+            android:id="@+id/txtPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="118dp"
             android:text="Precio: $xxxx"
             android:textColor="#000000"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/txtFecha"
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
@@ -103,15 +106,16 @@
             app:layout_constraintGuide_begin="225dp" />
 
         <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView44">
+            app:layout_constraintTop_toBottomOf="@+id/txtFecha">
 
             <ImageView
                 android:id="@+id/imageView15"
@@ -122,8 +126,8 @@
                 app:tint="#000000" />
 
             <TextView
-                android:id="@+id/textView45"
-                android:layout_width="150dp"
+                android:id="@+id/txtUbicacion"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:text="Dirección"

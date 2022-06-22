@@ -38,14 +38,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/btnAvatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:srcCompat="@drawable/avatar_1" />
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -60,7 +60,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/txtFecha"
             android:layout_width="wrap_content"
             android:layout_height="19sp"
             android:layout_marginStart="40dp"
@@ -94,7 +94,7 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="21dp"
             android:layout_marginBottom="18dp"
@@ -107,24 +107,26 @@
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="10dp"
                 android:layout_weight="1"
+                android:backgroundTint="#000000"
                 app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/txtUbicacion"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_margin="0dp"
+                android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
+                android:minHeight="20dp"
                 android:text="Dirección"
                 android:textColor="#000000"
                 android:textSize="10sp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView47"
+            android:id="@+id/txtPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -132,7 +134,7 @@
             android:text="Precio: $xxxx"
             android:textColor="#000000"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+            app:layout_constraintTop_toBottomOf="@+id/txtFecha" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabWhatsapp"
@@ -145,8 +147,8 @@
             app:backgroundTint="#6750A4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintHorizontal_bias="0.121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             app:srcCompat="@drawable/ic_whatsapp_white"
             app:tint="@android:color/white"
             tools:ignore="SpeakableTextPresentCheck" />

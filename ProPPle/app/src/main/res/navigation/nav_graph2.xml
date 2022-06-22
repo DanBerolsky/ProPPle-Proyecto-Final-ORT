@@ -75,7 +75,7 @@
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" >
         <action
-            android:id="@+id/action_serviciosContratadosFragment_to_abonarReservaFragment"
+            android:id="@+id/action_serviciosContratadosFragment_to_abonarReservaFragment2"
             app:destination="@id/abonarReservaFragment" />
     </fragment>
     <activity

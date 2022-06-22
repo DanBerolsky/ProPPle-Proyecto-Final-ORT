@@ -15,12 +15,12 @@
             app:destination="@id/publicacionesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/serviciosContratadosFragment2"
+        android:id="@+id/serviciosContratadosFragment"
         android:name="com.example.propple.fragments.cliente.ServiciosContratadosFragment"
         android:label="servicios_contratados_fragment"
         tools:layout="@layout/servicios_contratados_fragment" >
         <action
-            android:id="@+id/action_serviciosContratadosFragment2_action_serviciosContratadosFragment_to_abonarReservaFragment"
+            android:id="@+id/action_serviciosContratadosFragment_to_abonarReservaFragment2"
             app:destination="@id/abonarReservaFragment" />
     </fragment>
     <fragment
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/reservasFragment2"
-        android:name="com.ort.casodeusotest.fragments.ReservasFragment"
+        android:name="com.example.propple.fragments.clientePrestador.ReservasFragment"
         android:label="ReservasFragment" >
         <action
             android:id="@+id/action_reservasFragment2_to_historicoReservasFragment2"
@@ -103,7 +103,11 @@
     <fragment
         android:id="@+id/historicoReservasFragment"
         android:name="com.example.propple.fragments.clientePrestador.HistoricoReservasFragment"
-        android:label="HistoricoReservasFragment" />
+        android:label="HistoricoReservasFragment" >
+        <argument
+            android:name="venta"
+            app:argType="com.example.propple.api.Transacciones.VentasPro" />
+    </fragment>
     <fragment
         android:id="@+id/formularioReservaFragment"
         android:name="com.example.propple.fragments.clientePrestador.FormularioReservaFragment"

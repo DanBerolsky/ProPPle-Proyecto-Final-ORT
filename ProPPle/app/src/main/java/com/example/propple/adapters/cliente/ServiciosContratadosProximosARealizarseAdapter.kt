@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.example.propple.entities.cliente.Transaccion
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 
@@ -30,7 +29,11 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             txtRubro.text = rubro
         }
 
-
+        fun setFecha(fecha: String){
+            var txtFecha : TextView = view.findViewById(R.id.txtFecha)
+          val fecha = fecha.replace("-"," / ").substring(0,14)
+            txtFecha.text = "Fecha : " + fecha
+        }
 
         fun setPrecio(precio: Double){
             var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
@@ -59,9 +62,9 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             var txtUbicacion : TextView = view.findViewById(R.id.txtUbicacion)
             txtUbicacion.text = ubicacion
         }
-        fun setTitulo(x:String){
+        fun setTitulo(x: String, rubroAux: String){
             val txt:TextView=view.findViewById(R.id.txtTitle)
-            txt.setText(x)
+            txt.setText(rubroAux+" - "+x)
         }
 
     }
@@ -77,9 +80,18 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
         //ServiciosContratadosList[position].titulo?.let { holder.setRubro(it) }
         //ServiciosContratadosList[position].valoracion?.let { holder.setValoracion(it) }
         ServiciosContratadosList[position].location.let { holder.setUbicacion(it) }
-        ServiciosContratadosList[position].presupuesto.let { holder.setPrecio(it) }
+        ServiciosContratadosList[position].presupuesto.let {
+            if (it != null) {
+                holder.setPrecio(it)
+            }
+        }
         ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
         val aliasAux = ServiciosContratadosList[position].alias
+        ServiciosContratadosList[position].fecha.let {
+            if (it != null) {
+                holder.setFecha(it)
+            }
+        }
         //val rubroAux = ServiciosContratadosList[position].rubro
         //holder.setTitulo(aliasAux,rubroAux)
     }

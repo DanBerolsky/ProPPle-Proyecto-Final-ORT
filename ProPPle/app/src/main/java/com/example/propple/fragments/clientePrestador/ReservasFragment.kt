@@ -1,4 +1,4 @@
-package com.ort.casodeusotest.fragments
+package com.example.propple.fragments.clientePrestador
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,15 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.reservas.ReservaAcordadaAdapter
 import com.ort.casodeusotest.adapters.reservas.ReservaConfirmarAdapter
 import com.example.propple.adapters.clientePrestador.reservas.ReservaSolicitadaAdapter
+import com.example.propple.api.Transacciones.VentasPro
 import com.ort.casodeusotest.entities.ReservaRepository
 import com.ort.casodeusotest.viewModel.ReservasViewModel
 
@@ -39,6 +40,7 @@ class ReservasFragment : Fragment() {
     //private lateinit var fabCancelar : FloatingActionButton
     //private lateinit var fabLlenarFormulario : FloatingActionButton
     //private lateinit var fabRechazarSolicitud : FloatingActionButton
+    private var lista: VentasPro? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,13 +72,10 @@ class ReservasFragment : Fragment() {
                 v.findNavController().navigate(action)
             }
         }*/
-        acordadaAdapter= ReservaAcordadaAdapter(repository.reservaList)
-        recyclerReservasAcordadas.adapter = acordadaAdapter
+
 
         recyclerReservasConfirmar.setHasFixedSize(true)
         recyclerReservasConfirmar.layoutManager = LinearLayoutManager(context)
-        confirmarAdapter = ReservaConfirmarAdapter(repository.reservaList) {}
-        recyclerReservasConfirmar.adapter = confirmarAdapter
 
         recyclerReservasSolicitadas.setHasFixedSize(true)
         recyclerReservasSolicitadas.layoutManager = LinearLayoutManager(context)
@@ -91,12 +90,15 @@ class ReservasFragment : Fragment() {
                 Snackbar.make(v, "Rechazaste la solicitud de reserva de Cliente", Snackbar.LENGTH_SHORT).show()
             }
         }*/
-        solicitadaAdapter = ReservaSolicitadaAdapter(repository.reservaList)
-        recyclerReservasSolicitadas.adapter = solicitadaAdapter
 
-         btnHistoricoReservas.setOnClickListener {
-            val action = ReservasFragmentDirections.actionReservasFragment2ToHistoricoReservasFragment2()
-            v.findNavController().navigate(action)
+
+        btnHistoricoReservas.setOnClickListener {
+            if (lista!=null){
+                val action = ReservasFragmentDirections.actionReservasFragment2ToHistoricoReservasFragment2(
+                    lista!!
+                )
+                v.findNavController().navigate(action)
+            }
         }
 
     }
@@ -104,7 +106,22 @@ class ReservasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ReservasViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        viewModel.getReservas()
+        viewModel.listasDeReservas.observe(viewLifecycleOwner, Observer {result->
+            if (result!=null){
+                lista = result
+                solicitadaAdapter = ReservaSolicitadaAdapter(result.inicial)
+                recyclerReservasSolicitadas.adapter = solicitadaAdapter
+                confirmarAdapter = ReservaConfirmarAdapter(result.pendientes)
+                recyclerReservasConfirmar.adapter = confirmarAdapter
+                acordadaAdapter= ReservaAcordadaAdapter(result.proximos)
+                recyclerReservasAcordadas.adapter = acordadaAdapter
+            }else{
+                Snackbar.make(v,"Error al cargar los datos.",Snackbar.LENGTH_SHORT).show()
+            }
+            //dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)
+        } )
     }
 
 }

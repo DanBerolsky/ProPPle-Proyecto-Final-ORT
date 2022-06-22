@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="260dp"
     android:layout_margin="20dp"
@@ -47,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="42dp"
             android:layout_marginEnd="90dp"
             android:text="Rubro - NombrePresta"
             android:textAlignment="center"
@@ -63,6 +64,7 @@
             android:layout_height="15dp"
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.123"
             app:layout_constraintStart_toEndOf="@+id/cardView"
@@ -119,7 +121,7 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="21dp"
             android:layout_marginBottom="18dp"
@@ -139,8 +141,9 @@
 
             <TextView
                 android:id="@+id/txtUbicacion"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_margin="0dp"
                 android:gravity="center_vertical"
                 android:text="Location"
@@ -150,17 +153,15 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txtTitle"
+            android:id="@+id/txtFecha"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="85dp"
+            android:layout_marginEnd="20dp"
             android:text="Fecha : 25/04/2022"
             android:textColor="#000000"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView12"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <TextView
@@ -171,14 +172,16 @@
             android:text="Hora: 09:00"
             android:textColor="#000000"
             android:textSize="14sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
             app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
         <TextView
             android:id="@+id/txtPrecio"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="38dp"
             android:height="20dp"
             android:text="Precio: $999999"
             android:textColor="#000000"
@@ -190,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="225dp" />
+            app:layout_constraintGuide_begin="175dp" />
 
         <Button
             android:id="@+id/btnAbonar"
@@ -212,8 +215,7 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnRechazar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnRechazar"
@@ -236,8 +238,7 @@
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnAbonar"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintStart_toEndOf="@+id/btnAbonar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

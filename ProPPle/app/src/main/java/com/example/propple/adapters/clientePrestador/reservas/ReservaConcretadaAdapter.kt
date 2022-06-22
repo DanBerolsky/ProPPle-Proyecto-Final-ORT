@@ -6,10 +6,12 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.Transacciones.Transaccion
 import com.ort.casodeusotest.entities.Reserva
 
-class ReservaConcretadaAdapter (var reservaList : MutableList<Reserva>,
-                                var onClick : (Int) -> Unit) : RecyclerView.Adapter<ReservaConcretadaAdapter.ReservaHolder>() {
+class ReservaConcretadaAdapter(
+    var reservaList: List<Transaccion>
+    ) : RecyclerView.Adapter<ReservaConcretadaAdapter.ReservaHolder>() {
 
     class ReservaHolder(v: View) : RecyclerView.ViewHolder(v) {
         private var view: View
@@ -30,7 +32,7 @@ class ReservaConcretadaAdapter (var reservaList : MutableList<Reserva>,
 
     override fun onBindViewHolder(holder: ReservaHolder, position: Int) {
         holder.getCard().setOnClickListener {
-            onClick(position)
+            //onClick(position)
         }
     }
 

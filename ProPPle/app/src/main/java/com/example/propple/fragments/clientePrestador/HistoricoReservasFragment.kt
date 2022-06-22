@@ -9,13 +9,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.propple.fragments.cliente.publicacionVistaPublicaFragmentArgs
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.reservas.ReservaCanceladaAdapter
 import com.ort.casodeusotest.adapters.reservas.ReservaConcretadaAdapter
-import com.ort.casodeusotest.adapters.reservas.ReservaRechazadaAdapter
-import com.ort.casodeusotest.adapters.reservas.ReservaVencidaAdapter
-import com.ort.casodeusotest.entities.ReservaRepository
-import com.ort.casodeusotest.viewModel.HistoricoReservasViewModel
+import com.ort.casodeusotest.viewModel.ReservasViewModel
 
 class HistoricoReservasFragment : Fragment() {
 
@@ -23,18 +21,18 @@ class HistoricoReservasFragment : Fragment() {
         fun newInstance() = HistoricoReservasFragment()
     }
 
-    private lateinit var viewModel: HistoricoReservasViewModel
+    private lateinit var viewModel: ReservasViewModel
     private lateinit var v : View
-    lateinit var recyclerReservasConcretadas : RecyclerView
-    lateinit var recyclerReservasCanceladas : RecyclerView
-    lateinit var recyclerReservasRechazadas : RecyclerView
-    lateinit var recyclerReservasVencidas : RecyclerView
-    lateinit var concretadaAdapter : ReservaConcretadaAdapter
-    lateinit var canceladaAdapter : ReservaCanceladaAdapter
-    lateinit var rechazadaAdapter : ReservaRechazadaAdapter
-    lateinit var vencidaAdapter : ReservaVencidaAdapter
-    var repository : ReservaRepository = ReservaRepository()
-    private lateinit var fabVolverReservas2 : FloatingActionButton
+    private lateinit var recyclerReservasConcretadas : RecyclerView
+    private lateinit var recyclerReservasCanceladas : RecyclerView
+    //private lateinit var recyclerReservasRechazadas : RecyclerView
+    //lateinit var recyclerReservasVencidas : RecyclerView
+    private lateinit var concretadaAdapter : ReservaConcretadaAdapter
+    private lateinit var canceladaAdapter : ReservaCanceladaAdapter
+    //lateinit var rechazadaAdapter : ReservaRechazadaAdapter
+    //lateinit var vencidaAdapter : ReservaVencidaAdapter
+    //var repository : ReservaRepository = ReservaRepository()
+    //private lateinit var fabVolverReservas2 : FloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,8 +42,8 @@ class HistoricoReservasFragment : Fragment() {
         //fabVolverReservas2 = v.findViewById(R.id.fabVolverReservas2)
         recyclerReservasConcretadas = v.findViewById(R.id.recConcretadas)
         recyclerReservasCanceladas = v.findViewById(R.id.recCanceladas)
-        recyclerReservasRechazadas = v.findViewById(R.id.recRechazadas)
-        recyclerReservasVencidas = v.findViewById(R.id.recVencidas)
+        //recyclerReservasRechazadas = v.findViewById(R.id.recRechazadas)
+        //recyclerReservasVencidas = v.findViewById(R.id.recVencidas)
         return v
     }
 
@@ -63,15 +61,12 @@ class HistoricoReservasFragment : Fragment() {
 
         recyclerReservasConcretadas.setHasFixedSize(true)
         recyclerReservasConcretadas.layoutManager = LinearLayoutManager(context)
-        concretadaAdapter = ReservaConcretadaAdapter(repository.reservaList) {}
-        recyclerReservasConcretadas.adapter = concretadaAdapter
+
 
         recyclerReservasCanceladas.setHasFixedSize(true)
         recyclerReservasCanceladas.layoutManager = LinearLayoutManager(context)
-        canceladaAdapter = ReservaCanceladaAdapter(repository.reservaList) {}
-        recyclerReservasCanceladas.adapter = canceladaAdapter
 
-        recyclerReservasRechazadas.setHasFixedSize(true)
+        /*recyclerReservasRechazadas.setHasFixedSize(true)
         recyclerReservasRechazadas.layoutManager = LinearLayoutManager(context)
         rechazadaAdapter = ReservaRechazadaAdapter(repository.reservaList) {}
         recyclerReservasRechazadas.adapter = rechazadaAdapter
@@ -79,14 +74,24 @@ class HistoricoReservasFragment : Fragment() {
         recyclerReservasVencidas.setHasFixedSize(true)
         recyclerReservasVencidas.layoutManager = LinearLayoutManager(context)
         vencidaAdapter = ReservaVencidaAdapter(repository.reservaList) {}
-        recyclerReservasVencidas.adapter = vencidaAdapter
+        recyclerReservasVencidas.adapter = vencidaAdapter]*/
 
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HistoricoReservasViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProvider(this).get(ReservasViewModel::class.java)
+        var ventas = HistoricoReservasFragmentArgs.fromBundle(requireArguments()).venta
+        if(ventas!=null){
+            canceladaAdapter = ReservaCanceladaAdapter(ventas.cancelados)
+            recyclerReservasCanceladas.adapter = canceladaAdapter
+            concretadaAdapter = ReservaConcretadaAdapter(ventas.finalizados)
+            recyclerReservasConcretadas.adapter = concretadaAdapter
+        }else{
+            Snackbar.make(v,"Error no se pudieron cargar los datos",Snackbar.LENGTH_SHORT).show()
+        }
+
+
     }
 
 }
