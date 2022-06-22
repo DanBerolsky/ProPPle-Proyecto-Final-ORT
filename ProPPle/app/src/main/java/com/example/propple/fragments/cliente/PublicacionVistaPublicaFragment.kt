@@ -16,8 +16,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.propple.DenunciarServicioDialogFragment
 import com.example.propple.R
 import com.example.propple.databinding.FragmentPublicacionVistaPublicaBinding
+import com.example.propple.fragments.DialogCargarFragment
 import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.ort.casodeusotest.adapters.ComentarioAdapter
@@ -25,14 +27,14 @@ import com.ort.casodeusotest.adapters.ComentarioAdapter
 class publicacionVistaPublicaFragment : Fragment() {
 
     companion object {
-        fun newInstance() = publicacionVistaPublicaFragment()
+        val DIALOG_DENUNCIA = "DENU"
     }
-
     private lateinit var v: View
     private lateinit var viewModel: PublicacionVistaPublicaViewModel
     private lateinit var binding: FragmentPublicacionVistaPublicaBinding
     private lateinit var adapter : ComentarioAdapter
     private lateinit var recycle : RecyclerView
+
 
 
     override fun onCreateView(
@@ -47,6 +49,9 @@ class publicacionVistaPublicaFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        binding.fabDenunciar.setOnClickListener{
+            DenunciarServicioDialogFragment().show(childFragmentManager, DIALOG_DENUNCIA)
+        }
 
     }
     fun setValoracion(cantEstrellas : Int){
