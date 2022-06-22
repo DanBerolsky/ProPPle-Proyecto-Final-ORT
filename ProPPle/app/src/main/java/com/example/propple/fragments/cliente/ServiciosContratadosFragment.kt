@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
@@ -28,6 +30,7 @@ class ServiciosContratadosFragment : Fragment() {
     lateinit var pendienteDePagoAdapter : ServiciosContratadosPendienteDePagoAdapter
     lateinit var recyclerProximoARealizarse : RecyclerView
     lateinit var proximosARealizarAdapter : ServiciosContratadosProximosARealizarseAdapter
+    lateinit var btnHistServ : Button
 
     var repo : TransaccionesRepo = TransaccionesRepo()
     var repo2 : TransaccionesRepo = TransaccionesRepo()
@@ -42,6 +45,7 @@ class ServiciosContratadosFragment : Fragment() {
         recyclerIniciado = v.findViewById(R.id.recIniciado)
         recyclerPendienteDePago = v.findViewById(R.id.recPendientePago)
         recyclerProximoARealizarse = v.findViewById(R.id.recProximoRealizar)
+        btnHistServ = v.findViewById(R.id.btnHistServ)
 
         return v
     }
@@ -70,8 +74,11 @@ class ServiciosContratadosFragment : Fragment() {
 
         proximosARealizarAdapter = ServiciosContratadosProximosARealizarseAdapter(repo2.transaccionesList)
         recyclerProximoARealizarse.adapter=proximosARealizarAdapter // esta linea se renderiza la lista
+
+        btnHistServ.setOnClickListener {
+            val action = ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToHistoricoServiciosFragment()
+            v.findNavController().navigate(action)
+        }
     }
-
-
 
 }

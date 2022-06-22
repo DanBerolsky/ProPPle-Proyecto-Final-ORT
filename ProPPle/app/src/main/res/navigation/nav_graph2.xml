@@ -77,6 +77,9 @@
         <action
             android:id="@+id/action_serviciosContratadosFragment_to_abonarReservaFragment"
             app:destination="@id/abonarReservaFragment" />
+        <action
+            android:id="@+id/action_serviciosContratadosFragment_to_historicoServiciosFragment"
+            app:destination="@id/historicoServiciosFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -148,4 +151,9 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/historicoServiciosFragment"
+        android:name="com.example.propple.fragments.cliente.HistoricoServiciosFragment"
+        android:label="fragment_historico_servicios"
+        tools:layout="@layout/fragment_historico_servicios" />
 </navigation>
