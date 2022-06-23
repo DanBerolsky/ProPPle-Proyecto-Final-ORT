@@ -28,41 +28,6 @@
                 android:layout_height="match_parent">
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView1232"
-                    android:layout_width="350dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-
-                    android:layout_marginTop="24dp"
-                    android:autofillHints="  Ingrese nuevamente una contraseña"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.491"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView3">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <EditText
-                            android:id="@+id/InMotivo"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/rosa_para_input"
-                            android:backgroundTint="#00AA3E3E"
-                            android:ems="10"
-                            android:hint="Motivo"
-                            android:inputType="textEmailAddress"
-                            android:paddingStart="10dp"
-                            android:paddingEnd="10dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="350dp"
@@ -99,7 +64,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Reserva no abonada, vence en 24 horas"
-                            android:textSize="10dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -108,13 +75,11 @@
                             android:id="@+id/cardView10"
                             android:layout_width="52dp"
                             android:layout_height="53dp"
-                            android:layout_marginStart="55dp"
-                            android:layout_marginTop="36dp"
-                            android:layout_marginBottom="24dp"
+                            android:layout_marginTop="10dp"
                             app:cardCornerRadius="50dp"
-                            app:layout_constraintBottom_toTopOf="@+id/textView44"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                            app:layout_constraintTop_toBottomOf="@+id/textView31">
 
                             <ImageView
                                 android:id="@+id/btnAvatar"
@@ -125,98 +90,112 @@
 
                         <TextView
                             android:id="@+id/textView36"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="35dp"
-                            android:layout_marginEnd="90dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Servicio - para Nombre"
-                            android:textAlignment="textStart"
+                            android:textAlignment="center"
                             android:textColor="#000000"
-                            android:textSize="14sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/cardView10"
-                            app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-                        <TextView
-                            android:id="@+id/textView41"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="24dp"
-                            android:text="Hora: hh:mm"
-                            android:textColor="#000000"
-                            android:textSize="14sp"
-                            android:visibility="gone"
-                            app:layout_constraintStart_toStartOf="@+id/guideline6"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/linearLayout19"
                             app:layout_constraintTop_toBottomOf="@+id/cardView10" />
-
-                        <TextView
-                            android:id="@+id/txtFecha"
-                            android:layout_width="wrap_content"
-                            android:layout_height="19dp"
-                            android:layout_marginStart="40dp"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginEnd="85dp"
-                            android:text="Fecha: "
-                            android:textColor="#000000"
-                            android:textSize="14sp"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline6"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView10" />
-
-                        <TextView
-                            android:id="@+id/txtPrecio"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="92dp"
-                            android:layout_marginTop="44dp"
-                            android:layout_marginEnd="6dp"
-                            android:text="Precio: $xxxx"
-                            android:textColor="#000000"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toEndOf="@+id/txtFecha"
-                            app:layout_constraintTop_toBottomOf="@+id/textView36"
-                            app:layout_constraintVertical_bias="0.018" />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_begin="225dp" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:id="@+id/linearLayout19"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="28dp"
-                            android:layout_marginTop="21dp"
-                            android:layout_marginBottom="16dp"
-                            android:orientation="horizontal"
+                            android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txtFecha">
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
 
-                            <ImageView
-                                android:id="@+id/imageView15"
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_marginRight="5dp"
-                                app:srcCompat="@drawable/ic_baseline_location_on_24"
-                                app:tint="#000000" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtUbicacion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Dirección"
+                                    android:textAlignment="center"
+                                    android:textColor="#000000"
+                                    android:textSize="14sp"
+                                    android:textStyle="italic" />
+                            </LinearLayout>
 
                             <TextView
-                                android:id="@+id/txtUbicacion"
-                                android:layout_width="350dp"
-                                android:layout_height="match_parent"
-                                android:gravity="center_vertical"
-                                android:text="Dirección"
+                                android:id="@+id/txtFecha"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Fecha: "
+                                android:textAlignment="center"
                                 android:textColor="#000000"
-                                android:textSize="10sp" />
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/textView41"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Hora: hh:mm"
+                                android:textColor="#000000"
+                                android:textSize="14sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:text="Precio: $xxxx"
+                                android:textAlignment="center"
+                                android:textColor="#000000"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
                         </LinearLayout>
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1232"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginTop="24dp"
+                    android:autofillHints="  Ingrese nuevamente una contraseña"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.491"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/InMotivo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/rosa_para_input"
+                            android:backgroundTint="#00AA3E3E"
+                            android:ems="10"
+                            android:hint="Motivo"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp" />
+
+                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
