@@ -6,6 +6,6 @@ data class FormalizarTransaccion(
     val location: String,
     val location_latitud: Double,
     val location_longitud: Double,
-    val presupuesto: Int,
+    val presupuesto: Double,
     val token: String
 )

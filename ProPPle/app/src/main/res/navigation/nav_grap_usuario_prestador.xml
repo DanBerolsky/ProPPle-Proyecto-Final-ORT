@@ -129,9 +129,6 @@
         android:name="com.ort.casodeusotest.fragments.MisPublicacionesFragment"
         android:label="MisPublicacionesFragment" >
         <action
-            android:id="@+id/action_misPublicacionesFragment_to_cuentaUsuarioPrestadorFragment"
-            app:destination="@id/cuentaFragment" />
-        <action
             android:id="@+id/action_misPublicacionesFragment_to_publicacionFragment"
             app:destination="@id/publicacionFragment" />
     </fragment>
@@ -148,14 +145,11 @@
     </fragment>
     <fragment
         android:id="@+id/comentariosFragment"
-        android:name="com.ort.casodeusotest.fragments.ComentariosFragment"
+        android:name="com.example.propple.fragments.clientePrestador.ComentariosFragment"
         android:label="ComentariosFragment" >
         <argument
-            android:name="rubroPosition"
+            android:name="id"
             app:argType="integer" />
-        <action
-            android:id="@+id/action_comentariosFragment_to_publicacionFragment"
-            app:destination="@id/publicacionFragment" />
     </fragment>
     <fragment
         android:id="@+id/publicacionFragment"
@@ -171,7 +165,7 @@
             android:id="@+id/action_publicacionFragment_to_misPublicacionesFragment"
             app:destination="@id/misPublicacionesFragment" />
         <argument
-            android:name="rubroPosition"
+            android:name="id"
             app:argType="integer" />
     </fragment>
     <fragment

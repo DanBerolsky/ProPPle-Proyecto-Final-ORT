@@ -157,8 +157,8 @@
 
                         <TextView
                             android:id="@+id/textView16"
-                            android:layout_width="150dp"
-                            android:layout_height="50dp"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:text="Nombre"
@@ -202,7 +202,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="5dp"
                             android:text="Título del servicio"
-                            android:textAlignment="textStart"
+                            android:textAlignment="center"
                             android:textSize="25dp"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -268,8 +268,8 @@
 
                         <TextView
                             android:id="@+id/textDireccion"
-                            android:layout_width="200dp"
-                            android:layout_height="20dp"
+                            android:layout_width="230dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Dirección Google Maps"
                             android:textSize="15sp"
@@ -280,7 +280,7 @@
                             android:id="@+id/btnEditarPublicacion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="30dp"
                             android:layout_marginBottom="10dp"
                             android:clickable="true"
                             android:src="@drawable/ic_edit"
@@ -288,7 +288,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView24"
+                            app:layout_constraintTop_toBottomOf="@+id/textDireccion"
                             app:tint="@android:color/white"
                             tools:ignore="SpeakableTextPresentCheck" />
 

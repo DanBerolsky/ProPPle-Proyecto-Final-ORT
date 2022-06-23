@@ -7,10 +7,12 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.api.publication.PublicationCuenta
 import com.google.android.material.snackbar.Snackbar
+import com.ort.casodeusotest.fragments.MisPublicacionesFragmentDirections
 
 class RubroAdapter(
     var rubroList: List<PublicationCuenta>) : RecyclerView.Adapter<RubroAdapter.RubroHolder>() {
@@ -49,6 +51,13 @@ class RubroAdapter(
         fun setEstado(visibility: Boolean) {
             view.findViewById<Switch>(R.id.switch4).setChecked(visibility)
         }
+
+        fun nav(id:Int){
+           view.findViewById<CardView>(R.id.cardRubroItem).setOnClickListener {
+               val nav = MisPublicacionesFragmentDirections.actionMisPublicacionesFragmentToPublicacionFragment(id)
+               view.findNavController().navigate(nav)
+           }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RubroHolder {
@@ -62,6 +71,7 @@ class RubroAdapter(
         //holder.getCard().setOnClickListener {
           //  onClick(position)
         //}
+        holder.nav(rubroList[position].id_publicacion)
         holder.setEstado(rubroList[position].visibility)
         holder.estado()
         holder.setName(rubroList[position].rubro_name)

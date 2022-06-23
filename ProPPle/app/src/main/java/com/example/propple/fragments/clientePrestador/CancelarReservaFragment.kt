@@ -69,6 +69,7 @@ class CancelarReservaFragment : Fragment() {
         trx.fecha?.let { setFecha(it) }
         setUbicacion(trx.location)
         trx.presupuesto?.let { setPrecio(it) }
+        setTitulo(trx.alias,trx.rubro_name)
     }
     fun setFecha(fecha: String){
         var txtFecha : TextView = v.findViewById(R.id.txtFecha)
@@ -93,5 +94,10 @@ class CancelarReservaFragment : Fragment() {
             )
     }
 
+    fun setTitulo(x: String, rubroAux: String) {
+        val txt: TextView = v.findViewById(R.id.textView36)
+        txt.setText(rubroAux + " - " + x)
+
+    }
 
 }

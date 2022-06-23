@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
@@ -29,6 +28,7 @@ import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.FormularioReservaViewModel
+import java.lang.Double.parseDouble
 
 class FormularioReservaFragment : Fragment() {
 
@@ -119,23 +119,7 @@ class FormularioReservaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.InFechaDeNacrimiento.setOnClickListener { showDatePickerDialog() }
-        btnEnviarReserva.setOnClickListener {
-            if(verificarCamposVacios()) {
-                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else if(!InputFieldValidator.esNumerico(
-                    binding.inPrecioHora,
-                    binding.txvinPrecioHora,
-                    1979711488
-                )
-            ) {
-                Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
-            }
-            else {
-                val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment22()
-                v.findNavController().navigate(action)
-                Snackbar.make(v, "Reserva enviada a Cliente para confirmar", Snackbar.LENGTH_SHORT).show()
-            }
-        }
+
         /*fabVolverReservas1.setOnClickListener {
             val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment2()
             v.findNavController().navigate(action)
@@ -160,8 +144,23 @@ class FormularioReservaFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(FormularioReservaViewModel::class.java)
         var trx = FormularioReservaFragmentArgs.fromBundle(requireArguments()).trx
         setAvatar(trx.url_download_image)
-        binding.btnEnviarReserva.setOnClickListener {
-
+        btnEnviarReserva.setOnClickListener {
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else if(!InputFieldValidator.esNumerico(
+                    binding.inPrecioHora,
+                    binding.txvinPrecioHora,
+                    1979711488
+                )
+            ) {
+                Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
+                viewModel.enviarFormulario(binding.InFechaDeNacrimiento.text.toString(),trx.id_transaccion,direccion,latitude,longitude,parseDouble(binding.inPrecioHora.text.toString()))
+                val action = FormularioReservaFragmentDirections.actionFormularioReservaFragmentToReservasFragment22()
+                v.findNavController().navigate(action)
+                Snackbar.make(v, "Reserva enviada a Cliente para confirmar", Snackbar.LENGTH_SHORT).show()
+            }
         }
 
     }

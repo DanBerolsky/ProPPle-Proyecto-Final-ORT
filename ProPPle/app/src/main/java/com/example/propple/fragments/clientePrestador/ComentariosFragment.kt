@@ -1,4 +1,4 @@
-package com.ort.casodeusotest.fragments
+package com.example.propple.fragments.clientePrestador
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import android.widget.EditText
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
+import com.example.propple.adapters.cliente.Comentario2Adapter
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.adapters.ComentarioAdapter
 import com.ort.casodeusotest.viewModel.ComentariosViewModel
@@ -63,7 +65,20 @@ class ComentariosFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(ComentariosViewModel::class.java)
-        // TODO: Use the ViewModel
+        val id = ComentariosFragmentArgs.fromBundle(requireArguments()).id
+        viewModel.getComentarios(id)
+        //binding.btnEnviar.setOnClickListener{
+          //  viewModel.newComment(servicios.toInt(),binding.inPregunta.text.toString())
+        //}
+
+        viewModel.comentarios.observe(viewLifecycleOwner, Observer {
+            var it2=it
+            if (it != null) {
+                it2=it.filter { it.answer==null }
+            }
+            adapter = it2?.let { it1 -> ComentarioAdapter(it1) }!!
+            recyclerComentarios.adapter=adapter
+        } )
     }
 
 }

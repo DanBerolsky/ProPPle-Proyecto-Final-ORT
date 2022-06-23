@@ -1,7 +1,7 @@
 package com.example.propple.api.publication
 
 data class Comentario(
-    val answer: String,
+    val answer: String?,
     val content: String,
     val date_of_creation: String,
     val foto_cliente: String,

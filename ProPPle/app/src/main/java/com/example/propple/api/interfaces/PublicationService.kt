@@ -30,11 +30,13 @@ interface PublicationService {
     suspend fun postPostulacion(@Body x : CrearPostulacion):Response<Void>
 
     @GET("publication/getPublicationForPrestador/{token}/{id}")
-    suspend fun getPublicationForPrestador(@Path("token") token: String, @Path("id") id: Int):Response<Void>
+    suspend fun getPublicationForPrestador(@Path("token") token: String, @Path("id") id: Int):Response<Publication>
 
     @GET("publication/getPublicationsForPrestador/{token}")
     suspend fun getPublicationsForPrestador(@Path("token") token: String):Response<List<PublicationCuenta>>
 
+    @POST("publication/postRespuesta")
+    suspend fun postRespuesta(@Body x : RespuestaComentario):Response<Void>
 }
 
 
