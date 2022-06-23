@@ -23,13 +23,13 @@ class ServiciosCanceladosAdapter(
         }
 
         fun setFecha(fecha: String){
-            var txtFecha : TextView = view.findViewById(R.id.txtFecha)
+            var txtFecha : TextView = view.findViewById(R.id.textView44)
             val fecha = fecha.replace("-"," / ").substring(0,14)
             txtFecha.text = "Fecha : " + fecha
         }
 
         fun setPrecio(precio: Double){
-            var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
+            var txtPrecio : TextView = view.findViewById(R.id.textView47)
             txtPrecio.text = "Presupuesto : $"+precio
         }
         fun setAvatar(img64:String){
