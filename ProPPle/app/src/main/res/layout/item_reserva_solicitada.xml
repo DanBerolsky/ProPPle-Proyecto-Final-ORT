@@ -19,11 +19,11 @@
             android:id="@+id/cardView10"
             android:layout_width="52dp"
             android:layout_height="53dp"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toTopOf="@+id/fabLlenarFormulario"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -38,51 +38,49 @@
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="90dp"
+            android:layout_marginBottom="10dp"
             android:text="Servicio - para Nombre"
-            android:textAlignment="textStart"
+            android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/fabLlenarFormulario"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cardView10"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabLlenarFormulario"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="76dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            app:backgroundTint="#6750A4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fabRechazarSolicitud"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView10"
-            app:srcCompat="@drawable/ic_write"
-            app:tint="@android:color/white"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView10" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabRechazarSolicitud"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            app:backgroundTint="#FFFFFF"
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fabLlenarFormulario"
-            app:layout_constraintTop_toBottomOf="@+id/cardView10"
-            app:srcCompat="@drawable/ic_cancel"
-            app:tint="#6750A4"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabLlenarFormulario"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="25dp"
+                android:clickable="true"
+                app:backgroundTint="#6750A4"
+                app:srcCompat="@drawable/ic_write"
+                app:tint="@android:color/white"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabRechazarSolicitud"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="25dp"
+                android:clickable="true"
+                app:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/ic_cancel"
+                app:tint="#6750A4"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
