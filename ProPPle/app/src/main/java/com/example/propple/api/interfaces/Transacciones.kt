@@ -25,6 +25,9 @@ interface Transacciones {
     @GET("/transaccion/pending")
     suspend fun pending(@Body ):Response<Void>
     */
+    @PUT("/transaccion/deleteTransaccionIniciada")
+    suspend fun deleteTransaccionIniciada(@Body x: RechazarReserva):Response<Void>
+
     @POST("/transaccion/deleteTransaccionAbonada")
     suspend fun deleteTransaccionAbonada(@Body x: RechazarReserva):Response<Void>
 

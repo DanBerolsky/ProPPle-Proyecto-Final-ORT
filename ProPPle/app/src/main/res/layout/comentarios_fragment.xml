@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.clientePrestador.ComentariosFragment" >
+    android:backgroundTint="@color/banco_negro"
+    tools:context=".fragments.clientePrestador.ComentariosFragment">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -20,6 +21,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vacio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="23dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/rosa_para_input"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="No hay preguntas"
+                    android:textAlignment="center"
+                    android:textColor="@color/banco_negro"
+                    android:textSize="34sp" />
+            </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recComentarios"

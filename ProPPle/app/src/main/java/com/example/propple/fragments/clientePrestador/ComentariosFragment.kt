@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -75,6 +76,9 @@ class ComentariosFragment : Fragment() {
             var it2=it
             if (it != null) {
                 it2=it.filter { it.answer==null }
+            }
+            if (it2?.size==0){
+                v.findViewById<CardView>(R.id.vacio).visibility=View.VISIBLE
             }
             adapter = it2?.let { it1 -> ComentarioAdapter(it1) }!!
             recyclerComentarios.adapter=adapter

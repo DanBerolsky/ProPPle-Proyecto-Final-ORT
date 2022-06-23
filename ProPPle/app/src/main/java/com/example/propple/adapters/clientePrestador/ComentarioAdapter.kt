@@ -66,56 +66,43 @@ class ComentarioAdapter (var comentarioList: List<Comentario>) : RecyclerView.Ad
         fun setRespuesta2(x:String){
             view.findViewById<TextView>(R.id.textRespuesta2).text=x
         }
-        fun ocultarInput(){
-            val txtRes=view.findViewById<TextView>(R.id.textRespuesta3)
-            view.findViewById<CardView>(R.id.card).visibility=View.GONE
-            view.findViewById<FloatingActionButton>(R.id.btnEnviar).visibility=View.GONE
-            txtRes.visibility=View.VISIBLE
-            txtRes.text=view.findViewById<EditText>(R.id.inRes1).text
-        }
-        fun ocultarInput1(answer:String){
-            val txtRes=view.findViewById<TextView>(R.id.textRespuesta3)
-            view.findViewById<CardView>(R.id.card).visibility=View.GONE
-            view.findViewById<FloatingActionButton>(R.id.btnEnviar).visibility=View.GONE
-            txtRes.visibility=View.VISIBLE
-            txtRes.text=answer
-        }
-
-        fun enviarComent(id_comentario: Int, id_publicacion: Int,){
-            var salida = false
-            val txtRes=view.findViewById<TextView>(R.id.textRespuesta3)
-            val respuestaMensaje = RespuestaComentario(txtRes.text.toString(),id_comentario,id_publicacion,prefs.getJwt())
-            if(txtRes.text.trim()!=""){
-                view.findViewById<FloatingActionButton>(R.id.btnEnviar).setOnClickListener {
-                    if (view.findViewById<EditText>(R.id.inRes1).text.trim()!=""){
-
-                        val parentJob = Job()
-                        val scope = CoroutineScope(Dispatchers.Default + parentJob)
-
-
-                        scope.launch {
-                            CoroutineScope(Dispatchers.IO).launch {
-                                var call : Response<Void> = RetrofitHelper.getRetrofit().create(
-                                    PublicationService::class.java).postRespuesta(respuestaMensaje)
-                                if(call.isSuccessful){
-                                    async{ocultarInput()
-                                        Snackbar.make(view,"Enviado...",Snackbar.LENGTH_SHORT).show()}
-                                    //
-                                }else {
-                                    //Snackbar.make(view,"El mensaje no fue enviado.",Snackbar.LENGTH_SHORT).show()
-                                }
-                            }
-                        }
-                    }
+        fun ocultarInput(id_comentario: Int, id_publicacion: Int){
+            view.findViewById<FloatingActionButton>(R.id.btnEnviar).setOnClickListener {
+                if (view.findViewById<EditText>(R.id.inRes1).text.trim()!="") {
+                    val txtRes = view.findViewById<TextView>(R.id.textRespuesta3)
+                    view.findViewById<CardView>(R.id.card).visibility = View.GONE
+                    view.findViewById<FloatingActionButton>(R.id.btnEnviar).visibility = View.GONE
+                    txtRes.visibility = View.VISIBLE
+                    txtRes.text = view.findViewById<EditText>(R.id.inRes1).text
+                    enviarComent(id_comentario, id_publicacion)
                 }
             }
         }
 
-        fun ocultarCard() {
-            view.findViewById<CardView>(R.id.cardComentarioItem).visibility=View.GONE
-        }
 
-    }
+        fun enviarComent(id_comentario: Int, id_publicacion: Int){
+            /*var salida = false
+            if(txtRes.text.trim()!=""){
+                view.findViewById<FloatingActionButton>(R.id.btnEnviar).setOnClickListener {
+                    if (view.findViewById<EditText>(R.id.inRes1).text.trim()!=""){*/
+            val txtRes=view.findViewById<TextView>(R.id.textRespuesta3)
+            val respuestaMensaje = RespuestaComentario(txtRes.text.toString(),id_comentario,id_publicacion,prefs.getJwt())
+                        CoroutineScope(Dispatchers.IO).launch {
+                            var call : Response<Void> = RetrofitHelper.getRetrofit().create(
+                                PublicationService::class.java).postRespuesta(respuestaMensaje)
+                            if(call.isSuccessful){
+                                async{ Snackbar.make(view,"Enviado...",Snackbar.LENGTH_SHORT).show()}
+                                //
+                            }else {
+                                async{Snackbar.make(view,"El mensaje no fue enviado.",Snackbar.LENGTH_SHORT).show()}
+                            }
+                        }
+                    //}
+                }
+            }
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComentarioHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_comentario,parent,false)
@@ -133,7 +120,8 @@ class ComentarioAdapter (var comentarioList: List<Comentario>) : RecyclerView.Ad
                // holder.setRespuesta(it)
                 //holder.setRespuesta2("")
             }
-            holder.enviarComent( comentarioList[position].id_comentario, comentarioList[position].id_publicacion)
+            holder.ocultarInput(comentarioList[position].id_comentario, comentarioList[position].id_publicacion)
+
         }
 
     }

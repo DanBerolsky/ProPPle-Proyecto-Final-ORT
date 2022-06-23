@@ -8,12 +8,22 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.RetrofitHelper
+import com.example.propple.api.Transacciones.RechazarReserva
 import com.example.propple.api.Transacciones.Transaccion
+import com.example.propple.api.interfaces.PublicationService
+import com.example.propple.api.interfaces.Transacciones
 import com.example.propple.fragments.clientePrestador.ReservasFragmentDirections
 import com.example.propple.shared.ProPPle
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.imgController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import retrofit2.Response
 
 
 class ReservaSolicitadaAdapter(
@@ -46,7 +56,19 @@ class ReservaSolicitadaAdapter(
         }
         fun cancelar(id: Int){
             view.findViewById<FloatingActionButton>(R.id.fabRechazarSolicitud).setOnClickListener{
-                Snackbar.make(view,"Rechazar solicitud",Snackbar.LENGTH_SHORT).show()
+                view.findViewById<FloatingActionButton>(R.id.fabRechazarSolicitud).visibility=View.GONE
+                view.findViewById<FloatingActionButton>(R.id.fabLlenarFormulario).visibility=View.GONE
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    var call : Response<Void> = RetrofitHelper.getRetrofit().create(
+                        Transacciones::class.java).deleteTransaccionIniciada(RechazarReserva(prefs.getJwt(),id))
+                    if(call.isSuccessful){
+                        async{  Snackbar.make(view,"Solicitud Rechazada",Snackbar.LENGTH_SHORT).show()}
+                        //
+                    }else {
+                        async{Snackbar.make(view,"Error en el envio.",Snackbar.LENGTH_SHORT).show()}
+                    }
+                }
             }
         }
         fun setTitulo(x: String, rubroAux: String){
