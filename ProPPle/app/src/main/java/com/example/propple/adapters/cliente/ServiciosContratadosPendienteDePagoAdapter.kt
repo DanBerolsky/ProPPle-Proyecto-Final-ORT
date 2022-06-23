@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.Transacciones.Transaccion
 import com.example.propple.fragments.cliente.ServiciosContratadosFragmentDirections
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
@@ -64,9 +65,10 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
             }
         }
 
-        fun Rechazar() {
+        fun Rechazar(trx:Transaccion) {
             view.findViewById<Button>(R.id.btnRechazar).setOnClickListener {
-                Snackbar.make(view, "ELIMINAR", Snackbar.LENGTH_SHORT).show()
+                //Snackbar.make(view, "ELIMINAR", Snackbar.LENGTH_SHORT).show()
+                view.findNavController().navigate(ServiciosContratadosFragmentDirections.actionServiciosContratadosFragmentToRechazarReservaFragment2(trx))
             }
         }
 
@@ -79,7 +81,6 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
         fun setTitulo(x: String, rubroAux: String) {
             val txt: TextView = view.findViewById(R.id.txtTitle)
             txt.setText(rubroAux + " - " + x)
-
         }
     }
     // aca voy a buscar el xml de item
@@ -100,7 +101,7 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
                 holder.setFecha(it)
             }
         }
-        holder.Rechazar()
+        holder.Rechazar(ServiciosContratadosList[position])
         val aliasAux = ServiciosContratadosList[position].alias
         val rubroAux = ServiciosContratadosList[position].rubro_name
         holder.setTitulo(aliasAux,rubroAux)

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_serviciosContratadosFragment_to_historicoServiciosFragment"
             app:destination="@id/historicoServiciosFragment" />
+        <action
+            android:id="@+id/action_serviciosContratadosFragment_to_rechazarReservaFragment2"
+            app:destination="@id/rechazarReservaFragment2" />
     </fragment>
     <fragment
         android:id="@+id/cuentaFragment"
@@ -250,5 +253,16 @@
         <action
             android:id="@+id/action_cambiarContraseniaFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/rechazarReservaFragment2"
+        android:name="com.example.propple.fragments.cliente.RechazarReservaFragment"
+        android:label="RechazarReservaFragment" >
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
+        <action
+            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment"
+            app:destination="@id/serviciosContratadosFragment" />
     </fragment>
 </navigation>

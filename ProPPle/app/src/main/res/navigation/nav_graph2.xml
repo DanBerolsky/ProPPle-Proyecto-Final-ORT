@@ -80,6 +80,9 @@
         <action
             android:id="@+id/action_serviciosContratadosFragment_to_historicoServiciosFragment"
             app:destination="@id/historicoServiciosFragment" />
+        <action
+            android:id="@+id/action_serviciosContratadosFragment_to_rechazarReservaFragment2"
+            app:destination="@id/rechazarReservaFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -159,5 +162,16 @@
         <argument
             android:name="trxs"
             app:argType="com.example.propple.api.Transacciones.CompraCli" />
+    </fragment>
+    <fragment
+        android:id="@+id/rechazarReservaFragment"
+        android:name="com.example.propple.fragments.cliente.RechazarReservaFragment"
+        android:label="RechazarReservaFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment"
+            app:destination="@id/serviciosContratadosFragment" />
     </fragment>
 </navigation>

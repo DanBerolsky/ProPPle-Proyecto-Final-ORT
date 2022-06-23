@@ -9,11 +9,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.CancelarReservaFragmentBinding
 import com.example.propple.databinding.FragmentComentarios2Binding
+import com.example.propple.fragments.cliente.RechazarReservaFragmentDirections
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 import com.google.android.material.snackbar.Snackbar
@@ -49,12 +51,7 @@ class CancelarReservaFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         btnNoRegresar.setOnClickListener { v.findNavController().navigate(CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment22())}
-        btnSiCancelar.setOnClickListener {
-            if(inMotivo.text.isBlank()) {
-                Snackbar.make(v, "Debes ingresar un motivo", Snackbar.LENGTH_SHORT).show()
-            } else {
-            }
-        }
+
         /*fabVolverReservas3.setOnClickListener {
             val action = CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment22()
             v.findNavController().navigate(action)
@@ -70,6 +67,28 @@ class CancelarReservaFragment : Fragment() {
         setUbicacion(trx.location)
         trx.presupuesto?.let { setPrecio(it) }
         setTitulo(trx.alias,trx.rubro_name)
+
+        btnSiCancelar.setOnClickListener {
+            if(inMotivo.text.isBlank()) {
+                Snackbar.make(v, "Debes ingresar un motivo", Snackbar.LENGTH_SHORT).show()
+            } else {
+                //Snackbar.make(v,trx.id_transaccion.toString(),Snackbar.LENGTH_SHORT).show()
+                viewModel.cancelar(trx.id_transaccion)
+            }
+        }
+
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+
+            if (it){
+                Snackbar.make(v,"Reserva rechazada con éxito.",Snackbar.LENGTH_SHORT).show()
+                v.findNavController().navigate(CancelarReservaFragmentDirections.actionCancelarReservaFragmentToReservasFragment22())
+            }else{
+                Snackbar.make(v,"Error en el envio.",Snackbar.LENGTH_SHORT).show()
+            }
+
+
+        })
+
     }
     fun setFecha(fecha: String){
         var txtFecha : TextView = v.findViewById(R.id.txtFecha)

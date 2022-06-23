@@ -110,13 +110,16 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toEndOf="@+id/cardView9"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+            app:layout_constraintVertical_bias="0.68">
 
             <TextView
                 android:id="@+id/textRespuesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:text="Respuesta"
                 android:textColor="#000000" />
 

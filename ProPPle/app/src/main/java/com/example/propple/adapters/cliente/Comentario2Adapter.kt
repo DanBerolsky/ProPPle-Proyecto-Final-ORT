@@ -48,8 +48,8 @@ class Comentario2Adapter (var comentarioList: List<Comentario>) : RecyclerView.A
             view.findViewById<TextView>(R.id.textRespuesta).text=x
         }
 
-        fun setRespuesta2(x:String){
-            view.findViewById<TextView>(R.id.textRespuesta2).text=x
+        fun setRespuesta2(){
+            view.findViewById<TextView>(R.id.textRespuesta2).visibility=View.GONE
         }
     }
 
@@ -69,7 +69,7 @@ class Comentario2Adapter (var comentarioList: List<Comentario>) : RecyclerView.A
         comentarioList.get(position).answer.let {
             if (it!="" && it!=null){
                 holder.setRespuesta(it)
-                holder.setRespuesta2("")
+                holder.setRespuesta2()
             }
              }
     }
