@@ -97,16 +97,6 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/textView41"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
-                android:text="Hora: hh:mm"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
-            <TextView
                 android:id="@+id/textView47"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
