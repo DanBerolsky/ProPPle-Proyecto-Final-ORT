@@ -235,6 +235,9 @@
         <argument
             android:name="trx"
             app:argType="com.example.propple.api.Transacciones.Transaccion" />
+        <action
+            android:id="@+id/action_abonarReservaFragment_to_serviciosContratadosFragment2"
+            app:destination="@id/serviciosContratadosFragment" />
     </fragment>
     <fragment
         android:id="@+id/historicoServiciosFragment"
@@ -262,7 +265,7 @@
             android:name="trx"
             app:argType="com.example.propple.api.Transacciones.Transaccion" />
         <action
-            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment"
+            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment2"
             app:destination="@id/serviciosContratadosFragment" />
     </fragment>
 </navigation>

@@ -13,18 +13,9 @@ interface Transacciones {
     @POST("/transaccion/crearTransaccion")
     suspend fun crearTransaccion(@Body x:CrearTransaccion):Response<Void>
 
-    /*@POST("/transaccion/abonarTransaccion")
-    suspend fun abonarTransaccion(@Body ):Response<Void>
+    @POST("/transaccion/abonarTransaccion")
+    suspend fun abonarTransaccion(@Body x:RechazarReserva):Response<MercadoPagoRes>
 
-    @GET("/transaccion/success")
-    suspend fun success(@Body ):Response<Void>
-
-    @GET("/transaccion/failure")
-    suspend fun failure(@Body ):Response<Void>
-
-    @GET("/transaccion/pending")
-    suspend fun pending(@Body ):Response<Void>
-    */
     @PUT("/transaccion/deleteTransaccionIniciada")
     suspend fun deleteTransaccionIniciada(@Body x: RechazarReserva):Response<Void>
 

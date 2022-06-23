@@ -53,7 +53,7 @@ class RechazarReservaFragment : Fragment() {
 
             if (it){
                 Snackbar.make(v,"Reserva rechazada con éxito.",Snackbar.LENGTH_SHORT).show()
-                v.findNavController().navigate(RechazarReservaFragmentDirections.actionRechazarReservaFragment2ToServiciosContratadosFragment())
+                v.findNavController().navigate(RechazarReservaFragmentDirections.actionRechazarReservaFragment2ToServiciosContratadosFragment2())
             }else{
                 Snackbar.make(v,"Error en el envio.",Snackbar.LENGTH_SHORT).show()
             }

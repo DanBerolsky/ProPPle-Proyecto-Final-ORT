@@ -81,7 +81,7 @@ class ServiciosContratadosFragment : Fragment() {
         viewModel.getCompras()
         viewModel.listasDeCompras.observe(viewLifecycleOwner, Observer {
            if (it!=null){
-               iniciadoAdapter = ServiciosIniciadosAdapter(it.proximos)
+               iniciadoAdapter = ServiciosIniciadosAdapter(it.inicial)
                recyclerIniciado.adapter=iniciadoAdapter // esta linea se renderiza la lista
                pendienteDePagoAdapter = ServiciosContratadosPendienteDePagoAdapter(it.pendientes)
                recyclerPendienteDePago.adapter=pendienteDePagoAdapter

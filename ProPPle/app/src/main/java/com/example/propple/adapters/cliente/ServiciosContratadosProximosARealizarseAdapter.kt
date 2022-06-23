@@ -1,12 +1,16 @@
 package com.example.propple.adapters.cliente
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.shared.ProPPle
@@ -23,6 +27,7 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
         init {
             this.view = v
         }
+
 
 
         fun setFecha(fecha: String){
@@ -63,6 +68,7 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             txt.setText(rubroAux+" - "+x)
         }
 
+
     }
 
     // aca voy a buscar el xml de item
@@ -90,6 +96,7 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
         }
         val rubroAux = ServiciosContratadosList[position].rubro_name
         holder.setTitulo(aliasAux,rubroAux)
+
     }
 
 
@@ -97,6 +104,7 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
     override fun getItemCount(): Int {
         return ServiciosContratadosList.size
     }
+
 
 
 }

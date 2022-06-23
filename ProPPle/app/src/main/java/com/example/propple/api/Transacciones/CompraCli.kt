@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CompraCli(
+    val inicial: List<Transaccion>,
     val cancelados: List<Transaccion>,
     val comentados: List<Transaccion>,
     val finalizados: List<Transaccion>,

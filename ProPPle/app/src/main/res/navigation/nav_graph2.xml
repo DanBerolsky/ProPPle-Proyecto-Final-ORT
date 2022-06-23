@@ -82,7 +82,7 @@
             app:destination="@id/historicoServiciosFragment" />
         <action
             android:id="@+id/action_serviciosContratadosFragment_to_rechazarReservaFragment2"
-            app:destination="@id/rechazarReservaFragment" />
+            app:destination="@id/rechazarReservaFragment2" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
@@ -153,6 +153,9 @@
         <argument
             android:name="trx"
             app:argType="com.example.propple.api.Transacciones.Transaccion" />
+        <action
+            android:id="@+id/action_abonarReservaFragment_to_serviciosContratadosFragment2"
+            app:destination="@id/serviciosContratadosFragment" />
     </fragment>
     <fragment
         android:id="@+id/historicoServiciosFragment"
@@ -164,14 +167,14 @@
             app:argType="com.example.propple.api.Transacciones.CompraCli" />
     </fragment>
     <fragment
-        android:id="@+id/rechazarReservaFragment"
+        android:id="@+id/rechazarReservaFragment2"
         android:name="com.example.propple.fragments.cliente.RechazarReservaFragment"
         android:label="RechazarReservaFragment" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
         <action
-            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment"
+            android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment2"
             app:destination="@id/serviciosContratadosFragment" />
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
 </navigation>

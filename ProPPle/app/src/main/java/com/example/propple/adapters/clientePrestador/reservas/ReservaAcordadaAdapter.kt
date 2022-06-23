@@ -1,5 +1,6 @@
 package com.ort.casodeusotest.adapters.reservas
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
@@ -29,6 +30,11 @@ class ReservaAcordadaAdapter(
             this.view = v
         }
 
+        private var context: Context? = null
+
+        fun MyAdapter(context: Context?) {
+            this.context = context
+        }
         /*fun getCard(): CardView {
             return view.findViewById(R.id.cardReservaAcordadaItem)
         }*/
@@ -76,6 +82,20 @@ class ReservaAcordadaAdapter(
             var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
             txtPrecio.text = "Presupuesto : $"+precio
         }
+        fun getWhatsapp(telefono:String,mensaje:String){
+            //hola,%20qué%20tal?
+            val oldValue = " "
+            val newValue = "%20"
+            val output = mensaje.replace(oldValue, newValue)
+            Log.i("mensaje", output)
+            val url = "https://api.whatsapp.com/send?phone=${telefono}&text=${output}";
+            val i = Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            view.findViewById<FloatingActionButton>(R.id.fabWhatsapp).setOnClickListener {
+                view.context.startActivity(i)
+                //context?.startActivity(i)
+            }
+        }
 
     }
 
@@ -106,6 +126,10 @@ class ReservaAcordadaAdapter(
         val aliasAux = reservaList[position].alias
         val rubroAux = reservaList[position].rubro_name
         holder.setTitulo(aliasAux,rubroAux)
+        val mensaje = "Hola ${reservaList[position].alias}!!Contacto con usted para conocer mas sobre su ProppleService."
+        holder.getWhatsapp(reservaList[position].phone,mensaje)
+
+
     }
 
     override fun getItemCount(): Int {

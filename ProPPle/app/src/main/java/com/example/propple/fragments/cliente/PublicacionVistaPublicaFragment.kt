@@ -107,7 +107,7 @@ class publicacionVistaPublicaFragment : Fragment() {
                     nav(act)
                 }
                 binding.fabWapp1.setOnClickListener{resul->
-                    val mensaje = "Hola ${it.user_name}!!/nContacto con usted para conocer mas sobre su ProppleService."
+                    val mensaje = "Hola ${it.user_name}!!Contacto con usted para conocer mas sobre su ProppleService."
                     getWhatsapp(it.phone,mensaje)
                     //getWhatsapp("5491164960203","Hola que onda doc?")
                 }

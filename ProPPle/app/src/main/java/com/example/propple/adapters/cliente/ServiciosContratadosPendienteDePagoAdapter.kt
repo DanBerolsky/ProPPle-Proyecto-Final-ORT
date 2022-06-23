@@ -82,6 +82,11 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
             val txt: TextView = view.findViewById(R.id.txtTitle)
             txt.setText(rubroAux + " - " + x)
         }
+        fun setPrecio(precio: Double){
+            var txtPrecio : TextView = view.findViewById(R.id.txtPrecio)
+            txtPrecio.text = "Presupuesto : $"+precio
+        }
+
     }
     // aca voy a buscar el xml de item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiciosContratadosHolder {
@@ -105,6 +110,7 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
         val aliasAux = ServiciosContratadosList[position].alias
         val rubroAux = ServiciosContratadosList[position].rubro_name
         holder.setTitulo(aliasAux,rubroAux)
+        ServiciosContratadosList[position].presupuesto?.let { holder.setPrecio(it) }
     }
 
 
