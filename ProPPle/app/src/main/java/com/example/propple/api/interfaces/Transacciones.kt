@@ -31,4 +31,10 @@ interface Transacciones {
     @GET("transaccion/getVentas/{token}")
     suspend fun getVentas(@Path("token") token: String):Response<VentasPro>
 
+    @GET("/transaccion/getTransaccionesAFinalizar/{token}")
+    suspend fun getTransaccionesAFinalizar(@Path("token") token: String):Response<List<Transaccion>>
+
+    @POST("/transaccion/finalizarTransaccion")
+    suspend fun finalizarTransaccion(@Body x:RechazarReserva):Response<Void>
+
 }

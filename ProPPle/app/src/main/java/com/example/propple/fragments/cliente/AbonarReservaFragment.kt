@@ -35,7 +35,6 @@ class AbonarReservaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v=inflater.inflate(R.layout.fragment_abonar_reserva, container, false)
-
         return v
     }
 

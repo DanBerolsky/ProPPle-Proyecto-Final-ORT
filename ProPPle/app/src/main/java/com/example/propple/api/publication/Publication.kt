@@ -6,8 +6,8 @@ data class Publication(
     val id_rubro: Int,
     val id_usuario_prestador: Int,
     val location: String,
-    val location_latitud: Int,
-    val location_longitud: Int,
+    val location_latitud: Double,
+    val location_longitud: Double,
     val phone: String,
     val precio_x_hora: Int,
     val publicacion_description: String,
@@ -17,5 +17,6 @@ data class Publication(
     val url_download_image: String,
     val user_last_name: String,
     val user_name: String,
-    val visibility: Boolean
+    val visibility: Boolean,
+    val show:Boolean?
 )

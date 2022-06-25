@@ -16,6 +16,7 @@ import com.example.propple.databinding.PublicacionFragmentBinding
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.viewModel.PublicacionViewModel
 
 class PublicacionFragment : Fragment() {
@@ -74,7 +75,15 @@ class PublicacionFragment : Fragment() {
             setEstado(it.visibility)
             binding.button10.text=it.puntuacion.toString()
             setAvatar(it.url_download_image)
+            it.show?.let { it1 -> estadoOcultar(it1) }
         })
+
+        viewModel.status2.observe(viewLifecycleOwner, Observer {
+            Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
+        })
+        binding.switch3.setOnCheckedChangeListener{buttonView, isChecked ->
+            viewModel.changeVisibility(id)
+        }
 
     }
     fun setEstado(visibility: Boolean) {
@@ -87,5 +96,10 @@ class PublicacionFragment : Fragment() {
                 v.context,
                 v.findViewById<ImageView>(R.id.imageView7)
             )
+    }
+    fun estadoOcultar(mostrar:Boolean){
+        if (!mostrar){
+           binding.cardVisible.visibility = View.GONE
+        }
     }
 }

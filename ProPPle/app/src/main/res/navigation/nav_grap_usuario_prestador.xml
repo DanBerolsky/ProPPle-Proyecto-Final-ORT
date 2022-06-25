@@ -139,12 +139,12 @@
         android:id="@+id/publicarServicioFragment"
         android:name="com.example.propple.fragments.clientePrestador.PublicarServicioFragment"
         android:label="PublicarServicioFragment" >
-        <argument
-            android:name="rubroPosition"
-            app:argType="integer" />
         <action
             android:id="@+id/action_publicarServicioFragment_to_publicacionFragment"
             app:destination="@id/publicacionFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/comentariosFragment"

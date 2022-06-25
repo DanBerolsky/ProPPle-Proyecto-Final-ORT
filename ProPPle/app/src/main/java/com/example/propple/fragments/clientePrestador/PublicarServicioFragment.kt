@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.propple.R
@@ -21,6 +22,7 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
+import com.ort.casodeusotest.fragments.PublicacionFragmentArgs
 import com.ort.casodeusotest.viewModel.PublicarServicioViewModel
 
 class PublicarServicioFragment : Fragment() {
@@ -115,23 +117,7 @@ class PublicarServicioFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        btnPublicar.setOnClickListener {
-            if(verificarCamposVacios()) {
-                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else if(!InputFieldValidator.esNumerico(
-                    binding.InPrecioHora,
-                    binding.txvInPrecioHoraPS,
-                    1979711488
-                )
-            ) {
-                Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
-            }
-            else {
-                val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
-                v.findNavController().navigate(action)
-                Snackbar.make(v, "Publicación modificada", Snackbar.LENGTH_SHORT).show()
-            }
-        }
+
         /*fabVolverPublicacion1.setOnClickListener {
             val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(PublicarServicioFragmentArgs.fromBundle(requireArguments()).rubroPosition)
             v.findNavController().navigate(action)
@@ -146,7 +132,37 @@ class PublicarServicioFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PublicarServicioViewModel::class.java)
-        // TODO: Use the ViewModel
+        val id = PublicacionFragmentArgs.fromBundle(requireArguments()).id
+
+
+        btnPublicar.setOnClickListener {
+            if(verificarCamposVacios()) {
+                Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
+            } else if(!InputFieldValidator.esNumerico(
+                    binding.InPrecioHora,
+                    binding.txvInPrecioHoraPS,
+                    1979711488
+                )
+            ) {
+                Snackbar.make(v, "El precio debe ser númerico", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
+                viewModel.publicarServicio(id,direccion,latitude,longitude,binding.InPrecioHora.text.toString().toInt() ,binding.InDescripcionServicio.text.toString(),binding.InTituloServicio.text.toString())
+
+            }
+        }
+        viewModel.status2.observe(viewLifecycleOwner, Observer {
+            if (it){
+                val action = PublicarServicioFragmentDirections.actionPublicarServicioFragmentToPublicacionFragment(id)
+                v.findNavController().navigate(action)
+                Snackbar.make(v, "Publicación modificada", Snackbar.LENGTH_SHORT).show()
+            }else{
+                Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
+            }
+
+        })
+
+
     }
 
     private fun verificarCamposVacios(): Boolean {

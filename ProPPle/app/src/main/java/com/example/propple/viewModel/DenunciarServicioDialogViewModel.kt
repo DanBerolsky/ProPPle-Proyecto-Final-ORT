@@ -1,4 +1,4 @@
-package com.example.propple
+package com.example.propple.viewModel
 
 import androidx.lifecycle.ViewModel
 

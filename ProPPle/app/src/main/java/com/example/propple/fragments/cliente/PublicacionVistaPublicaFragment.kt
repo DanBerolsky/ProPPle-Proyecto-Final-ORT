@@ -16,10 +16,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.propple.DenunciarServicioDialogFragment
+import com.example.propple.fragments.DenunciarServicioDialogFragment
 import com.example.propple.R
 import com.example.propple.databinding.FragmentPublicacionVistaPublicaBinding
-import com.example.propple.fragments.DialogCargarFragment
 import com.example.propple.utils.imgController
 import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
 import com.ort.casodeusotest.adapters.ComentarioAdapter

@@ -8,12 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import com.example.propple.fragments.DialogReservaHoyFragment
 import com.example.propple.R
 import com.example.propple.databinding.HomeFragmentBinding
-import com.example.propple.shared.ProPPle
-import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.viewModel.cliente.HomeViewModel
-import com.google.android.material.snackbar.Snackbar
 
 class homeFragment : Fragment() {
 

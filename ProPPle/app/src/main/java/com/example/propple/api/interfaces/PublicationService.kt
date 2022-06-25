@@ -3,10 +3,7 @@ package com.example.propple.api.interfaces
 import com.example.propple.api.UserClient.Sign
 import com.example.propple.api.publication.*
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface PublicationService {
     @GET("publication/getPublications/{token}/{precio}/{puntuacion}/{ubicacion}/{rubro}")
@@ -37,6 +34,14 @@ interface PublicationService {
 
     @POST("publication/postRespuesta")
     suspend fun postRespuesta(@Body x : RespuestaComentario):Response<Void>
+
+    @PUT("publication/changeVisibility")
+    suspend fun changeVisibility(@Body x : ChangeVisibility):Response<Void>
+
+    @PUT("publication/updatePublication")
+    suspend fun updatePublication(@Body x : UpdatePublication):Response<Void>
+
+
 }
 
 

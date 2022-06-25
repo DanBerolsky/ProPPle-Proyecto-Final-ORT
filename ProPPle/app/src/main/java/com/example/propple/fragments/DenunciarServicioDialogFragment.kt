@@ -1,19 +1,18 @@
-package com.example.propple
+package com.example.propple.fragments
 
 import android.app.Dialog
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
-import com.example.propple.fragments.cliente.publicacionVistaPublicaFragment
+import com.example.propple.R
+import com.example.propple.viewModel.DenunciarServicioDialogViewModel
 
 class DenunciarServicioDialogFragment : DialogFragment() {
 
@@ -36,7 +35,7 @@ class DenunciarServicioDialogFragment : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        v.findViewById<Button>(R.id.btnEnviar).setOnClickListener {
+        v.findViewById<Button>(R.id.btnSi).setOnClickListener {
             dialog?.dismiss()
         }
     }

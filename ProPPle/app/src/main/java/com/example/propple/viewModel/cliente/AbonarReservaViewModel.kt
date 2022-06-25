@@ -30,8 +30,6 @@ class AbonarReservaViewModel : ViewModel() {
                 link.postValue("")
                 Log.i("hola","errror")
             }
-
-
         }
     }
 }

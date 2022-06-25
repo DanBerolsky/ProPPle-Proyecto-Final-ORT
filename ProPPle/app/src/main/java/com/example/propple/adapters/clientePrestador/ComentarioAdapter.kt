@@ -1,6 +1,5 @@
 package com.ort.casodeusotest.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,6 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.lifecycle.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
 import com.example.propple.api.RetrofitHelper
@@ -20,7 +18,6 @@ import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.imgController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.*
 import retrofit2.Response
 
@@ -67,11 +64,11 @@ class ComentarioAdapter (var comentarioList: List<Comentario>) : RecyclerView.Ad
             view.findViewById<TextView>(R.id.textRespuesta2).text=x
         }
         fun ocultarInput(id_comentario: Int, id_publicacion: Int){
-            view.findViewById<FloatingActionButton>(R.id.btnEnviar).setOnClickListener {
+            view.findViewById<FloatingActionButton>(R.id.btnSi).setOnClickListener {
                 if (view.findViewById<EditText>(R.id.inRes1).text.trim()!="") {
                     val txtRes = view.findViewById<TextView>(R.id.textRespuesta3)
                     view.findViewById<CardView>(R.id.card).visibility = View.GONE
-                    view.findViewById<FloatingActionButton>(R.id.btnEnviar).visibility = View.GONE
+                    view.findViewById<FloatingActionButton>(R.id.btnSi).visibility = View.GONE
                     txtRes.visibility = View.VISIBLE
                     txtRes.text = view.findViewById<EditText>(R.id.inRes1).text
                     enviarComent(id_comentario, id_publicacion)

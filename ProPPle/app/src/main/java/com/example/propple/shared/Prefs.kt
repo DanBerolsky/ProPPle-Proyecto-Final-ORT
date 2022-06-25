@@ -4,11 +4,33 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.net.Uri
+import com.example.propple.api.Transacciones.Transaccion
 import com.example.propple.utils.imgController
+import com.google.gson.Gson
+
 
 class Prefs(context: Context) {
     val PREFS_NAME = "myPreferences"
     val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, 0)
+
+    fun setTrx(trx: Transaccion) {
+        val prefsEditor = prefs.edit()
+        val gson = Gson()
+        val json = gson.toJson(trx)
+        prefsEditor.putString("trx", json)
+        prefsEditor.apply()
+    }
+
+    fun getTrx(): String {
+        val gson = Gson()
+        val json= prefs.getString("trx", null)
+        //val obj=null
+        //if (json!=null){
+        //    val obj= gson.fromJson(json.toString(), Transaccion::class.java)
+       // }
+       // return obj
+        return prefs.getString("trx", "").toString()
+    }
 
     fun setJwt(jwt: String) {
         prefs.edit().putString("jwt", jwt).apply()

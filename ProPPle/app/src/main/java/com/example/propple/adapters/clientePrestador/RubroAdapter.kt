@@ -1,5 +1,6 @@
 package com.ort.casodeusotest.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,12 +8,22 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.view.isGone
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.adapters.cliente.PublicacionesAdapter
+import com.example.propple.api.RetrofitHelper
+import com.example.propple.api.interfaces.PublicationService
+import com.example.propple.api.publication.ChangeVisibility
 import com.example.propple.api.publication.PublicationCuenta
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.google.android.material.snackbar.Snackbar
 import com.ort.casodeusotest.fragments.MisPublicacionesFragmentDirections
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class RubroAdapter(
     var rubroList: List<PublicationCuenta>) : RecyclerView.Adapter<RubroAdapter.RubroHolder>() {
@@ -39,12 +50,26 @@ class RubroAdapter(
             return view.findViewById(R.id.cardRubroItem)
         }
 
-        fun estado(){
+        fun estado(id:Int){
             view.findViewById<Switch>(R.id.switch4).setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked){
                     Snackbar.make(view,"Activado", Snackbar.LENGTH_SHORT).show()
+                    changeVisibility(id)
                 }else{
                     Snackbar.make(view,"Desactivado", Snackbar.LENGTH_SHORT).show()
+                    changeVisibility(id)
+                }
+            }
+        }
+
+        fun changeVisibility(id:Int){
+            CoroutineScope(Dispatchers.IO).launch {
+                val call : Response<Void> = RetrofitHelper.getRetrofit().create(
+                    PublicationService::class.java).changeVisibility(ChangeVisibility(prefs.getJwt(),id))
+                if(call.isSuccessful){
+
+                }else{
+                    Snackbar.make(view,"ERROR", Snackbar.LENGTH_SHORT).show()
                 }
             }
         }
@@ -57,6 +82,11 @@ class RubroAdapter(
                val nav = MisPublicacionesFragmentDirections.actionMisPublicacionesFragmentToPublicacionFragment(id)
                view.findNavController().navigate(nav)
            }
+        }
+        fun estadoOcultar(mostrar:Boolean){
+            if (!mostrar){
+                view.findViewById<Switch>(R.id.switch4).visibility = View.GONE
+            }
         }
     }
 
@@ -73,8 +103,9 @@ class RubroAdapter(
         //}
         holder.nav(rubroList[position].id_publicacion)
         holder.setEstado(rubroList[position].visibility)
-        holder.estado()
+        holder.estado(rubroList[position].id_publicacion)
         holder.setName(rubroList[position].rubro_name)
+        holder.estadoOcultar(rubroList[position].show)
     }
 
     override fun getItemCount(): Int {

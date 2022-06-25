@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DenunciarServicioDialogFragment">
+    tools:context=".fragments.DialogReservaHoyFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -23,70 +23,49 @@
 
             <TextView
                 android:id="@+id/textView18"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="28dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Denunciar servicio"
                 android:textColor="@color/negro_blaco"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView1232"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="30dp"
-                android:autofillHints="  Ingrese nuevamente una contraseña"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView18">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/InMotivo"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/rosa_para_input"
-                        android:backgroundTint="#00AA3E3E"
-                        android:ems="10"
-                        android:hint="Motivo"
-                        android:inputType="textEmailAddress"
-                        android:paddingStart="15dp"
-                        android:paddingEnd="15dp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
             <Button
                 android:id="@+id/btnSi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="64dp"
                 android:layout_marginBottom="30dp"
-                android:backgroundTint="@color/deep_purple_500"
-                android:text="Enviar"
+                android:backgroundTint="#7B8EEC"
+                android:text="Si"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView1232"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btnNo"
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btnNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/deep_purple_500"
+                android:text="No"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                app:layout_constraintVertical_bias="1.0" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
