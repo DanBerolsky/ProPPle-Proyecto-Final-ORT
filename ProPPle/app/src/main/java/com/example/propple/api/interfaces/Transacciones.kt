@@ -37,4 +37,8 @@ interface Transacciones {
     @POST("/transaccion/finalizarTransaccion")
     suspend fun finalizarTransaccion(@Body x:RechazarReserva):Response<Void>
 
+    @POST("/transaccion/getTransaccionesAValuar/{token}")
+    suspend fun getTransaccionesAValuar(@Path("token") token: String):Response<List<Transaccion>>
+
+
 }

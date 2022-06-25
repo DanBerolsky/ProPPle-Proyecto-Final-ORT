@@ -1,12 +1,13 @@
-package com.ort.casodeusotest.fragments
+package com.example.propple.fragments.clientePrestador
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -73,9 +74,10 @@ class PublicacionFragment : Fragment() {
             binding.textDescripciN.text=it.publicacion_description
             binding.tTuloDelServicio.text=it.title
             setEstado(it.visibility)
-            binding.button10.text=it.puntuacion.toString()
+            //binding.button10.text=it.puntuacion.toString()
             setAvatar(it.url_download_image)
             it.show?.let { it1 -> estadoOcultar(it1) }
+            setValoracion(it.puntuacion)
         })
 
         viewModel.status2.observe(viewLifecycleOwner, Observer {
@@ -100,6 +102,14 @@ class PublicacionFragment : Fragment() {
     fun estadoOcultar(mostrar:Boolean){
         if (!mostrar){
            binding.cardVisible.visibility = View.GONE
+        }
+    }
+    fun setValoracion(cantEstrellas : Int){
+        //val COLOR_AMARILLO : Color.argb =
+        for ( i in 1..cantEstrellas){
+            var estrellaAux = "estrella$i"
+            Log.d("estre",estrellaAux)
+            v.findViewWithTag<ImageView>(estrellaAux).setColorFilter(Color.argb(255, 245, 242, 66))
         }
     }
 }

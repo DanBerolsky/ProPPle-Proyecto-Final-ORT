@@ -22,7 +22,7 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.material.snackbar.Snackbar
-import com.ort.casodeusotest.fragments.PublicacionFragmentArgs
+import com.example.propple.fragments.clientePrestador.PublicacionFragmentArgs
 import com.ort.casodeusotest.viewModel.PublicarServicioViewModel
 
 class PublicarServicioFragment : Fragment() {

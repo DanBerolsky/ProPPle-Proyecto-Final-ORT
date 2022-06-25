@@ -49,7 +49,7 @@
             android:switchMinWidth="65dp"
             android:switchPadding="0dp"
             android:thumbTint="#6750A4"
-            android:trackTint="#FFFFFF"
+            android:trackTint="#F4F4F4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.97"

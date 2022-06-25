@@ -156,7 +156,7 @@
     </fragment>
     <fragment
         android:id="@+id/publicacionFragment"
-        android:name="com.ort.casodeusotest.fragments.PublicacionFragment"
+        android:name="com.example.propple.fragments.clientePrestador.PublicacionFragment"
         android:label="PublicacionFragment" >
         <action
             android:id="@+id/action_publicacionFragment_to_publicarServicioFragment"
