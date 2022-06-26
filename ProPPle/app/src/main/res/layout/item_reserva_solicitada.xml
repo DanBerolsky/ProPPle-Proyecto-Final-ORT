@@ -22,7 +22,6 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/fabLlenarFormulario"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
