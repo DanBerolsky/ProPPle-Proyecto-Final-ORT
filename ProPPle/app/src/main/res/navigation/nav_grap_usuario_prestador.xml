@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_publicacionesFragment"
             app:destination="@id/publicacionesFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_valorarServicioFragment"
+            app:destination="@id/valorarServicioFragment" />
     </fragment>
     <fragment
         android:id="@+id/serviciosContratadosFragment"
@@ -268,4 +271,18 @@
             android:id="@+id/action_rechazarReservaFragment2_to_serviciosContratadosFragment2"
             app:destination="@id/serviciosContratadosFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/valorarServicioFragment"
+        android:name="com.example.propple.fragments.cliente.ValorarServicioFragment"
+        android:label="fragment_valorar_servicio"
+        tools:layout="@layout/fragment_valorar_servicio" >
+        <action
+            android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
+            app:destination="@id/servicioValoradoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicioValoradoFragment"
+        android:name="com.example.propple.fragments.cliente.ServicioValoradoFragment"
+        android:label="fragment_servicio_valorado"
+        tools:layout="@layout/fragment_servicio_valorado" />
 </navigation>

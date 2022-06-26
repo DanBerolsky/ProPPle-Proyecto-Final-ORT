@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout13"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.cliente.ValorarServicioFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/rosa_para_input"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImgPrestador"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgPrestador"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@drawable/avatar_1" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txvServicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Servicio - Prestador"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardImgPrestador" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txvServicio">
+
+                <TextView
+                    android:id="@+id/txvFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Fecha: dd/mm/aaaa"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txvDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Dirección: Google Maps"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txvPregunta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="¿Qué te pareció este servicio?"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout20" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout21"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txvPregunta">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6750A4"
+                    android:clickable="true"
+                    app:maxImageSize="64dp"
+                    app:srcCompat="@drawable/ic_one_bold_score"
+                    app:tint="#FFFFFF"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6750A4"
+                    android:clickable="true"
+                    app:maxImageSize="64dp"
+                    app:srcCompat="@drawable/ic_two_bold_score"
+                    app:tint="#FFFFFF"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6750A4"
+                    android:clickable="true"
+                    app:maxImageSize="64dp"
+                    app:srcCompat="@drawable/ic_three_bold_score"
+                    app:tint="#FFFFFF"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6750A4"
+                    android:clickable="true"
+                    app:maxImageSize="64dp"
+                    app:srcCompat="@drawable/ic_four_bold_score"
+                    app:tint="#FFFFFF"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6750A4"
+                    android:clickable="true"
+                    app:maxImageSize="64dp"
+                    app:srcCompat="@drawable/ic_five_bold_score"
+                    app:tint="#FFFFFF"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout21">
+
+                <EditText
+                    android:id="@+id/InOpinion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/rosa_para_input"
+                    android:backgroundTint="#FFFFFF"
+                    android:ems="10"
+                    android:hint="Tu opinión"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnEnviarOpinion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#6750A4"
+                android:text="Enviar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout22" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
