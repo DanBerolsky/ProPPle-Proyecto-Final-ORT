@@ -9,13 +9,13 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.propple.R
+import com.example.propple.api.Transacciones.Transaccion
 import com.example.propple.fragments.cliente.homeFragmentDirections
 import com.example.propple.shared.ProPPle
 import com.example.propple.utils.imgController
 
 class ServiciosPendienteValorarAdapter(
-    var ServiciosContratadosList: List<com.example.propple.api.Transacciones.Transaccion>
-) : RecyclerView.Adapter<ServiciosPendienteValorarAdapter.ServiciosPendienteValorarHolder>() {
+    var ServiciosContratadosList: List<com.example.propple.api.Transacciones.Transaccion>) : RecyclerView.Adapter<ServiciosPendienteValorarAdapter.ServiciosPendienteValorarHolder>() {
 
     //esto se conecta con el item
     class ServiciosPendienteValorarHolder (v : View) : RecyclerView.ViewHolder(v) {
@@ -48,9 +48,9 @@ class ServiciosPendienteValorarAdapter(
             txvServicioFinalizado.setText(rubroAux+" - "+x)
         }
 
-        fun valorar() {
+        fun valorar(trx:Transaccion) {
             view.findViewById<Button>(R.id.btnValorar).setOnClickListener {
-                view.findNavController().navigate(homeFragmentDirections.actionHomeFragmentToValorarServicioFragment())
+                view.findNavController().navigate(homeFragmentDirections.actionValorarServicioFragmentToServicioValoradoFragment2(trx))
             }
         }
 
@@ -68,16 +68,17 @@ class ServiciosPendienteValorarAdapter(
         ServiciosContratadosList[position].location.let { holder.setUbicacion(it) }
         ServiciosContratadosList[position].url_download_image.let { holder.setAvatar(it) }
         ServiciosContratadosList[position].fecha.let {
-            if (it != null) {
-                holder.setFecha(it)
+           if (it != null) {
+               holder.setFecha(it)
             }
         }
         val aliasAux = ServiciosContratadosList[position].alias
         val rubroAux = ServiciosContratadosList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
-        ServiciosContratadosList[position].fecha.let {
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
         }
-        holder.valorar()
+        //ServiciosContratadosList[position].fecha.let {
+         holder.valorar(ServiciosContratadosList[position])
     }
 
 

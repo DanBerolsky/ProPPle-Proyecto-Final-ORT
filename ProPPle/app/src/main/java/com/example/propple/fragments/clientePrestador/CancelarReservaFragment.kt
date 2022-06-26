@@ -66,7 +66,7 @@ class CancelarReservaFragment : Fragment() {
         trx.fecha?.let { setFecha(it) }
         setUbicacion(trx.location)
         trx.presupuesto?.let { setPrecio(it) }
-        setTitulo(trx.alias,trx.rubro_name)
+        trx.alias?.let { setTitulo(it,trx.rubro_name) }
 
         btnSiCancelar.setOnClickListener {
             if(inMotivo.text.isBlank()) {

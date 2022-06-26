@@ -109,7 +109,9 @@ class ServiciosContratadosPendienteDePagoAdapter(var ServiciosContratadosList: L
         holder.Rechazar(ServiciosContratadosList[position])
         val aliasAux = ServiciosContratadosList[position].alias
         val rubroAux = ServiciosContratadosList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
         ServiciosContratadosList[position].presupuesto?.let { holder.setPrecio(it) }
     }
 

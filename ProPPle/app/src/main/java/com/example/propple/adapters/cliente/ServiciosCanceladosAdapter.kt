@@ -75,7 +75,9 @@ class ServiciosCanceladosAdapter(
         }
         val aliasAux = ServiciosContratadosList[position].alias
         val rubroAux = ServiciosContratadosList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
     }
 
 

@@ -47,7 +47,7 @@ class RechazarReservaFragment : Fragment() {
         }
 
         setAvatar(trx.url_download_image)
-        setTitulo(trx.alias,trx.rubro_name,v)
+        trx.alias?.let { setTitulo(it,trx.rubro_name,v) }
 
         viewModel.status.observe(viewLifecycleOwner, Observer {
 

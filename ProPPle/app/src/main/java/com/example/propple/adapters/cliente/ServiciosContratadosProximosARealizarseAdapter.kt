@@ -95,7 +95,9 @@ class ServiciosContratadosProximosARealizarseAdapter(var ServiciosContratadosLis
             }
         }
         val rubroAux = ServiciosContratadosList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
 
     }
 

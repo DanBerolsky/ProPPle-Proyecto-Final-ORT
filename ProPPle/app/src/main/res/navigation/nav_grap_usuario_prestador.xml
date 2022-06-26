@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_grap_usuario_prestador"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/home_fragment"
+        android:id="@+id/homeFragment"
         android:name="com.example.propple.fragments.cliente.homeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" >
@@ -14,7 +14,7 @@
             android:id="@+id/action_homeFragment_to_publicacionesFragment"
             app:destination="@id/publicacionesFragment" />
         <action
-            android:id="@+id/action_home_fragment_to_valorarServicioFragment"
+            android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
             app:destination="@id/valorarServicioFragment" />
     </fragment>
     <fragment
@@ -228,7 +228,7 @@
         tools:layout="@layout/fragment_formalizacion_envio" >
         <action
             android:id="@+id/action_formalizacionEnvioFragment_to_home_fragment"
-            app:destination="@id/home_fragment" />
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/abonarReservaFragment"
@@ -279,10 +279,17 @@
         <action
             android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
             app:destination="@id/servicioValoradoFragment" />
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
         android:id="@+id/servicioValoradoFragment"
         android:name="com.example.propple.fragments.cliente.ServicioValoradoFragment"
         android:label="fragment_servicio_valorado"
-        tools:layout="@layout/fragment_servicio_valorado" />
+        tools:layout="@layout/fragment_servicio_valorado" >
+        <action
+            android:id="@+id/action_servicioValoradoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

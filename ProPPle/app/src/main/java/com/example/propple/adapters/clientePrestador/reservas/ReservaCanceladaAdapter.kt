@@ -74,7 +74,9 @@ class ReservaCanceladaAdapter(
         }
         val aliasAux = reservaList[position].alias
         val rubroAux = reservaList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
         reservaList[position].url_download_image.let { holder.setAvatar(it) }
         reservaList[position].location.let { holder.setUbicacion(it) }
         reservaList[position].presupuesto.let {

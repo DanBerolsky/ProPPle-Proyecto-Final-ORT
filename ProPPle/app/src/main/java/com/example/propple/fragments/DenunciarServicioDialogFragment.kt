@@ -5,14 +5,21 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import com.example.propple.R
+import com.example.propple.api.Transacciones.Transaccion
+import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.viewModel.DenunciarServicioDialogViewModel
+import com.example.propple.viewModel.cliente.PublicacionVistaPublicaViewModel
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 
 class DenunciarServicioDialogFragment : DialogFragment() {
 
@@ -35,9 +42,7 @@ class DenunciarServicioDialogFragment : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        v.findViewById<Button>(R.id.btnSi).setOnClickListener {
-            dialog?.dismiss()
-        }
+
     }
 
 
@@ -51,7 +56,22 @@ class DenunciarServicioDialogFragment : DialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(DenunciarServicioDialogViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        Log.i("aaaaaaa", prefs.getPubli())
+        val json = prefs.getTrx()
+        val gson = Gson()
+        val obj= gson.fromJson(json, Transaccion::class.java)
+        v.findViewById<Button>(R.id.btnSi).setOnClickListener {
+            viewModel.getPublicationsForPrestador(obj.id_usuario_prestador)
+        }
+        viewModel.status.observe(viewLifecycleOwner, Observer {
+            if (it){
+                dialog?.dismiss()
+            }else{
+                Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
+            }
+        })
+
     }
 
 }

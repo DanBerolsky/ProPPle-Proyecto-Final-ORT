@@ -75,7 +75,9 @@ class ReservaConcretadaAdapter(
         reservaList[position].url_download_image.let { holder.setAvatar(it) }
         val aliasAux = reservaList[position].alias
         val rubroAux = reservaList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
     }
 
     override fun getItemCount(): Int {

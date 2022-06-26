@@ -89,7 +89,7 @@ class publicacionVistaPublicaFragment : Fragment() {
                 binding.textDescripciN.text=it.publicacion_description
                 setValoracion(it.puntuacion)
                 binding.textDireccion.text=it.location
-                binding.textprecio.text="$"+it.precio_x_hora
+                binding.textprecio.text=" $"+it.precio_x_hora
                 binding.textCantVeces.text="Ha realizado ${it.cant_transacciones} veces este servicio"
                 binding.tTuloDelServicio.text=it.title
                 binding.Nombre.text=it.user_name+" "+it.user_last_name

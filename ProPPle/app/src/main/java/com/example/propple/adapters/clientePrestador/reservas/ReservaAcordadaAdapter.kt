@@ -125,9 +125,11 @@ class ReservaAcordadaAdapter(
         }
         val aliasAux = reservaList[position].alias
         val rubroAux = reservaList[position].rubro_name
-        holder.setTitulo(aliasAux,rubroAux)
+        if (aliasAux != null) {
+            holder.setTitulo(aliasAux,rubroAux)
+        }
         val mensaje = "Hola ${reservaList[position].alias}!!Contacto con usted para conocer mas sobre su ProppleService."
-        holder.getWhatsapp(reservaList[position].phone,mensaje)
+        reservaList[position].phone?.let { holder.getWhatsapp(it,mensaje) }
 
 
     }

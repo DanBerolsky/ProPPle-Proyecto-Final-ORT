@@ -186,12 +186,19 @@
         android:label="fragment_valorar_servicio"
         tools:layout="@layout/fragment_valorar_servicio" >
         <action
-            android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment"
+            android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
             app:destination="@id/servicioValoradoFragment" />
+        <argument
+            android:name="trx"
+            app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
         android:id="@+id/servicioValoradoFragment"
         android:name="com.example.propple.fragments.cliente.ServicioValoradoFragment"
         android:label="fragment_servicio_valorado"
-        tools:layout="@layout/fragment_servicio_valorado" />
+        tools:layout="@layout/fragment_servicio_valorado" >
+        <action
+            android:id="@+id/action_servicioValoradoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

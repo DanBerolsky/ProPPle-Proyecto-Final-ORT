@@ -25,6 +25,7 @@ class PublicacionVistaPublicaViewModel : ViewModel() {
     var publi= MutableLiveData<Publication?>()
     var comentarios= MutableLiveData<List<Comentario>?>()
     var status= MutableLiveData<String?>()
+    //var publi2:Publication?=null
     fun getPublication(id:Int){
         CoroutineScope(Dispatchers.IO).launch {
             var call : Response<Publication> = RetrofitHelper.getRetrofit().create(
@@ -32,6 +33,8 @@ class PublicacionVistaPublicaViewModel : ViewModel() {
             if(call.isSuccessful){
                 val response : Publication? = call.body()
                 if (response!=null){
+                    //publi2= response
+                    prefs.setPubli(response)
                     publi.postValue(response)
                 }
 

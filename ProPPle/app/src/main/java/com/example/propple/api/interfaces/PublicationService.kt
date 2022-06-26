@@ -41,6 +41,8 @@ interface PublicationService {
     @PUT("publication/updatePublication")
     suspend fun updatePublication(@Body x : UpdatePublication):Response<Void>
 
+    @POST("/denuncia")
+    suspend fun denuncia(@Body x : Denuncia):Response<Void>
 
 }
 

@@ -237,7 +237,7 @@
                 </androidx.gridlayout.widget.GridLayout>
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/textViewRE"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -248,6 +248,7 @@
                     android:textSize="34sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/re"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="40dp" />
