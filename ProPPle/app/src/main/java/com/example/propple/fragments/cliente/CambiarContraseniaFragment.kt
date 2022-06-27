@@ -73,10 +73,10 @@ class cambiarContraseniaFragment : Fragment() {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
             }
-            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.InContrasenia1, 1979711488)){
+            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.txvInContrasenia1CC, 1979711488)){
                 Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
             }
-            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.InContrasenia2, 1979711488)){
+            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.txvInContrasenia2CC, 1979711488)){
                 Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
             }
             else {

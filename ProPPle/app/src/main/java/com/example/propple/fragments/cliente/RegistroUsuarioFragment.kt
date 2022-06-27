@@ -220,10 +220,10 @@ class RegistroUsuarioFragment : Fragment() {
             else if (!esTelefono(binding.InTelefono, binding.txvInTelefono, 1979711488)){
                 Snackbar.make(v, "Formato de teléfono incorrecto", Snackbar.LENGTH_SHORT).show()
             }
-            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.InContrasenia1, 1979711488)){
+            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.txvInContrasenia1, 1979711488)){
                 Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
             }
-            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.InContrasenia2, 1979711488)){
+            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.txvInContrasenia2, 1979711488)){
                 Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
             }
             else {
