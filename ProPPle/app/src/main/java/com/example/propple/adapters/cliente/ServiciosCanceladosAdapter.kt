@@ -23,7 +23,7 @@ class ServiciosCanceladosAdapter(
         }
 
         fun setFecha(fecha: String){
-            var txtFecha : TextView = view.findViewById(R.id.textView44)
+            var txtFecha : TextView = view.findViewById(R.id.textView41)
             val fecha = fecha.replace("-"," / ").substring(0,14)
             txtFecha.text = "Fecha : " + fecha
         }

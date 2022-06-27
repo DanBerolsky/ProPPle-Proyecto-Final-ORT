@@ -54,7 +54,7 @@ class homeFragment : Fragment() {
             nav(action)
         }
         binding.btnAireAC.setOnClickListener {
-            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("acondicionado")
+            val action = homeFragmentDirections.actionHomeFragmentToPublicacionesFragment("Acondicionados")
             nav(action)
         }
         binding.btnGasista.setOnClickListener {

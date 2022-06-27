@@ -15,7 +15,7 @@
             app:destination="@id/publicacionesFragment" />
         <action
             android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
-            app:destination="@id/valorarServicioFragment" />
+            app:destination="@id/action_valorarServicioFragment_to_servicioValoradoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/serviciosContratadosFragment"
@@ -272,19 +272,19 @@
             app:destination="@id/serviciosContratadosFragment" />
     </fragment>
     <fragment
-        android:id="@+id/valorarServicioFragment"
+        android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
         android:name="com.example.propple.fragments.cliente.ValorarServicioFragment"
         android:label="fragment_valorar_servicio"
         tools:layout="@layout/fragment_valorar_servicio" >
         <action
             android:id="@+id/action_valorarServicioFragment_to_servicioValoradoFragment2"
-            app:destination="@id/servicioValoradoFragment" />
+            app:destination="@id/action_servicioValoradoFragment_to_homeFragment" />
         <argument
             android:name="trx"
             app:argType="com.example.propple.api.Transacciones.Transaccion" />
     </fragment>
     <fragment
-        android:id="@+id/servicioValoradoFragment"
+        android:id="@+id/action_servicioValoradoFragment_to_homeFragment"
         android:name="com.example.propple.fragments.cliente.ServicioValoradoFragment"
         android:label="fragment_servicio_valorado"
         tools:layout="@layout/fragment_servicio_valorado" >

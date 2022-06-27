@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.propple.R
@@ -43,11 +44,33 @@ class MainActivityUsuarioPrestador : AppCompatActivity() {
         mainHandler = Handler(Looper.getMainLooper())
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         //call super
         super.onActivityResult(requestCode, resultCode, data)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
     }
 
 

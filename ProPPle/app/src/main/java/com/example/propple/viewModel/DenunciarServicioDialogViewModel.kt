@@ -14,12 +14,12 @@ import retrofit2.Response
 
 class DenunciarServicioDialogViewModel : ViewModel() {
     var status = MutableLiveData<Boolean>()
-    fun getPublicationsForPrestador(id_usuario_prestador:Int){
+    fun getPublicationsForPrestador(id_usuario_prestador:Int,com:String){
         val jwt = ProPPle.prefs.getJwt()
         CoroutineScope(Dispatchers.IO).launch {
             val call : Response<Void> = RetrofitHelper.getRetrofit().create(
                 PublicationService::class.java).
-            denuncia(Denuncia(jwt, id_usuario_prestador))
+            denuncia(Denuncia(jwt, id_usuario_prestador,com))
             if(call.isSuccessful){
                 status.postValue(true)
             }else{

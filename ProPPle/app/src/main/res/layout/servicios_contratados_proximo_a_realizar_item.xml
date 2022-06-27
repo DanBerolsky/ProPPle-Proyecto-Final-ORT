@@ -18,7 +18,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reserva no abonada, vence en 24 horas"
+            android:text="Reserva abonada"
             android:textAlignment="center"
             android:textSize="12sp"
             android:textStyle="italic"

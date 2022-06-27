@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.propple.R
@@ -25,6 +26,14 @@ class MainActivity2 : AppCompatActivity() {
 
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
+        //navHostFragment.popBackStack();
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
     }
 }

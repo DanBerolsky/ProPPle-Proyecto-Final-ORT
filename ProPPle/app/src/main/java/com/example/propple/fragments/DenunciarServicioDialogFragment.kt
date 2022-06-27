@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import com.example.propple.R
@@ -62,7 +63,7 @@ class DenunciarServicioDialogFragment : DialogFragment() {
         val gson = Gson()
         val obj= gson.fromJson(json, Transaccion::class.java)
         v.findViewById<Button>(R.id.btnSi).setOnClickListener {
-            viewModel.getPublicationsForPrestador(obj.id_usuario_prestador)
+            viewModel.getPublicationsForPrestador(obj.id_usuario_prestador,v.findViewById<EditText>(R.id.InMotivo).text.toString())
         }
         viewModel.status.observe(viewLifecycleOwner, Observer {
             if (it){

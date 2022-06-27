@@ -65,7 +65,7 @@ class DialogReservaHoyFragment() : DialogFragment() {
 
         v.findViewById<Button>(R.id.btnSi).setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
-            builder.setMessage("Are you sure you want to Delete?")
+            builder.setMessage("¿Estas seguro?")
                 .setCancelable(false)
                 .setPositiveButton("Yes") { dialog, id ->
                     viewModel.finalizarTransaccion(trx.id_transaccion)
@@ -91,7 +91,7 @@ class DialogReservaHoyFragment() : DialogFragment() {
 
         v.findViewById<Button>(R.id.btnNo).setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
-            builder.setMessage("Are you sure you want to Delete?")
+            builder.setMessage("¿Estas seguro?")
                 .setCancelable(false)
                 .setPositiveButton("Yes") { dialog, id ->
                     viewModel.deleteTransaccionPresupuestada(trx.id_transaccion)
