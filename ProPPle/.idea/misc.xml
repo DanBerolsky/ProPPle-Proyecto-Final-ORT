@@ -52,6 +52,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/blank_fragment.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cambiar_contrasenia_fragment.xml" value="0.3421875" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cancelar_reserva_fragment.xml" value="0.4204724409448819" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/card_valorar_servicio.xml" value="0.19814814814814816" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/comentarios_fragment.xml" value="0.36102564102564105" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/content_main_activity_usuario_prestado.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cuenta_fragment.xml" value="0.36666666666666664" />
@@ -75,6 +76,8 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_inicio.xml" value="0.3509963768115942" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_publicacion_vista_publica.xml" value="0.40764331210191085" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_rechazar_reserva.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_servicio_valorado.xml" value="0.2962962962962963" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_valorar_servicio.xml" value="0.2962962962962963" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/genero_item_framework.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/home_fragment.xml" value="0.3962962962962963" />
@@ -92,6 +95,7 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_cancelado.xml" value="0.4831223628691983" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_finalizado.xml" value="0.5" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_solicitado.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicios_pendientes_valorar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/log_in__fragment.xml" value="0.3515625" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_preferencias_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_publicaciones_fragment.xml" value="0.36102564102564105" />
@@ -118,15 +122,11 @@
         <entry key="..\:/Users/TEKK/AndroidStudioProjects/Proyecto-Final-ORT-/ProPPle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1665" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cambiar_contrasenia_fragment.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/cancelar_reserva_fragment.xml" value="0.33" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/card_devolucion.xml" value="0.13677536231884058" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/card_valorar_servicio.xml" value="0.13677536231884058" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/datos_personales_edit_fragment.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/formulario_reserva_fragment.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_cambiar_contrasenia_prestador.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_denunciar_servicio.xml" value="0.1503623188405797" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_publicacion_vista_publica.xml" value="0.18" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_servicio_valorado.xml" value="0.13677536231884058" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/fragment_valorar_servicio.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/historico_reservas_fragment.xml" value="0.12" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/inicio_sesion_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_comentario.xml" value="0.20416666666666666" />
@@ -137,7 +137,6 @@
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_cancelado.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_finalizado.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicio_solicitado.xml" value="0.33" />
-        <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/item_servicios_pendientes_valorar.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/mis_preferencias_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/postularme_fragment.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Proyecto-Final-ORT-/ProPPle/app/src/main/res/layout/publicacion_fragment.xml" value="0.1403985507246377" />

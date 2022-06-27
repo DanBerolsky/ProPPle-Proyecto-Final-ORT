@@ -21,12 +21,11 @@ class ServicioValoradoFragment : Fragment() {
     private lateinit var viewModel: ServicioValoradoViewModel
     lateinit var v:View
     lateinit var mainHandler: Handler
-    var delay = 3000
+    var delay = 100001
 
     private val updateTextTask = object : Runnable {
         override fun run() {
-            v.findNavController().navigate(ServicioValoradoFragmentDirections.actionServicioValoradoFragmentToHomeFragment())
-            mainHandler.postDelayed(this, delay.toLong())
+            mainHandler.postDelayed(this, 100001)
         }
     }
     override fun onCreateView(
@@ -34,9 +33,18 @@ class ServicioValoradoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         mainHandler = Handler(Looper.getMainLooper())
+        mainHandler.post(updateTextTask)
         v=inflater.inflate(R.layout.fragment_servicio_valorado, container, false)
         return v
     }
+
+    override fun onStart() {
+        super.onStart()
+        Handler().postDelayed({
+            v.findNavController().navigate(ServicioValoradoFragmentDirections.actionServicioValoradoFragmentToHomeFragment())
+        }, 3000)
+    }
+
     override fun onPause() {
         super.onPause()
         mainHandler.removeCallbacks(updateTextTask)
