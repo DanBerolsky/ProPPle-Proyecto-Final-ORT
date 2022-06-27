@@ -59,9 +59,9 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/rosa_para_input"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Datos personales"
@@ -78,9 +78,9 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/rosa_para_input"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Cambiar Contraseña"
@@ -97,9 +97,9 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/rosa_para_input"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Mis preferencias"
@@ -116,9 +116,9 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
 
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/rosa_para_input"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Postularme"
@@ -129,4 +129,23 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bntMisPreferencias" />
+
+    <Button
+        android:id="@+id/cerrar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#D87AA3"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="cerrar sesion"
+        android:textColor="#300975"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bntPostularme" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,8 @@ import retrofit2.http.*
 interface PublicationService {
     @GET("publication/getPublications/{token}/{precio}/{puntuacion}/{ubicacion}/{rubro}")
     suspend fun getPublications(@Path("token") token : String,
-                                @Path("precio") precio : Boolean,
-                                @Path("puntuacion") puntuacion : Boolean,
+                                @Path("precio") precio : Int,
+                                @Path("puntuacion") puntuacion : Int,
                                 @Path("ubicacion") ubicacion : String,
                                 @Path("rubro") rubro : String):Response<List<Publication>>
     @GET("publication/getPublication/{token}/{id}")

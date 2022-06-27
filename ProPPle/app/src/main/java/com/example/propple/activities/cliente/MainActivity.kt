@@ -3,6 +3,7 @@ package com.example.propple.activities.cliente
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.propple.R
+import com.example.propple.activities.clientePrestador.MainActivityUsuarioPrestador
 import com.example.propple.shared.ProPPle.Companion.prefs
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-       prefs.clear()
+
+
+        prefs.clear()
     }
 
     override fun onResume() {

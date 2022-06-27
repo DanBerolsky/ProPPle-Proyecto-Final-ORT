@@ -1,6 +1,7 @@
 package com.example.propple.fragments.cliente
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.propple.R
 import com.example.propple.databinding.CuentaFragmentBinding
+import com.example.propple.fragments.clientePrestador.CuentaUsuarioPrestadorFragmentDirections
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.imgController.getImgUrl
 import com.example.propple.viewModel.cliente.CuentaViewModel
@@ -62,6 +64,23 @@ class CuentaFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
+        binding.cerrar.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setMessage("¿Estas seguro que quieres cerrar sesion?")
+                .setCancelable(false)
+                .setPositiveButton("Si") { dialog, id ->
+                    v.findNavController().navigate(CuentaFragmentDirections.actionCuentaFragmentToMainActivity3())
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, id ->
+                    // Dismiss the dialog
+                    dialog.dismiss()
+                }
+
+            val alert = builder.create()
+            alert.show()
+
+        }
         binding.NombreDeUsuario.setText(nombre+" "+ apellido)
         binding.aliasRol.setText("$alias - $rol")
         bntDatosPersonales.setOnClickListener {

@@ -10,7 +10,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.propple.R
 import com.example.propple.api.RetrofitHelper
-import com.example.propple.api.Transacciones.RechazarReserva
 import com.example.propple.api.Transacciones.Transaccion
 import com.example.propple.api.interfaces.Transacciones
 import com.example.propple.fragments.DialogReservaHoyFragment
@@ -73,7 +72,9 @@ class MainActivityUsuarioPrestador : AppCompatActivity() {
         }
     }
 
-
+    public override fun onDestroy() {
+        super.onDestroy()
+    }
 
     override fun onPause() {
         super.onPause()

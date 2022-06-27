@@ -17,10 +17,17 @@ class PublicacionesViewModel : ViewModel() {
     var publiXRubro= MutableLiveData<List<Publication>?>()
 
     fun getPublications(rubro:String){
-
+        var v1=0
+        if (ProPPle.prefs.getMenorPrecioBase()){
+            v1=1
+        }
+        var v2 =0
+        if (ProPPle.prefs.getMejorValoracion()){
+            v2
+        }
         CoroutineScope(Dispatchers.IO).launch {
             var call : Response<List<Publication>> = RetrofitHelper.getRetrofit().create(PublicationService::class.java).getPublications(
-                ProPPle.prefs.getJwt(), ProPPle.prefs.getMenorPrecioBase(), ProPPle.prefs.getMejorValoracion(), ProPPle.prefs.getLat().toString()+","+prefs.getLon().toString(),rubro)
+                ProPPle.prefs.getJwt(),v1 , v2, ProPPle.prefs.getLat().toString()+","+prefs.getLon().toString(),rubro)
             Log.i("hola",ProPPle.prefs.getJwt()+ ProPPle.prefs.getMenorPrecioBase()+ ProPPle.prefs.getMejorValoracion()+ ProPPle.prefs.getLat().toString()+prefs.getLon().toString()+rubro)
             if(call.isSuccessful){
                 val response : List<Publication>? = call.body()

@@ -78,14 +78,15 @@ class PublicacionFragment : Fragment() {
             setAvatar(it.url_download_image)
             it.show?.let { it1 -> estadoOcultar(it1) }
             setValoracion(it.puntuacion)
+            binding.switch3.setOnCheckedChangeListener{buttonView, isChecked ->
+                viewModel.changeVisibility(id)
+            }
         })
 
         viewModel.status2.observe(viewLifecycleOwner, Observer {
             Snackbar.make(v,"ERROR",Snackbar.LENGTH_SHORT).show()
         })
-        binding.switch3.setOnCheckedChangeListener{buttonView, isChecked ->
-            viewModel.changeVisibility(id)
-        }
+
 
     }
     fun setEstado(visibility: Boolean) {

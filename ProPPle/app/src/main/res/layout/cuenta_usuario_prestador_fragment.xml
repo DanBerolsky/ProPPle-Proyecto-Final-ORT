@@ -7,144 +7,176 @@ android:layout_height="match_parent"
 android:background="@color/banco_negro"
 tools:context=".fragments.clientePrestador.CuentaUsuarioPrestadorFragment">
 
-<androidx.cardview.widget.CardView
-    android:id="@+id/cardView"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="48dp"
-    app:cardCornerRadius="50dp"
-
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <ImageView
-        android:id="@+id/btnAvatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/avatar_1" />
-
-</androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/NombreDeUsuario"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="20dp"
-        android:lineSpacingExtra="12sp"
-        android:textColor="@color/negro_blaco"
-        android:textSize="24sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/aliasRol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/negro_blaco"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/NombreDeUsuario" />
-
-    <Button
-        android:id="@+id/bntDatosPersonales"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="10dp"
-        android:backgroundTint="@color/rosa_para_input"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Datos personales"
-        android:textColor="#300975"
-        android:textSize="18sp"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aliasRol" />
+        app:layout_constraintTop_toTopOf="parent">
 
-<Button
-    android:id="@+id/bntCambiarContra"
-    android:layout_width="0dp"
-    android:layout_height="60dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginRight="10dp"
-    android:backgroundTint="@color/rosa_para_input"
-    android:fontFamily="sans-serif-condensed-light"
-    android:text="Cambiar Contraseña"
-    android:textColor="#300975"
-    android:textSize="18sp"
-    app:cornerRadius="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.473"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/bntDatosPersonales" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<Button
-    android:id="@+id/bntMisPreferencias"
-    android:layout_width="0dp"
-    android:layout_height="60dp"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="24dp"
 
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginRight="10dp"
-    android:backgroundTint="@color/rosa_para_input"
-    android:fontFamily="sans-serif-condensed-light"
-    android:text="Mis preferencias"
-    android:textColor="#300975"
-    android:textSize="18sp"
-    app:cornerRadius="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.473"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/bntCambiarContra" />
+                    android:layout_marginTop="48dp"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-<Button
-    android:id="@+id/bntPostularme"
-    android:layout_width="0dp"
-    android:layout_height="60dp"
+                    <ImageView
+                        android:id="@+id/btnAvatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/avatar_1" />
 
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginRight="10dp"
-    android:backgroundTint="@color/rosa_para_input"
-    android:fontFamily="sans-serif-condensed-light"
-    android:text="Postularme"
-    android:textColor="#300975"
-    android:textSize="18sp"
-    app:cornerRadius="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.526"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/bntMisPreferencias" />
+                </androidx.cardview.widget.CardView>
 
-<Button
-    android:id="@+id/bntMisPublicaciones"
-    android:layout_width="0dp"
-    android:layout_height="60dp"
+                <TextView
+                    android:id="@+id/NombreDeUsuario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="68dp"
+                    android:lineSpacingExtra="12sp"
+                    android:textColor="@color/negro_blaco"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="10dp"
-    android:backgroundTint="@color/rosa_para_input"
-    android:fontFamily="sans-serif-condensed-light"
-    android:text="Mis publicaciones"
-    android:textColor="#300975"
-    android:textSize="18sp"
-    app:cornerRadius="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/bntPostularme" />
+                <Button
+                    android:id="@+id/cerrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:backgroundTint="#D87AA3"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="cerrar sesion"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bntMisPublicaciones" />
+
+                <TextView
+                    android:id="@+id/aliasRol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/negro_blaco"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/NombreDeUsuario" />
+
+                <Button
+                    android:id="@+id/bntPostularme"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/rosa_para_input"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Postularme"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bntMisPreferencias" />
+
+                <Button
+                    android:id="@+id/bntMisPreferencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/rosa_para_input"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Mis preferencias"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bntCambiarContra" />
+
+                <Button
+                    android:id="@+id/bntMisPublicaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/rosa_para_input"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Mis publicaciones"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bntPostularme" />
+
+                <Button
+                    android:id="@+id/bntCambiarContra"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/rosa_para_input"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Cambiar Contraseña"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bntDatosPersonales" />
+
+                <Button
+                    android:id="@+id/bntDatosPersonales"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/rosa_para_input"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Datos personales"
+                    android:textColor="#300975"
+                    android:textSize="18sp"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

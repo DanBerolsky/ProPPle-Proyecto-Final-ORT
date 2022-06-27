@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -57,6 +58,9 @@ class PublicacionesFragment : Fragment() {
         var servicios = PublicacionesFragmentArgs.fromBundle(requireArguments()).rubroIndex
         viewModel.getPublications(servicios)
         viewModel.publiXRubro.observe(viewLifecycleOwner, Observer {
+            if (it?.size==0){
+                v.findViewById<CardView>(R.id.vacio).visibility=View.VISIBLE
+            }
             adapter = PublicacionesAdapter(it)
             recyclerPublicaciones.adapter=adapter
             dismissDialog(InicioSesionFragment.DIALOG_CARGANDO)

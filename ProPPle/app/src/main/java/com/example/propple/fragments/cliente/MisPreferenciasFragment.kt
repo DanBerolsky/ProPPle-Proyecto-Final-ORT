@@ -173,10 +173,13 @@ class MisPreferenciasFragment : Fragment() {
                 Snackbar.make(v,"Desactivado",Snackbar.LENGTH_SHORT).show()
             }
         }
+
         binding.btnGuardar2.setOnClickListener {
             prefs.setDireccion(direccion)
-            prefs.setMejorValoracion(binding.switch1.isChecked)
-            prefs.setMenorPrecioBase(binding.switch12.isChecked)
+            val v1=binding.switch1.isChecked
+            val v2=binding.switch12.isChecked
+            prefs.setMejorValoracion(v1)
+            prefs.setMenorPrecioBase(v2)
             Snackbar.make(v,"Listo!",Snackbar.LENGTH_SHORT).show()
 
         }

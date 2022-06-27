@@ -1,5 +1,6 @@
 package com.example.propple.fragments.clientePrestador
 
+import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -50,6 +51,23 @@ class CuentaUsuarioPrestadorFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        binding.cerrar.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setMessage("¿Estas seguro que quieres cerrar sesion?")
+                .setCancelable(false)
+                .setPositiveButton("Si") { dialog, id ->
+                    v.findNavController().navigate(CuentaUsuarioPrestadorFragmentDirections.actionCuentaFragmentToMainActivity())
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, id ->
+                    // Dismiss the dialog
+                    dialog.dismiss()
+                }
+
+            val alert = builder.create()
+            alert.show()
+
+        }
         binding.NombreDeUsuario.setText(nombre+" "+apellido)
         binding.aliasRol.setText(alias +" - " + rol)
         binding.bntDatosPersonales.setOnClickListener { nav(CuentaUsuarioPrestadorFragmentDirections.actionCuentaUsuarioPrestadorFragmentToDatosPersonalesEditFragment2()) }

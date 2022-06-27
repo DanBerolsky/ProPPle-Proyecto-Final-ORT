@@ -178,14 +178,15 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 app:srcCompat="@drawable/ic_baseline_location_on_24"
-                app:tint="#FF0000" />
+                app:tint="#AC2525" />
 
             <TextView
                 android:id="@+id/txtUbicacion"
-                android:layout_width="190dp"
-                android:layout_height="match_parent"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:gravity="center_vertical"
+                android:minHeight="20dp"
                 android:textColor="@color/banco_negro"
                 android:textSize="10sp" />
 

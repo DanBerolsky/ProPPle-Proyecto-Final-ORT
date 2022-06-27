@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_cuentaFragment_to_postularmeFragment"
             app:destination="@id/postularmeFragment2" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_mainActivity3"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment"

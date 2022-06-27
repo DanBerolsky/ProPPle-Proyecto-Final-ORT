@@ -1,17 +1,14 @@
 package com.example.propple.activities.cliente
 
 
-import android.R.attr
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.propple.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity2 : AppCompatActivity() {
@@ -35,5 +32,27 @@ class MainActivity2 : AppCompatActivity() {
         }
         //navHostFragment.popBackStack();
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        //call super
+        super.onActivityResult(requestCode, resultCode, data)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host))
+            findNavController(R.id.nav_host).popBackStack(item.itemId, inclusive = false)
+
+            true
+        }
+    }
+    public override fun onDestroy() {
+        super.onDestroy()
     }
 }

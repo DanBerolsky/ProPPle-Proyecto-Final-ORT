@@ -48,10 +48,17 @@
             app:destination="@id/postularmeFragment2" />
         <action
             android:id="@+id/action_cuentaUsuarioPrestadorFragment_to_misPublicacionesFragment"
-            app:destination="@id/misPublicacionesFragment" />
+            app:destination="@id/misPublicacionesFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_cuentaFragment_to_cambiarContraseniaFragment"
             app:destination="@id/cambiarContraseniaFragment" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_cuentaFragment_to_mainActivity2"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment
         android:id="@+id/datosPersonalesEditFragment2"
@@ -136,7 +143,8 @@
         android:label="MisPublicacionesFragment" >
         <action
             android:id="@+id/action_misPublicacionesFragment_to_publicacionFragment"
-            app:destination="@id/publicacionFragment" />
+            app:destination="@id/publicacionFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/publicarServicioFragment"
@@ -144,7 +152,8 @@
         android:label="PublicarServicioFragment" >
         <action
             android:id="@+id/action_publicarServicioFragment_to_publicacionFragment"
-            app:destination="@id/publicacionFragment" />
+            app:destination="@id/publicacionFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="id"
             app:argType="integer" />
@@ -163,13 +172,17 @@
         android:label="PublicacionFragment" >
         <action
             android:id="@+id/action_publicacionFragment_to_publicarServicioFragment"
-            app:destination="@id/publicarServicioFragment" />
+            app:destination="@id/publicarServicioFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_publicacionFragment_to_comentariosFragment"
-            app:destination="@id/comentariosFragment" />
+            app:destination="@id/comentariosFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_publicacionFragment_to_misPublicacionesFragment"
-            app:destination="@id/misPublicacionesFragment" />
+            app:destination="@id/misPublicacionesFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="id"
             app:argType="integer" />
