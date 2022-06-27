@@ -22,6 +22,7 @@ import com.example.propple.databinding.RegistroUsuarioFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.GoogleMaps
 import com.example.propple.utils.InputFieldValidator
+import com.example.propple.utils.InputFieldValidator.Companion.esContraseniaCompleja
 import com.example.propple.utils.InputFieldValidator.Companion.esEmail
 import com.example.propple.utils.InputFieldValidator.Companion.esNumerico
 import com.example.propple.utils.InputFieldValidator.Companion.esTelefono
@@ -218,6 +219,12 @@ class RegistroUsuarioFragment : Fragment() {
             }
             else if (!esTelefono(binding.InTelefono, binding.txvInTelefono, 1979711488)){
                 Snackbar.make(v, "Formato de teléfono incorrecto", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.InContrasenia1, 1979711488)){
+                Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.InContrasenia2, 1979711488)){
+                Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
             }
             else {
                 if (binding.InContrasenia1.text.toString() != binding.InContrasenia2.text.toString()){

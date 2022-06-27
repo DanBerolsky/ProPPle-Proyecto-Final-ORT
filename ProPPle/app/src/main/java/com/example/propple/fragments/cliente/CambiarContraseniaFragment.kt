@@ -14,6 +14,7 @@ import com.example.propple.R
 import com.example.propple.databinding.CambiarContraseniaFragmentBinding
 import com.example.propple.shared.ProPPle.Companion.prefs
 import com.example.propple.utils.InputFieldValidator
+import com.example.propple.utils.InputFieldValidator.Companion.esContraseniaCompleja
 import com.example.propple.viewModel.cliente.CambiarContraseniaViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -71,7 +72,14 @@ class cambiarContraseniaFragment : Fragment() {
         binding.btnCambiar.setOnClickListener {
             if(verificarCamposVacios()) {
                 Snackbar.make(v, "Los campos con * son obligatorios", Snackbar.LENGTH_SHORT).show()
-            } else {
+            }
+            else if (!esContraseniaCompleja(binding.InContrasenia1, binding.InContrasenia1, 1979711488)){
+                Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
+            }
+            else if (!esContraseniaCompleja(binding.InContrasenia2, binding.InContrasenia2, 1979711488)){
+                Snackbar.make(v, "La contraseña debe contener 8 caracteres cómo mínimo, incluyendo al menos una letra minúscula, otra mayúscula, un número y un caracter especial.", Snackbar.LENGTH_SHORT).show()
+            }
+            else {
                 viewModel.passwordChange(binding.InContraseniaActual.text.toString(),
                     binding.InContrasenia1.text.toString(),
                     binding.InContrasenia2.text.toString(),

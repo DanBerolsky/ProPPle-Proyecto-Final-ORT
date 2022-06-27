@@ -100,6 +100,20 @@ class InputFieldValidator {
             return esNumerico
         }
 
+        public fun esContraseniaCompleja(editTXT : EditText, viewTXT : TextView, txtDefaultColor : Int): Boolean {
+            var esCompleja = false
+            val REG = "(?=(.*[0-9]))(?=.*[\\!@#\$?])(?=(.*[A-Z]))(?=(.*)).{8,}"
+            var PATTERN: Pattern = Pattern.compile(REG)
+            fun CharSequence.isComplex() : Boolean = PATTERN.matcher(this).matches()
+            if (editTXT.text.isComplex()) {
+                viewTXT.setTextColor(txtDefaultColor)
+                esCompleja = true
+            } else {
+                viewTXT.setTextColor(Color.RED)
+            }
+            return esCompleja
+        }
+
     }
 
 }
